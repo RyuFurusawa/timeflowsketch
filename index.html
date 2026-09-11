@@ -8,7 +8,7 @@
 <header>
   <img class="icon" src="icon.png" alt="">
   <h1>Time Flow Sketch</h1>
-  <p class="lede">映像の中の時間の流れを、絵を描く感覚で操作する iPhone アプリ</p>
+  <p class="lede">映像の中の時間の流れを、絵を描く感覚で操作する iPhone / iPad アプリ</p>
 </header>
 
 <nav><a href="#support">サポート</a><a href="privacy.html">プライバシーポリシー</a><a href="#en">English</a></nav>
@@ -25,12 +25,62 @@
 </p>
 
 <h2>基本の使い方</h2>
-<ul>
-  <li><strong>動画を読み込む</strong> — 画面中央をタップして、写真ライブラリから動画を選びます。動きのある映像ほど効果がはっきり出ます。</li>
-  <li><strong>マップを描く</strong> — 下部のマップ画像をタップすると編集画面が開きます。映像の上をなぞると、その明るさに応じて時間の流れが変わります。</li>
-  <li><strong>結果を確かめる</strong> — 編集中もプレビューにリアルタイムで反映されます。</li>
-  <li><strong>書き出す</strong> — 映像右上のダウンロードアイコンから、写真ライブラリへ動画として保存します。</li>
-</ul>
+
+<div class="shot">
+  <figure><img src="shots/result.png" alt="トップ画面。上から入力映像、時間マップ、出力映像が並んでいる"></figure>
+  <div class="body">
+    <h3>1. 画面の見かた</h3>
+    <p>
+    トップ画面は上から <strong>入力映像</strong>・<strong>マップ画像</strong>・<strong>出力映像</strong> の3段です。
+    同じ素材が、マップによってどう変わったかをその場で見比べられます。
+    </p>
+    <p>
+    それぞれの映像の下に再生バーがあります。右上のスピーカーで音を切り替えます。
+    入力は素材そのままの音、出力は時間操作を受けた音で、鳴るのはどちらか一方だけです。
+    </p>
+    <p>
+    最初は画面下の<strong>「読み込み」</strong>から動画を選びます。動きのある映像ほど効果がはっきり出ます。
+    フル HD 以下・30 秒以下の短い素材が扱いやすく、読み込みも速く済みます。
+    </p>
+  </div>
+</div>
+
+<div class="shot">
+  <figure><img src="shots/draw.png" alt="編集画面。上に映像、下にマップ画像があり、マップに山形の線が描かれている"></figure>
+  <div class="body">
+    <h3>2. マップを描く</h3>
+    <p>
+    マップ画像の右下にある鉛筆アイコン、または画面下の<strong>「編集」</strong>から編集画面に入ります。
+    下半分のマップの上を指や Apple Pencil でなぞると、その明るさに応じて時間の流れが変わります。
+    </p>
+    <p>
+    黒いところは素材の始まりのほう、白いところは終わりのほうを映します。
+    上の映像に結果がその場で反映されるので、描きながら確かめられます。
+    </p>
+  </div>
+</div>
+
+<div class="shot">
+  <figure><img src="shots/presets.png" alt="プリセットで塗り直しの画面。7つのプリセットに再生の説明が付いている"></figure>
+  <div class="body">
+    <h3>3. 生成やプリセットから始める</h3>
+    <p>
+    右上のアイコンから、マップの作り方を切り替えられます。
+    <strong>グラデーション生成</strong>は規則的な縞模様を、
+    <strong>モーションから生成</strong>は映像自身の動きからマップを作ります。
+    </p>
+    <p>
+    <strong>プリセットで塗り直し</strong>では、一色やグラデーションでマップ全体を塗り替えます。
+    各ボタンの下に、いまの設定でどう再生されるか（通常再生・逆再生・時間停止など）が表示されます。
+    </p>
+    <p>生成したマップの上から、そのまま描き足すこともできます。</p>
+  </div>
+</div>
+
+<h3>4. 書き出す</h3>
+<p>
+画面下の<strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
+</p>
 
 <h2>適用モード</h2>
 <table>
@@ -38,7 +88,12 @@
   <tr><th>縦スリット</th><td>画面の縦の帯ごとに違う時刻を割り当てます。マップの縦方向が出力の時間、横方向が画面の位置に対応します。</td></tr>
   <tr><th>横スリット</th><td>縦スリットの向きを入れ替えたものです。</td></tr>
   <tr><th>レート</th><td>明るさを再生の速さとして扱います。逆再生から早送りまで、場所ごとに変えられます。</td></tr>
+  <tr><th>空間マップ</th><td>明るさを「画面のどこから映像を取ってくるか」として扱います。時間マップと組み合わせて使う補助的なモードです。</td></tr>
 </table>
+<p>
+編集画面の左上にある「時間マップ・縦スリット」の表示をタップすると、
+マップの種類と適用モードをまとめて切り替えられます。
+</p>
 
 <h2 id="support">よくある質問</h2>
 
@@ -64,8 +119,28 @@ iOS の「設定」→「Time Flow」→「写真」から変更できます。
 
 <h3>音はどこから鳴っていますか</h3>
 <p>
-読み込んだ動画の音声トラックが、映像と同じ時間操作を受けて鳴っています。
-音声を持たない動画では無音になります。
+映像の右上にあるスピーカーで切り替えます。
+<strong>出力</strong>を選ぶと、読み込んだ動画の音声が映像と同じ時間操作を受けて鳴ります。
+<strong>入力</strong>を選ぶと、素材そのままの音が等速で鳴ります。
+鳴るのはどちらか一方だけで、同時には鳴りません。音声を持たない動画では無音になります。
+</p>
+
+<h3>外部ディスプレイにつなげますか</h3>
+<p>
+つなげます。HDMI や AirPlay でディスプレイに接続すると、
+<strong>出力映像だけがそちらに全画面で表示されます</strong>。手元の画面は編集画面のまま使えるので、
+大きな画面で結果を見ながら描けます。展示や上映にも使えます。
+</p>
+<p>
+iPad でステージマネージャがオンになっていると外部ディスプレイが拡張デスクトップとして扱われ、
+この表示にならないことがあります。その場合は「設定」→「マルチタスクとジェスチャ」から
+ステージマネージャをオフにしてください。
+</p>
+
+<h3>iPad でも使えますか</h3>
+<p>
+使えます。iPhone と iPad の両方に対応しています。
+画面の広い iPad では、映像とマップを大きく表示しながら Apple Pencil で描けます。
 </p>
 
 <h2>お問い合わせ</h2>
@@ -93,12 +168,23 @@ reassembled.
 </p>
 
 <h2>Getting started</h2>
-<ul>
-  <li><strong>Load a video</strong> — Tap the center of the screen and pick a video from your photo library. Footage with movement shows the effect most clearly.</li>
-  <li><strong>Draw a map</strong> — Tap the map image at the bottom to open the editor. Trace over the video to change how time flows there.</li>
-  <li><strong>Watch the result</strong> — The preview updates in real time as you draw.</li>
-  <li><strong>Export</strong> — Use the download icon above the video to save the result to your photo library.</li>
-</ul>
+
+<div class="shot">
+  <figure><img src="shots/result.png" alt="Main screen showing the source video, the map, and the result"></figure>
+  <div class="body">
+    <ul>
+      <li><strong>Load a video</strong> — Tap “読み込み” at the bottom and pick a video from your photo library. Footage with movement shows the effect most clearly. Clips at HD or below and under 30 seconds load fastest.</li>
+      <li><strong>Read the screen</strong> — Source video, map, and result are stacked top to bottom, so you can compare them as you work. Each video has its own playback bar and a speaker button; only one of the two audio sources plays at a time.</li>
+      <li><strong>Draw a map</strong> — Tap the pencil icon at the bottom right of the map, or “編集” at the bottom of the screen. Trace over the map to change how time flows there. Dark areas show earlier moments, light areas later ones.</li>
+      <li><strong>Generate instead</strong> — Build a map from a gradient, from the motion in the footage itself, or repaint it with a preset. Each preset shows what it will do with your current settings.</li>
+      <li><strong>Export</strong> — Use “書き出し” at the bottom to save the result to your photo library.</li>
+    </ul>
+    <p>
+    Connect an external display over HDMI or AirPlay and the result fills that screen on its own,
+    while your device keeps showing the editor. Works on both iPhone and iPad.
+    </p>
+  </div>
+</div>
 
 <h2>Support</h2>
 <p>
