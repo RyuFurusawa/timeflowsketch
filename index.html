@@ -11,7 +11,7 @@
   <p class="lede">映像の中の時間の流れを、絵を描く感覚で操作する iPhone / iPad アプリ</p>
 </header>
 
-<nav><a href="#support">サポート</a><a href="privacy.html">プライバシーポリシー</a><a href="#en">English manual</a></nav>
+<nav><a href="#support">サポート</a><a href="time.html">時間処理の仕組み</a><a href="privacy.html">プライバシーポリシー</a><a href="#en">English manual</a></nav>
 
 <h2>このアプリについて</h2>
 <p>
@@ -27,7 +27,7 @@
 <h2>基本の使い方</h2>
 
 <div class="shot">
-  <figure><img src="shots/result.png" alt="トップ画面。上から入力映像、時間マップ、出力映像が並んでいる"></figure>
+  <figure><img src="shots/v15/ja/top.png" alt="トップ画面。上から入力映像と使用範囲のバー、切り分けで作ったレートマップ、出力映像が並んでいる"></figure>
   <div class="body">
     <h3>1. 画面の見かた</h3>
     <p>
@@ -35,14 +35,31 @@
     同じ素材が、マップによってどう変わったかをその場で見比べられます。
     </p>
     <p>
-    それぞれの映像の下に再生バーがあります。右上のスピーカーで音を切り替えます。
-    入力は素材そのままの音、出力は時間操作を受けた音で、鳴るのはどちらか一方だけです。
+    入力映像の下のバーは<strong>使用範囲</strong>を兼ねています。両端の白いハンドルで素材のどこを使うかを決め、
+    長押ししてから引くと長さを保ったまま範囲をずらせます。ハンドルを動かしている間は、入力映像にその端の瞬間が映ります。
+    右上のスピーカーで音を切り替えます。入力は素材そのままの音、出力は時間操作を受けた音で、鳴るのはどちらか一方だけです。
+    </p>
+    <p>
+    入力・出力それぞれの右下のボタンで<strong>全画面表示</strong>になります。
+    入力の全画面には使用範囲のバーと読み込みの情報（元の映像と GPU 上の映像の大きさ・fps）が出て、情報をタップすると読み込みの設定を開けます。
+    出力の全画面には再生バーと出力の情報が出て、その場で書き出せます。
     </p>
     <p>
     最初は画面下の<strong>「読み込み」</strong>から動画を選びます。動きのある映像ほど効果がはっきり出ます。
-    フル HD 以下・30 秒以下の短い素材が扱いやすく、読み込みも速く済みます。
+    フル HD 以下の軽い素材が扱いやすく、読み込みも速く済みます。
+    </p>
+    <p>
+    読み込む解像度と秒数は、映像とこの端末の空きメモリから自動で決まります。
+    入りきらないときは読み込む秒数を短くしたりフレームを間引いたりして収め、読み込み後にお知らせします。
+    設定の<strong>「映像の読み込み」</strong>で変えられます。
+    読み込んだ範囲・使用範囲と出力の長さの関係は、<a href="time.html">時間処理の仕組み</a>で説明しています。
     </p>
   </div>
+</div>
+
+<div class="gallery">
+  <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面表示。下に読み込みの情報、使用範囲のバー、秒数が並ぶ" loading="lazy"><figcaption>入力の全画面。情報をタップすると読み込みの設定が開きます</figcaption></figure>
+  <figure><img src="shots/v15/ja/output_full.png" alt="出力映像の全画面表示。出力の大きさ・fps・秒数とモード、書き出しボタン、再生バー" loading="lazy"><figcaption>出力の全画面。その場で書き出せます</figcaption></figure>
 </div>
 
 <div class="shot">
@@ -50,12 +67,13 @@
   <div class="body">
     <h3>2. マップを描く</h3>
     <p>
-    マップ画像の右下にある鉛筆アイコン、または画面下の<strong>「編集」</strong>から編集画面に入ります。
+    マップ画像の右下にある鉛筆アイコン、出力映像のタップ、または画面下の<strong>「編集」</strong>から編集画面に入ります。
     下半分のマップの上を指や Apple Pencil でなぞると、その明るさに応じて時間の流れが変わります。
     </p>
     <p>
-    黒いところは素材の始まりのほう、白いところは終わりのほうを映します。
-    上の映像に結果がその場で反映されるので、描きながら確かめられます。
+    明るさの意味はマップの種類で変わります。起動時のレートマップでは黒が停止、グレーが通常の速さ、白が2倍速。
+    時間マップでは黒いところが素材の始まりのほう、白いところが終わりのほうを映します。
+    いまの設定での意味はツールの上に表示され、上の映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
   </div>
 </div>
@@ -65,21 +83,34 @@
   <div class="body">
     <h3>3. 生成やプリセットから始める</h3>
     <p>
-    右上のアイコンから、マップの作り方を切り替えられます。
+    右上のアイコンから、マップの作り方を切り替えられます。各項目の右にある <strong>i</strong> で説明を開けます。
     <strong>グラデーション生成</strong>は規則的な縞模様を、
-    <strong>モーションから生成</strong>は映像自身の動きからマップを作ります。
+    <strong>モーションから生成</strong>は映像自身の動きからマップを作ります（動きの残像が変化する「ヒストリー」はサーフェスのときだけ使えます）。
     </p>
     <p>
     <strong>プリセットで塗り直し</strong>では、一色やグラデーションでマップ全体を塗り替えます。
     各ボタンの下に、いまの設定でどう再生されるか（通常再生・逆再生・時間停止など）が表示されます。
     </p>
+    <p>
+    <strong>切り分け</strong>では、マップを横切る線や囲む線で2つに分け、それぞれを指でずらします。
+    線は下のパレットで「自由曲線」か「直線」（始点と終点をタップ）を選べ、囲む線は交差したところで閉じた形になります。
+    ずらしてできた隙間は両側の値をつないで自動で埋まります。「確定」で次の線へ進み、「やり直す」で線を引き直し、
+    「元に戻す」で切り分けを始める前のマップに戻ります。
+    </p>
     <p>生成したマップの上から、そのまま描き足すこともできます。</p>
   </div>
+</div>
+
+<div class="gallery">
+  <figure><img src="shots/v15/ja/menu_info.png" alt="編集方法のメニュー。各項目の右に i ボタンがあり、切り分けの説明が開いている" loading="lazy"><figcaption>メニューの i で各方法の説明を開けます</figcaption></figure>
+  <figure><img src="shots/v15/ja/cut_free.png" alt="切り分けで三角形を囲んで右へずらした画面。元の線が黄色、移動先が水色の点線" loading="lazy"><figcaption>自由曲線で囲んでずらす。線が交差したところで閉じます</figcaption></figure>
+  <figure><img src="shots/v15/ja/cut_straight_start.png" alt="直線モードで始点を置いた画面。黄色の丸が始点" loading="lazy"><figcaption>直線は始点と終点をタップ</figcaption></figure>
 </div>
 
 <h3>4. 書き出す</h3>
 <p>
 画面下の<strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
+長さは編集画面の歯車にある「再生時間」で調整でき、解像度は「映像の読み込み」で選んだ解像度になります。
 </p>
 
 <h2>適用モード</h2>
@@ -88,27 +119,52 @@
   <tr><th>縦スリット</th><td>画面の縦の帯ごとに違う時刻を割り当てます。マップの縦方向が出力の時間、横方向が画面の位置に対応します。</td></tr>
   <tr><th>横スリット</th><td>縦スリットの向きを入れ替えたものです。</td></tr>
   <tr><th>レート</th><td>明るさを再生の速さとして扱います。逆再生から早送りまで、場所ごとに変えられます。</td></tr>
-  <tr><th>空間マップ</th><td>明るさを「画面のどこから映像を取ってくるか」として扱います。時間マップと組み合わせて使う補助的なモードです。</td></tr>
+  <tr><th>空間マップ</th><td>明るさを「画面のどこから映像を取ってくるか」として扱います。時間マップやレートマップと組み合わせて使う補助的なマップで、やめるときは編集方法のメニューの「デフォルトの状態に戻す」を選びます。</td></tr>
 </table>
 <p>
-編集画面の左上にある「時間マップ・縦スリット」の表示をタップすると、
-マップの種類と適用モードをまとめて切り替えられます。
+編集画面の左上にある「レートマップ・サーフェス」などの表示をタップすると、
+マップの種類と適用モードをまとめて切り替えられます（起動時はレートマップ・サーフェスです）。
+歯車の「適用パラメータ」とサウンドの各項目にも <strong>i</strong> ボタンがあり、いまのモードでの意味を確かめられます。
 </p>
+<div class="gallery">
+  <figure><img src="shots/v15/ja/params_info.png" alt="適用パラメータ。再生時間の i を開き、サーフェス×レートでの意味が表示されている" loading="lazy"><figcaption>適用パラメータの i（再生時間の説明）</figcaption></figure>
+  <figure><img src="shots/v15/ja/sound_info.png" alt="サウンドパネル。音の方式の i を開き、グラニュラーとレート再生の違いが表示されている" loading="lazy"><figcaption>サウンドの i（グラニュラーとレート再生）</figcaption></figure>
+</div>
 
 <h2 id="support">よくある質問</h2>
 
 <h3>動画の読み込みに時間がかかります</h3>
 <p>
 4K や長い動画は、写真ライブラリからの取り出しに数十秒かかることがあります。
-短く切り出した素材のほうが試行錯誤しやすくなります。
+読み込み中はいつでも「中止」できます。短く切り出した素材のほうが試行錯誤しやすくなります。
 </p>
 
 <h3>アプリが途中で終了します</h3>
 <p>
 読み込んだ動画は端末のメモリに展開されます。
-設定画面の「映像の品質」で解像度や常駐フレーム数を下げると改善します。
+読み込む量は空きメモリから自動で決まりますが、他のアプリがメモリを使っていると足りなくなることがあります。
+設定の「映像の読み込み」で解像度を 1/2 や 1/4 に下げるか、読み込む秒数を短くしてください。
 他のアプリを終了してからお試しください。
 </p>
+
+<h3>「フレームを間引いて読み込みました」と表示されます</h3>
+<p>
+GPU が一度に扱えるフレーム数（2048枚）やメモリに収まらないときは、フレームを間引いて読み込みます。
+スローモーションで撮った映像はフレーム数が多いため、特に間引かれやすくなります。
+設定の「映像の読み込み」で解像度を下げるか読み込む秒数を短くすると、間引かずに読み込めます。
+スリットの時間マップでは、歯車の「使用範囲だけを読み込み直す」も使えます。
+</p>
+<figure><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引きの表示" loading="lazy"><figcaption>設定の「映像の読み込み」。間引きが起きるときは「フレーム」に理由が出ます</figcaption></figure>
+
+<h3>「読み込み範囲の外は動きません」と表示されます</h3>
+<p>
+使用範囲のハンドルを、読み込んだ範囲（バーの少し明るい部分）の外まで広げたときに出ます。外側の時刻は端のフレームで止まります。
+横の「この範囲で読み直す」を押すと、解像度と読み込む秒数はそのままで、使用範囲が真ん中に来る位置から読み直します。
+</p>
+<div class="gallery">
+  <figure><img src="shots/v15/ja/top_reload.png" alt="使用範囲を 7.48 秒まで広げ、「読み込み範囲の外は動きません」と「この範囲で読み直す」が出ている" loading="lazy"><figcaption>読み込んだ 0–4 秒の外まで広げると表示されます</figcaption></figure>
+  <figure><img src="shots/v15/ja/top_reloaded.png" alt="読み直した後の画面。0.0–7.5 秒を読み込み、注意が消えている" loading="lazy"><figcaption>押した後。使用範囲が収まるように読み直されます</figcaption></figure>
+</div>
 
 <h3>書き出した動画が見つかりません</h3>
 <p>
@@ -164,14 +220,14 @@ iPad でステージマネージャがオンになっていると外部ディス
 <p class="lede">Reshape the flow of time inside a video by drawing. For iPhone and iPad.</p>
 
 <nav>
-<a href="#about-en">About</a><a href="#started-en">Getting started</a><a href="#maps-en">Maps and modes</a><a href="#building-en">Building a map</a><a href="#sound-en">Sound</a><a href="#export-en">Exporting</a><a href="#settings-en">Settings</a><a href="#tips-en">Getting good results</a><a href="#support-en">FAQ</a>
+<a href="#about-en">About</a><a href="#started-en">Getting started</a><a href="#maps-en">Maps and modes</a><a href="#building-en">Building a map</a><a href="#sound-en">Sound</a><a href="#export-en">Exporting</a><a href="#settings-en">Settings</a><a href="#tips-en">Getting good results</a><a href="#support-en">FAQ</a><a href="time.html#en">How time processing works</a>
 </nav>
 
 <h2 id="about-en">About</h2>
 <p>
 Time Flow Sketch is a sketching app for reshaping the way time flows inside a video. Load a clip and the
-app expands it frame by frame into memory on the GPU, so the whole thing is available at once rather than
-one moment at a time. Out of that block of stacked frames it assembles a new video in which
+app expands it frame by frame into memory on the GPU, so the part you loaded is available all at once rather
+than one moment at a time. Out of that block of stacked frames it assembles a new video in which
 <strong>different parts of the picture sit at different points in the clip</strong> &mdash; column by column
 (<strong>Vertical slit</strong>), row by row (<strong>Horizontal slit</strong>), or pixel by pixel
 (<strong>Surface</strong>). A wave can break on the left of the frame while the right side has not started
@@ -180,13 +236,13 @@ moving yet; a walking figure can trail a wake of its own earlier selves.
 <p>
 What decides all of that is a picture. The instruction medium is a <strong>grayscale image</strong> &mdash;
 the map &mdash; which you make with <strong>Draw</strong>, <strong>Gradient</strong>,
-<strong>Presets</strong>, or <strong>From motion</strong>. Its brightness is read as a number, and what the
-number means depends on which kind of map you are editing. In a <strong>Time map</strong>, brightness is a
-moment in the clip: black is near the start, white near the end. In a <strong>Rate map</strong>, brightness
-is a playback speed: with the default range, black is frozen, mid grey is normal playback, and white is
-double speed. In the optional <strong>Space map</strong>, brightness is a position &mdash; which part of the
-frame to take the image from. Maps are handled as 16-bit grayscale, so a smooth tonal gradient really does
-become a smooth change in time rather than a staircase of visible steps.
+<strong>Presets</strong>, <strong>From motion</strong> or <strong>Cut &amp; slide</strong>. Its brightness is
+read as a number, and what the number means depends on which kind of map you are editing. In a
+<strong>Time map</strong>, brightness is a moment in the clip: black is near the start, white near the end. In a
+<strong>Rate map</strong>, brightness is a playback speed: with the default settings, black is frozen, mid grey
+is normal playback, and white is double speed. In the optional <strong>Space map</strong>, brightness is a
+position &mdash; which part of the frame to take the image from. Maps are handled as 16-bit grayscale, so a
+smooth tonal gradient really does become a smooth change in time rather than a staircase of visible steps.
 </p>
 <p>
 This is the part ordinary editing cannot reach. In a normal editor, speed is a property of a whole clip and
@@ -202,8 +258,8 @@ Everything happens on the device. This build makes <strong>no network connection
 there is no sign-in, no account, no in-app purchase, no analytics, and nothing is uploaded or collected.
 Your photo library is touched exactly twice: once to read the video you load, once to save the video you
 export. Rendering is local, on the device&rsquo;s own GPU, which is also why long or high-resolution clips
-are demanding &mdash; every frame has to fit in memory at the working resolution you choose under
-<strong>Settings</strong>.
+are demanding &mdash; every loaded frame has to fit in memory at the resolution and length set under
+<strong>Settings &rarr; Video Loading</strong>.
 </p>
 <p>
 The app runs on iPhone and iPad, and it is localized: on a device not set to Japanese the controls, menus
@@ -217,30 +273,34 @@ makes the app usable for installation and live work as well as for producing fil
 <h2 id="started-en">Getting started</h2>
 
 <div class="shot">
-  <figure><img src="shots/en/main.png" alt="The main screen: the input video at the top, the time map in the middle, and the output video at the bottom, each with its own playback bar"></figure>
+  <figure><img src="shots/v15/en/top.png" alt="The main screen: the input video with its range bar at the top, a rate map made with Cut &amp; slide in the middle, and the output video at the bottom"></figure>
   <div class="body">
     <h3>1. Reading the main screen</h3>
     <p>
     With landscape footage the screen stacks <strong>Input</strong> (your clip, untouched), the
     <strong>map</strong>, and <strong>Output</strong> (the result, playing live) from top to bottom; with
-    portrait footage Input and Output sit side by side and the map goes below them.
+    portrait footage Input and Output sit side by side and the map goes below them. Turn the device sideways and
+    the bottom bar moves to the right edge, with the playback bars laid over the videos.
     </p>
     <p>
-    Each video has its own playback bar. The one under Input also sets the <strong>clip range</strong>: drag
+    Each video has its own playback bar. The one under Input also sets the <strong>range in use</strong>: drag
     the white handle at either end to trim it, touch inside the pale band to move the playhead, or press and
-    hold and then drag to slide the whole range without changing its length. The seconds in use are printed
-    underneath.
+    hold and then drag to slide the whole range without changing its length. While you drag a handle, the Input
+    picture shows the frame at that edge, so you can see exactly where the range begins or ends. The seconds in
+    use are printed underneath.
     </p>
     <p>
     A speaker button sits at the top right of each video, and only one of the two sounds at a time. A
     <strong>rotate button</strong> sits at the bottom left of the Input tile: each tap turns the source
-    another 90&deg; and re-imports the clip, which takes as long as a reload but leaves your maps alone.
+    another 90&deg; and re-imports the clip, which takes as long as a reload but leaves your maps alone. The
+    button at the bottom right of each video (beside the speaker when the device is sideways) opens it
+    <strong>full screen</strong> (see below).
     </p>
     <p>
     The map tile is labelled with which map it is and carries a <strong>red playhead</strong> marking the row
     or column being read at that instant. Drag anywhere on the map to scrub straight there; playback pauses
     while your finger is down and resumes when you lift. The editor opens three ways: the pencil icon at the
-    bottom right of the map, a tap on the map or on the Output video, or <strong>Edit</strong> on the bottom
+    bottom right of the map, a tap on the Output video, or <strong>Edit</strong> on the bottom
     bar &mdash; which also holds <strong>Load</strong>, <strong>Export</strong>, <strong>Settings</strong> and
     <strong>Help</strong>, with Edit and Export dimmed until a video is loaded.
     </p>
@@ -250,17 +310,44 @@ makes the app usable for installation and live work as well as for producing fil
 <h3>2. Loading a video</h3>
 <p>
 Tap <strong>Load</strong> and pick a clip from your photo library; the same button swaps in a different clip
-later. The first time, a note recommends <strong>HD (1280&times;720) or below and under 30 seconds</strong>.
-Every frame is converted on device at import, so lighter footage both loads faster and stays responsive while
-you draw. The overlay names the stage it has reached &mdash; <strong>Fetching from your photo library&hellip;</strong>,
-then <strong>Expanding frames&hellip;</strong> with a percentage and <em>Converting and uploading to the GPU</em>
-underneath it, then <strong>Loading the audio track&hellip;</strong> &mdash; and <strong>Cancel</strong> stops it
-at any point. Footage with continuous movement shows the effect most clearly.
+later. Every frame is converted on device at import, so lighter footage both loads faster and stays responsive
+while you draw. The overlay names the stage it has reached &mdash; <strong>Fetching from your photo
+library&hellip;</strong>, then <strong>Expanding frames&hellip;</strong> with a percentage and <em>Converting and
+uploading to the GPU</em> underneath it, then <strong>Loading the audio track&hellip;</strong> &mdash; and
+<strong>Cancel</strong> stops it at any point. Footage with continuous movement shows the effect most clearly.
+</p>
+<p>
+You do not have to decide how much to load. For a new clip the app picks a resolution and a number of seconds
+from the video and from the memory free on the device; if the whole clip does not fit, it loads fewer seconds
+or skips frames, and an orange note under the Input bar says what it did &mdash; for example <em>Of the &hellip;
+s clip, only &hellip;&ndash;&hellip; s was loaded</em>. Tap the <strong>&times;</strong> to dismiss it. Change the choice under
+<a href="#settings-en">Settings &rarr; Video Loading</a>. How the loaded part, the range in use and the length
+of the output relate to one another is explained step by step in
+<a href="time.html#en">How time processing works</a>.
 </p>
 <p>
 When loading finishes, Output looks exactly like Input. That is correct: the starting map for every mode is
-the pattern that gives back ordinary playback. The two pictures only diverge once you draw or generate.
+the pattern that gives back ordinary playback. The two pictures only diverge once you draw or generate. A new
+session starts on a <strong>Rate map</strong> in <strong>Surface</strong> mode, so painting straight away
+changes how fast each part of the picture runs.
 </p>
+
+<h3>Full-screen input and output</h3>
+<p>
+The full-screen button on either video fills the display with that picture; tap the picture to hide or show the
+controls, and tap <strong>Back</strong> at the top right or swipe down to return. The <strong>Input</strong>
+view carries the same range bar as the main screen &mdash; handles, press-and-hold to slide, touch to scrub
+&mdash; with the seconds underneath, and a line describing what is loaded: the source&rsquo;s size and frame
+rate, the size and frame rate held on the GPU, whether frames were skipped, and the seconds loaded. Tap that line
+to open the <strong>Video Loading</strong> settings on their own and reload from there. The
+<strong>Output</strong> view has play/pause and a playback bar, a line giving the output&rsquo;s size, frame rate,
+length and current map and mode, and an <strong>Export</strong> button, so you can check a result at full size
+and write it out without leaving.
+</p>
+<div class="gallery">
+  <figure><img src="shots/v15/en/input_full.png" alt="Full-screen Input with the loading information line, the range bar and the seconds in use" loading="lazy"><figcaption>Full-screen Input: tap the information line to open Video Loading</figcaption></figure>
+  <figure><img src="shots/v15/en/output_full.png" alt="Full-screen Output with size, frame rate, length, mode, an Export button and a playback bar" loading="lazy"><figcaption>Full-screen Output, with Export</figcaption></figure>
+</div>
 
 <div class="shot">
   <figure><img src="shots/en/draw.png" alt="The editor with the video and the map side by side, a curve drawn across the map, and the warped result visible in the video above it"></figure>
@@ -268,7 +355,7 @@ the pattern that gives back ordinary playback. The two pictures only diverge onc
     <h3>3. Drawing or generating a map</h3>
     <p>
     The editor opens full screen. The row across the top carries the map-and-mode label at the left, the gear
-    (<strong>Parameters</strong>), the waveform (<strong>Sound</strong>), the layout menu, the method menu, and
+    (<strong>Parameters</strong>), the waveform (<strong>Sound</strong>), the layout menu, the method button, and
     an <strong>X</strong> at the far right that closes the editor. Nothing needs saving &mdash; the map is
     already applied.
     </p>
@@ -282,23 +369,28 @@ the pattern that gives back ordinary playback. The two pictures only diverge onc
     <p>
     The caption under the map spells out what brightness means with your current settings &mdash;
     &ldquo;Black is the start of the clip &frasl; white the end&rdquo; &mdash; and rewrites itself when you
-    change the map or the mode. The icon at the top right switches from <strong>Draw</strong> to
-    <strong>Gradient</strong>, <strong>Presets</strong> or <strong>From motion</strong>. Anything you generate
-    can be drawn on afterwards.
+    change the map or the mode. The button at the top right opens the list of methods: <strong>Draw</strong>,
+    <strong>Gradient</strong>, <strong>Presets</strong>, <strong>From motion</strong> and
+    <strong>Cut &amp; slide</strong>. The <strong>i</strong> at the end of each row opens a short explanation
+    without leaving the list. Anything you generate can be drawn on afterwards.
     </p>
   </div>
+</div>
+<div class="gallery">
+  <figure><img src="shots/v15/en/menu_info.png" alt="The method list with an i button on every row and the Cut &amp; slide explanation open" loading="lazy"><figcaption>The i on each row explains the method</figcaption></figure>
+  <figure><img src="shots/v15/en/params_info.png" alt="The Parameters panel with the Duration explanation open for a surface rate map" loading="lazy"><figcaption>Parameters: the i text is written for the current mode</figcaption></figure>
 </div>
 
 <h3>4. Exporting your first result</h3>
 <p>
 Tap <strong>Export</strong>. Exactly what the Output view is showing is written out as an H.264 .mp4 with its
 audio and saved to your photo library, with a progress bar over the output while it works &mdash; leave the
-app open until it finishes. The length comes from the map&rsquo;s dimensions and the <strong>Duration</strong>
-slider in the editor&rsquo;s <strong>Parameters</strong> panel (the gear icon). Settings shows the resulting
-<strong>Export length</strong> next to <strong>Frame rate</strong> under <strong>Export</strong>, while
-<strong>Include audio</strong> and <strong>Also save the map as a 16-bit PNG</strong> sit under
-<strong>Export options</strong>. The video is exported at the working resolution chosen at import. If you
-declined the Photos permission, a share sheet opens instead.
+app open until it finishes. The length follows the map and mode (for a time map, the seconds in the range in
+use) and the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong> panel (the gear
+icon). Settings shows the resulting <strong>Export length</strong> next to <strong>Frame rate</strong> under
+<strong>Export</strong>, while <strong>Include audio</strong> and <strong>Also save the map as a 16-bit
+PNG</strong> sit under <strong>Export options</strong>. The video is written at the <strong>Resolution</strong>
+chosen under Video Loading. If you declined the Photos permission, a share sheet opens instead.
 </p>
 
 <h2 id="maps-en">Maps and modes</h2>
@@ -306,7 +398,7 @@ declined the Photos permission, a share sheet opens instead.
 Two separate choices decide what a grayscale image does to your footage: the <strong>kind</strong> of map
 &mdash; what brightness is taken to mean &mdash; and the <strong>mode</strong> &mdash; how the map is laid
 over the picture. Both live behind one label at the top left of the editor, which reads something like
-<strong>Time map</strong> &middot; <strong>Vertical slit</strong>. Tap it and a menu opens whose top section is
+<strong>Rate map</strong> &middot; <strong>Surface</strong>. Tap it and a menu opens whose top section is
 headed <strong>Map</strong> (Time map, Rate map, <strong>Space map (optional)</strong>) and whose lower
 section is headed <strong>Modes</strong> &mdash; or <strong>Mode (space uses slits only)</strong> when a space
 map is what you are editing.
@@ -317,26 +409,36 @@ whatever is sitting in that slot instead of reinterpreting what you just drew, s
 your work. Maps are held as 16-bit grayscale &mdash; 65,536 levels &mdash; which is why a gentle gradient
 produces a genuinely gentle change in time rather than visible steps.
 </p>
+<p>
+The settings that belong to the current kind and mode are in the <strong>Parameters</strong> panel (the gear).
+Each setting there has an <strong>i</strong> button that opens an explanation written for the mode you are in, since
+the same control can mean different things in different modes.
+</p>
 
 <h3>Time map &mdash; brightness is a moment</h3>
 <p>
-Black points at the beginning of the clip, white at the end, and every grey in between is a moment in
+Black points at the beginning of the range in use, white at the end, and every grey in between is a moment in
 between. The caption under the map in the editor always states the current reading: &ldquo;Black is the start
 of the clip &frasl; white the end.&rdquo;
 </p>
 <p>
 In the slit modes, <strong>Time from</strong> and <strong>Time to</strong> in the <strong>Parameters</strong>
 panel (the gear icon) narrow the span the two ends of the scale point at. These are the same two values as
-the white handles on the playback bar under the input video, so moving either one moves the other. Once you
-narrow the range, the caption switches to real seconds &mdash; &ldquo;Black 2.0s into the clip &frasl; white
-6.5s&rdquo; &mdash; and <strong>Reload this range at higher detail</strong> re-imports just that span, giving
-you more frames to work with inside it.
+the white handles on the playback bar under the input video, so moving either one moves the other; setting Time
+from above Time to plays in reverse. Once you narrow the range, the caption switches to real seconds &mdash;
+&ldquo;Black 2.0s into the clip &frasl; white 6.5s&rdquo; &mdash; and <strong>Reload only the range in
+use</strong>, just below, re-imports exactly that span at the same resolution. Because fewer seconds are loaded,
+fewer frames need to be skipped to fit.
+</p>
+<p>
+A time map always plays at natural speed: at a Duration of 1&times; the output lasts exactly as long as the range
+in use, and 2&times; shows the same range at half speed.
 </p>
 <p>
 In Surface mode a time map means something different: a <em>relative</em> shift rather than an absolute
 position. <strong>Shift (s)</strong>, 2&nbsp;seconds by default, is the total spread. Black runs half of it
 earlier than the current moment, mid grey is unchanged, white half of it later, and time wraps &mdash; a
-pixel pushed past the end of the clip reappears at the beginning.
+pixel pushed past the end of the range in use reappears at its beginning.
 </p>
 <p>
 The default time map is whichever pattern gives back ordinary playback: a <strong>Top &rarr; bottom</strong>
@@ -357,23 +459,24 @@ Speed is <strong>1 + (brightness &times; 2 &minus; 1) &times; Rate range</strong
 <strong>2.0&times; fast</strong>; push Rate range to 3 and black becomes 2.0&times; reverse while white
 becomes 4.0&times;. The solid presets report the resulting speed in words, and the four ramps report both
 ends at once using the shortened forms &mdash; Frozen, Normal, Slow, Fast, Reverse, Slow reverse, Fast
-reverse. <strong>Start point</strong> chooses where in the clip the accumulation begins. If the resulting path
-would run off either end of the source, the app slides the whole path back inside the clip, and compresses it
-only when sliding is not enough &mdash; so the result never simply sticks against the first or last frame.
+reverse. <strong>Start point</strong> chooses where in the range the accumulation begins. If the resulting path
+would run off either end of the range, the app slides the whole path back inside, and compresses it
+only when sliding is not enough &mdash; so the result never simply sticks against the first or last frame (in
+that case Start point has no effect).
 </p>
 <p>
 In Surface mode every pixel becomes an independent clock. <strong>Black rate</strong> and
-<strong>White rate</strong> (&minus;4 to +4, default &minus;1 and +1) are interpolated by brightness, so out
-of the box black runs backwards at normal speed, white runs forwards, and mid grey is frozen.
-<strong>Anchor</strong> &mdash; Start, Middle, or End, Middle by default &mdash; is the instant in the output
-at which every pixel agrees, and <strong>Anchor at</strong> picks which point of the source they agree on.
+<strong>White rate</strong> (&minus;4 to +4, default 0 and 2) are interpolated by brightness, so out of the box
+black is frozen, mid grey plays at normal speed and white at double speed &mdash; the same reading as a slit
+rate map at a Rate range of 1.0. Negative values run backwards. <strong>Anchor</strong> &mdash; Start, Middle,
+or End, Middle by default &mdash; is the instant in the output at which every pixel agrees, and
+<strong>Anchor at</strong> picks which point of the range they agree on; switching Anchor sets Anchor at to match
+(0, 0.5 or 1). Moving Anchor at away from that value can make the fastest pixels jump partway through the loop.
 </p>
 <p>
-The default rate map is <strong>All grey</strong> in every mode. Under a slit that is plain normal playback;
-under Surface it is completely frozen, because grey sits halfway between &minus;1 and +1. If you switch to a
-rate map in Surface mode and nothing moves at all, that is why &mdash; paint away from grey. Reach for a rate
-map when the interesting question is how fast a region moves rather than which frame it shows: one corner
-crawling, another racing, a third running backwards.
+The default rate map is <strong>All grey</strong> in every mode, which is plain normal playback under a slit
+and under Surface alike. Reach for a rate map when the interesting question is how fast a region moves rather
+than which frame it shows: one corner crawling, another racing, a third running backwards.
 </p>
 
 <h3>Space map &mdash; brightness is a place</h3>
@@ -395,7 +498,8 @@ changes nothing. Repaint it <strong>All grey</strong> and every column shows the
 smearing one slit across the whole frame; <strong>Right &rarr; left</strong> mirrors the picture; a ramp
 running along the time axis is labelled <strong>Slit scan</strong>. Once you have edited it, a
 <strong>Space map in use</strong> button appears on the main screen and its thumbnail sits beside the time
-map.
+map. To stop using it, open the method list while editing the space map and choose <strong>Reset to
+default</strong>: the space map returns to its unedited state and disappears from the main screen.
 </p>
 
 <h3>The three modes</h3>
@@ -430,31 +534,34 @@ mode&rsquo;s normal-playback default; maps you have drawn on are left exactly as
 video rebuilds all three, edited or not, at the new clip&rsquo;s aspect ratio.
 </p>
 <p>
-One consequence catches people out. In the slit modes the map&rsquo;s size along its time axis &mdash;
-<strong>height</strong> for a vertical slit, <strong>width</strong> for a horizontal one &mdash; is the
-duration of the result, so a map built for a 16:9 clip gives roughly a 17-second output under a vertical slit
-and a 30-second one under a horizontal slit: same footage, same drawing, same settings otherwise. The length
-of the clip you loaded has nothing to do with it. The numbers, and the controls that change them, are under
+One consequence catches people out. For a <strong>rate map</strong> in the slit modes, the map&rsquo;s size
+along its time axis &mdash; <strong>height</strong> for a vertical slit, <strong>width</strong> for a horizontal
+one &mdash; is the duration of the result, so a map built for a 16:9 clip gives roughly a 17-second output under
+a vertical slit and a 30-second one under a horizontal slit: same footage, same drawing, same settings otherwise.
+A time map is different: its output lasts as long as the range in use. The numbers, and the controls that change
+them, are under <a href="#export-en">How long the export will be</a> and
 <a href="#settings-en">Settings &rarr; Map resolution (time detail)</a>.
 </p>
 
 <h2 id="building-en">Building a map</h2>
 <p>
-The round icon at the top right of the editor chooses <em>how</em> you build the map. There are four methods
-&mdash; <strong>Draw</strong>, <strong>Gradient</strong>, <strong>Presets</strong> and
-<strong>From motion</strong> &mdash; and switching between them changes only the row of tools along the
-bottom. The map you are editing, the mode it is applied in, and the live preview all stay as they were. The
-caption just above the tools always states what black, grey and white mean for the current map and mode, so it
-is worth reading again after any change of mode or parameter.
+The round button at the top right of the editor chooses <em>how</em> you build the map. It opens a list of five
+methods &mdash; <strong>Draw</strong>, <strong>Gradient</strong>, <strong>Presets</strong>,
+<strong>From motion</strong> and <strong>Cut &amp; slide</strong> &mdash; each with an <strong>i</strong> at
+the end of its row that expands a short explanation underneath; tap the row itself to switch. While you are
+editing the space map the list ends with <strong>Reset to default</strong>, which has its own <strong>i</strong>.
+Switching methods changes only the row of tools along the bottom. The map you are editing, the mode it is applied
+in, and the live preview all stay as they were. The caption just above the tools always states what black, grey
+and white mean for the current map and mode, so it is worth reading again after any change of mode or parameter.
 </p>
 <p>
-Every method&rsquo;s tool row begins with a <strong>play/pause</strong> button and ends with a
-counter-clockwise <strong>reset</strong> arrow that returns the map to the current mode&rsquo;s default;
-Gradient and From motion also carry a clockwise <strong>refresh</strong> button that re-runs the generation.
-Outside Draw, a drag on the preview scrubs the playhead.
+Every method&rsquo;s tool row begins with a <strong>play/pause</strong> button. Draw, Gradient, Presets and
+From motion end with a counter-clockwise <strong>reset</strong> arrow that returns the map to the current
+mode&rsquo;s default; Gradient and From motion also carry a clockwise <strong>refresh</strong> button that re-runs
+the generation. Outside Draw and Cut &amp; slide, a drag on the preview scrubs the playhead.
 </p>
 <p>
-The layout menu, next to the method menu at the top right, has four options. <strong>Side by side</strong> is
+The layout menu, next to the method button at the top right, has four options. <strong>Side by side</strong> is
 the default and shows the video and the map as two panes. <strong>Overlay</strong> lays the map over the
 picture at partial opacity, which is how you land a stroke on a particular object rather than a particular
 part of the frame. <strong>Map only</strong> and <strong>Video only</strong> show one layer at a time. The
@@ -469,7 +576,7 @@ fading to nothing at its edge. Tone therefore builds up over repeated passes and
 which is what makes soft shading possible.
 </p>
 <p>
-<strong>There is no undo.</strong> Nothing in the app takes a stroke back. A stroke can only be painted out
+<strong>There is no undo.</strong> Nothing in Draw takes a stroke back. A stroke can only be painted out
 &mdash; pick the tone that was there before and work at low Strength until it is gone &mdash; or the whole map
 reset with the counter-clockwise arrow at the end of the tool row, which costs you the entire drawing. There
 is no separate eraser either; painting with <strong>White</strong> pulls the map back to white. This is also
@@ -579,18 +686,18 @@ earlier&rdquo;, Normal playback and &ldquo;1.5s later&rdquo; &mdash; while all f
 </p>
 <p>
 On a <strong>rate map</strong> the labels are driven by <strong>Rate range</strong> in the
-<strong>Parameters</strong> panel, which sets what black and white mean. With the range at 1.0, black is
-frozen and white is double speed, so <strong>All white</strong> reads &ldquo;2.0&times; fast&rdquo;; widen the
-range to 1.5 and black passes through zero into reverse, so <strong>All black</strong> now reads &ldquo;Slow
-reverse&rdquo;. The four ramps show both ends at once &mdash; joined by an arrow when the ramp runs along the
-time axis, or by a wave dash when it runs across the frame, since in that case the two speeds coexist in
-different parts of the picture rather than following one another.
+<strong>Parameters</strong> panel (or by Black rate and White rate under Surface), which sets what black and
+white mean. With the range at 1.0, black is frozen and white is double speed, so <strong>All white</strong> reads
+&ldquo;2.0&times; fast&rdquo;; widen the range to 1.5 and black passes through zero into reverse, so
+<strong>All black</strong> now reads &ldquo;Slow reverse&rdquo;. The four ramps show both ends at once &mdash;
+joined by an arrow when the ramp runs along the time axis, or by a wave dash when it runs across the frame, since
+in that case the two speeds coexist in different parts of the picture rather than following one another.
 </p>
 
 <h3>From motion</h3>
 <p>
-This builds the map out of the footage itself. On selecting it, the app walks the whole clip once on the GPU,
-accumulating how much each pixel&rsquo;s brightness changes from frame to frame; busy areas come out light,
+This builds the map out of the footage itself. On selecting it, the app walks the whole loaded clip once on the
+GPU, accumulating how much each pixel&rsquo;s brightness changes from frame to frame; busy areas come out light,
 still areas dark. The result of that pass is cached for the loaded clip, so every slider afterwards responds
 instantly.
 </p>
@@ -615,19 +722,59 @@ map thumbnail updates as you watch, and consecutive frames of the map are cross-
 frames were thinned at import changes smoothly rather than stepping.
 </p>
 <p>
-Two limits are worth knowing. History applies to time and rate maps only &mdash; the button is hidden while
-you are editing a space map, which always uses the still analysis. And the per-frame data is held at reduced
-resolution (at least half, and further reduced for long clips, to stay inside a fixed memory budget), so a
-history map is softer than a still one. Applying any fixed image afterwards &mdash; a preset, a gradient, a
-reset, or switching to Draw &mdash; stops the moving map and leaves the state it had reached behind as an
-ordinary still map.
+Three limits are worth knowing. History works <strong>only in Surface mode</strong>: a slit reads a single row or
+column of the map at each instant, so a moving map would add nothing there. In the slit modes the clock button is
+dimmed and the caption says <em>History is available only in Surface mode</em>, and switching an active history
+map to a slit mode stops it. History applies to time and rate maps only &mdash; the button is hidden while you are
+editing a space map, which always uses the still analysis. And the per-frame data is held at reduced resolution
+(at least half, and further reduced for long clips, to stay inside a fixed memory budget), so a history map is
+softer than a still one. Applying any fixed image afterwards &mdash; a preset, a gradient, a reset, or switching
+to Draw or Cut &amp; slide &mdash; stops the moving map and leaves the state it had reached behind as an ordinary
+still map.
 </p>
 
-<h3>Combining the four</h3>
+<h3>Cut &amp; slide</h3>
 <p>
-The four methods are not symmetrical. Anything generated can be drawn over: entering <strong>Draw</strong>
+This method splits the map in two with a line and lets you slide the pieces apart. The gap that opens is not left
+empty: the values that used to sit on either side of the cut are joined across it and blended, so the edge looks
+stretched rather than torn, and a piece dragged far away stays connected to where it came from by a band. On a
+time or rate map that stretches one region of time away from its neighbour; on the space map it builds structures
+where part of the picture is cut open.
+</p>
+<p>
+A small palette above the tool row chooses how the line is drawn. <strong>Freehand</strong> takes the line you
+trace: draw it across the map from edge to edge (you can start and finish outside the map, and an end that stops
+inside is extended to the edge in the direction it was travelling), or draw a loop around a region. A loop closes
+where the line crosses itself, so its start and end do not have to meet exactly, and the tiny loops a wobbling
+fingertip makes are ignored. <strong>Straight</strong> takes two taps: tap the start point, which is marked, then
+the end point, and the map is cut along the straight line through them, extended to the edges &mdash; a faint dashed
+line previews where it will run. The caption under the buttons tells you which step you are on, and turns orange
+for a few seconds if a line could not split the map.
+</p>
+<p>
+Once the map is split, drag either piece; the caption reads <em>Drag a region to move it. You can keep moving it
+until you tap Apply</em>. The original cut is shown as a yellow dashed line and its moved position as a cyan dotted
+one. Lifting your finger commits nothing, so you can grab and move again as often as you like. A piece enclosed by a
+loop always stays on top; otherwise the piece you dragged last does. Playback pauses while you touch the map, as in
+Draw. The tool row holds:
+</p>
+<table>
+  <tr><th>Start over</th><td>Throws away the line and the offsets and lets you draw a new line on the same base. In Straight mode it also cancels a start point you have placed.</td></tr>
+  <tr><th>Apply</th><td>Makes the current result the new base, ready for another cut.</td></tr>
+  <tr><th>Revert</th><td>Returns the map to how it was when you opened Cut &amp; slide, discarding every cut since.</td></tr>
+</table>
+<div class="gallery">
+  <figure><img src="shots/v15/en/cut_free.png" alt="A freehand loop around a triangle, slid to the right: the original outline in yellow, the moved outline in cyan" loading="lazy"><figcaption>Freehand: the loop closes where the line crosses itself</figcaption></figure>
+  <figure><img src="shots/v15/en/cut_straight_start.png" alt="Straight mode with the start point placed, shown as a yellow ring" loading="lazy"><figcaption>Straight: tap a start point&hellip;</figcaption></figure>
+  <figure><img src="shots/v15/en/cut_straight.png" alt="A straight cut from edge to edge with the lower piece slid upwards" loading="lazy"><figcaption>&hellip;then an end point, and slide</figcaption></figure>
+</div>
+
+<h3>Combining the methods</h3>
+<p>
+The methods are not symmetrical. Anything generated can be drawn over: entering <strong>Draw</strong>
 seeds its canvas from whatever the map currently holds, so a gradient, a preset or a motion map becomes the
-base and your strokes add to it. The reverse does not hold &mdash; choosing <strong>Gradient</strong> or
+base and your strokes add to it. <strong>Cut &amp; slide</strong> likewise starts from the current map, drawn or
+generated. The reverse does not hold &mdash; choosing <strong>Gradient</strong> or
 <strong>From motion</strong> after drawing rebuilds the map from scratch and discards the strokes, with no
 undo to get them back. If a drawing is worth keeping, export it first: see
 <a href="#export-en">Also save the map as a 16-bit PNG</a>.
@@ -636,10 +783,10 @@ undo to get them back. If a drawing is worth keeping, export it first: see
 <h2 id="sound-en">Sound</h2>
 <p>
 If the clip you loaded carries an audio track, that audio is put through the same time manipulation as the
-picture. The frame is divided into a grid, and each cell sounds according to how time is running in that part
-of the image &mdash; a region running backwards plays backwards, a region racing ahead climbs in pitch.
-Nothing is synthesised from scratch: every sound you hear is the clip&rsquo;s own recording, read at a
-different place and a different speed for each cell.
+picture. The frame is divided into regions &mdash; a grid in Surface, strips in the slit modes &mdash; and each
+region sounds according to how time is running in that part of the image &mdash; a region running backwards plays
+backwards, a region racing ahead climbs in pitch. Nothing is synthesised from scratch: every sound you hear is the
+clip&rsquo;s own recording, read at a different place and a different speed for each region.
 </p>
 
 <h3>The two speaker buttons</h3>
@@ -651,10 +798,10 @@ both are built from the same recording and layering them only doubles it.
 </p>
 <ul>
 <li><strong>Result audio is already on</strong> when a clip with an audio track finishes loading, set to Rate
-playback. That is the grid synthesis described below. Switch it off and on again and it returns to whichever
+playback. That is the synthesis described below. Switch it off and on again and it returns to whichever
 method you used last.</li>
 <li><strong>Source audio is off until you turn it on.</strong> It plays the material untouched at normal
-speed, looping the clip range you set with the white handles on the bar under the input, and turning it on
+speed, looping the range in use you set with the white handles on the bar under the input, and turning it on
 switches the result audio off. While it is on, the input picture takes its playhead from the audio rather than
 from its own timer, so the two cannot drift apart.</li>
 <li>Both buttons are dimmed and inert when the clip has no audio track.</li>
@@ -663,46 +810,53 @@ from its own timer, so the two cannot drift apart.</li>
 <h3>What the result audio is doing</h3>
 <p>
 For every output frame the app evaluates the same map arithmetic the picture uses, but on the CPU and averaged
-over each cell of the grid. That gives each cell one position in the recording &mdash; 0 is the start of the
-clip, 1 the end. Comparing that position with the previous frame&rsquo;s gives the cell its playback rate,
-clamped to a range of &plusmn;4&times; so that an extreme map cannot run away. Each cell is then a
+over each region. That gives each region one position in the recording &mdash; 0 is the start of the clip, 1 the
+end. Comparing that position with the previous frame&rsquo;s gives the region its playback rate, clamped to a
+range of &plusmn;4&times; so that an extreme map cannot run away. Each region is then a
 <strong>voice</strong>: one reader moving through the recording at that position and that rate.
 </p>
 <ul>
-<li>A cell&rsquo;s <strong>column sets its stereo position</strong>, from hard left in the leftmost column to
-hard right in the rightmost. Rows are not panned, so the stereo image is a map of the frame from left to right
-and you can hear where in the picture a change is happening.</li>
-<li>In <strong>Vertical slit</strong> and <strong>Horizontal slit</strong>, cell positions are read from the
-row or column of the map the red line is currently crossing, so the sound changes as the scan advances through
-the map.</li>
-<li>In <strong>Surface</strong>, every cell advances together but offset by the average brightness of its own
-region, so the whole frame moves through the clip in a shape rather than a line.</li>
+<li>In <strong>Surface</strong> the regions are a grid, and a cell&rsquo;s <strong>column sets its stereo
+position</strong>, from hard left in the leftmost column to hard right in the rightmost. Rows are not panned, so the
+stereo image is a map of the frame from left to right and you can hear where in the picture a change is happening.
+Each cell follows the average brightness of its own region, so the whole frame moves through the clip in a shape
+rather than a line.</li>
+<li>In <strong>Vertical slit</strong> the regions are strips running left to right, panned by position. In
+<strong>Horizontal slit</strong> they are strips running top to bottom, which have no left or right, so both
+channels carry the same signal. In both slit modes, positions are read from the row or column of the map the red
+line is currently crossing, so the sound changes as the scan advances through the map.</li>
+<li>When every region is showing nearly the same moment &mdash; ordinary playback &mdash; the voices give way to
+the original stereo recording played straight through, and they fade back in as the moments spread apart. An
+untouched map therefore sounds like the recording itself.</li>
 </ul>
 
 <h3>Granular and Rate playback</h3>
 <p>
 Open the <strong>Sound</strong> panel with the waveform icon at the top of the editor. The segmented control at
 the top of it chooses <strong>Off</strong>, <strong>Granular</strong>, or <strong>Rate playback</strong>
-&mdash; the same two methods the output speaker toggles between. Both read the recording at the cell&rsquo;s
-rate, so in both of them speed shows up as pitch; what differs is how often a voice is pulled back to where the
+&mdash; the same two methods the output speaker toggles between &mdash; and its <strong>i</strong> explains both.
+Both read the recording at the region&rsquo;s rate, so in both of them speed shows up as pitch, negative speeds play
+backwards, and a region at a dead stop is silent; what differs is how often a voice is pulled back to where the
 picture says it should be.
 </p>
 <table>
-  <tr><th>Granular</th><td>Each voice plays two overlapping grains under a raised-cosine window, and each grain is re-seeded to the cell&rsquo;s current position every <strong>Grain (ms)</strong>. A granular voice therefore re-articulates constantly and can never drift away from the picture, which is what keeps it locked to a fast-moving map. Grain (ms) runs 20&ndash;200 and is only shown for this method: short grains track fast changes crisply but sound grainier; long grains are smoother but smear detail.</td></tr>
-  <tr><th>Rate playback</th><td>Each voice reads the recording as one continuous stream, like tape, so half speed is an octave down, double speed an octave up, and negative rates run the recording backwards. It only jumps back to the picture&rsquo;s position when it has drifted more than about a third of a second, and does so behind a short fade rather than a click. A cell held at a dead stop goes silent, because nothing is moving past the head.</td></tr>
+  <tr><th>Granular</th><td>Each voice plays two overlapping grains under a raised-cosine window, and each grain is re-seeded to the region&rsquo;s current position every <strong>Grain (ms)</strong>. A granular voice therefore re-articulates constantly and can never drift away from the picture, which is what keeps it locked to a fast-moving map. Grain (ms) runs 20&ndash;200 and is only shown for this method: short grains track fast changes crisply but sound grainier; long grains are smoother but smear detail.</td></tr>
+  <tr><th>Rate playback</th><td>Each voice reads the recording as one continuous stream, like tape, so half speed is an octave down, double speed an octave up, and negative rates run the recording backwards. It only jumps back to the picture&rsquo;s position when it has drifted more than about a third of a second, and does so behind a short fade rather than a click.</td></tr>
 </table>
 <p>
 <strong>Granular suits maps that change quickly</strong> and material whose identity matters &mdash; speech,
-music, a single recognisable sound &mdash; because the constant re-seeding keeps every cell pinned to the
+music, a single recognisable sound &mdash; because the constant re-seeding keeps every region pinned to the
 moment its part of the frame is showing. <strong>Rate playback suits material read as texture</strong> &mdash;
 water, traffic, wind, a crowd &mdash; and is the clearest way to hear what a rate map is doing, since the speed
 of each region arrives as pitch, uninterrupted.
 </p>
 
+<figure><img src="shots/v15/en/sound_info.png" alt="The Sound panel with the explanation of Granular and Rate playback open" loading="lazy"><figcaption>The i next to the method explains both</figcaption></figure>
+
 <h3>Reverb</h3>
 <p>
 Reverb is off until you turn it on, and it is not a fixed room. <strong>The wet amount follows the spread of
-time across the frame</strong>: the app measures the gap between the earliest and the latest cell in the
+time across the frame</strong>: the app measures the gap between the earliest and the latest region in the
 current frame and drives the reverb from it. A flat map, where the whole frame sits at the same moment, stays
 dry. A map that scatters the frame across the clip opens the reverb up, reaching full depth once the spread is
 around half the clip&rsquo;s length. The value is smoothed, so the tail swells and recedes with the map instead
@@ -712,10 +866,13 @@ half seconds behind a short pre-delay. In practice this means scattered time is 
 
 <h3>Voices, and what they cost</h3>
 <p>
-<strong>Voices</strong> chooses how finely the frame is divided: 3&times;3 (9), 5&times;3 (15), 7&times;5 (35,
-the default) or 9&times;7 (63). More voices resolve the map more finely and, because stereo comes from the
-columns, give a wider and more detailed stereo image. Fewer voices average a larger area into each cell, which
-sounds broader and blunter.
+In Surface, <strong>Voice count</strong> chooses how finely the frame is divided: 3&times;3 (9), 5&times;3 (15),
+7&times;5 (35, the default) or 9&times;7 (63). In the slit modes the control becomes <strong>Voice
+divisions</strong>, a stepper from 1 to 16 (default 7) that sets how many strips the frame is split into at right
+angles to the slit; a note beside it says whether they are split left to right or top to bottom. More voices
+resolve the map more finely and, where stereo comes from their position, give a wider and more detailed stereo
+image. Fewer voices average a larger area into each one, which sounds broader and blunter. Under a Horizontal slit
+the output is the same in both channels, so <strong>Stereo width</strong> is dimmed, with a note explaining why.
 </p>
 <p>
 Every voice is synthesised sample by sample on the audio thread while the GPU is warping the picture, so 63
@@ -727,16 +884,16 @@ summed voices are soft-clipped before output, so a loud map compresses rather th
 <table>
   <tr><th>Volume</th><td>Level of the result audio, 0 to 1.</td></tr>
   <tr><th>Grain (ms)</th><td>Grain length, 20&ndash;200&nbsp;ms, default 85. Granular only.</td></tr>
-  <tr><th>Stereo width</th><td>0 places every voice in the centre; 1 spreads them fully left to right.</td></tr>
+  <tr><th>Stereo width</th><td>0 places every voice in the centre; 1 spreads them fully left to right. Dimmed under a Horizontal slit.</td></tr>
   <tr><th>Reverb</th><td>The switch, and <strong>Depth</strong> &mdash; the ceiling the spread of time can drive it to.</td></tr>
-  <tr><th>Voices</th><td>Grid division: 9, 15, 35 or 63 cells.</td></tr>
+  <tr><th>Voice count / Voice divisions</th><td>Surface: a grid of 9, 15, 35 or 63 cells. Slit modes: 1&ndash;16 strips. Both have an <strong>i</strong> explaining how the voices are laid out in the current mode.</td></tr>
   <tr><th>Export audio</th><td><strong>Include audio in the export</strong> &mdash; whether the exported file carries a soundtrack. The same switch appears as <strong>Include audio</strong> under Settings &rarr; Export options.</td></tr>
 </table>
 
 <h3>In the exported file</h3>
 <p>
 These settings carry through to the export. The export does not record what your speakers played; it runs the
-same synthesis offline, frame by frame, against the same cell positions, so the file matches what you heard in
+same synthesis offline, frame by frame, against the same region positions, so the file matches what you heard in
 the preview &mdash; method, grain length, stereo width, reverb, voice count and volume included.
 </p>
 <p>
@@ -752,8 +909,8 @@ rendered out of editing apps often arrive without one.</li>
 <li><strong>The audio was skipped at import.</strong> Loading the audio track is the last stage of loading a
 video. Cancel during it and the app tells you it has the video but not the sound; load the clip again to get
 the audio.</li>
-<li><strong>Rate playback on a frozen map.</strong> A cell at a dead stop has nothing moving past the head.
-Switch to Granular, which keeps re-articulating, or paint the map away from a hard freeze.</li>
+<li><strong>A frozen map.</strong> A region at a dead stop is silent with either method, because nothing is moving
+past the head. Paint the map away from a hard freeze.</li>
 <li><strong>Volume is at zero, or the method is set to Off.</strong> Both leave the picture running
 normally.</li>
 <li>The app plays through the <em>playback</em> audio category, so it sounds even with the ring/silent switch
@@ -762,12 +919,12 @@ set to silent. If your device is otherwise quiet, that is not the cause.</li>
 
 <h2 id="export-en">Exporting and quality</h2>
 <p>
-<strong>Export</strong>, on the bar at the bottom of the screen, renders exactly what the output view is
-showing and writes it as an <strong>H.264 .mp4</strong>, which is then saved to your photo library. The render
-is not a copy of the preview: the app walks the output from beginning to end one frame at a time and draws each
-frame at full quality, so it takes longer than the piece is long. Playback stops while it runs, a progress bar
-reads <em>Exporting&hellip;</em>, and the button stays disabled until it finishes. Keep the app open while it
-runs; a longer piece takes proportionally longer.
+<strong>Export</strong>, on the bar at the bottom of the screen or in the full-screen Output view, renders exactly
+what the output view is showing and writes it as an <strong>H.264 .mp4</strong>, which is then saved to your photo
+library. The render is not a copy of the preview: the app walks the output from beginning to end one frame at a
+time and draws each frame at full quality, so it takes longer than the piece is long. Playback stops while it runs,
+a progress bar reads <em>Exporting&hellip;</em>, and the button stays disabled until it finishes. Keep the app open
+while it runs; a longer piece takes proportionally longer. A video cannot be loaded while an export is running.
 </p>
 <p>
 When it is done the app confirms that the file went to your photo library. If you declined the photo library
@@ -776,7 +933,7 @@ Files, AirDrop it, or hand it to another app. The same happens if the save itsel
 </p>
 <p>
 Sound is written into the same file as stereo AAC, and it is the manipulated sound &mdash; the grains or rates
-are recomputed offline against the same per-cell times the picture uses, so the export matches what you heard
+are recomputed offline against the same per-region times the picture uses, so the export matches what you heard
 in the preview rather than the original audio. Turn it off with <strong>Include audio in the export</strong>,
 in the editor&rsquo;s sound panel or as <strong>Include audio</strong> under <strong>Export options</strong> in
 Settings. Muting the output, or setting the sound method to Off, also leaves the file silent.
@@ -784,24 +941,33 @@ Settings. Muting the output, or setting the sound method to Off, also leaves the
 
 <h3>How long the export will be</h3>
 <p>
-You never type the length in. It is a <strong>base length</strong> that the current mode works out for itself,
-multiplied by the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong> panel (the
-gear icon). The slider runs from &frac14;&times; to 4&times; and shows the result in seconds next to it;
-Settings also reports it as <strong>Export length</strong>.
+You never type the length in. It is a <strong>base length</strong> that the current map and mode work out for
+themselves, multiplied by the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong>
+panel (the gear icon). The slider runs from &frac14;&times; to 4&times; and shows the result in seconds next to it;
+its <strong>i</strong> explains the base for the mode you are in, and Settings also reports the result as
+<strong>Export length</strong>.
 </p>
 <table>
-  <tr><th>Vertical slit</th><td>The map&rsquo;s <strong>height</strong> in pixels, read as 30&nbsp;px per second and clamped to 2&ndash;120 seconds.</td></tr>
-  <tr><th>Horizontal slit</th><td>The same, but from the map&rsquo;s <strong>width</strong> &mdash; the time axis is horizontal in this mode.</td></tr>
-  <tr><th>Surface, time</th><td>The length of the loaded clip.</td></tr>
-  <tr><th>Surface, rate</th><td>A flat 30 seconds.</td></tr>
+  <tr><th>Time map, any mode</th><td>The seconds in the range in use &mdash; the span between the white handles. The result always plays at natural speed at 1&times;.</td></tr>
+  <tr><th>Rate map, Vertical slit</th><td>The map&rsquo;s <strong>height</strong> in pixels, read as 30&nbsp;px per second and clamped to 2&ndash;120 seconds.</td></tr>
+  <tr><th>Rate map, Horizontal slit</th><td>The same, but from the map&rsquo;s <strong>width</strong> &mdash; the time axis is horizontal in this mode.</td></tr>
+  <tr><th>Rate map, Surface</th><td>The seconds in the range in use divided by the fastest rate anywhere in the map, ignoring direction &mdash; the time the fastest pixel takes to cross the range exactly once. A map containing faster areas gives a shorter output. Rates below 0.1&times; count as 0.1&times;, so an almost black map runs at most ten times the range.</td></tr>
 </table>
 <p>
-So in the slit modes the shape of the map is the shape of the time: a tall map is a long, slow video, a wide
-map a short one with finer detail across the frame. Changing the map&rsquo;s dimensions is the honest way to
-change the length, and the controls for that live under
-<a href="#settings-en">Settings &rarr; Map resolution (time detail)</a>. Stretching the Duration slider instead
-is perfectly usable, but understand what it does: above 1&times; the map is resampled between its own pixels,
-so the steps in time get softer the further you push it.
+For a time map, what you are really choosing with the handles is the length. Until you touch a handle the range
+fits itself inside the loaded part &mdash; in the slit modes to the length the map&rsquo;s time axis suggests, in
+Surface to the whole loaded part &mdash; so the default already plays at natural speed; once you move one, it stays
+where you put them.
+</p>
+<p>
+For a slit rate map the shape of the map is the shape of the time: a tall map is a long, slow video, a wide map a
+short one with finer detail across the frame. Changing the map&rsquo;s dimensions is the honest way to change that
+length, and the controls for that live under <a href="#settings-en">Settings &rarr; Map resolution (time
+detail)</a>. Stretching the Duration slider instead is perfectly usable, but understand what it does: above
+1&times; the map is resampled between its own pixels, so the steps in time get softer the further you push it.
+Under a slit, while the accumulated path still fits inside the range the speed is unchanged; once it no longer fits,
+the whole path is scaled down evenly and plays slower. Under Surface, lengthening a rate map does not change the
+speed; the paths simply get longer and wrap around within the range.
 </p>
 <p>
 <strong>Frame rate</strong> (Settings &rarr; Export) is 24, 30 or 60&nbsp;fps. It changes how many frames are
@@ -810,36 +976,47 @@ written and how long the render takes, not how long the result plays.
 
 <h3>Resolution, and why it is not your camera&rsquo;s</h3>
 <p>
-The export comes out at the size of the working copy held in memory, not the size of the file you picked. That
-size is fixed at import by <strong>Resolution (long edge)</strong> in Settings &rarr;
-<strong>Video quality</strong>: 540p, 720p, 1080p or 1440p. The aspect ratio and any rotation follow the
-source, and the app never scales <em>up</em> &mdash; a 480p clip stays 480p however high you set the long edge.
-The bit rate scales with the frame area &mdash; about 11&nbsp;Mbps for 1280&times;720, and never less than
-6&nbsp;Mbps &mdash; so compression is rarely what you are seeing; the working resolution is.
+The export comes out at the size of the working copy held in memory, not necessarily the size of the file you
+picked. That size is fixed at import by <strong>Resolution</strong> in Settings &rarr; <strong>Video
+Loading</strong>: <strong>Full</strong>, <strong>1/2</strong> or <strong>1/4</strong> of the source&rsquo;s
+dimensions, with the actual pixel size of each shown under the buttons. The aspect ratio and any rotation follow the
+source, and the app never scales <em>up</em> &mdash; Full is the source&rsquo;s own size. The bit rate scales with
+the frame area &mdash; about 11&nbsp;Mbps for 1280&times;720, and never less than 6&nbsp;Mbps &mdash; so compression
+is rarely what you are seeing; the working resolution is.
 </p>
 <p>
-Changing <strong>Resolution (long edge)</strong> or <strong>Frames in memory</strong> does nothing to the video
-already loaded. Tap <strong>Reload with these settings</strong> to re-import on the spot; the preview and the
-export both pick it up. Otherwise the change waits for the next clip you load. Note what the second setting
-costs: frames in memory is the time resolution of the whole piece, and <strong>Estimated memory</strong> tells
-you what the combination will ask of the device before you commit to it.
+Changing <strong>Resolution</strong> or <strong>Seconds to load</strong> does nothing to the video already loaded
+until you tap <strong>Reload with these settings</strong>; the preview and the export both pick up the result. Watch
+the <strong>Memory</strong> line under them: it tells you what the combination will ask of the device, and
+<strong>Frames</strong> tells you whether frames will be skipped to fit, before you commit to it.
 </p>
 
-<h3>The clip range is part of the export</h3>
+<h3>The range in use is part of the export</h3>
 <p>
 The white handles on the bar under the input video decide which part of the source the render draws from, and
 the range is shown in seconds underneath. It applies in every mode, not only the slit modes &mdash; the
-editor&rsquo;s <strong>Time from</strong> and <strong>Time to</strong> sliders are the same two numbers. Until
-you touch a handle the range fits itself to the output length so the material plays at roughly natural speed;
-once you move one, it stays where you put it. Press and hold the band and drag to slide the whole range without
-changing its length.
+editor&rsquo;s <strong>Time from</strong> and <strong>Time to</strong> sliders are the same two numbers. Press and
+hold the band and drag to slide the whole range without changing its length.
 </p>
 <p>
-Before a final export <strong>in a slit mode with a time map</strong>, it is worth tapping <strong>Reload this
-range at higher detail</strong> in the same Parameters panel. It re-imports only the seconds between the
-handles, which spends the same frame budget on less material and gives the time axis more to interpolate
-between. The button is built only for that combination &mdash; on a rate map or in Surface it is not there, and
-a reload from Settings brings in the whole clip.
+The range can reach beyond the part of the clip that is loaded, which the bar shows slightly brighter when only part
+of the clip is in memory. Moments outside the loaded part cannot move &mdash; they stick to the frame at its edge
+&mdash; so the caption then reads <strong>Frozen outside the loaded part</strong>, with a <strong>Reload here</strong>
+button beside it. Tapping it reloads at the same resolution and the same number of seconds, placed so the range in use
+sits in the middle (if the range is longer than that, the range&rsquo;s length is loaded, skipping frames if needed).
+The same notice appears under the range bar in the full-screen Input view, and below both videos when portrait footage
+puts them side by side.
+</p>
+<div class="gallery">
+  <figure><img src="shots/v15/en/top_reload.png" alt="The range widened to 7.48 s beyond the loaded 0&ndash;4 s, with Frozen outside the loaded part and Reload here" loading="lazy"><figcaption>Past the loaded part: the notice and Reload here</figcaption></figure>
+  <figure><img src="shots/v15/en/top_reloaded.png" alt="After reloading: 0.0&ndash;7.5 s is loaded and the notice is gone" loading="lazy"><figcaption>After tapping it</figcaption></figure>
+</div>
+<p>
+Before a final export <strong>in a slit mode with a time map</strong>, it is also worth tapping <strong>Reload only
+the range in use</strong> in the Parameters panel, under Time from and Time to. It re-imports exactly the seconds
+between the handles at the same resolution; fewer seconds in memory means fewer frames need to be skipped, which gives
+the time axis more real frames to land on. The button is built only for that combination &mdash; on a rate map or in
+Surface it is not there.
 </p>
 
 <h3>Also save the map as a 16-bit PNG</h3>
@@ -853,11 +1030,11 @@ which is the time-axis length in Vertical slit. The files are written to a tempo
 photo library, so dismiss the share sheet without saving and they are gone.
 </p>
 <p>
-The reason to keep them is quality. The .mp4 can only ever be as good as the working copy, capped at 1440p and
-at the number of frames the device could hold. The map is not a picture of the result, it is the instruction
-&mdash; brightness per pixel, 65,536 levels of it, which is why it is 16-bit and not 8-bit (at 8-bit the time
-axis visibly steps). A map also carries no resolution of its own: it is read as brightness from 0 to 1 and
-stretched over whatever frame it is applied to. So take that PNG and your original, full-resolution footage to
+The reason to keep them is quality. The .mp4 can only ever be as good as the working copy, limited to the
+resolution you loaded at and to the number of frames the device could hold. The map is not a picture of the result,
+it is the instruction &mdash; brightness per pixel, 65,536 levels of it, which is why it is 16-bit and not 8-bit (at
+8-bit the time axis visibly steps). A map also carries no resolution of its own: it is read as brightness from 0 to 1
+and stretched over whatever frame it is applied to. So take that PNG and your original, full-resolution footage to
 a desktop, render there with the desktop version (<strong>imgtrans</strong>), which reads these files as they
 are named, and you get the same time design at the full quality of the original. Sketch on the device, finish
 on the desktop.
@@ -870,64 +1047,46 @@ Sustained exporting warms the device and drains the battery. For a long piece, p
 <p>
 <strong>Settings</strong> is the fourth button on the bottom bar. It opens as a sheet over the main screen;
 <strong>Done</strong> at the top right closes it. There is nothing to save &mdash; every control takes effect
-the moment you change it, with two deliberate exceptions: the video quality settings and the map dimensions,
-each of which has its own button.
+the moment you change it, with two deliberate exceptions: Video Loading and the map dimensions, each of which has
+its own button.
 </p>
 
-<h3>Video quality</h3>
+<h3>Video Loading</h3>
 <p>
-This section decides how the imported video is held in memory, and it is the section to reach for when the app
-runs out of memory or feels slow.
+This section decides how much of the video is held in memory and at what size, and it is the section to reach for
+when frames are being skipped, the app runs out of memory, or it feels slow. The same section opens on its own when
+you tap the information line in the full-screen Input view. Until a video is loaded its controls are shown greyed
+out.
 </p>
+<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading, with the Frames line explaining why frames are skipped</figcaption></figure>
 <table>
-  <tr><th>Resolution</th><td><strong>Resolution (long edge)</strong> &mdash; 540p / 720p / 1080p / 1440p. The long edge of the working copy the app decodes to; the file in your photo library is never modified. This is also the resolution the export is written at, so 1080p footage imported at 720p exports at 720p.</td></tr>
-  <tr><th>Frames</th><td><strong>Frames in memory</strong> &mdash; 300 / 450 / 900 / 1800. The maximum number of frames kept. A clip with more frames than this is thinned evenly across the loaded range &mdash; every second frame, every third, and so on &mdash; which lowers its effective frame rate.</td></tr>
-  <tr><th>Memory</th><td><strong>Estimated memory</strong> &mdash; a read-out, not a control: resolution &times; frames &times; 4 bytes per pixel, computed for a 16:9 frame. Square or portrait footage at the same long edge costs more than the figure shown (a square clip roughly 1.8&times;).</td></tr>
-  <tr><th>Reload</th><td><strong>Reload with these settings</strong> &mdash; re-imports the clip you already have at the current resolution and frame count. Greyed out when no video is loaded or one is still loading.</td></tr>
+  <tr><th>Resolution</th><td><strong>Full</strong> / <strong>1/2</strong> / <strong>1/4</strong> &mdash; the size the loaded video is worked at, as a fraction of the source; the pixel size of each option is printed under it. The file in your photo library is never modified. This is also the resolution the export is written at.</td></tr>
+  <tr><th>Seconds to load</th><td>How much of the video to use, from 0.5&nbsp;s up to the whole clip in steps of 0.1&nbsp;s, shown as &ldquo;&hellip; s of &hellip; s&rdquo;. The line underneath gives the start time: when you change the seconds, the loaded part starts at the beginning of the range in use on the main screen.</td></tr>
+  <tr><th>Frames</th><td>A read-out. <em>No frames skipped</em> with the source frame rate, or an orange warning giving the source and loaded frame rates and how many frames make one (&ldquo;1 of every &hellip; frames&rdquo;), with the reason: either the GPU can hold at most 2,048 frames at once, or the clip does not fit in memory. Below 8&nbsp;fps it adds <em>Motion will look quite choppy</em>.</td></tr>
+  <tr><th>Memory</th><td>A read-out: how much the combination uses against what this device can spare right now, and the width &times; height &times; number of frames behind it. Frames are stored uncompressed at 4 bytes per pixel.</td></tr>
+  <tr><th>Reload</th><td><strong>Reload with these settings</strong> &mdash; re-imports the clip you already have with the resolution and seconds chosen here, and closes the sheet so you can watch the progress on the main screen. <em>Changes not applied yet</em> appears above it when the choice differs from what is loaded; otherwise it is greyed out, as it is while a video is loading or exporting.</td></tr>
 </table>
 <p>
-The per-frame cost is fixed and easy to reason about, because frames are stored uncompressed:
-</p>
-<table>
-  <tr><th>Long edge</th><th>Per frame</th><th>&times;450 frames</th><th>&times;1800 frames</th></tr>
-  <tr><td>540p</td><td>0.63&nbsp;MB</td><td>about 280&nbsp;MB</td><td>about 1.1&nbsp;GB</td></tr>
-  <tr><td>720p</td><td>1.11&nbsp;MB</td><td>about 500&nbsp;MB</td><td>about 2.0&nbsp;GB</td></tr>
-  <tr><td>1080p</td><td>2.5&nbsp;MB</td><td>about 1.1&nbsp;GB</td><td>about 4.4&nbsp;GB</td></tr>
-  <tr><td>1440p</td><td>4.45&nbsp;MB</td><td>about 2.0&nbsp;GB</td><td>about 7.8&nbsp;GB</td></tr>
-</table>
-<p>
-The default is 720p and 450 frames, about 500&nbsp;MB. The bottom-right corner of that table is the usual cause
-of an app that quits while loading; iOS gives an app a fraction of installed RAM, and several gigabytes is past
-it on most devices.
+There is no frame-rate setting: a lower frame rate would not make loading any faster, so the app only skips frames
+when it has to. When you load a new video, both values are chosen again from that video and the free memory on the
+device. The app starts from the largest of the three resolutions whose long edge is 1280&nbsp;px or less, loads the
+whole clip if it fits, and otherwise cuts back in order: first fewer seconds (aiming for at least 4 seconds, or the
+whole clip if it is shorter), then skipped frames (keeping at least 15&nbsp;fps), then the next lower resolution.
 </p>
 <p>
-The two settings buy different things. <strong>Resolution</strong> buys detail within a frame, and costs memory
-in proportion to area &mdash; going from 720p to 1440p is four times the memory, not twice.
-<strong>Frames in memory</strong> buys resolution in time, and matters most in the slit modes: there the
-renderer samples the nearest stored frame with no blending, exactly as the desktop version does, so if a
-60-second clip has been thinned to 450 frames the slit output steps visibly. Surface mode blends between the
-two nearest frames instead, and tolerates thinning much better. If your output stutters rather than flows,
-raise frames before you raise resolution.
-</p>
-<p>
-<strong>Changes here do not reach the clip already loaded.</strong> Until you act, they apply only to the next
-video you import. When the loaded copy no longer matches, an orange line appears &mdash; <em>The current video
-has not been reloaded with these settings yet</em> &mdash; and <strong>Reload with these settings</strong>
-re-imports on the spot, updating the preview and the export together. One caveat: that warning compares
-resolution only. Change the frame count alone and no warning appears, but a reload is still needed for it to
-take effect.
+The two choices buy different things. <strong>Resolution</strong> buys detail within a frame, and costs memory in
+proportion to area &mdash; Full is four times the memory of 1/2, not twice. <strong>Seconds to load</strong> trades
+length against time resolution: the fewer seconds you load, the less the app needs to skip frames. That matters most
+in the slit modes: there the renderer samples the nearest stored frame with no blending, exactly as the desktop version
+does, so a clip thinned to a low frame rate steps visibly. Surface mode blends between the two nearest frames instead,
+and tolerates thinning much better. If your output stutters rather than flows, load fewer seconds or a lower resolution
+until <strong>Frames</strong> reports no skipping.
 </p>
 <p>
 Reloading keeps your work. The maps are untouched, because the app only rebuilds maps when you load a
-<em>different</em> video. The audio track is extracted again, and the clip-range handles are re-fitted to the
-material now in memory rather than left where you put them.
-</p>
-<p>
-There is a second, more interesting use for that button. In a slit mode with a time map, the reload imports
-<em>only</em> the clip range set by the white handles, not the whole file, and packs the same number of frames
-into that shorter span. Trim to three seconds of a thirty-second clip, reload, and the frames in memory are ten
-times denser in time &mdash; the same trick the desktop renderer uses. The editor offers the identical action
-as <strong>Reload this range at higher detail</strong> under the time sliders.
+<em>different</em> video. The audio track is extracted again. Range handles you have moved stay where you put them;
+if you never touched them, they are re-fitted to the material now in memory. If a reload is cancelled or fails after the
+old copy has been released, the app reloads the previous settings and tells you so.
 </p>
 
 <h3>Export</h3>
@@ -938,16 +1097,17 @@ as <strong>Reload this range at higher detail</strong> under the time sliders.
 <p>
 Frame rate does not change how long the output runs; it changes how many frames are written to cover that time
 (length &times; fps). Nor does it create detail that is not there: at 60&nbsp;fps the renderer still has only
-the frames you kept in memory to draw from, so in slit modes a high export rate on a thinned clip just repeats
-stored frames. Raise <strong>Frames in memory</strong> first, then the export rate. Length itself is set by the
-next section.
+the frames you loaded to draw from, so in slit modes a high export rate on a thinned clip just repeats
+stored frames. Get <strong>Frames</strong> under Video Loading to report no skipping first, then raise the export
+rate. Length itself is explained under <a href="#export-en">How long the export will be</a>.
 </p>
 
 <h3>Map resolution (time detail)</h3>
 <p>
-The size of the map is not a cosmetic choice, and this is where the length of your export is really decided. In
-the slit modes the map&rsquo;s time axis <em>is</em> the timeline of the output, one row (or column) per
-rendered moment, so changing its size changes how long the result runs and how finely time is subdivided.
+The size of the map is not a cosmetic choice. In the slit modes the map&rsquo;s time axis <em>is</em> the timeline
+of the output, one row (or column) per rendered moment, so its size decides how finely time is subdivided &mdash;
+and, for a <strong>rate map</strong>, how long the result runs. For a time map it sets the length the range in use
+fits itself to until you move a handle.
 </p>
 <table>
   <tr><th>Map shape</th><td>Square / Portrait / Landscape. A shortcut that sets width and height to 512&times;512, 512&times;1024, or 1024&times;512. The selected segment is inferred from the current numbers rather than remembered.</td></tr>
@@ -963,7 +1123,7 @@ a 16:9 clip gets a 912&times;512 map. Setting a size by hand switches the map to
 extending past the frame can be reached by scrolling in the editor.
 </p>
 <p>
-In the slit modes the length works out at one pixel of the time axis per 1/30&nbsp;second, before the
+For a rate map in the slit modes the length works out at one pixel of the time axis per 1/30&nbsp;second, before the
 <strong>Duration</strong> multiplier in the editor is applied (slider centre is 1&times;, the ends &times;0.25
 and &times;4):
 </p>
@@ -977,8 +1137,8 @@ and &times;4):
 <p>
 A tall map therefore gives a long, slow output; a wide, short one gives a brief, densely scanned output. That
 also explains the 912&times;512 default: about 17 seconds under a vertical slit, but about 30 under a horizontal
-one, because the time axis is the other side. Surface mode is the exception and ignores all of this &mdash; a
-time surface runs as long as the loaded clip, a rate surface runs 30 seconds, in both cases times the Duration
+one, because the time axis is the other side. A time map in any mode runs as long as the range in use, and a rate
+map in Surface runs as long as its fastest pixel takes to cross the range &mdash; in every case times the Duration
 multiplier.
 </p>
 <p>
@@ -993,7 +1153,7 @@ here, at the cost of the drawing.
 One behaviour to know before you spend time on a map: <strong>loading a different video rebuilds every map,
 edited ones included</strong>, at a size matched to the new clip&rsquo;s aspect ratio, and discards a size you
 set by hand. A map made for one aspect ratio does not mean anything over another. Reloading the <em>same</em>
-clip &mdash; the reload button above, or rotating the video &mdash; does not do this. If a map is worth keeping,
+clip &mdash; the reload buttons, or rotating the video &mdash; does not do this. If a map is worth keeping,
 export it as a PNG first.
 </p>
 
@@ -1010,14 +1170,15 @@ that the settings above did what you expected.
 </p>
 <table>
   <tr><th>Loaded video</th><td>The file name. Reads <em>No video loaded</em> when there is none.</td></tr>
-  <tr><th>Size</th><td>The working copy&rsquo;s pixel dimensions, after the long-edge limit and any rotation &mdash; not the dimensions of the original file.</td></tr>
-  <tr><th>Frames</th><td>How many frames are actually held. Fewer than the clip contains means it was thinned to fit <strong>Frames in memory</strong>.</td></tr>
-  <tr><th>Length</th><td>The duration those frames span. After a range reload this is the length of the range in memory, not of the whole file.</td></tr>
+  <tr><th>Size</th><td>The working copy&rsquo;s pixel dimensions, after the resolution choice and any rotation &mdash; not the dimensions of the original file.</td></tr>
+  <tr><th>Frames</th><td>How many frames are actually held.</td></tr>
+  <tr><th>Length</th><td>The duration of the whole clip.</td></tr>
+  <tr><th>Loaded range</th><td>The span of the clip, in seconds, that those frames cover.</td></tr>
 </table>
 <p>
-Divide <strong>Frames</strong> by <strong>Length</strong> and you have the effective frame rate you are working
-at. If that number is well under the frame rate you shot at, the output will step rather than flow in the slit
-modes, and the fix is more frames, a shorter clip range, or both.
+The full-screen Input view states the effective frame rate directly, next to the source&rsquo;s. If that number is
+well under the frame rate you shot at, the output will step rather than flow in the slit modes, and the fix is fewer
+seconds loaded, a lower resolution, or a shorter range reloaded.
 </p>
 <p>
 There is nothing else in Settings, and that is deliberate: no account, no sign-in, no sync, no analytics.
@@ -1043,34 +1204,35 @@ the clip, so a cut in the middle of that range turns into a hard tear across the
 <p>
 Stretching time is a question of how many real frames there are to land on, and high-frame-rate footage has far
 more of them per second of action, so a map that spreads one second across the whole output has something to
-draw from and the movement stays continuous. Raising <strong>Frames in memory</strong> cannot invent frames that
-were never shot &mdash; ten seconds at 30&nbsp;fps contains 300 and no more.
+draw from and the movement stays continuous. No setting can invent frames that were never shot &mdash; ten seconds
+at 30&nbsp;fps contains 300 and no more.
 </p>
 <p>
-The caveat is that slow motion hits the frame cap first. Ten seconds at 240&nbsp;fps is 2,400 frames, above even
-the 1800 maximum, so the importer thins it back out &mdash; at the default 450 it keeps roughly every sixth
-frame, leaving about 40&nbsp;fps of real material. To actually get the benefit, trim to a short clip range and
-tap <strong>Reload this range at higher detail</strong>, or raise the frame cap, or both. Otherwise the extra
-frames you shot are discarded at the door.
+The caveat is that slow motion reaches the limits first. Ten seconds at 240&nbsp;fps is 2,400 frames, more than the
+2,048 the GPU can hold at once, so the app loads fewer seconds or skips frames &mdash; and a skipped frame is a frame
+you shot for nothing. To actually get the benefit, keep the loaded span short: lower <strong>Seconds to load</strong>
+or <strong>Resolution</strong> until <strong>Frames</strong> reports no skipping, or trim the range and tap
+<strong>Reload only the range in use</strong>.
 </p>
 
 <h3>Work small, then raise the quality once, before you export</h3>
 <p>
-In <strong>Settings &rarr; Video quality</strong>, 540p with 300 frames reloads in seconds and keeps drawing
-responsive &mdash; that is the setting to design in. When the map is right, raise <strong>Resolution (long
-edge)</strong> and <strong>Frames in memory</strong>, tap <strong>Reload with these settings</strong>, and
-export after that: the file is written at the working resolution chosen at import, so raising it later does
-nothing. Reloading the same clip keeps the map you drew; only loading a different video rebuilds it.
+In <strong>Settings &rarr; Video Loading</strong>, a Resolution of 1/4 or 1/2 with a few seconds reloads quickly and
+keeps drawing responsive &mdash; that is the setting to design in. When the map is right, raise
+<strong>Resolution</strong>, tap <strong>Reload with these settings</strong>, and export after that: the file is
+written at the resolution that is loaded, so raising it afterwards does nothing. Reloading the same clip keeps the map
+you drew; only loading a different video rebuilds it.
 </p>
 
-<h3>Isolate one moment with the clip range</h3>
+<h3>Isolate one moment with the range in use</h3>
 <p>
-The bar under the input has white handles at both ends and reports the range in seconds. Touching the band
-scrubs; a long press then a drag slides the window through the clip without changing its length, which is how
-you hunt for the right three seconds. With a <strong>Time map</strong> in either slit mode those values reappear
-as <strong>Time from</strong> and <strong>Time to</strong> in the Parameters panel, above <strong>Reload this
-range at higher detail</strong>, which re-imports only that span &mdash; the same frame budget packed into a
-fraction of the time. Three seconds of one wave breaking beats thirty seconds of the whole clip.
+The bar under the input has white handles at both ends and reports the range in seconds; while you drag a handle the
+input picture shows that edge&rsquo;s frame. Touching the band scrubs; a long press then a drag slides the window
+through the clip without changing its length, which is how you hunt for the right three seconds. If the window leaves
+the loaded part, <strong>Reload here</strong> brings the loaded part to it. With a <strong>Time map</strong> in either
+slit mode those values reappear as <strong>Time from</strong> and <strong>Time to</strong> in the Parameters panel,
+above <strong>Reload only the range in use</strong>, which re-imports only that span, so fewer frames have to be
+skipped. Three seconds of one wave breaking beats thirty seconds of the whole clip.
 </p>
 
 <h3>Smooth maps and hard edges look completely different in motion</h3>
@@ -1082,6 +1244,8 @@ horizontal edge makes the whole frame jump to another moment as the playhead cro
 leaves a standing seam, one band permanently showing an earlier moment than the band beside it.
 <strong>Horizontal slit</strong> swaps the two. Gamma, Blur and invert stay reversible until you tap
 <strong>Apply adjustments (overwrites the map)</strong>, so you can audition a softer version and back out.
+<strong>Cut &amp; slide</strong> is the exception worth trying on purpose: it moves a region without tearing, because
+the gap is filled by blending the two sides of the cut.
 </p>
 
 <h3>Surface for texture, slits for subjects that travel</h3>
@@ -1102,7 +1266,7 @@ maximum.
 give you something concrete to react to, and you can draw freely on top of anything they produce. Choosing
 Gradient or From motion <em>after</em> drawing, though, rebuilds the map from scratch and your strokes are gone,
 with no undo. <strong>From motion</strong> makes a good under-layer: busier areas come out brighter, so the
-distortion follows what is actually moving, and its History option lets the trails decay over a
+distortion follows what is actually moving, and in Surface its History option lets the trails decay over a
 <strong>Trail (s)</strong> period, so the map itself changes as the clip plays.
 </p>
 
@@ -1124,7 +1288,8 @@ is always applied as slits, even when the time side is Surface. In Vertical slit
 Repaint it <strong>All grey</strong> and every column shows the same input column, smearing one strip of the
 source across the frame; repaint it <strong>Top &rarr; bottom</strong> and that strip sweeps across the frame as
 the clip plays, which is classic slit scan. Put either under a Time map that is also moving and the moment
-sampled and the place sampled travel independently.
+sampled and the place sampled travel independently. <strong>Cut &amp; slide</strong> on a space map opens the picture
+up along the cut. When you are done with it, <strong>Reset to default</strong> in the method list switches it off.
 </p>
 
 <h3>Use the red line to tie the map to what you are seeing</h3>
@@ -1144,6 +1309,7 @@ right of the editor to <strong>Map only</strong> and the device becomes a pure d
 on the wall; switch to <strong>Overlay</strong>, which lays the map over the image at partial opacity, when a
 stroke needs to land on a particular object rather than a particular part of the frame. On iPad, turn Stage
 Manager off first or the display is treated as an extended desktop and the full-screen output never appears.
+Without a display, the full-screen Output view on the device itself is the quickest way to judge a result at size.
 </p>
 
 <h3>Keep the map, not just the video</h3>
@@ -1162,24 +1328,41 @@ The caption under the progress bar names the stage: <strong>Fetching from your p
 then <strong>Expanding frames&hellip;</strong> with a percentage, then <strong>Loading the audio
 track&hellip;</strong>. The first stage is iOS handing the file over, and for a long 4K or HDR clip it can take
 tens of seconds before the percentage even starts to move. <strong>Cancel</strong> stops the import at any
-stage. HD (1280&times;720) and under 30 seconds is the size this app is built around.
+stage. The second stage is shorter when less is loaded: a lower <strong>Resolution</strong> or fewer
+<strong>Seconds to load</strong> under Settings &rarr; Video Loading.
 </p>
 
 <h3>The app quits while loading</h3>
 <p>
-It is the frame count and the working resolution, not the file size, that decide whether a clip fits. Lower
-<strong>Resolution (long edge)</strong> and <strong>Frames in memory</strong> in
-<a href="#settings-en">Settings &rarr; Video quality</a> and watch <strong>Estimated memory</strong>: the
-default 720p / 450 frames is about 500&nbsp;MB, while 1440p / 1800 frames is about 7.8&nbsp;GB and will fail on
-most devices. Closing other apps first buys real headroom.
+It is the resolution and the number of frames loaded, not the file size, that decide whether a clip fits. The app
+sizes each load to the memory it measures as free, but other apps can take that memory back. Lower
+<strong>Resolution</strong> or <strong>Seconds to load</strong> in
+<a href="#settings-en">Settings &rarr; Video Loading</a> and watch the <strong>Memory</strong> line, and close other
+apps first, which buys real headroom.
+</p>
+
+<h3>A message says frames were skipped</h3>
+<p>
+When a clip has more frames than the GPU can hold at once (2,048) or than fit in memory, frames are skipped evenly and
+an orange note gives the source and loaded frame rates. Slow-motion footage is the usual case. Under
+<a href="#settings-en">Settings &rarr; Video Loading</a>, lower <strong>Resolution</strong> to 1/2 or 1/4 or load
+fewer seconds until <strong>Frames</strong> reads <em>No frames skipped</em>; with a time map in a slit mode,
+<strong>Reload only the range in use</strong> in the Parameters panel does the same for just the range you are using.
+</p>
+
+<h3>&ldquo;Frozen outside the loaded part&rdquo; appears under the bar</h3>
+<p>
+The range in use reaches beyond the part of the clip that is in memory, and moments out there hold the frame at the
+edge. Tap <strong>Reload here</strong> beside the message: the clip is reloaded at the same resolution and length,
+positioned so your range sits in the middle of it.
 </p>
 
 <h3>The export stops with an error part way through</h3>
 <p>
 Rendering allocates on top of the frames already resident, so an export can run out of memory even though the
 clip loaded fine &mdash; usually reported as a texture that could not be allocated. Lower
-<strong>Resolution (long edge)</strong> or <strong>Frames in memory</strong>, tap <strong>Reload with these
-settings</strong>, shorten <strong>Duration</strong>, close other apps, and export again.
+<strong>Resolution</strong> or <strong>Seconds to load</strong>, tap <strong>Reload with these settings</strong>,
+shorten <strong>Duration</strong>, close other apps, and export again.
 </p>
 
 <h3>Nothing seems to happen when I switch between Vertical slit and Horizontal slit</h3>
@@ -1219,7 +1402,7 @@ and the render is gone. Grant the permission in iOS <strong>Settings &rarr; Time
 The speaker over <strong>Output</strong> is already on when a clip with sound loads, playing the clip&rsquo;s own
 audio put through the same time manipulation as the picture. The speaker over <strong>Input</strong> is off
 until you turn it on, and turning it on switches the output one off &mdash; only one plays at a time. See
-<a href="#sound-en">Sound</a> for the methods, reverb and voice count.
+<a href="#sound-en">Sound</a> for the methods, reverb and voices.
 </p>
 
 <h3>Can I use an external display?</h3>
@@ -1242,29 +1425,30 @@ case: hold still with a fingertip and tone keeps building and spreading outward.
 
 <h3>Is there an undo?</h3>
 <p>
-No. A stroke can only be painted back out at low Strength, or the whole map reset with the counter-clockwise
+Not in Draw. A stroke can only be painted back out at low Strength, or the whole map reset with the counter-clockwise
 arrow at the end of the tool row. <strong>Apply adjustments (overwrites the map)</strong> is one-way as well, so
-audition Gamma, Blur and invert before you commit them.
+audition Gamma, Blur and invert before you commit them. <strong>Cut &amp; slide</strong> is the exception:
+<strong>Revert</strong> returns the map to how it was when you opened that method.
 </p>
 
 <h3>My drawing disappeared when I loaded another video</h3>
 <p>
 Loading a <em>different</em> clip rebuilds every map at the new video&rsquo;s aspect ratio, edited ones included,
 because a map shaped for the old frame no longer lines up. Re-importing the <em>same</em> clip does not
-&mdash; changing quality settings, the trim range, or the rotation and reloading leaves your maps alone.
+&mdash; changing the Video Loading settings, reloading the range, or rotating leaves your maps alone.
 </p>
 
 <h3>Can I bring a map in from elsewhere, or take one out?</h3>
 <p>
 Out, yes: <strong>Also save the map as a 16-bit PNG</strong> under Settings &rarr; Export options, described in
 <a href="#export-en">Exporting</a>. In, no &mdash; the current version has no way to load an image as a map;
-maps are made inside the app with Draw, Gradient, Presets or From motion.
+maps are made inside the app with Draw, Gradient, Presets, From motion or Cut &amp; slide.
 </p>
 
 <h3>The device gets hot, or the preview starts to stutter</h3>
 <p>
-Preview, drawing and exporting all keep the GPU working. Lower <strong>Resolution (long edge)</strong> or
-<strong>Frames in memory</strong> if the preview stops keeping up, drop the voice count if the audio is the part
+Preview, drawing and exporting all keep the GPU working. Lower <strong>Resolution</strong> or
+<strong>Seconds to load</strong> if the preview stops keeping up, drop the voice count if the audio is the part
 that breaks up, and stay plugged in for installation or performance use. Build the map at a light working
 resolution and raise it only for the final render.
 </p>
