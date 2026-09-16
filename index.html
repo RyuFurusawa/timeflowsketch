@@ -45,13 +45,19 @@
     出力の全画面には再生バーと出力の情報が出て、その場で書き出せます。
     </p>
     <p>
+    出力の全画面で<strong>「立体グラフ」</strong>か<strong>「時間グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にグラフが出ます（オンにできるのはどちらか一方）。
+    立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
+    時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
+    読み方は<a href="time.html#volume">時間処理の仕組み</a>で説明しています。
+    </p>
+    <p>
     最初は画面下の<strong>「読み込み」</strong>から動画を選びます。動きのある映像ほど効果がはっきり出ます。
     フル HD 以下の軽い素材が扱いやすく、読み込みも速く済みます。
     </p>
     <p>
     読み込む解像度と秒数は、映像とこの端末の空きメモリから自動で決まります。
     入りきらないときは読み込む秒数を短くしたりフレームを間引いたりして収め、読み込み後にお知らせします。
-    設定の<strong>「映像の読み込み」</strong>で変えられます。
+    設定の<strong>「映像の読み込み」</strong>で変えられます。そこで読み込む範囲はトップ画面の使用範囲の先頭から始まり、使用範囲より短くはなりません。
     読み込んだ範囲・使用範囲と出力の長さの関係は、<a href="time.html">時間処理の仕組み</a>で説明しています。
     </p>
   </div>
@@ -60,6 +66,7 @@
 <div class="gallery">
   <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面表示。下に読み込みの情報、使用範囲のバー、秒数が並ぶ" loading="lazy"><figcaption>入力の全画面。情報をタップすると読み込みの設定が開きます</figcaption></figure>
   <figure><img src="shots/v15/ja/output_full.png" alt="出力映像の全画面表示。出力の大きさ・fps・秒数とモード、書き出しボタン、再生バー" loading="lazy"><figcaption>出力の全画面。その場で書き出せます</figcaption></figure>
+  <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と秒数の目盛り" loading="lazy"><figcaption>立体グラフ。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
 </div>
 
 <div class="shot">
@@ -71,12 +78,19 @@
     下半分のマップの上を指や Apple Pencil でなぞると、その明るさに応じて時間の流れが変わります。
     </p>
     <p>
-    明るさの意味はマップの種類で変わります。起動時のレートマップでは黒が停止、グレーが通常の速さ、白が2倍速。
-    時間マップでは黒いところが素材の始まりのほう、白いところが終わりのほうを映します。
-    いまの設定での意味はツールの上に表示され、上の映像に結果がその場で反映されるので、描きながら確かめられます。
+    明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
+    最初のマップは上が黒・下が白のグラデーションで、これが通常の再生です。マップの縦方向が出力の時間なので、描いたところは赤い線がそこを通るときに、その列が映す瞬間を変えます。
+    レートマップでは（既定の設定なら）黒が停止、グレーが通常の速さ、白が2倍速です。
+    いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
+    </p>
+    <p>
+    右上の表示メニューで並べ方を選べます。<strong>重ねて表示</strong>・<strong>マップのみ</strong>・<strong>映像のみ</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
+    <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。
     </p>
   </div>
 </div>
+
+<figure><img src="shots/v16/ja/editor_3pane.png" alt="編集画面の3画面表示。上から出力映像、傾いた面の入った立体グラフ、左→右のグラデーションの時間マップが並び、下にプリセットのボタン" loading="lazy"><figcaption>3画面: 映像 ＋ 立体グラフ ＋ マップ</figcaption></figure>
 
 <div class="shot">
   <figure><img src="shots/presets.png" alt="プリセットで塗り直しの画面。7つのプリセットに再生の説明が付いている"></figure>
@@ -122,8 +136,8 @@
   <tr><th>空間マップ</th><td>明るさを「画面のどこから映像を取ってくるか」として扱います。時間マップやレートマップと組み合わせて使う補助的なマップで、やめるときは編集方法のメニューの「デフォルトの状態に戻す」を選びます。</td></tr>
 </table>
 <p>
-編集画面の左上にある「レートマップ・サーフェス」などの表示をタップすると、
-マップの種類と適用モードをまとめて切り替えられます（起動時はレートマップ・サーフェスです）。
+編集画面の左上にある「時間マップ・縦スリット」などの表示をタップすると、
+マップの種類と適用モードをまとめて切り替えられます（起動時は時間マップ・縦スリットです）。
 歯車の「適用パラメータ」とサウンドの各項目にも <strong>i</strong> ボタンがあり、いまのモードでの意味を確かめられます。
 </p>
 <div class="gallery">
@@ -328,8 +342,11 @@ of the output relate to one another is explained step by step in
 <p>
 When loading finishes, Output looks exactly like Input. That is correct: the starting map for every mode is
 the pattern that gives back ordinary playback. The two pictures only diverge once you draw or generate. A new
-session starts on a <strong>Rate map</strong> in <strong>Surface</strong> mode, so painting straight away
-changes how fast each part of the picture runs.
+session starts on a <strong>Time map</strong> in <strong>Vertical slit</strong> mode. The map&rsquo;s vertical axis
+is output time and its horizontal axis is position across the frame, and the starting map is a
+<strong>Top &rarr; bottom</strong> ramp: black at the top for the start of the range in use, white at the bottom for
+its end. Painting straight away therefore changes which moment each column of the picture shows while the red line
+passes over your stroke.
 </p>
 
 <h3>Full-screen input and output</h3>
@@ -342,12 +359,41 @@ rate, the size and frame rate held on the GPU, whether frames were skipped, and 
 to open the <strong>Video Loading</strong> settings on their own and reload from there. The
 <strong>Output</strong> view has play/pause and a playback bar, a line giving the output&rsquo;s size, frame rate,
 length and current map and mode, and an <strong>Export</strong> button, so you can check a result at full size
-and write it out without leaving.
+and write it out without leaving. Beside Export sit two toggles, <strong>3D plot</strong> and <strong>Time
+graph</strong>, described next.
 </p>
 <div class="gallery">
   <figure><img src="shots/v15/en/input_full.png" alt="Full-screen Input with the loading information line, the range bar and the seconds in use" loading="lazy"><figcaption>Full-screen Input: tap the information line to open Video Loading</figcaption></figure>
   <figure><img src="shots/v15/en/output_full.png" alt="Full-screen Output with size, frame rate, length, mode, an Export button and a playback bar" loading="lazy"><figcaption>Full-screen Output, with Export</figcaption></figure>
 </div>
+
+<h3 id="plots-en">The 3D plot and the time graph</h3>
+<p>
+The <strong>3D plot</strong> and <strong>Time graph</strong> toggles sit beside <strong>Export</strong> in the
+full-screen Output view, and they show how the current map spends the clip&rsquo;s time. Only one can be on at a
+time. While one is on, the screen splits: the output picture stays on top and the graph sits below it, so you can
+watch both at once.
+</p>
+<p>
+The <strong>3D plot</strong> draws the whole clip as a box &mdash; width &times; height &times; time &mdash; with the
+end of the clip at the back when the view opens and the seconds marked along one lower edge. The current output
+frame is a surface inside the box with the actual picture mapped onto it, and each point of it sits at the moment
+that part of the picture is showing. A flat surface square to the time axis means the whole frame shows one moment;
+a tilted or bent one means different parts of the picture show different moments. Cyan lines on the surface join
+points that show the same moment. Orange rectangles mark the range in use and blue ones the loaded range, and the
+clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only on the side farther from you. The box
+turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
+is down. Pinch to zoom. Each time the plot opens, a short intro runs: frames at the second marks fade in and out from
+the back of the box towards the front, then the surface fades in.
+</p>
+<p>
+The <strong>Time graph</strong> is the flat version over one loop. The horizontal axis is one output loop and the
+vertical axis is time in the clip, in seconds. Each line is one part of the picture, coloured from green at the left
+of the picture to red at the right (top to bottom under a horizontal slit). The orange band is the range in use, the
+blue band the loaded range, and the red vertical line is the current playback position. How to read both for each
+mode is explained in <a href="time.html#volume-en">How time processing works</a>.
+</p>
+<figure><img src="shots/v16/en/volume.png" alt="Full-screen Output with the 3D plot on: the output picture above, and below it a tilted surface carrying the picture inside a box marked in seconds" loading="lazy"><figcaption>The 3D plot. With a Left &rarr; right time map under a vertical slit, the left of the picture shows earlier moments, so the surface is tilted</figcaption></figure>
 
 <div class="shot">
   <figure><img src="shots/en/draw.png" alt="The editor with the video and the map side by side, a curve drawn across the map, and the warped result visible in the video above it"></figure>
@@ -398,7 +444,7 @@ chosen under Video Loading. If you declined the Photos permission, a share sheet
 Two separate choices decide what a grayscale image does to your footage: the <strong>kind</strong> of map
 &mdash; what brightness is taken to mean &mdash; and the <strong>mode</strong> &mdash; how the map is laid
 over the picture. Both live behind one label at the top left of the editor, which reads something like
-<strong>Rate map</strong> &middot; <strong>Surface</strong>. Tap it and a menu opens whose top section is
+<strong>Time map</strong> &middot; <strong>Vertical slit</strong> &mdash; the combination a new session starts on. Tap it and a menu opens whose top section is
 headed <strong>Map</strong> (Time map, Rate map, <strong>Space map (optional)</strong>) and whose lower
 section is headed <strong>Modes</strong> &mdash; or <strong>Mode (space uses slits only)</strong> when a space
 map is what you are editing.
@@ -561,12 +607,16 @@ mode&rsquo;s default; Gradient and From motion also carry a clockwise <strong>re
 the generation. Outside Draw and Cut &amp; slide, a drag on the preview scrubs the playhead.
 </p>
 <p>
-The layout menu, next to the method button at the top right, has four options. <strong>Side by side</strong> is
-the default and shows the video and the map as two panes. <strong>Overlay</strong> lays the map over the
-picture at partial opacity, which is how you land a stroke on a particular object rather than a particular
-part of the frame. <strong>Map only</strong> and <strong>Video only</strong> show one layer at a time. The
+The layout menu, next to the method button at the top right, has six options. <strong>Overlay</strong> lays the
+map over the picture at partial opacity, which is how you land a stroke on a particular object rather than a
+particular part of the frame. <strong>Map only</strong> and <strong>Video only</strong> show one layer at a time.
+<strong>Split: video + map</strong> is the default and shows the video and the map as two panes, side by side or
+stacked, whichever shows both larger. <strong>Split: 3D plot + map</strong> puts the
+<a href="#plots-en">3D plot</a> in place of the video, and <strong>Three panes: video + 3D plot + map</strong> shows
+all three, stacked along the longer side of the screen, so you can watch the surface bend while you draw. The
 choice is independent of what an external display is showing &mdash; that always shows the output alone.
 </p>
+<figure><img src="shots/v16/en/editor_3pane.png" alt="The editor in Three panes: the output video at the top, the 3D plot with a tilted surface in the middle, and a left-to-right time map at the bottom above the preset buttons" loading="lazy"><figcaption>Three panes: video + 3D plot + map</figcaption></figure>
 
 <h3>Draw</h3>
 <p>
@@ -1061,10 +1111,10 @@ out.
 <figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading, with the Frames line explaining why frames are skipped</figcaption></figure>
 <table>
   <tr><th>Resolution</th><td><strong>Full</strong> / <strong>1/2</strong> / <strong>1/4</strong> &mdash; the size the loaded video is worked at, as a fraction of the source; the pixel size of each option is printed under it. The file in your photo library is never modified. This is also the resolution the export is written at.</td></tr>
-  <tr><th>Seconds to load</th><td>How much of the video to use, from 0.5&nbsp;s up to the whole clip in steps of 0.1&nbsp;s, shown as &ldquo;&hellip; s of &hellip; s&rdquo;. The line underneath gives the start time: when you change the seconds, the loaded part starts at the beginning of the range in use on the main screen.</td></tr>
+  <tr><th>Seconds to load</th><td>How much of the video to use, from 0.5&nbsp;s up to the whole clip in steps of 0.1&nbsp;s, shown as &ldquo;&hellip; s of &hellip; s&rdquo;. It never drops below the length of the range in use on the main screen. The line underneath gives the start time, which always follows the beginning of the range in use (moving earlier only when the seconds would otherwise run past the end of the clip).</td></tr>
   <tr><th>Frames</th><td>A read-out. <em>No frames skipped</em> with the source frame rate, or an orange warning giving the source and loaded frame rates and how many frames make one (&ldquo;1 of every &hellip; frames&rdquo;), with the reason: either the GPU can hold at most 2,048 frames at once, or the clip does not fit in memory. Below 8&nbsp;fps it adds <em>Motion will look quite choppy</em>.</td></tr>
   <tr><th>Memory</th><td>A read-out: how much the combination uses against what this device can spare right now, and the width &times; height &times; number of frames behind it. Frames are stored uncompressed at 4 bytes per pixel.</td></tr>
-  <tr><th>Reload</th><td><strong>Reload with these settings</strong> &mdash; re-imports the clip you already have with the resolution and seconds chosen here, and closes the sheet so you can watch the progress on the main screen. <em>Changes not applied yet</em> appears above it when the choice differs from what is loaded; otherwise it is greyed out, as it is while a video is loading or exporting.</td></tr>
+  <tr><th>Reload</th><td><strong>Reload with these settings</strong> &mdash; re-imports the clip you already have with the resolution and seconds chosen here, and closes the sheet so you can watch the progress on the main screen, keeping the range in use as it is. <em>Changes not applied yet</em> appears above it when the choice differs from what is loaded &mdash; which includes moving the start of the range in use on the main screen, or stretching the range past the loaded length, since the plan follows the range; otherwise it is greyed out, as it is while a video is loading or exporting.</td></tr>
 </table>
 <p>
 There is no frame-rate setting: a lower frame rate would not make loading any faster, so the app only skips frames
@@ -1084,8 +1134,10 @@ until <strong>Frames</strong> reports no skipping.
 </p>
 <p>
 Reloading keeps your work. The maps are untouched, because the app only rebuilds maps when you load a
-<em>different</em> video. The audio track is extracted again. Range handles you have moved stay where you put them;
-if you never touched them, they are re-fitted to the material now in memory. If a reload is cancelled or fails after the
+<em>different</em> video. The audio track is extracted again. <strong>Reload with these settings</strong> and
+<strong>Reload here</strong> keep the range in use exactly where it is, and from then on it counts as set by hand. For
+other reloads of the same clip, range handles you have moved stay where you put them; if you never touched them, they
+are re-fitted to the material now in memory. If a reload is cancelled or fails after the
 old copy has been released, the app reloads the previous settings and tells you so.
 </p>
 
