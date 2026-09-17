@@ -48,6 +48,8 @@
     出力の全画面で<strong>「立体グラフ」</strong>か<strong>「時間グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にグラフが出ます（オンにできるのはどちらか一方）。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
+    立体グラフは、トップ画面のマップを横にスワイプしても見られます（空間マップを編集していれば、その前に空間マップのページが入ります）。
+    使用範囲が素材の半分より短いときは、立体グラフ右上の<strong>「素材全体／使用範囲」</strong>で箱の奥行きを使用範囲に合わせられます。
     読み方は<a href="time.html#volume">時間処理の仕組み</a>で説明しています。
     </p>
     <p>
@@ -383,13 +385,17 @@ a tilted or bent one means different parts of the picture show different moments
 points that show the same moment. Orange rectangles mark the range in use and blue ones the loaded range, and the
 clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only on the side farther from you. The box
 turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
-is down. Pinch to zoom. Each time the plot opens, a short intro runs: frames at the second marks fade in and out from
+is down. Pinch to zoom. When the use range is shorter than half the clip, a <strong>Whole clip / Use range</strong>
+button appears at the top right and fits the box&rsquo;s depth to the use range. You can also reach the 3D plot on
+the main screen by swiping the map sideways. Each time the plot opens, a short intro runs: frames at the second marks fade in and out from
 the back of the box towards the front, then the surface fades in.
 </p>
 <p>
 The <strong>Time graph</strong> is the flat version over one loop. The horizontal axis is one output loop and the
 vertical axis is time in the clip, in seconds. Each line is one part of the picture, coloured from green at the left
-of the picture to red at the right (top to bottom under a horizontal slit). The orange band is the range in use, the
+of the picture to red at the right (top to bottom under a horizontal slit; under Surface the hue gives the left&ndash;right
+position and the brightness the top&ndash;bottom position). A small legend at the top right shows the parts in the same
+colours. The orange band is the range in use, the
 blue band the loaded range, and the red vertical line is the current playback position. How to read both for each
 mode is explained in <a href="time.html#volume-en">How time processing works</a>.
 </p>
@@ -543,8 +549,8 @@ Its defaults are the identity ramps &mdash; <strong>Left &rarr; right</strong> f
 changes nothing. Repaint it <strong>All grey</strong> and every column shows the same column of the source,
 smearing one slit across the whole frame; <strong>Right &rarr; left</strong> mirrors the picture; a ramp
 running along the time axis is labelled <strong>Slit scan</strong>. Once you have edited it, a
-<strong>Space map in use</strong> button appears on the main screen and its thumbnail sits beside the time
-map. To stop using it, open the method list while editing the space map and choose <strong>Reset to
+<strong>Space map in use</strong> button appears on the main screen, and the space map becomes a page of the map
+tile, between the time map and the 3D plot &mdash; swipe the map sideways to see it. To stop using it, open the method list while editing the space map and choose <strong>Reset to
 default</strong>: the space map returns to its unedited state and disappears from the main screen.
 </p>
 

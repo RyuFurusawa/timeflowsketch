@@ -15,7 +15,7 @@
 <header>
   <img class="icon" src="icon.png" alt="">
   <h1 id="top">動画の時間処理の仕組み</h1>
-  <p class="lede">Time Flow Sketch 1.6 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
+  <p class="lede">Time Flow Sketch 1.7 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
 </header>
 
 <nav><a href="index.html">サポートページへ戻る</a><a href="#en">English</a></nav>
@@ -76,7 +76,7 @@
 </div>
 
 <h2 id="volume">4. 3D で見る: 立体グラフ</h2>
-<p>出力の全画面で<strong>「立体グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にこの図が出ます。編集画面の表示メニューの「2画面: 立体グラフ ＋ マップ」「3画面: 映像 ＋ 立体グラフ ＋ マップ」でも、描きながら同じ図を見られます。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
+<p>出力の全画面で<strong>「立体グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にこの図が出ます。トップ画面のマップを横にスワイプしても見られます。編集画面の表示メニューの「2画面: 立体グラフ ＋ マップ」「3画面: 映像 ＋ 立体グラフ ＋ マップ」でも、描きながら同じ図を見られます。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
 <div class="gallery">
   <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と、下の辺に 0.0〜8.0 の秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
   <figure><img src="shots/v16/ja/timegraph.png" alt="出力の全画面で時間グラフをオンにしたところ。高さの違う 7 本の水平な線が、下の緑から上の赤まで並び、赤い縦線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。帯ごとの線が水平に、高さを変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
@@ -86,6 +86,7 @@
   <li><strong>面</strong> — 出力のいまの 1 コマです。面の各点の奥行きが、画面のその場所が映している素材の時刻で、面には実際の絵が貼られています。時間の軸に垂直な平らな面なら、画面全体が同じ瞬間です。傾いたり曲がったりしていれば、場所ごとに違う瞬間を映しています。</li>
   <li><strong>水色の線</strong> — 素材の同じ時刻を結ぶ線です。間隔は 0.5・1・2・5・10・20・30 秒のうち、素材の長さを 12 本以内で刻める最も細かいもの（6 分を超える素材は長さ ÷ 12 を丸めた秒）。線が混んでいるところほど、面が時間の方向へ急に傾いています。</li>
   <li><strong>橙と青の四角</strong> — 橙が使用範囲の始めと終わり、青が読み込み範囲の始めと終わりです。面はふつう橙の間に収まります。使用範囲が読み込み範囲からはみ出していると面も青の外へ出ますが、そこに貼られる絵は読み込み範囲の端のフレームのままです（2 章の「端で平らになる」と同じ）。</li>
+  <li><strong>素材全体／使用範囲</strong> — 使用範囲が素材の半分より短いときだけ、右上に出ます。押すと箱の奥行きが使用範囲の始めから終わりまでになり（秒数の目盛りもその範囲で振り直します）、もう一度押すと素材全体に戻ります。長い素材の一部だけを使うとき、面が薄い箱の中に押し込まれて読めなくなるのを防ぎます。</li>
   <li><strong>半透明の板</strong> — 箱の両端（素材の最初と最後の時刻）に、その時刻のフレームを薄く表示します（読み込み範囲の外なら、読み込んだ端のフレーム）。描くのは見ている側から遠いほうだけで、回転して奥と手前が入れ替わるときはクロスフェードします。</li>
   <li><strong>操作</strong> — 何もしなければ約 50 秒で 1 周の速さで自動で回ります。ドラッグで回転（触っている間は自動回転が止まり、離すと続きから回ります）、ピンチで拡大・縮小。</li>
   <li><strong>開いたとき</strong> — 約 1.7 秒の演出があります。目盛りの時刻のフレームが奥（素材の終わり）から手前へ順に現れては消え、入れ替わりに面がフェードインします。</li>
@@ -105,7 +106,7 @@
 <ul>
   <li>横軸は出力の 1 周（秒数は軸名に出ます）、縦軸は素材の時刻（秒、素材全体）です。</li>
   <li>線は画面の区画ごとに 1 本です。区画はサウンドのボイスと同じで、縦スリットは左右に並ぶ帯（ボイス分割数、既定 7）、横スリットは上下に並ぶ帯、サーフェスはボイス数の格子（格子が細かいときは一部を間引きます）。値は区画の中のマップの平均から計算します。</li>
-  <li>線の色は画面の左（緑）から右（赤）へ。横スリットでは上から下へ、サーフェスでは左上の区画から行ごとに右下へ変わります。</li>
+  <li>線の色は画面の左（緑）から右（赤）へ変わります。横スリットでは上（緑）から下（赤）へ。サーフェスでは左右の位置が色（左＝緑 → 右＝赤）、上下の位置が明るさ（上＝明るい → 下＝暗い）です。右上の小さな図が区画の並びを線と同じ色で示し、ぴったり重なる線は、それぞれの色を交互にした破線で描きます。</li>
   <li>橙の帯が使用範囲、青の帯が読み込み範囲、赤い縦線がいまの再生位置です。回り込みの飛びは線をつなぎません。</li>
   <li>赤い縦線のところで線の高さを縦に読むと、立体グラフの面がいま箱のどの奥行きにあるかと対応します。既定の「上→下」では全部の線が 1 本の斜めの線に重なり（3 章の図 (a) の既定グラデ）、「左→右」では高さの違う水平な線が並びます。</li>
 </ul>
@@ -186,7 +187,7 @@
 
 <h1 id="en" lang="en">How time processing works</h1>
 <div lang="en">
-<p class="lede">Which moment of your video Time Flow Sketch 1.6 shows at each instant of the output</p>
+<p class="lede">Which moment of your video Time Flow Sketch 1.7 shows at each instant of the output</p>
 
 <nav><a href="index.html#en">Back to the support page</a><a href="#top">日本語</a></nav>
 
@@ -246,7 +247,7 @@
 </div>
 
 <h2 id="volume-en">4. Seeing it in 3D: the 3D plot</h2>
-<p>Turn on <strong>3D plot</strong> in the full-screen Output view and the screen splits: the output picture on top, this plot below it. The editor&rsquo;s layout menu shows the same plot while you draw, in <strong>Split: 3D plot + map</strong> and <strong>Three panes: video + 3D plot + map</strong>. The plot computes its times with the same function that renders the output picture.</p>
+<p>Turn on <strong>3D plot</strong> in the full-screen Output view and the screen splits: the output picture on top, this plot below it. You can also swipe the map on the main screen sideways to reach it. The editor&rsquo;s layout menu shows the same plot while you draw, in <strong>Split: 3D plot + map</strong> and <strong>Three panes: video + 3D plot + map</strong>. The plot computes its times with the same function that renders the output picture.</p>
 <div class="gallery">
   <figure><img src="shots/v16/en/volume.png" alt="Full-screen Output with the 3D plot on: the output picture above, and below it a tilted surface inside the clip box, with seconds 0.0 to 8.0 along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
   <figure><img src="shots/v16/en/timegraph.png" alt="Full-screen Output with the time graph on: seven horizontal lines at different heights, green at the bottom to red at the top, and a red vertical playhead" loading="lazy"><figcaption>The time graph for the same map: one flat line per strip, each at its own height (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
@@ -256,6 +257,7 @@
   <li><strong>The surface</strong> &mdash; the current output frame. The depth of each point is the moment of the clip that part of the picture is showing, and the actual picture is mapped onto it. A flat surface square to the time axis means the whole frame shows one moment; a tilted or bent surface means different parts of the picture show different moments.</li>
   <li><strong>Cyan lines</strong> &mdash; join points that show the same moment of the clip. The spacing is the finest of 0.5, 1, 2, 5, 10, 20 or 30 seconds that marks the clip in 12 steps or fewer (for clips over 6 minutes, the clip length &divide; 12, rounded). Where the lines crowd together, the surface is tilting steeply in time.</li>
   <li><strong>Orange and blue rectangles</strong> &mdash; orange marks the start and end of the use range, blue the start and end of the loaded range. The surface normally stays between the orange ones. If the use range reaches past the loaded range, the surface goes beyond the blue rectangles too, but the picture on that part stays on the edge frame of the loaded range &mdash; the same flattening at the edges as in section 2.</li>
+  <li><strong>Whole clip / Use range</strong> &mdash; appears at the top right only when the use range is shorter than half the clip. Tap it and the box&rsquo;s depth runs from the start to the end of the use range (the second marks are redrawn for that span); tap again to return to the whole clip. It keeps the surface from being squeezed into a thin slice when you use only part of a long clip.</li>
   <li><strong>Translucent frames</strong> &mdash; the end faces of the box (the first and last moments of the clip) show the frame at that time faintly (the edge frame of the loaded range if that moment is not loaded). Only the face on the far side from you is drawn, and the two cross-fade as the box turns.</li>
   <li><strong>Handling</strong> &mdash; left alone, the box turns slowly by itself, about once every 50 seconds. Drag to rotate it; the automatic turn stops while your finger is down and carries on from there when you lift. Pinch to zoom.</li>
   <li><strong>Opening</strong> &mdash; a short intro of about 1.7 seconds plays: frames at the second marks appear and fade in turn from the back (the end of the clip) towards the front, and the surface fades in as they go.</li>
@@ -275,7 +277,7 @@
 <ul>
   <li>The horizontal axis is one output loop (its length in seconds is in the axis label); the vertical axis is time in the whole clip, in seconds.</li>
   <li>There is one line per part of the picture. The parts are the same as the sound&rsquo;s voices: strips from left to right under a vertical slit (Voice divisions, 7 by default), strips from top to bottom under a horizontal slit, and the voice grid under Surface (thinned out when the grid is fine). Each line uses the average of the map over its part.</li>
-  <li>Line colour runs from green at the left of the picture to red at the right; under a horizontal slit, from top to bottom; under Surface, row by row from the top-left part to the bottom-right.</li>
+  <li>Line colour runs from green at the left of the picture to red at the right; under a horizontal slit, from green at the top to red at the bottom. Under Surface, the hue gives the left&ndash;right position (left green &rarr; right red) and the brightness the top&ndash;bottom position (top bright &rarr; bottom dark). A small legend at the top right shows the parts in the same colours, and lines that lie exactly on top of each other are drawn as dashes alternating their colours.</li>
   <li>The orange band is the use range, the blue band the loaded range, and the red vertical line the current playback position. Where a line wraps from end to start, the jump is not drawn.</li>
   <li>Reading the heights of the lines at the red line tells you where in the box the 3D plot&rsquo;s surface sits at that moment. With the default Top &rarr; bottom, all the lines lie on top of one another along a single diagonal (the default gradient in section 3&rsquo;s figure (a)); with Left &rarr; right, they are flat lines at different heights.</li>
 </ul>
