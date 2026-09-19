@@ -49,6 +49,8 @@
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
     立体グラフは、トップ画面のマップを横にスワイプしても見られます（空間マップを編集していれば、その前に空間マップのページが入ります）。
+    空間マップを使っているときは、面の左右（横スリットでは上下）の位置も、映している素材の位置へ動きます。
+    一色のように 1 本の列だけを映すマップでは面が 1 本の線につぶれ、その線が時間の方向に切る板（その列のスリットスキャンの絵）が半透明で添えられます。
     使用範囲が素材の半分より短いときは、立体グラフ右上の<strong>「素材全体／使用範囲」</strong>で箱の奥行きを使用範囲に合わせられます。
     読み方は<a href="time.html#volume">時間処理の仕組み</a>で説明しています。
     </p>
@@ -86,6 +88,12 @@
     いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
     <p>
+    ツールの列のいちばん右のボタンで、<strong>ひとつ前の状態に戻せます</strong>。押すたびに 1 手順ずつ戻り、
+    ストロークだけでなくプリセットやグラデーション生成など、どの方法での変更もさかのぼれます
+    （スライダーは指を離すまでが 1 手順）。長押しすると「デフォルトの状態に戻す」が出ます。
+    手順はマップごとに最大 30 まで覚えていて、アプリを終了すると消えます。
+    </p>
+    <p>
     右上の表示メニューで並べ方を選べます。<strong>重ねて表示</strong>・<strong>マップのみ</strong>・<strong>映像のみ</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
     <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。
     </p>
@@ -112,6 +120,10 @@
     線は下のパレットで「自由曲線」か「直線」（始点と終点をタップ）を選べ、囲む線は交差したところで閉じた形になります。
     ずらしてできた隙間は両側の値をつないで自動で埋まります。「確定」で次の線へ進み、「やり直す」で線を引き直し、
     「元に戻す」で切り分けを始める前のマップに戻ります。
+    </p>
+    <p>
+    マップを編集すると、手法の一覧のいちばん下に<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）が出ます。
+    選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
     </p>
     <p>生成したマップの上から、そのまま描き足すこともできます。</p>
   </div>
@@ -387,7 +399,10 @@ clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only 
 turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
 is down. Pinch to zoom. When the use range is shorter than half the clip, a <strong>Whole clip / Use range</strong>
 button appears at the top right and fits the box&rsquo;s depth to the use range. You can also reach the 3D plot on
-the main screen by swiping the map sideways. Each time the plot opens, a short intro runs: frames at the second marks fade in and out from
+the main screen by swiping the map sideways. With a space map in use, the surface also moves sideways (up and
+down under a horizontal slit) to the place in the clip it is showing; a map that shows a single column at a
+time collapses the surface into one line, and the plane that line cuts along time &mdash; that column&rsquo;s
+slit-scan picture &mdash; is drawn translucently beside it. Each time the plot opens, a short intro runs: frames at the second marks fade in and out from
 the back of the box towards the front, then the surface fades in.
 </p>
 <p>
@@ -600,8 +615,10 @@ them, are under <a href="#export-en">How long the export will be</a> and
 The round button at the top right of the editor chooses <em>how</em> you build the map. It opens a list of five
 methods &mdash; <strong>Draw</strong>, <strong>Gradient</strong>, <strong>Presets</strong>,
 <strong>From motion</strong> and <strong>Cut &amp; slide</strong> &mdash; each with an <strong>i</strong> at
-the end of its row that expands a short explanation underneath; tap the row itself to switch. While you are
-editing the space map the list ends with <strong>Reset to default</strong>, which has its own <strong>i</strong>.
+the end of its row that expands a short explanation underneath; tap the row itself to switch. Once you have
+edited the map, the list ends with <strong>Reset to normal playback</strong> (<strong>Reset to default</strong>
+for the space map), which has its own <strong>i</strong>: it returns that map to normal playback for the current
+mode and marks it unedited again.
 Switching methods changes only the row of tools along the bottom. The map you are editing, the mode it is applied
 in, and the live preview all stay as they were. The caption just above the tools always states what black, grey
 and white mean for the current map and mode, so it is worth reading again after any change of mode or parameter.
@@ -632,11 +649,13 @@ fading to nothing at its edge. Tone therefore builds up over repeated passes and
 which is what makes soft shading possible.
 </p>
 <p>
-<strong>There is no undo.</strong> Nothing in Draw takes a stroke back. A stroke can only be painted out
-&mdash; pick the tone that was there before and work at low Strength until it is gone &mdash; or the whole map
-reset with the counter-clockwise arrow at the end of the tool row, which costs you the entire drawing. There
-is no separate eraser either; painting with <strong>White</strong> pulls the map back to white. This is also
-why Gamma, Blur and invert are built to stay reversible until you commit them, below.
+<strong>The button at the end of the tool row steps back one change.</strong> Press it again to go further
+back, one step at a time; it reaches past strokes into whatever else changed the map (a preset, a generated
+gradient, a reset), and a slider drag counts as one step. Up to 30 steps are kept per map, and they are
+forgotten when the app quits. Press and hold that button for <strong>Reset to default</strong>, which returns
+the map to normal playback for the current mode. There is no separate eraser; painting with
+<strong>White</strong> pulls the map back to white. Gamma, Blur and invert stay reversible until you commit
+them, below.
 </p>
 <p>
 <strong>Smudge</strong> works differently from the tones &mdash; it picks up the tone already under the brush

@@ -15,7 +15,7 @@
 <header>
   <img class="icon" src="icon.png" alt="">
   <h1 id="top">動画の時間処理の仕組み</h1>
-  <p class="lede">Time Flow Sketch 1.7 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
+  <p class="lede">Time Flow Sketch 1.8 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
 </header>
 
 <nav><a href="index.html">サポートページへ戻る</a><a href="#en">English</a></nav>
@@ -98,7 +98,7 @@
   <li><strong>縦スリット×時間マップ・「左→右」</strong> — 左の列が使用範囲の始め、右の列が終わりを映し続けます。面は左から右へ斜めに傾いた板になり、1 周のあいだ動きません（出力は止まった 1 枚の絵です）。水色の線は、同じ時刻の列を結ぶので縦の平行線になります。</li>
   <li><strong>スリット全般</strong> — 縦スリットでは 1 列が 1 つの時刻なので、どんなマップでも面は縦方向にまっすぐで、曲がるのは横方向だけです。横スリットはその逆で、曲がるのは縦方向だけです。スリット×レートでは、列ごとに速さが違えば面の形が 1 周のあいだに変わります。軌道は使用範囲に収めてあるので、面が橙の外へ出ることも回り込むこともありません。</li>
   <li><strong>サーフェス</strong> — 画素ごとに時刻が違うので、面は縦にも横にも曲がります。サーフェス×時間では、マップの濃淡がそのまま面の起伏になり（白いほど終わり側、黒いほど始まり側）、その形のまま等速で進み、使用範囲の端を越えた部分は反対側へ回り込みます。サーフェス×レートでは、同期点の瞬間に面が平らにそろい、そこから離れるほど画素ごとの速さの差のぶん曲がりが大きくなり、やはり使用範囲の中で回り込みます。</li>
-  <li><strong>空間マップ</strong> — 面の形（時刻）は変えません。面に貼る絵を画面のどの位置から取るかだけが変わります。</li>
+  <li><strong>空間マップ</strong> — 面の形（時刻）は変えませんが、面の置かれる左右（横スリットでは上下）の位置が、映している素材の位置へ動きます。一色や「上→下」のように 1 本の列だけを映すマップでは、面が 1 本の線につぶれます。そのときは、その線を時間の方向に切った板（その列のスリットスキャンの絵）が半透明で添えられ、スリットが動けば板も横へ滑ります。</li>
 </ul>
 
 <h3>時間グラフ: 3 章の図の 2D 版</h3>
@@ -187,7 +187,7 @@
 
 <h1 id="en" lang="en">How time processing works</h1>
 <div lang="en">
-<p class="lede">Which moment of your video Time Flow Sketch 1.7 shows at each instant of the output</p>
+<p class="lede">Which moment of your video Time Flow Sketch 1.8 shows at each instant of the output</p>
 
 <nav><a href="index.html#en">Back to the support page</a><a href="#top">日本語</a></nav>
 
@@ -269,7 +269,7 @@
   <li><strong>Vertical slit &times; time map, Left &rarr; right</strong> &mdash; the left column keeps showing the start of the use range and the right column its end. The surface is a plane tilted from left to right, and it does not move during the loop: the output is a single still picture. The cyan lines join columns at the same moment, so they are parallel vertical lines.</li>
   <li><strong>Slit modes in general</strong> &mdash; under a vertical slit each column has one moment, so whatever the map, the surface is straight from top to bottom and bends only across the width. A horizontal slit is the other way round: it bends only from top to bottom. On a slit &times; rate map, columns running at different speeds make the shape change over the loop; because the path is fitted into the use range, the surface never leaves the orange rectangles and never wraps.</li>
   <li><strong>Surface modes</strong> &mdash; every pixel has its own moment, so the surface bends in both directions. On a surface &times; time map the tones of the map become its relief (lighter towards the end of the clip, darker towards the start), and that fixed shape travels at normal speed, with any part that passes the edge of the use range wrapping round to the other side. On a surface &times; rate map the surface is flat at the anchor moment and bends further the further the output gets from it, as pixels at different speeds drift apart; it too wraps within the use range.</li>
-  <li><strong>Space map</strong> &mdash; does not change the shape of the surface (its times), only where in the frame the picture on it is taken from.</li>
+  <li><strong>Space map</strong> &mdash; does not change the shape of the surface (its times), but it does move the surface sideways (up and down under a horizontal slit) to the place in the clip it is showing. A map that shows a single column at a time (a solid tone, or Top &rarr; bottom) collapses the surface into one line; the plane that line cuts along time &mdash; that column's slit-scan picture &mdash; is then drawn translucently beside it, and slides sideways as the slit moves.</li>
 </ul>
 
 <h3>The time graph: section 3&rsquo;s figure, live</h3>
