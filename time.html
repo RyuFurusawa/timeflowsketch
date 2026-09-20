@@ -184,64 +184,6 @@
   <figure><img src="shots/v15/ja/sound_info.png" alt="サウンドパネルで音の方式の i を開いたところ" loading="lazy"><figcaption>音の方式の i</figcaption></figure>
 </div>
 
-<h2 id="background">10. 背景</h2>
-<p>このアプリは、作者（古澤龍）が自分の映像制作で使っていた道具から生まれました。</p>
-<ul>
-  <li><a href="https://ryufurusawa.com/midtide3">《Mid Tide #3》</a></li>
-  <li><a href="https://ryufurusawa.com/passing">《Passing》</a></li>
-</ul>
-<p>映像を、横（x）・縦（y）・時間（t）の三方向にひろがるひとつのかたまりとして考え、そこを好きな向きに切り直す。そういう処理を、長いあいだ自分で書いたプログラムで行っていました。あるとき、その「どこを切るか」という指示が、x と y の二方向しか持っていないこと——つまり指示そのものが 1 枚の画像と同じ形をしていることに気づきました。</p>
-<p>それなら、指示をコードで書くのではなく、画像として描いてしまえばいい。絵を描くように扱えれば、コードを書いていてはたどり着けない表現の可能性にも出会えるかもしれない。そして画像で操作できるのなら、より多くの人に、この表現の楽しさを体験してもらえるかもしれない。こうした期待と、ちょうど声のかかったフェスティバルの企画とが重なり、ワークショップとして形にしていくことになりました。</p>
-<p>2025 年 11 月 8〜9 日、ルーマニア・ブカレストのアートフェスティバル Nova（会場: CINETIC）で、ワークショップ「Shape of Time」を行いました。このときはデスクトップ向けに Python で書いたツールを使い、参加者が描いたマップをその場で映像に変換していました。</p>
-<p>その後、東京藝術大学「I LOVE YOU」プロジェクト 2026 の支援を受けてワークショップを続けるなかで、参加者が手元の端末だけで完結できる形が必要になりました。そうして作り直したのが Time Flow Sketch です。扱える解像度や映像の長さはデスクトップ版に及びませんが、そこは割り切って、撮ってその場で試せる手軽さを優先しています。</p>
-<ul>
-  <li><a href="https://vimeo.com/1129421003">ワークショップの記録映像（Vimeo）</a></li>
-  <li><a href="https://artdx.geidai.ac.jp/research/furusawa_2026">東京藝術大学 アートDX「I LOVE YOU」プロジェクト 2026</a></li>
-</ul>
-
-<h2>11. この技法の来歴</h2>
-<p>時間を画像として扱う発想は、この 100 年ほどのあいだに、フィルム・アナログビデオ・デジタルと、素材が変わるたびに形を変えながら受け継がれてきました。このアプリもその延長にあります。</p>
-
-<h3>フィルム</h3>
-<p>カメラの前に細いスリットを置き、フィルムを送りながら露光すると、画面の横方向が時間になった 1 枚の写真ができます（スリットスキャン写真）。映画では、撮影済みのフィルムを光学プリンタで焼き直すときにコンピュータ制御の処理を挟むことで、同じことが動画としてできるようになりました。ズビグニェフ・リプチンスキの《The Fourth Dimension》（1988）は、画面を 480 本の走査線に分け、1 本ごとに時間をずらして組み直した作品です。頭はもう振り向いているのに足はまだ元の位置にある、という像が現れます。</p>
-<p>「どこを、いつから焼き付けるか」を 1 枚の絵で指定する方法も、すでにこの時代にあります。R/Greenberg Associates の Eugene Mamut は、コンピュータで大量のマット画像を作り、それをハイコントラストのフィルムに焼いて段階的に合成する「Elastic Effect」を確立し、1980 年代前半のテレビ CM で実践しています。</p>
-
-<h3>アナログビデオ</h3>
-<p>ビデオでは、フィルムのようにコマが物として並んでいるわけではなく、映像は信号として流れています。そのぶん、フレームバッファに溜める、フィードバックさせる、走査線の単位で差し替えるといった、時間そのものへの操作が早い時期から試されてきました。スタイナ・ヴァスルカの一連の作品と、そのために Tom Demeyer が作ったソフトウェア《Image/ine》（1997）は、その到達点のひとつです。ここでは、グレースケール画像をマップとして与えて映像をリアルタイムに変形する操作が、すでに行われていました。</p>
-
-<h3>デジタル</h3>
-<p>1990 年代以降、映像が画素の集まりとしてコンピュータ上で自由に操作できるようになると、この技法は一気に広がります。時間軸と空間軸を入れ替えた《Tx-transform》（1998, Martin Reinhart / Virgil Widrich）、観客の動きや触れた場所に応じて断面が動く《Transverser》（1998, Christian Kessler）、《Liquid Time》（2000, Camille Utterback）、《Khronos Projector》（2004, Alvaro Cassinelli）など、作品の形もさまざまです。</p>
-<p>そして 2003 年、After Effects 6.0 に Time Displacement（時間置き換え）が入ります。グレースケール画像の明るさで各画素の参照時間を指示するもので、「指示を画像として描く」という考え方が、市販の映像制作ソフトの一機能になりました。Time Flow Sketch のマップは、この系譜のすぐ隣にあります。違うのは、その画像を指で描いて、結果をその場で見ながら直せることです。</p>
-
-<h2>12. 参考文献・資料</h2>
-<ul>
-  <li>Golan Levin, <a href="https://www.flong.com/archive/texts/lists/slit_scan/">An Informal Catalogue of Slit-Scan Video Artworks and Research</a> — スリットスキャン映像の作品と研究を集めた目録</li>
-  <li>Tania Ruiz Gutiérrez, <a href="https://theses.fr/2004PA010705">Études sur le temps et l’espace dans l’image en mouvement</a>（博士論文, Université Paris 1, 2004）— 映像の時間を体積として捉える議論</li>
-  <li>Susanne Jaschko, “Space-Time Correlations Focused in Film Objects and Interactive Video”, in <em>Future Cinema: The Cinematic Imaginary after Film</em>, MIT Press, 2003</li>
-  <li>Andrew Davidhazy, <a href="https://people.rit.edu/andpph/text-slit-scan.html">Slit-Scan Photography</a> — スリットスキャン写真の原理</li>
-  <li>Tom Demeyer, <a href="https://image-ine.org/downloads/ImOs9Manual.pdf">Image/ine Manual</a>（PDF）</li>
-  <li>Adobe After Effects 6.0 User Guide — Time Displacement エフェクト</li>
-</ul>
-
-<h3>参照した作品</h3>
-<ul>
-  <li>Zbigniew Rybczyński 《The Fourth Dimension》（1988）— <a href="https://zbigvision.com/">zbigvision.com</a></li>
-  <li>Steina Vasulka + Tom Demeyer 《Image/ine》（1997）、および《Warp》（2000）、《Bent Scans》（2002）</li>
-  <li>Martin Reinhart, Virgil Widrich 《Tx-transform》（1998）— <a href="https://www.tx-transform.com/">tx-transform.com</a></li>
-  <li>Christian Kessler 《Transverser》（1998）— <a href="https://www.ntticc.or.jp/ja/archive/works/transverser/">NTT インターコミュニケーション・センター</a></li>
-  <li>Camille Utterback 《Liquid Time》（2000）— <a href="http://camilleutterback.com/projects/liquid-time-series/">camilleutterback.com</a></li>
-  <li>Alvaro Cassinelli 《Khronos Projector》（2004）— <a href="https://www.alvarocassinelli.com/works/Khronos/Khronos_Projector.html">alvarocassinelli.com</a></li>
-  <li>Teis Draiby 《Time Fold》（2012）— <a href="https://vimeo.com/36763488">Vimeo</a></li>
-  <li>北千住デザイン 《Structure of Slit-scan》（2021）— <a href="https://kitasenjudesign.com/slitscan/structure/">kitasenjudesign.com</a></li>
-</ul>
-
-<h2 id="workshop">13. ワークショップのご依頼</h2>
-<p>このアプリを使ったワークショップを各地で行っています。ご相談は <a href="mailto:ryu.furusawa@gmail.com">ryu.furusawa@gmail.com</a> へ（サポートと同じ窓口です）。</p>
-<ul>
-  <li><strong>時間</strong> — 1 時間から。ご都合に合わせて組み替えます。1 時間以上とれる場合は、撮影から一緒に行う形にできます。ご希望の時間をお知らせいただければ、こちらで内容を設計します。</li>
-  <li><strong>ご用意いただくもの</strong> — 参加者の iPhone または iPad（プログラミングの経験は必要ありません）。iPhone・iPad を固定する三脚があるとなお良いです。</li>
-</ul>
-
 <hr class="lang">
 
 <h1 id="en" lang="en">How time processing works</h1>
@@ -413,64 +355,6 @@
   <figure><img src="shots/v15/en/params_info.png" alt="The Duration explanation opened with its i button" loading="lazy"><figcaption>The i for Duration explains the length rule for the current mode</figcaption></figure>
   <figure><img src="shots/v15/en/sound_info.png" alt="The Sound panel with the method explanation open" loading="lazy"><figcaption>The i for the sound method</figcaption></figure>
 </div>
-
-<h2 id="background-en">10. Background</h2>
-<p>This app grew out of a tool its author, Ryu Furusawa, built for his own video work.</p>
-<ul>
-  <li><a href="https://ryufurusawa.com/midtide3">Mid Tide #3</a></li>
-  <li><a href="https://ryufurusawa.com/passing">Passing</a></li>
-</ul>
-<p>Think of a video as a single block extending in three directions &mdash; width (x), height (y) and time (t) &mdash; and cut through it at any angle you like. For years that was something I did by writing programs. At some point I noticed that the instruction itself &mdash; where to cut &mdash; only ever needs two directions, x and y. In other words, the instruction has exactly the same shape as an image.</p>
-<p>So why write the instruction as code at all? Draw it as a picture instead. If it can be handled the way you draw, it might lead somewhere writing code never would. And if a picture is all it takes, far more people could enjoy this way of working with time. Those hopes happened to coincide with an invitation from a festival, and the idea took shape as a workshop.</p>
-<p>On 8&ndash;9 November 2025 I ran the workshop &ldquo;Shape of Time&rdquo; at the Nova art festival in Bucharest, Romania (venue: CINETIC). Back then it used a desktop tool written in Python: the maps participants drew were loaded and turned into video on the spot.</p>
-<p>As the workshops continued with support from the &ldquo;I LOVE YOU&rdquo; Project 2026 at Tokyo University of the Arts, it became clear that everything had to fit on the device in each participant&rsquo;s own hand. Time Flow Sketch is the result of that rebuild. It cannot match the desktop version in resolution or clip length; that was traded away deliberately, in favour of being able to shoot something and try it immediately.</p>
-<ul>
-  <li><a href="https://vimeo.com/1129421003">Workshop documentation (Vimeo)</a></li>
-  <li><a href="https://artdx.geidai.ac.jp/research/furusawa_2026">Tokyo University of the Arts, Art DX &mdash; &ldquo;I LOVE YOU&rdquo; Project 2026</a></li>
-</ul>
-
-<h2>11. A short history of the technique</h2>
-<p>Treating time as an image is an idea that has been handed down for about a century, taking a new form with each medium: film, analogue video, digital. This app is part of that line.</p>
-
-<h3>Film</h3>
-<p>Put a narrow slit in front of the camera and expose the film while moving it, and you get a single photograph whose horizontal axis is time (slit-scan photography). In cinema the same thing became possible as moving images by adding computer-controlled processing while re-printing exposed film on an optical printer. Zbigniew Rybczyński&rsquo;s <em>The Fourth Dimension</em> (1988) divides the picture into 480 scan lines and rebuilds it with each line taken from a different moment, so a figure&rsquo;s head has already turned while the feet are still where they were.</p>
-<p>Specifying what to print, and from when, with a single picture also dates from this era. Eugene Mamut at R/Greenberg Associates generated large numbers of matte images by computer, transferred them to high-contrast film and composited them in stages &mdash; a method he established as the &ldquo;Elastic Effect&rdquo; and used in television commercials in the early 1980s.</p>
-
-<h3>Analogue video</h3>
-<p>In video, frames are not physical objects in a row; the image flows as a signal. That made it possible, early on, to work on time itself &mdash; holding frames in a buffer, feeding the output back in, replacing single scan lines. Steina Vasulka&rsquo;s works, and <em>Image/ine</em> (1997), the software Tom Demeyer built for them, are one high point of that period. Feeding in a greyscale image as a map to deform video in real time was already being done there.</p>
-
-<h3>Digital</h3>
-<p>From the 1990s, once video could be manipulated freely on a computer as a field of pixels, the technique spread quickly: <em>Tx-transform</em> (1998, Martin Reinhart / Virgil Widrich), which swaps the time and space axes; <em>Transverser</em> (1998, Christian Kessler), where the cut moves with the viewer; <em>Liquid Time</em> (2000, Camille Utterback); <em>Khronos Projector</em> (2004, Alvaro Cassinelli).</p>
-<p>Then, in 2003, After Effects 6.0 added Time Displacement, which uses the brightness of a greyscale image to say which moment each pixel should be taken from. Drawing the instruction as a picture had become a feature of ordinary video software. The maps in Time Flow Sketch sit right next to that lineage. What is different is that you draw the picture with a finger and correct it while watching the result.</p>
-
-<h2>12. References</h2>
-<ul>
-  <li>Golan Levin, <a href="https://www.flong.com/archive/texts/lists/slit_scan/">An Informal Catalogue of Slit-Scan Video Artworks and Research</a></li>
-  <li>Tania Ruiz Guti&eacute;rrez, <a href="https://theses.fr/2004PA010705">&Eacute;tudes sur le temps et l&rsquo;espace dans l&rsquo;image en mouvement</a> (doctoral thesis, Universit&eacute; Paris 1, 2004)</li>
-  <li>Susanne Jaschko, &ldquo;Space-Time Correlations Focused in Film Objects and Interactive Video&rdquo;, in <em>Future Cinema: The Cinematic Imaginary after Film</em>, MIT Press, 2003</li>
-  <li>Andrew Davidhazy, <a href="https://people.rit.edu/andpph/text-slit-scan.html">Slit-Scan Photography</a></li>
-  <li>Tom Demeyer, <a href="https://image-ine.org/downloads/ImOs9Manual.pdf">Image/ine Manual</a> (PDF)</li>
-  <li>Adobe After Effects 6.0 User Guide &mdash; Time Displacement</li>
-</ul>
-
-<h3>Works referred to</h3>
-<ul>
-  <li>Zbigniew Rybczyński, <em>The Fourth Dimension</em> (1988) &mdash; <a href="https://zbigvision.com/">zbigvision.com</a></li>
-  <li>Steina Vasulka + Tom Demeyer, <em>Image/ine</em> (1997), and <em>Warp</em> (2000), <em>Bent Scans</em> (2002)</li>
-  <li>Martin Reinhart, Virgil Widrich, <em>Tx-transform</em> (1998) &mdash; <a href="https://www.tx-transform.com/">tx-transform.com</a></li>
-  <li>Christian Kessler, <em>Transverser</em> (1998) &mdash; <a href="https://www.ntticc.or.jp/en/archive/works/transverser/">NTT InterCommunication Center</a></li>
-  <li>Camille Utterback, <em>Liquid Time</em> (2000) &mdash; <a href="http://camilleutterback.com/projects/liquid-time-series/">camilleutterback.com</a></li>
-  <li>Alvaro Cassinelli, <em>Khronos Projector</em> (2004) &mdash; <a href="https://www.alvarocassinelli.com/works/Khronos/Khronos_Projector.html">alvarocassinelli.com</a></li>
-  <li>Teis Draiby, <em>Time Fold</em> (2012) &mdash; <a href="https://vimeo.com/36763488">Vimeo</a></li>
-  <li>Kitasenju Design, <em>Structure of Slit-scan</em> (2021) &mdash; <a href="https://kitasenjudesign.com/slitscan/structure/">kitasenjudesign.com</a></li>
-</ul>
-
-<h2 id="workshop-en">13. Workshop enquiries</h2>
-<p>Workshops using this app are held in various places. Please get in touch at <a href="mailto:ryu.furusawa@gmail.com">ryu.furusawa@gmail.com</a> (the same address as support).</p>
-<ul>
-  <li><strong>Length</strong> &mdash; from one hour, adapted to the time available. With more than an hour, shooting can be part of the session. Tell me how long you have and I will design the content around it.</li>
-  <li><strong>What you need</strong> &mdash; an iPhone or iPad for each participant (no programming experience required). A tripod to hold the iPhone or iPad is a plus.</li>
-</ul>
 </div>
 
 <footer>
