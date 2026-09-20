@@ -48,6 +48,8 @@
     出力の全画面で<strong>「立体グラフ」</strong>か<strong>「時間グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にグラフが出ます（オンにできるのはどちらか一方）。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
+    横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
+    レートはレートマップ基準で編集しているとき、空間は空間マップを編集したときに現れます。
     立体グラフは、トップ画面のマップを横にスワイプしても見られます（空間マップを編集していれば、その前に空間マップのページが入ります）。
     空間マップを使っているときは、面の左右（横スリットでは上下）の位置も、映している素材の位置へ動きます。
     一色のように 1 本の列だけを映すマップでは面が 1 本の線につぶれ、その線が時間の方向に切る板（その列のスリットスキャンの絵）が半透明で添えられます。
@@ -139,6 +141,11 @@
 <p>
 画面下の<strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
 長さは編集画面の歯車にある「再生時間」で調整でき、解像度は「映像の読み込み」で選んだ解像度になります。
+</p>
+
+<p>
+App Store に新しいバージョンが出ていると、起動したときに一度だけお知らせします。
+<strong>「使い方」</strong>の画面にはバージョンが表示され、更新があるときはその右のボタンからそのまま App Store を開けます。
 </p>
 
 <h2>適用モード</h2>
@@ -407,7 +414,9 @@ the back of the box towards the front, then the surface fades in.
 </p>
 <p>
 The <strong>Time graph</strong> is the flat version over one loop. The horizontal axis is one output loop and the
-vertical axis is time in the clip, in seconds. Each line is one part of the picture, coloured from green at the left
+vertical axis is time in the clip, in seconds. Swipe it sideways for two more pages: <strong>Rate</strong> (playback
+speed) and <strong>Space</strong> (where in the clip each strip is sampled from). Rate appears while you are working
+with the rate map, Space once you have edited a space map. Each line is one part of the picture, coloured from green at the left
 of the picture to red at the right (top to bottom under a horizontal slit; under Surface the hue gives the left&ndash;right
 position and the brightness the top&ndash;bottom position). A small legend at the top right shows the parts in the same
 colours. The orange band is the range in use, the

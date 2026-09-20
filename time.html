@@ -15,7 +15,7 @@
 <header>
   <img class="icon" src="icon.png" alt="">
   <h1 id="top">動画の時間処理の仕組み</h1>
-  <p class="lede">Time Flow Sketch 1.8 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
+  <p class="lede">Time Flow Sketch 1.9 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
 </header>
 
 <nav><a href="index.html">サポートページへ戻る</a><a href="#en">English</a></nav>
@@ -104,10 +104,11 @@
 <h3>時間グラフ: 3 章の図の 2D 版</h3>
 <p>出力の全画面の<strong>「時間グラフ」</strong>は、3 章の図と同じ読み方の図を、いまのマップ・モード・パラメータで描きます（立体グラフとはどちらか一方だけオンにできます）。</p>
 <ul>
-  <li>横軸は出力の 1 周（秒数は軸名に出ます）、縦軸は素材の時刻（秒、素材全体）です。</li>
+  <li>横軸は出力の 1 周、縦軸は素材の時刻です。どちらも秒の目盛りが付き、いちばん大きい目盛りに単位（s）が添えられます。</li>
   <li>線は画面の区画ごとに 1 本です。区画はサウンドのボイスと同じで、縦スリットは左右に並ぶ帯（ボイス分割数、既定 7）、横スリットは上下に並ぶ帯、サーフェスはボイス数の格子（格子が細かいときは一部を間引きます）。値は区画の中のマップの平均から計算します。</li>
   <li>線の色は画面の左（緑）から右（赤）へ変わります。横スリットでは上（緑）から下（赤）へ。サーフェスでは左右の位置が色（左＝緑 → 右＝赤）、上下の位置が明るさ（上＝明るい → 下＝暗い）です。右上の小さな図が区画の並びを線と同じ色で示し、ぴったり重なる線は、それぞれの色を交互にした破線で描きます。</li>
-  <li>橙の帯が使用範囲、青の帯が読み込み範囲、赤い縦線がいまの再生位置です。回り込みの飛びは線をつなぎません。</li>
+  <li>薄い帯が使用範囲（素材全体と同じときは出ません）、赤い縦線がいまの再生位置です。回り込みの飛びは線をつなぎません。</li>
+  <li>横にスワイプするか、左右の矢印を押すと、<strong>レート</strong>（縦＝再生の速さ。1 が等速、0 は停止、マイナスは逆再生）と<strong>空間</strong>（縦＝その帯が素材のどの列を映すか。px 表示）のページに切り替わります。並びは 時間 → レート → 空間で、既定は時間だけ。レートはレートマップ基準のとき、空間は空間マップを編集したときに加わります（imgtrans の 2dplot が既定で描く Space / Time / Rate と同じ 3 つです）。</li>
   <li>赤い縦線のところで線の高さを縦に読むと、立体グラフの面がいま箱のどの奥行きにあるかと対応します。既定の「上→下」では全部の線が 1 本の斜めの線に重なり（3 章の図 (a) の既定グラデ）、「左→右」では高さの違う水平な線が並びます。</li>
 </ul>
 
@@ -187,7 +188,7 @@
 
 <h1 id="en" lang="en">How time processing works</h1>
 <div lang="en">
-<p class="lede">Which moment of your video Time Flow Sketch 1.8 shows at each instant of the output</p>
+<p class="lede">Which moment of your video Time Flow Sketch 1.9 shows at each instant of the output</p>
 
 <nav><a href="index.html#en">Back to the support page</a><a href="#top">日本語</a></nav>
 
@@ -275,10 +276,11 @@
 <h3>The time graph: section 3&rsquo;s figure, live</h3>
 <p><strong>Time graph</strong> in the full-screen Output view draws the same kind of figure as section 3 for your current map, mode and parameters. Only one of Time graph and 3D plot can be on at a time.</p>
 <ul>
-  <li>The horizontal axis is one output loop (its length in seconds is in the axis label); the vertical axis is time in the whole clip, in seconds.</li>
+  <li>The horizontal axis is one output loop and the vertical axis is time in the clip. Both carry second marks, with the unit (s) on the largest one.</li>
   <li>There is one line per part of the picture. The parts are the same as the sound&rsquo;s voices: strips from left to right under a vertical slit (Voice divisions, 7 by default), strips from top to bottom under a horizontal slit, and the voice grid under Surface (thinned out when the grid is fine). Each line uses the average of the map over its part.</li>
   <li>Line colour runs from green at the left of the picture to red at the right; under a horizontal slit, from green at the top to red at the bottom. Under Surface, the hue gives the left&ndash;right position (left green &rarr; right red) and the brightness the top&ndash;bottom position (top bright &rarr; bottom dark). A small legend at the top right shows the parts in the same colours, and lines that lie exactly on top of each other are drawn as dashes alternating their colours.</li>
-  <li>The orange band is the use range, the blue band the loaded range, and the red vertical line the current playback position. Where a line wraps from end to start, the jump is not drawn.</li>
+  <li>The faint band is the use range (it is not drawn when the range is the whole clip), and the red vertical line is the current playback position. Where a line wraps from end to start, the jump is not drawn.</li>
+  <li>Swipe sideways, or tap the arrows at the edges, for two more pages: <strong>Rate</strong> (vertical is playback speed &mdash; 1 is normal, 0 frozen, negative reverse) and <strong>Space</strong> (vertical is which column of the clip that strip shows, in pixels). The order is Time &rarr; Rate &rarr; Space; only Time is there by default, Rate joins while you work with the rate map, and Space once you have edited a space map &mdash; the same three that imgtrans&rsquo; 2dplot draws by default.</li>
   <li>Reading the heights of the lines at the red line tells you where in the box the 3D plot&rsquo;s surface sits at that moment. With the default Top &rarr; bottom, all the lines lie on top of one another along a single diagonal (the default gradient in section 3&rsquo;s figure (a)); with Left &rarr; right, they are flat lines at different heights.</li>
 </ul>
 
