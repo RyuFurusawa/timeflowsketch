@@ -29,9 +29,9 @@
 
 <h2>写真ライブラリへのアクセス</h2>
 <p>
-書き出した映像を保存するときにのみ、写真ライブラリへの追加を求めます。
-既存の写真や動画を読み取る権限は要求しません。
-動画の選択には iOS 標準の写真選択画面を使用しており、利用者が選んだ1本のみがアプリへ渡されます。
+書き出した映像を保存するときに、写真ライブラリへの追加を求めます。
+動画の選択には iOS 標準の写真選択画面を使用しており、利用者が選んだ1本のみがアプリへ渡されます。通常の動画はこれだけで読み込め、既存の写真や動画を読み取る権限は求めません。
+スローモーション（ハイスピード撮影）の動画を選んだときに限り、写真ライブラリの読み取り許可を求めます。写真選択画面が渡すファイルにはスロー再生が焼き込まれており、撮影時のフレームレートに戻せないため、選んだその1本のオリジナル（調整前の動画）を取り出すために使用します。他の写真や動画を読み取ることはなく、いかなるデータも端末外へ送信しません。
 </p>
 
 <h2>ネットワーク通信</h2>
@@ -78,9 +78,13 @@ third party. It includes no analytics, advertising, or tracking.
 
 <h2>Photo Library Access</h2>
 <p>
-The app requests permission to add to your photo library only when saving an exported video.
-It does not request permission to read existing photos or videos. Video selection uses the
-standard iOS photo picker, which passes only the single item you choose to the app.
+The app requests permission to add to your photo library when saving an exported video.
+Video selection uses the standard iOS photo picker, which passes only the single item you choose
+to the app; ordinary videos load this way alone, with no permission to read existing photos or videos.
+Only when you choose a slow-motion (high-speed) video does the app ask for read access to the
+photo library. The file the picker hands over has the slow-down baked in and cannot be restored to
+the frame rate it was shot at, so the permission is used solely to fetch the unadjusted original of
+that one video. No other photos or videos are read, and nothing is sent off the device.
 </p>
 
 <h2>Network Communication</h2>

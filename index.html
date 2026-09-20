@@ -29,16 +29,27 @@
 順再生と逆再生が同時に立ち上がる、ねじれた時間も描けます。一様に流れる映像の時間を、ばらばらに解きほぐして組み立て直してみよう。
 変化する水面の反射、流れる雲、身近な物や生物の動き。見慣れた現実の風景の中に、面白い発見があるかもしれません。
 </p>
+<h3>マップをつくる</h3>
 <ul>
   <li><strong>描画</strong> — 指でなぞって時間の流れを描く。5段階の濃淡、にじみ筆、指先ツール</li>
-  <li><strong>サーフェス</strong> — 画素ごとに時間をずらす。凹凸がそのまま時間のゆがみになる</li>
-  <li><strong>スリットスキャン</strong> — 縦・横の帯ごとに違う時刻を割り当てる</li>
-  <li><strong>レート</strong> — 明るさを再生速度として扱う。逆再生から早送りまで</li>
-  <li><strong>切り分け</strong> — マップを線で2つに分けてずらし、時間の断層をつくる</li>
-  <li><strong>空間マップ</strong> — どの位置から映像を取るかを描く（スリットスキャンの拡張）</li>
-  <li><strong>モーション解析</strong> — 映像自身の動きから自動で時間の形をつくる</li>
   <li><strong>グラデーション生成・プリセット</strong> — 規則的なパターンから始める</li>
-  <li><strong>立体グラフ・時間グラフ</strong> — 描いた時間の形を、立体や折れ線で確かめる</li>
+  <li><strong>モーション解析</strong> — 映像自身の動きから自動で時間の形をつくる</li>
+  <li><strong>切り分け</strong> — マップを線で2つに分けてずらし、時間のずれをつくる</li>
+</ul>
+<h3>描いた時間の効かせ方</h3>
+<ul>
+  <li><strong>適用モード</strong> — 縦・横の帯ごとに効かせる「縦/横スリット」と、画素ごとに効かせる「サーフェス」</li>
+  <li><strong>時間マップ</strong> — 明るさが「映像のどの瞬間か」を決める。黒＝最初のほう、白＝最後のほう</li>
+  <li><strong>レートマップ</strong> — 明るさが「再生の速さ」を決める。逆再生から早送りまで</li>
+  <li><strong>空間マップ</strong> — 明るさが「画面のどの位置から絵を取ってくるか」を決める</li>
+</ul>
+<h3>確かめる</h3>
+<ul>
+  <li><strong>立体グラフ</strong> — 描いた時間の形を立体で見る</li>
+  <li><strong>時間グラフ</strong> — 時間・レート・空間の変化を折れ線で見る</li>
+</ul>
+<h3>音と書き出し</h3>
+<ul>
   <li><strong>音声</strong> — 映像と同じ時間操作を受けた音が鳴る</li>
   <li><strong>書き出し</strong> — 結果を動画として写真ライブラリへ保存</li>
 </ul>
@@ -300,17 +311,28 @@ of time in a video, pull it apart, and put it back together. Reflections shiftin
 the movement of familiar things and creatures: there may be something new waiting in the everyday scenery you
 thought you knew.
 </p>
+<h3>Making a map</h3>
 <ul>
-  <li><strong>Draw</strong> &mdash; trace with a finger to draw the flow of time. Five brush tones, a bleeding brush, and a smudge tool</li>
-  <li><strong>Surface</strong> &mdash; shift time pixel by pixel; the shape you draw becomes the warp of time</li>
-  <li><strong>Slit scan</strong> &mdash; give each vertical or horizontal strip its own moment</li>
-  <li><strong>Rate</strong> &mdash; read brightness as playback speed, from reverse to fast forward</li>
-  <li><strong>Cut &amp; slide</strong> &mdash; split the map along a line and slide the pieces to make a fault line in time</li>
-  <li><strong>Space map</strong> &mdash; draw where in the frame the picture is taken from (slit scan, extended)</li>
-  <li><strong>From motion</strong> &mdash; build the shape of time automatically from the movement in the clip</li>
+  <li><strong>Draw</strong> &mdash; trace with a finger to draw the flow of time. Five brush tones, a bleed brush, and a smudge tool</li>
   <li><strong>Gradients and presets</strong> &mdash; start from a regular pattern</li>
-  <li><strong>3D plot and time graph</strong> &mdash; check the shape of time you drew, as a solid or as lines</li>
-  <li><strong>Sound</strong> &mdash; the audio goes through the same time manipulation as the picture</li>
+  <li><strong>From motion</strong> &mdash; build the shape of time automatically from the movement in the clip</li>
+  <li><strong>Cut &amp; slide</strong> &mdash; split the map along a line and slide the pieces to make time slip</li>
+</ul>
+<h3>How the map is applied</h3>
+<ul>
+  <li><strong>Apply mode</strong> &mdash; Vertical / Horizontal slit works band by band, Surface works pixel by pixel</li>
+  <li><strong>Time map</strong> &mdash; brightness sets which moment of the clip is shown; black is the start, white is the end</li>
+  <li><strong>Rate map</strong> &mdash; brightness sets the playback speed, from reverse to fast forward</li>
+  <li><strong>Space map</strong> &mdash; brightness sets where on screen the picture is taken from</li>
+</ul>
+<h3>Checking what you made</h3>
+<ul>
+  <li><strong>3D plot</strong> &mdash; see the shape of time as a solid</li>
+  <li><strong>Time graph</strong> &mdash; see time, rate and space as line charts</li>
+</ul>
+<h3>Sound and export</h3>
+<ul>
+  <li><strong>Sound</strong> &mdash; the audio goes through the same time processing as the picture</li>
   <li><strong>Export</strong> &mdash; save the result to your photo library as a video</li>
 </ul>
 <p>
