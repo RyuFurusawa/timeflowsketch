@@ -35,7 +35,11 @@
 </p>
 
 <h2>ネットワーク通信</h2>
-<p>本アプリはネットワーク通信を行いません。</p>
+<p>
+本アプリは、App Store に新しいバージョンがあるかを確かめるときだけ、Apple の公開 API（iTunes Lookup API）へ問い合わせます。
+送信するのはアプリの識別子（バンドル ID）と端末の地域設定だけで、1 日 1 回までです。
+読み込んだ動画・作成したマップ・書き出した作品・個人情報を送信することはありません。ほかにネットワーク通信は行いません。
+</p>
 
 <h2>第三者への提供</h2>
 <p>収集する情報がないため、第三者へ提供する情報もありません。</p>
@@ -80,7 +84,12 @@ standard iOS photo picker, which passes only the single item you choose to the a
 </p>
 
 <h2>Network Communication</h2>
-<p>The app does not communicate over the network.</p>
+<p>
+The app contacts Apple&rsquo;s public iTunes Lookup API only to check whether a newer version is available on
+the App Store. That request carries just the app&rsquo;s bundle identifier and the device&rsquo;s region
+setting, and is made at most once a day. Videos you load, maps you draw, exported results and personal data
+are never transmitted. The app makes no other network connections.
+</p>
 
 <h2>Sharing with Third Parties</h2>
 <p>As no information is collected, none is shared.</p>

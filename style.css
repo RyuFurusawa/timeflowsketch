@@ -48,3 +48,8 @@ figcaption { color:var(--muted); font-size:.85rem; margin-top:10px; }
 .gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:18px; margin:20px 0 32px; align-items:start; }
 .gallery figure { margin:0; }
 .gallery figure img { max-width:100%; }
+
+/* App Store バッジ */
+.store { margin: 18px 0 4px; }
+.store img { height: 48px; width: auto; display: inline-block; }
+.store a { display: inline-block; }
