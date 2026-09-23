@@ -68,8 +68,8 @@
 <table>
   <tr><th>モード</th><th>明るさの意味</th><th>出力の各瞬間に映る素材の時刻</th><th>範囲の外</th></tr>
   <tr><td>スリット×時間</td><td>黒＝使用範囲の始め、白＝終わり</td><td><code>始め + g × 使用範囲の長さ</code>。既定のグラデーションは等速再生</td><td>出ない。1 周の継ぎ目で終わり→始めへ飛ぶ</td></tr>
-  <tr><td>スリット×レート</td><td>グレー＝等速、黒＝1−レート幅、白＝1+レート幅（幅が 1 を超えると黒は逆再生）</td><td>速さを上から（横スリットは左から）足し合わせた軌道。開始位置から進む</td><td>収まるよう全体をずらすか一律に縮める。回り込まない</td></tr>
-  <tr><td>サーフェス×レート</td><td>画素の速さ。黒＝黒レート（既定 0）、白＝白レート（既定 2）</td><td>同期点（既定は中間）で全画素が同期位置にそろい、そこから各自の速さで進む</td><td>使用範囲の中で回り込む</td></tr>
+  <tr><td>スリット×レート</td><td>グレー＝停止、黒＝−レート幅、白＝+レート幅（幅 1 なら黒＝逆再生、白＝順再生）</td><td>速さを上から（横スリットは左から）足し合わせた軌道。開始位置から進む</td><td>収まるよう全体をずらすか一律に縮める。回り込まない</td></tr>
+  <tr><td>サーフェス×レート</td><td>画素の速さ。黒＝黒レート（既定 −1）、白＝白レート（既定 +1）。中間のグレーは停止</td><td>同期点（既定は中間）で全画素が同期位置にそろい、そこから各自の速さで進む</td><td>使用範囲の中で回り込む</td></tr>
   <tr><td>サーフェス×時間</td><td>グレー＝そのまま、白／黒＝変位量の半分だけ先／前</td><td>等速で進む時刻から <code>(g − 0.5) × 変位量</code> 秒ずらす</td><td>使用範囲の中で回り込む</td></tr>
   <tr><td>空間マップ（共通）</td><td>どの列（横スリットは行）を映すか</td><td>時間は変えない</td><td>—</td></tr>
 </table>
@@ -169,9 +169,9 @@
 
 <h2>9. つまずきやすい点</h2>
 <ul>
-  <li>スリット×レートでは「グレー＝等速」にならないことがあります。使用範囲が「マップの時間軸の画素数 ÷ 30 × 再生時間」秒より短いと、全体が一律にスローになります。</li>
+  <li>スリット×レートでは「白＝順再生」にならないことがあります。使用範囲が「マップの時間軸の画素数 ÷ 30 × 再生時間」秒より短いと、全体が一律にスローになります。</li>
   <li>スリット×レートのずらし・縮小はマップ全体で 1 組です。1 列だけ極端なレートや逆再生を置くと、他の列の動きも変わります。</li>
-  <li>サーフェス×レートは、白い画素が 1 つあるだけで尺が半分になります。ほぼ真っ黒だと使用範囲の 10 倍まで伸びます。</li>
+  <li>サーフェス×レートの尺は、いちばん速い画素の |レート| で決まります。白（順再生）や黒（逆再生）を含めば使用範囲ぶんの長さ、グレー一色（停止）に近いと使用範囲の 10 倍まで伸びます。</li>
   <li>再生時間の効き方はモードで違います。時間マップはスローになります。サーフェス×レートは速さそのままで軌道が伸び、使用範囲の中で回り込みます。スリット×レートは軌道が使用範囲に収まるうちは速さそのまま、収まらなくなると全体が一律に縮むので、時間マップと同じようにスローになります。</li>
   <li>同期（始点／中間／終点）を切り替えると、同期位置はそれに合わせた値（0／0.5／1）になります。同期位置をずらすと、最速の画素が途中でジャンプすることがあります。</li>
   <li>開始位置（スリット×レート）と同期位置（サーフェス×レート）は、使用範囲の中での 0〜1 です。</li>
@@ -240,8 +240,8 @@
 <table>
   <tr><th>Mode</th><th>What brightness means</th><th>Clip time shown at each output instant</th><th>Outside the range</th></tr>
   <tr><td>Slit &times; time map</td><td>Black = start of the use range, white = end</td><td><code>start + g &times; use-range length</code>. The default gradient plays at normal speed.</td><td>Never leaves it; jumps from end to start at the loop seam</td></tr>
-  <tr><td>Slit &times; rate map</td><td>Grey = normal speed, black = 1 &minus; Rate range, white = 1 + Rate range (above 1, black plays in reverse)</td><td>A path made by summing speeds from the top (from the left for a horizontal slit), starting at Start point</td><td>Shifted or scaled down evenly to fit; no wrapping</td></tr>
-  <tr><td>Surface &times; rate map</td><td>That pixel&rsquo;s speed: black = Black rate (default 0), white = White rate (default 2)</td><td>Every pixel meets at Anchor at at the anchor moment (Middle by default), then runs at its own speed</td><td>Wraps within the use range</td></tr>
+  <tr><td>Slit &times; rate map</td><td>Grey = frozen, black = &minus;Rate range, white = +Rate range (at a range of 1, black plays in reverse and white forward)</td><td>A path made by summing speeds from the top (from the left for a horizontal slit), starting at Start point</td><td>Shifted or scaled down evenly to fit; no wrapping</td></tr>
+  <tr><td>Surface &times; rate map</td><td>That pixel&rsquo;s speed: black = Black rate (default &minus;1), white = White rate (default +1); mid grey is frozen</td><td>Every pixel meets at Anchor at at the anchor moment (Middle by default), then runs at its own speed</td><td>Wraps within the use range</td></tr>
   <tr><td>Surface &times; time map</td><td>Grey = unchanged, white/black = half of Shift ahead/behind</td><td>Normal-speed time offset by <code>(g &minus; 0.5) &times; Shift</code> seconds</td><td>Wraps within the use range</td></tr>
   <tr><td>Space map (any mode)</td><td>Which column (row for a horizontal slit) to show</td><td>Does not change time</td><td>&mdash;</td></tr>
 </table>
@@ -341,9 +341,9 @@
 
 <h2>9. Common surprises</h2>
 <ul>
-  <li>On a slit &times; rate map, grey is not always normal speed. If the use range is shorter than (time-axis pixels &divide; 30 &times; Duration) seconds, everything slows down evenly.</li>
+  <li>On a slit &times; rate map, white is not always normal speed. If the use range is shorter than (time-axis pixels &divide; 30 &times; Duration) seconds, everything slows down evenly.</li>
   <li>The shift or scale applied on a slit &times; rate map is one setting for the whole map. One column with an extreme rate or reverse playback changes how every other column moves.</li>
-  <li>On a surface &times; rate map, a single white pixel halves the length. A map that is almost all black can stretch it to 10&times; the use range.</li>
+  <li>On a surface &times; rate map the length follows the largest |rate| in the map. With white (forward) or black (reverse) in it the loop is about as long as the use range; close to solid grey (frozen) it stretches to 10&times; the use range.</li>
   <li>Duration works differently per mode. Time maps slow down. Surface &times; rate keeps the speeds and lengthens the paths, which wrap within the use range. Slit &times; rate keeps the speeds while the path fits the use range; once it no longer fits, everything is scaled down evenly and slows, like a time map.</li>
   <li>Switching Anchor (Start / Middle / End) sets Anchor at to match (0 / 0.5 / 1). Moving Anchor at can make the fastest pixels jump mid-loop.</li>
   <li>Start point (slit &times; rate) and Anchor at (surface &times; rate) are 0&ndash;1 within the use range.</li>

@@ -119,7 +119,7 @@
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
     最初のマップは上が黒・下が白のグラデーションで、これが通常の再生です。マップの縦方向が出力の時間なので、描いたところは赤い線がそこを通るときに、その列が映す瞬間を変えます。
-    レートマップでは（既定の設定なら）黒が停止、グレーが通常の速さ、白が2倍速です。
+    レートマップでは（既定の設定なら）グレーが停止、黒が逆再生、白が順再生です。描かないところは止まったままで、描いた明るさのぶんだけ前後に進みます。
     いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
     <p>
@@ -354,8 +354,8 @@ the map &mdash; which you make with <strong>Draw</strong>, <strong>Gradient</str
 <strong>Presets</strong>, <strong>From motion</strong> or <strong>Cut &amp; slide</strong>. Its brightness is
 read as a number, and what the number means depends on which kind of map you are editing. In a
 <strong>Time map</strong>, brightness is a moment in the clip: black is near the start, white near the end. In a
-<strong>Rate map</strong>, brightness is a playback speed: with the default settings, black is frozen, mid grey
-is normal playback, and white is double speed. In the optional <strong>Space map</strong>, brightness is a
+<strong>Rate map</strong>, brightness is a playback speed: with the default settings, mid grey is frozen,
+black plays in reverse and white plays forward. In the optional <strong>Space map</strong>, brightness is a
 position &mdash; which part of the frame to take the image from. Maps are handled as 16-bit grayscale, so a
 smooth tonal gradient really does become a smooth change in time rather than a staircase of visible steps.
 </p>
@@ -623,8 +623,8 @@ that case Start point has no effect).
 </p>
 <p>
 In Surface mode every pixel becomes an independent clock. <strong>Black rate</strong> and
-<strong>White rate</strong> (&minus;4 to +4, default 0 and 2) are interpolated by brightness, so out of the box
-black is frozen, mid grey plays at normal speed and white at double speed &mdash; the same reading as a slit
+<strong>White rate</strong> (&minus;4 to +4, default &minus;1 and +1) are interpolated by brightness, so out of
+the box black plays in reverse, mid grey is frozen and white plays forward &mdash; the same reading as a slit
 rate map at a Rate range of 1.0. Negative values run backwards. <strong>Anchor</strong> &mdash; Start, Middle,
 or End, Middle by default &mdash; is the instant in the output at which every pixel agrees, and
 <strong>Anchor at</strong> picks which point of the range they agree on; switching Anchor sets Anchor at to match
@@ -852,9 +852,9 @@ earlier&rdquo;, Normal playback and &ldquo;1.5s later&rdquo; &mdash; while all f
 <p>
 On a <strong>rate map</strong> the labels are driven by <strong>Rate range</strong> in the
 <strong>Parameters</strong> panel (or by Black rate and White rate under Surface), which sets what black and
-white mean. With the range at 1.0, black is frozen and white is double speed, so <strong>All white</strong> reads
-&ldquo;2.0&times; fast&rdquo;; widen the range to 1.5 and black passes through zero into reverse, so
-<strong>All black</strong> now reads &ldquo;Slow reverse&rdquo;. The four ramps show both ends at once &mdash;
+white mean. With the range at 1.0, black plays in reverse and white plays forward, so <strong>All white</strong>
+reads &ldquo;Forward&rdquo; and <strong>All grey</strong> reads &ldquo;Frozen&rdquo;; widen the range to 1.5 and
+<strong>All black</strong> now reads &ldquo;1.5&times; reverse&rdquo;. The four ramps show both ends at once &mdash;
 joined by an arrow when the ramp runs along the time axis, or by a wave dash when it runs across the frame, since
 in that case the two speeds coexist in different parts of the picture rather than following one another.
 </p>
