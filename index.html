@@ -199,6 +199,20 @@ App Store に新しいバージョンが出ていると、起動したときに�
   <figure><img src="shots/v15/ja/sound_info.png" alt="サウンドパネル。音の方式の i を開き、グラニュラーとレート再生の違いが表示されている" loading="lazy"><figcaption>サウンドの i（グラニュラーとレート再生）</figcaption></figure>
 </div>
 
+<h2>ライブカメラ</h2>
+<p>
+カメラの映像を、撮りながら時間操作できます。<strong>「読み込み」→「ライブカメラ」</strong>か、起動直後の画面の「ライブカメラ」で始めます
+（カメラのある端末で、はじめにカメラの許可を求められます。映像は端末の外へ送られません）。
+</p>
+<ul>
+<li>直近の数秒（既定は 8 秒）を、端末の中にためつづけます。マップの明るさは「どれだけ前か」を表し、<strong>白＝いま、黒＝過去</strong>です。
+時間マップのサーフェスなら、描いた場所だけ過去の映像が映ります。立体グラフでは、いまが 0 で、過去へ向かってマイナスの秒数が並びます。</li>
+<li><strong>レートマップ</strong>は、速さが 0（停止）〜1（順再生）の範囲で使えます。黒く塗った場所は止まった絵が残り続け、グレーの場所は少しずつ遅れていきます。
+出力映像の右下の「リフレッシュ」で、全体をいまのフレームにそろえ直します。</li>
+<li>入力映像の上の表示で、フレームレート（30・60・120）と解像度を選べます。左下のボタンで、縦長・横長と、前面・背面カメラ（長押しでレンズ）を切り替えます。端末を横に倒すと、映像も横長になります。</li>
+<li>「<strong>止めて取り込む</strong>」で、いまためている映像が普通の素材になり、編集や書き出しができます（「ライブに戻る」でカメラへ戻れます）。ライブ中の書き出しは静止画です。</li>
+</ul>
+
 <h2 id="support">よくある質問</h2>
 
 <h3>動画の読み込みに時間がかかります</h3>
@@ -1209,6 +1223,24 @@ on the desktop.
 <p>
 Sustained exporting warms the device and drains the battery. For a long piece, plug in first.
 </p>
+
+<h2 id="live-en">Live camera</h2>
+<p>
+Time-shape the camera image as you film. Start from <strong>Load → Live camera</strong>, or from “Live camera” on the first
+screen. On a device with a camera, the app asks for camera access the first time; the video never leaves the device.
+</p>
+<ul>
+<li>The last few seconds (8 by default) are kept on the device. Brightness on the map means “how long ago”:
+<strong>white = now, black = the past</strong>. With Surface and a time map, only the places you paint show the past.
+In the 3D plot, now is 0 and the seconds run negative toward the past.</li>
+<li>The <strong>rate map</strong> works with speeds from 0 (stopped) to 1 (normal playback). Places painted black keep a frozen
+picture, and gray places fall behind little by little. <strong>Refresh</strong>, at the bottom right of the output video,
+realigns everything to the current frame.</li>
+<li>From the labels on the input video, choose the frame rate (30, 60, 120) and the resolution. The buttons at the bottom left switch
+portrait / landscape and the front / back camera (press and hold to pick the lens). Turn the device sideways and the video becomes landscape too.</li>
+<li><strong>Stop &amp; capture</strong> turns what is being kept into an ordinary clip you can edit and export
+(<strong>Back to live</strong> returns to the camera). Exporting while live saves a still image.</li>
+</ul>
 
 <h2 id="settings-en">Settings</h2>
 <p>
