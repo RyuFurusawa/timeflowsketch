@@ -75,10 +75,17 @@
     <p>
     入力・出力それぞれの右下のボタンで<strong>全画面表示</strong>になります。
     入力の全画面には使用範囲のバーと読み込みの情報（元の映像と GPU 上の映像の大きさ・fps）が出て、情報をタップすると読み込みの設定を開けます。
-    出力の全画面には再生バーと出力の情報が出て、その場で書き出せます。
     </p>
     <p>
-    出力の全画面で<strong>「立体グラフ」</strong>か<strong>「時間グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にグラフが出ます（オンにできるのはどちらか一方）。
+    出力の全画面は<strong>モニタービュー</strong>です。開いた直後は絵だけで、画面に触れると下からメニューが出ます。
+    <strong>入力映像・マップ・出力映像・立体グラフ・時間グラフ</strong>を選ぶと、いくつでも並べて見比べられます。
+    押した順に上から並びます（横長の画面では左右に）。マップは、いま出力に効いているもの（時間マップかレートマップ）が出ます。
+    空間マップは編集したときだけ選べます。トップ画面の立体グラフの右下のボタンから開くと、立体グラフだけで始まります。
+    画面の大きな端末（iPhone Air・Plus・Pro Max・iPad）では、並べた画面の右下のボタンでその画面だけを全画面にできます。
+    モニタービューは見るための画面なので、書き出しはトップ画面の「書き出し」から行います。
+    </p>
+    <p>
+    モニタービューで<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>をオンにすると、出力の絵と並べてグラフを見られます。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
     横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
@@ -104,7 +111,7 @@
 
 <div class="gallery">
   <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面表示。下に読み込みの情報、使用範囲のバー、秒数が並ぶ" loading="lazy"><figcaption>入力の全画面。情報をタップすると読み込みの設定が開きます</figcaption></figure>
-  <figure><img src="shots/v15/ja/output_full.png" alt="出力映像の全画面表示。出力の大きさ・fps・秒数とモード、書き出しボタン、再生バー" loading="lazy"><figcaption>出力の全画面。その場で書き出せます</figcaption></figure>
+  <figure><img src="shots/v115/ja/monitor.png" alt="モニタービュー。上から出力映像、立体グラフ、時間マップが並び、下に選択肢のボタンと再生バー" loading="lazy"><figcaption>モニタービュー。出力映像・立体グラフ・時間マップを押した順に並べたところ</figcaption></figure>
   <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と秒数の目盛り" loading="lazy"><figcaption>立体グラフ。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
 </div>
 
@@ -465,30 +472,35 @@ its end. Painting straight away therefore changes which moment each column of th
 passes over your stroke.
 </p>
 
-<h3>Full-screen input and output</h3>
+<h3>Full-screen input and the Monitor view</h3>
 <p>
 The full-screen button on either video fills the display with that picture; tap the picture to hide or show the
 controls, and tap <strong>Back</strong> at the top right or swipe down to return. The <strong>Input</strong>
 view carries the same range bar as the main screen &mdash; handles, press-and-hold to slide, touch to scrub
 &mdash; with the seconds underneath, and a line describing what is loaded: the source&rsquo;s size and frame
 rate, the size and frame rate held on the GPU, whether frames were skipped, and the seconds loaded. Tap that line
-to open the <strong>Video Loading</strong> settings on their own and reload from there. The
-<strong>Output</strong> view has play/pause and a playback bar, a line giving the output&rsquo;s size, frame rate,
-length and current map and mode, and an <strong>Export</strong> button, so you can check a result at full size
-and write it out without leaving. Beside Export sit two toggles, <strong>3D plot</strong> and <strong>Time
-graph</strong>, described next.
+to open the <strong>Video Loading</strong> settings on their own and reload from there.
+</p>
+<p>
+The button on the <strong>Output</strong> opens the <strong>Monitor view</strong>. It opens with nothing but the
+picture; touch the screen and a menu slides up from the bottom. Pick <strong>Input</strong>, the map,
+<strong>Output</strong>, <strong>3D plot</strong> and <strong>Time graph</strong> in any combination and they are
+laid out together, in the order you picked them &mdash; from the top, or left to right on a wide screen. The map shown
+is the one driving the output (the time map or the rate map); the space map can be picked once you have edited it.
+Opened from the 3D plot on the main screen, it starts with the 3D plot alone. On larger screens (iPhone Air, Plus,
+Pro Max and iPad) a button at the bottom right of each pane shows that one alone. The Monitor view is for looking
+only: export from <strong>Export</strong> on the main screen.
 </p>
 <div class="gallery">
   <figure><img src="shots/v15/en/input_full.png" alt="Full-screen Input with the loading information line, the range bar and the seconds in use" loading="lazy"><figcaption>Full-screen Input: tap the information line to open Video Loading</figcaption></figure>
-  <figure><img src="shots/v15/en/output_full.png" alt="Full-screen Output with size, frame rate, length, mode, an Export button and a playback bar" loading="lazy"><figcaption>Full-screen Output, with Export</figcaption></figure>
+  <figure><img src="shots/v115/en/monitor.png" alt="The Monitor view: the output video, the 3D plot and the time map stacked from the top, with the pane buttons and a playback bar below" loading="lazy"><figcaption>The Monitor view: Output, 3D plot and Time map, in the order they were picked</figcaption></figure>
 </div>
 
 <h3 id="plots-en">The 3D plot and the time graph</h3>
 <p>
-The <strong>3D plot</strong> and <strong>Time graph</strong> toggles sit beside <strong>Export</strong> in the
-full-screen Output view, and they show how the current map spends the clip&rsquo;s time. Only one can be on at a
-time. While one is on, the screen splits: the output picture stays on top and the graph sits below it, so you can
-watch both at once.
+The <strong>3D plot</strong> and <strong>Time graph</strong> are two of the panes in the Monitor view, and they show
+how the current map spends the clip&rsquo;s time. Turn either or both on beside the output picture to watch them
+together.
 </p>
 <p>
 The <strong>3D plot</strong> draws the whole clip as a box &mdash; width &times; height &times; time &mdash; with the
@@ -504,8 +516,7 @@ button appears at the top right and fits the box&rsquo;s depth to the use range.
 the main screen by swiping the map sideways. With a space map in use, the surface also moves sideways (up and
 down under a horizontal slit) to the place in the clip it is showing; a map that shows a single column at a
 time collapses the surface into one line, and the plane that line cuts along time &mdash; that column&rsquo;s
-slit-scan picture &mdash; is drawn translucently beside it. Each time the plot opens, a short intro runs: frames at the second marks fade in and out from
-the back of the box towards the front, then the surface fades in.
+slit-scan picture &mdash; is drawn translucently beside it.
 </p>
 <p>
 The <strong>Time graph</strong> is the flat version over one loop. The horizontal axis is one output loop and the
@@ -1100,7 +1111,7 @@ set to silent. If your device is otherwise quiet, that is not the cause.</li>
 
 <h2 id="export-en">Exporting and quality</h2>
 <p>
-<strong>Export</strong>, on the bar at the bottom of the screen or in the full-screen Output view, renders exactly
+<strong>Export</strong>, on the bar at the bottom of the screen, renders exactly
 what the output view is showing and writes it as an <strong>H.264 .mp4</strong>, which is then saved to your photo
 library. The render is not a copy of the preview: the app walks the output from beginning to end one frame at a
 time and draws each frame at full quality, so it takes longer than the piece is long. Playback stops while it runs,
