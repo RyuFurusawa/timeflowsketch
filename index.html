@@ -124,6 +124,11 @@
     下半分のマップの上を指や Apple Pencil でなぞると、その明るさに応じて時間の流れが変わります。
     </p>
     <p>
+    ちょっとした描き足しなら、トップ画面のマップ画像をそのままなぞっても描けます（赤い線の近くを触ると、再生位置の移動になります）。
+    左下の筆のボタンで黒〜白の 5 段階と指先を選び、隣の<strong>プリセット</strong>のボタンでは、黒・グレー・白の一色や、上→下・下→上・左→右・右→左のグラデーションでマップ全体を塗り直せます。
+    描いたあとは右下に「ひとつ前に戻す」が出ます。
+    </p>
+    <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
     最初のマップは上が黒・下が白のグラデーションで、これが通常の再生です。マップの縦方向が出力の時間なので、描いたところは赤い線がそこを通るときに、その列が映す瞬間を変えます。
     レートマップでは（既定の設定なら）グレーが停止、黒が逆再生、白が順再生です。描かないところは止まったままで、描いた明るさのぶんだけ前後に進みます。
@@ -215,8 +220,11 @@ App Store に新しいバージョンが出ていると、起動したときに�
 <li>直近の数秒（既定は 8 秒）を、端末の中にためつづけます。マップの明るさは「どれだけ前か」を表し、<strong>白＝いま、黒＝過去</strong>です。
 時間マップのサーフェスなら、描いた場所だけ過去の映像が映ります。立体グラフでは、いまが 0 で、過去へ向かってマイナスの秒数が並びます。</li>
 <li><strong>レートマップ</strong>は、速さが 0（停止）〜1（順再生）の範囲で使えます。黒く塗った場所は止まった絵が残り続け、グレーの場所は少しずつ遅れていきます。
-出力映像の右下の「リフレッシュ」で、全体をいまのフレームにそろえ直します。</li>
-<li>入力映像の上の表示で、フレームレート（30・60・120）と解像度を選べます。左下のボタンで、縦長・横長と、前面・背面カメラ（長押しでレンズ）を切り替えます。端末を横に倒すと、映像も横長になります。</li>
+出力映像の右下の「リフレッシュ」で、全体をいまのフレームにそろえ直します。
+いちばん遅く動いている場所の遅れが、ためている長さに届くと、全体を自動でいまへそろえ直すので、グラデーションの傾きがそのまま時間の傾きになります。
+編集画面の歯車の<strong>「上限」</strong>を「頭打ち」にすると、届いた場所はその遅れのまま流れ続けます。</li>
+<li>入力映像の上の表示で、フレームレート（30・60・120）と解像度、<strong>ためる長さ</strong>（8・15・30・60 秒）を選べます。
+長くためるほどメモリを使うので、端末と解像度で持ちきれない長さは選べません。左下のボタンで、縦長・横長と、前面・背面カメラ（長押しでレンズ）を切り替えます。端末を横に倒すと、映像も横長になります。</li>
 <li>「<strong>止めて取り込む</strong>」で、いまためている映像が普通の素材になり、編集や書き出しができます（「ライブに戻る」でカメラへ戻れます）。ライブ中の書き出しは静止画です。</li>
 </ul>
 
@@ -435,8 +443,12 @@ makes the app usable for installation and live work as well as for producing fil
     </p>
     <p>
     The map tile is labelled with which map it is and carries a <strong>red playhead</strong> marking the row
-    or column being read at that instant. Drag anywhere on the map to scrub straight there; playback pauses
-    while your finger is down and resumes when you lift. The editor opens three ways: the pencil icon at the
+    or column being read at that instant. Drag along the playhead to scrub; playback pauses while your finger
+    is down and resumes when you lift. Anywhere else, your finger <strong>draws straight onto the map</strong>:
+    the brush button at the bottom left picks one of the five tones or the smudge, and the
+    <strong>Presets</strong> button beside it repaints the whole map in black, grey or white, or a gradient
+    running top &rarr; bottom, bottom &rarr; top, left &rarr; right or right &rarr; left. After you draw, an undo
+    button appears at the bottom right. The editor opens three ways: the pencil icon at the
     bottom right of the map, a tap on the Output video, or <strong>Edit</strong> on the bottom
     bar &mdash; which also holds <strong>Load</strong>, <strong>Export</strong>, <strong>Settings</strong> and
     <strong>Help</strong>, with Edit and Export dimmed until a video is loaded.
@@ -1246,8 +1258,13 @@ screen. On a device with a camera, the app asks for camera access the first time
 In the 3D plot, now is 0 and the seconds run negative toward the past.</li>
 <li>The <strong>rate map</strong> works with speeds from 0 (stopped) to 1 (normal playback). Places painted black keep a frozen
 picture, and gray places fall behind little by little. <strong>Refresh</strong>, at the bottom right of the output video,
-realigns everything to the current frame.</li>
-<li>From the labels on the input video, choose the frame rate (30, 60, 120) and the resolution. The buttons at the bottom left switch
+realigns everything to the current frame. When the slowest-moving place has fallen as far behind as the
+video being kept, everything realigns on its own, so the slope of your gradient stays the slope in time. Set
+<strong>Limit</strong> under the gear in the editor to <strong>Cap</strong> and those places keep running at that
+delay instead.</li>
+<li>From the labels on the input video, choose the frame rate (30, 60, 120), the resolution and how long to
+<strong>keep</strong> (8, 15, 30 or 60 seconds). Longer takes more memory, so lengths the device can&rsquo;t hold at
+that resolution can&rsquo;t be picked. The buttons at the bottom left switch
 portrait / landscape and the front / back camera (press and hold to pick the lens). Turn the device sideways and the video becomes landscape too.</li>
 <li><strong>Stop &amp; capture</strong> turns what is being kept into an ordinary clip you can edit and export
 (<strong>Back to live</strong> returns to the camera). Exporting while live saves a still image.</li>
@@ -1509,7 +1526,7 @@ up along the cut. When you are done with it, <strong>Reset to default</strong> i
 On the main screen the map carries a red playhead: horizontal and sliding down in Vertical slit, vertical and
 sliding across in Horizontal slit. It marks the row or column being read at that instant, and the same red mark
 sits on the bar under the output, so when something odd flashes past you can see which part of the map caused
-it. Drag anywhere on the map to scrub straight there; playback pauses while your finger is down and resumes when
+it. Drag along the red line to scrub straight there; playback pauses while your finger is down and resumes when
 you lift it. Surface shows no line, because there the whole map is in use at every instant.
 </p>
 
