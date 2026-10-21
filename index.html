@@ -226,6 +226,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 編集画面の歯車の<strong>「上限」</strong>を「頭打ち」にすると、届いた場所はその遅れのまま流れ続けます。</li>
 <li>入力映像の上の表示で、フレームレート（30・60・120）と解像度、<strong>ためる長さ</strong>（8・15・30・60 秒）を選べます。
 長くためるほどメモリを使うので、端末と解像度で持ちきれない長さは選べません。左下のボタンで、縦長・横長と、前面・背面カメラ（長押しでレンズ）を切り替えます。端末を横に倒すと、映像も横長になります。</li>
+<li>編集画面の<strong>モーションから生成</strong>は、ライブでは動くマップになります。カメラの 1 枚ごとに直前との差を溜め、動いた所ほど白くなるので、動いた場所の時間がその場で変わります（サーフェスの時間マップ・レートマップで使えます）。「履歴秒数」で残像の長さ、反転で動いた所に過去を残す使い方を選べます。白になる動きの量は、映像の動きに合わせてゆっくり自動で調整されます。「止めて取り込む」と、その瞬間のマップが残ります。</li>
 <li>「<strong>止めて取り込む</strong>」で、いまためている映像が普通の素材になり、編集や書き出しができます（「ライブに戻る」でカメラへ戻れます）。ライブ中の書き出しは静止画です。</li>
 </ul>
 
@@ -1269,6 +1270,11 @@ delay instead.</li>
 <strong>keep</strong> (8, 15, 30 or 60 seconds). Longer takes more memory, so lengths the device can&rsquo;t hold at
 that resolution can&rsquo;t be picked. The buttons at the bottom left switch
 portrait / landscape and the front / back camera (press and hold to pick the lens). Turn the device sideways and the video becomes landscape too.</li>
+<li>In the editor, <strong>From motion</strong> becomes a moving map while live. Each camera frame adds its difference from the
+previous one, so whatever moves turns white and the places that move change in time as you film (time map or rate map in
+Surface mode). <strong>Trail</strong> sets how long the traces last, and the invert button leaves the past behind wherever
+something moved. How much movement counts as white adjusts itself slowly to what the camera sees. Stop &amp; capture keeps
+the map as it was at that moment.</li>
 <li><strong>Stop &amp; capture</strong> turns what is being kept into an ordinary clip you can edit and export
 (<strong>Back to live</strong> returns to the camera). Exporting while live saves a still image.</li>
 </ul>
