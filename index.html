@@ -31,7 +31,7 @@
 </p>
 <h3>マップをつくる</h3>
 <ul>
-  <li><strong>描画</strong> — 指でなぞって時間の流れを描く。5段階の濃淡、にじみ筆、指先ツール</li>
+  <li><strong>描画</strong> — 指でなぞって時間の流れを描く。5段階の濃淡と自由な灰色、スポイト、にじみ筆、指先ツール</li>
   <li><strong>グラデーション生成・プリセット</strong> — 規則的なパターンから始める</li>
   <li><strong>モーション解析</strong> — 映像自身の動きから自動で時間の形をつくる</li>
   <li><strong>切り分け</strong> — マップを線で2つに分けてずらし、時間のずれをつくる</li>
@@ -87,6 +87,7 @@
     <p>
     モニタービューで<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>をオンにすると、出力の絵と並べてグラフを見られます。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
+    右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に緑の線と秒数が付きます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
     横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
     レートはレートマップ基準で編集しているとき、空間は空間マップを編集したときに現れます。
@@ -125,9 +126,10 @@
     </p>
     <p>
     ちょっとした描き足しなら、トップ画面のマップ画像をそのままなぞっても描けます（赤い線の近くを触ると、再生位置の移動になります）。
-    左下の筆のボタンで黒〜白の 5 段階と指先を選び、隣の<strong>プリセット</strong>のボタンでは、黒・グレー・白の一色や、上→下・下→上・左→右・右→左のグラデーションでマップ全体を塗り直せます。
+    左下の筆のボタンで黒〜白の 5 段階、好きな灰色を上下のスライダーで選ぶ<strong>自由</strong>（その灰色が何秒・どの速さにあたるかも出ます）、マップに触れた所の灰色を拾う<strong>スポイト</strong>、指先を選び、隣の<strong>プリセット</strong>のボタンでは、黒・グレー・白の一色や、上→下・下→上・左→右・右→左のグラデーションでマップ全体を塗り直せます。
     その隣の<strong>グラデーション</strong>のボタンを押すと、マップが縞のグラデーションになり、なぞって動かす・ピンチで周期・2 本指で回して角度を、その場で変えられます（✓ で終わります）。
     描いたあとは右下に「ひとつ前に戻す」が出ます。
+    編集画面のマップの右上にある目のボタンで、マップの見せ方を<strong>ヒートマップ</strong>（黒側が青・白側が黄）や<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さかを数字で示す）に変えられます。見せ方だけで、マップの中身は変わりません。
     </p>
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
@@ -285,6 +287,10 @@ iOS の「設定」→「Time Flow」→「写真」から変更できます。
 つなげます。HDMI や AirPlay でディスプレイに接続すると、
 <strong>出力映像だけがそちらに全画面で表示されます</strong>。手元の画面は編集画面のまま使えるので、
 大きな画面で結果を見ながら描けます。展示や上映にも使えます。
+</p>
+<p>
+説明やデモで操作画面のほうを大きく見せたいときは、設定の「外部ディスプレイの表示」を
+「この画面をそのまま映す」にします。出力映像の上の「外部ディスプレイに出力中」の札をタップしても切り替えられます。
 </p>
 <p>
 iPad でステージマネージャがオンになっていると外部ディスプレイが拡張デスクトップとして扱われ、
@@ -455,7 +461,7 @@ makes the app usable for installation and live work as well as for producing fil
     The map tile is labelled with which map it is and carries a <strong>red playhead</strong> marking the row
     or column being read at that instant. Drag along the playhead to scrub; playback pauses while your finger
     is down and resumes when you lift. Anywhere else, your finger <strong>draws straight onto the map</strong>:
-    the brush button at the bottom left picks one of the five tones or the smudge, and the
+    the brush button at the bottom left picks one of the five tones, a custom grey, the eyedropper or the smudge, and the
     <strong>Presets</strong> button beside it repaints the whole map in black, grey or white, or a gradient
     running top &rarr; bottom, bottom &rarr; top, left &rarr; right or right &rarr; left. The
     <strong>Gradient</strong> button next to it turns the map into a striped gradient you shape right there: drag to
@@ -535,7 +541,10 @@ a tilted or bent one means different parts of the picture show different moments
 points that show the same moment. Orange rectangles mark the range in use and blue ones the loaded range, and the
 clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only on the side farther from you. The box
 turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
-is down. Pinch to zoom. When the use range is shorter than half the clip, a <strong>Whole clip / Use range</strong>
+is down. Pinch to zoom. The <strong>Section</strong> button at the top right switches to showing the clip&rsquo;s
+block itself, <strong>translucent</strong> or <strong>opaque</strong>: the front face then carries pixel-count ticks,
+and green lines with seconds mark the earliest and latest moments the section reaches. When the use range is
+shorter than half the clip, a <strong>Whole clip / Use range</strong>
 button appears at the top right and fits the box&rsquo;s depth to the use range. You can also reach the 3D plot on
 the main screen by swiping the map sideways. With a space map in use, the surface also moves sideways (up and
 down under a horizontal slit) to the place in the clip it is showing; a map that shows a single column at a
@@ -569,8 +578,12 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     Trace the map with a finger or Apple&nbsp;Pencil. The brush button opens a palette holding the
     <strong>Bleed brush</strong> toggle, <strong>Fill</strong>, five tones &mdash; <strong>Black</strong>,
     <strong>Dark grey</strong>, <strong>Grey</strong>, <strong>Light grey</strong>, <strong>White</strong>
-    &mdash; and <strong>Smudge</strong>. Brush size runs 1&ndash;300&nbsp;px, with Strength, Gamma and Blur
-    alongside.
+    &mdash; <strong>Custom</strong>, which opens a vertical slider for any grey and shows what that grey means in
+    seconds or speed, <strong>Eyedropper</strong>, which picks up the grey where you touch the map, and
+    <strong>Smudge</strong>. Brush size runs 1&ndash;300&nbsp;px, with Strength, Gamma and Blur
+    alongside. The eye button at the top right of the map changes how the map is shown: a <strong>heat map</strong>
+    (blue for the black side, yellow for the white side) or <strong>contour lines</strong> labelled with their
+    seconds or speed; neither changes the map itself.
     </p>
     <p>
     The caption under the map spells out what brightness means with your current settings &mdash;
@@ -778,7 +791,8 @@ particular part of the frame. <strong>Map only</strong> and <strong>Video only</
 stacked, whichever shows both larger. <strong>Split: 3D plot + map</strong> puts the
 <a href="#plots-en">3D plot</a> in place of the video, and <strong>Three panes: video + 3D plot + map</strong> shows
 all three, stacked along the longer side of the screen, so you can watch the surface bend while you draw. The
-choice is independent of what an external display is showing &mdash; that always shows the output alone.
+choice is independent of what an external display is showing &mdash; that shows the output alone, or mirrors
+the screen if you chose that in Settings.
 </p>
 <figure><img src="shots/v16/en/editor_3pane.png" alt="The editor in Three panes: the output video at the top, the 3D plot with a tilted surface in the middle, and a left-to-right time map at the bottom above the preset buttons" loading="lazy"><figcaption>Three panes: video + 3D plot + map</figcaption></figure>
 
@@ -1655,7 +1669,9 @@ until you turn it on, and turning it on switches the output one off &mdash; only
 <p>
 Yes, and it is the intended way to work at any real size. Over HDMI or AirPlay <strong>the output alone fills
 that screen</strong>, letterboxed on black with no interface over it, while your device keeps the editor; a
-<em>Showing on external display</em> badge appears beside the output. On iPad, turn off
+<em>Showing on external display</em> badge appears beside the output. For a talk or a demo you can mirror
+the whole app screen instead: set <strong>External display</strong> in Settings to <strong>Mirror this
+screen</strong>, or tap that badge. On iPad, turn off
 <strong>Settings &rarr; Multitasking &amp; Gestures &rarr; Stage Manager</strong> first, or the display is
 treated as an extended desktop and the second screen is never created.
 </p>
