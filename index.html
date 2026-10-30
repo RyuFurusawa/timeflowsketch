@@ -129,8 +129,8 @@
     左下の筆のボタンで黒〜白の 5 段階、好きな灰色を上下のスライダーで選ぶ<strong>自由</strong>（その灰色が何秒・どの速さにあたるかも出ます）、マップに触れた所の灰色を拾う<strong>スポイト</strong>、指先を選び、隣の<strong>プリセット</strong>のボタンでは、黒・グレー・白の一色や、上→下・下→上・左→右・右→左のグラデーションでマップ全体を塗り直せます。
     その隣の<strong>グラデーション</strong>のボタンを押すと、マップが縞のグラデーションになり、なぞって動かす・ピンチで周期・2 本指で回して角度を、その場で変えられます（✓ で終わります）。
     描いたあとは右下に「ひとつ前に戻す」が出ます。
-    編集画面のマップの右上にある目のボタンで、マップの見せ方を<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤です。見せ方だけで、マップの中身は変わりません。
-    スリットのときは、再生位置に細い白い線が出て、スリットに沿った 7 本の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を 3 段で示します（読み取り値）。上から、素材の何秒か（白）、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）、素材のどの位置か（px。緑〜赤）で、等高線と同じ色です。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。トップ画面では同じ 7 か所の素材の時刻が入力映像のバーに赤い点で出るので、出力のどの列が素材のどこを映しているかを入力の側でも見られます。
+    編集画面のマップの右上にある目のボタンで、マップの見せ方を<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤で、レートマップと空間マップは線と線の間もその色で塗り分けます。見せ方だけで、マップの中身は変わりません。
+    スリットのときは、再生位置に細い白い線が出て、スリットに沿った 7 本の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を示します（読み取り値）。上から、素材の何秒か（白）と、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）。空間マップを描き換えていれば、素材のどの位置か（px。緑〜赤）が 3 段目に加わります。色は等高線と同じです。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。トップ画面では同じ 7 か所の素材の時刻が入力映像のバーに赤い点で出るので、出力のどの列が素材のどこを映しているかを入力の側でも見られます。
     </p>
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
@@ -584,10 +584,10 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     <strong>Smudge</strong>. Brush size runs 1&ndash;300&nbsp;px, with Strength, Gamma and Blur
     alongside. The eye button at the top right of the map switches to <strong>contour lines</strong> labelled with their
     seconds, speed or pixel position; this does not change the map itself. The lines are coloured by map type: white on a time map, blue (reverse) through
-    gray (frozen) to yellow (forward) on a rate map, and green (left edge) through red (right edge) on a space map. With a slit, a thin white line marks
-    the playhead and seven faint lines run along the slit, poking past the edge of the map; under the map, three rows of readout values show, for the spot
-    where each one crosses the white line, which second of the video it is showing (white), its playback rate there (1 is normal speed, 0 a freeze,
-    negative is reverse; blue&ndash;gray&ndash;yellow) and which pixel of the video it shows (green&ndash;red), in the same colours as the contour lines.
+    gray (frozen) to yellow (forward) on a rate map, and green (left edge) through red (right edge) on a space map, with the bands between the lines filled in on rate and space maps. With a slit, a thin white line marks
+    the playhead and seven faint lines run along the slit, poking past the edge of the map; under the map, readout values show, for the spot
+    where each one crosses the white line, which second of the video it is showing (white) and its playback rate there (1 is normal speed, 0 a freeze,
+    negative is reverse; blue&ndash;gray&ndash;yellow); once the space map has been changed, a third row adds which pixel of the video it shows (green&ndash;red). The colours match the contour lines.
     With a vertical slit the time graph now runs output time downward (start at the top). On the main screen the same seven moments appear as red dots on the input video's bar.
     </p>
     <p>
