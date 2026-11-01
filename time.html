@@ -147,11 +147,13 @@
 <h2>7. 入力映像（プレビュー）と使用範囲の操作</h2>
 <ul>
   <li>入力ビューは出力とは別の時計で、使用範囲を実際の速さで繰り返します。</li>
+  <li>帯の上の<strong>緑の縦線</strong>が入力の再生位置です。出力の再生位置（出力のバーとマップの赤ライン）と、出力がいま映している素材の時刻（読み取りの赤い点・帯）は赤なので、色で入力と出力を見分けられます。</li>
   <li>帯をタップ／なぞると、入力の再生位置だけが動きます。出力の赤ラインや出力のバーを動かしても、入力は動きません。ただし入力の音がオンの間は位置が音に従うので、帯をタップしてもすぐ戻ります。</li>
   <li>開始／終了ハンドルをドラッグしている間だけ、その端の瞬間が映ります。指を離すと再生中の位置の絵に戻ります。</li>
   <li>帯を長押ししてからドラッグすると、長さを保ったまま範囲を動かせます。</li>
   <li>同じ帯は、入力映像の全画面表示の下にもあります。</li>
   <li>使用範囲が読み込み範囲の外にかかると、入力ビューもその区間は端のフレームで止まり、「読み込み範囲の外は動きません」と表示されます。横の<strong>「この範囲で読み直す」</strong>を押すと、解像度と読む秒数はそのままで、使用範囲が真ん中に来る位置へ読み込み範囲を移して読み直します（使用範囲のほうが長ければその長さを読み、メモリに収まらない分は間引きが増えます）。</li>
+  <li>間引いて読み込んだあとに使用範囲を狭めると、いまより間引きを減らせる長さになった所で<strong>「この範囲なら 60fps で読めます」</strong>のように表示されます。間引きは 1 コマおき・2 コマおき…の整数なので、120fps の素材なら 40 → 60 → 120fps と段ごとに知らせます（120fps まで戻せるときは「この範囲なら間引かずに読めます」）。<strong>「読み直す」</strong>を押すと、その fps で読める最長の範囲を、使用範囲を真ん中にして読み直します。</li>
   <li>入力の音をオンにすると、使用範囲を等速で繰り返す音に映像の位置が合います。出力の音とは同時に鳴りません。</li>
 </ul>
 <div class="gallery">
@@ -319,11 +321,13 @@
 <h2>7. The input preview and the use range</h2>
 <ul>
   <li>The input view runs on its own clock, separate from the output, looping the use range at real speed.</li>
+  <li>The <strong>green vertical line</strong> on the band is the input&rsquo;s playhead. The output&rsquo;s playhead (the output bar and the red line on the map) and the source time the output is showing (the red readout dot or band) are red, so the colour tells input and output apart.</li>
   <li>Tapping or sliding along the band moves only the input&rsquo;s playhead. Moving the output&rsquo;s red line or bar does not move the input. While the input sound is on, the position follows the sound, so a tap on the band snaps back.</li>
   <li>While you drag the start or end handle, the input shows that edge&rsquo;s frame; release it and the picture returns to the playing position.</li>
   <li>Press and hold the band, then drag, to slide the whole range without changing its length.</li>
   <li>The same bar also appears under the input&rsquo;s full-screen view.</li>
   <li>If the use range extends past the loaded range, the input freezes on the edge frame for that part too, and <strong>Frozen outside the loaded part</strong> appears with a <strong>Reload here</strong> button. It reloads with the same resolution and seconds, moving the loaded range so the use range sits in the middle. If the use range is longer than that, it loads the whole use range and skips more frames if memory requires it.</li>
+  <li>If a clip was loaded with frames skipped and you then narrow the use range, a notice such as <strong>This range fits at 60 fps</strong> appears as soon as fewer frames need to be skipped. Frames are skipped in whole steps (every 2nd, every 3rd&hellip;), so a 120 fps clip is offered at 40 &rarr; 60 &rarr; 120 fps in turn (at full rate the notice reads <strong>This range fits without dropping frames</strong>). <strong>Reload</strong> loads the longest range that fits at that rate, with the use range in the middle.</li>
   <li>Turning on the input sound locks the picture to audio looping the use range at normal speed. It does not play at the same time as the output sound.</li>
 </ul>
 <div class="gallery">
