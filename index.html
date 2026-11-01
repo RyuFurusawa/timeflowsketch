@@ -87,7 +87,7 @@
     <p>
     モニタービューで<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>をオンにすると、出力の絵と並べてグラフを見られます。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
-    右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に、上の面（画素の縦が 0）と左の面（横が 0）を横切る赤い線と、その端に秒数が付きます。
+    右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に、下の面（画素の縦がいちばん大きい側）と左の面（横が 0）を横切る白い線と、その端に赤い秒数が付きます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
     横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
     レートはレートマップ基準で編集しているとき、空間は空間マップを編集したときに現れます。
@@ -549,7 +549,7 @@ clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only 
 turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
 is down. Pinch to zoom. The <strong>Section</strong> button at the top right switches to showing the clip&rsquo;s
 block itself, <strong>translucent</strong> or <strong>opaque</strong>: the front face then carries pixel-count ticks,
-and the earliest and latest moments the section reaches are marked by red lines across the top face (pixel row 0) and the left face (pixel column 0), with the seconds at the end of each line. When the use range is
+and the earliest and latest moments the section reaches are marked by white lines across the bottom face (the last pixel row) and the left face (pixel column 0), with the seconds in red at the end of each line. When the use range is
 shorter than half the clip, a <strong>Whole clip / Use range</strong>
 button appears at the top right and fits the box&rsquo;s depth to the use range. You can also reach the 3D plot on
 the main screen by swiping the map sideways. With a space map in use, the surface also moves sideways (up and
