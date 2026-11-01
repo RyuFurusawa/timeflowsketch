@@ -691,11 +691,12 @@ brightness. The defaults are 0 and +1: black is a hard freeze, mid grey half spe
 black plays in reverse and mid grey freezes; <strong>Reset</strong> goes back to the defaults (Duration and
 Anchor at included). The solid presets report the resulting speed in words, and the four ramps report both
 ends at once using the shortened forms &mdash; Frozen, Normal, Slow, Fast, Reverse, Slow reverse, Fast
-reverse. In the slit modes every slit meets at <strong>Anchor at</strong> at the start of the output and accumulates
-from there (up to 1.21 this was called Start point). If the resulting path
+reverse. In the slit modes, as on a surface, every slit meets at the <strong>Anchor at</strong> moment of the loop
+(shown in seconds; with Readout values on, the map marks it with a dashed line) and accumulates forward and back from
+there (up to 1.21 this was called Start point, and the slits always met at the start of the output). If the resulting path
 would run off either end of the range, the app slides the whole path back inside, and compresses it
 only when sliding is not enough &mdash; so the result never simply sticks against the first or last frame (in
-that case Anchor at has no effect).
+that case the point of the clip where the slits meet moves, but the moment they meet does not).
 </p>
 <p>
 In Surface mode every pixel becomes an independent clock, reading brightness through the same Black rate and
