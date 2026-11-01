@@ -791,9 +791,10 @@ and white mean for the current map and mode, so it is worth reading again after 
 In the bottom row, next to the layout button, these tools work in every method: <strong>Undo</strong> (and <strong>Redo</strong> once you have undone something), <strong>Invert</strong>,
 <strong>Blur</strong> and <strong>Gamma</strong>. Invert swaps the map&rsquo;s dark and light as one step each tap.
 Blur and Gamma open a slider that works on the map as it was when you opened it; what you change counts as one step,
-and it is committed when you close the slider, start a stroke, undo or switch method. In Gradient and Cut &amp;
-slide, which rebuild the map from where you started, these tools first finish that method and switch to Draw, so
-the change is not rebuilt away. Gradient and From motion also carry a
+and it is committed when you close the slider, start a stroke, undo or switch method. Tapping Invert, Blur or
+Gamma deselects any other method (Gradient, Presets, From motion, Cut &amp; slide) and switches to Draw; the pen
+tools can stay open alongside. Undo and Redo in Gradient or Cut &amp; slide, which rebuild the map from where you
+started, likewise finish that method first, so the change is not rebuilt away. Gradient and From motion also carry a
 clockwise <strong>refresh</strong> button that re-runs the generation. Outside Draw and Cut &amp; slide, a drag on
 the preview scrubs the playhead.
 </p>
