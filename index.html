@@ -136,7 +136,7 @@
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
     最初のマップは上が黒・下が白のグラデーションで、これが通常の再生です。マップの縦方向が出力の時間なので、描いたところは赤い線がそこを通るときに、その列が映す瞬間を変えます。
-    レートマップでは（既定の設定なら）グレーが停止、黒が逆再生、白が順再生です。描かないところは止まったままで、描いた明るさのぶんだけ前後に進みます。
+    レートマップでは（既定の設定なら）黒が停止、白が順再生で、グレーはその間の半分の速さです。歯車のパネルの右上の「逆再生あり」を押すと、黒が逆再生、グレーが停止、白が順再生になり、「既定に戻す」で元に戻ります。
     いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
     <p>
@@ -684,27 +684,27 @@ along the output time axis, so the moment shown at any point is the sum of every
 band high in a vertical-slit map and everything below it moves too.
 </p>
 <p>
-Speed is <strong>1 + (brightness &times; 2 &minus; 1) &times; Rate range</strong>. With the default
-<strong>Rate range</strong> of 1.0 that makes black a hard freeze, mid grey ordinary playback, and white
-<strong>2.0&times; fast</strong>; push Rate range to 3 and black becomes 2.0&times; reverse while white
-becomes 4.0&times;. The solid presets report the resulting speed in words, and the four ramps report both
+Speed runs from <strong>Black rate</strong> to <strong>White rate</strong> (&minus;2 to +2), interpolated by
+brightness. The defaults are 0 and +1: black is a hard freeze, mid grey half speed and white ordinary playback.
+<strong>With reverse</strong>, at the top right of the Parameters panel, sets black to &minus;1 and white to +1, so
+black plays in reverse and mid grey freezes; <strong>Reset</strong> goes back to the defaults (Duration, Anchor and
+Anchor at included). The solid presets report the resulting speed in words, and the four ramps report both
 ends at once using the shortened forms &mdash; Frozen, Normal, Slow, Fast, Reverse, Slow reverse, Fast
-reverse. <strong>Start point</strong> chooses where in the range the accumulation begins. If the resulting path
+reverse. In the slit modes every slit meets at <strong>Anchor at</strong> at the start of the output and accumulates
+from there (up to 1.21 this was called Start point). If the resulting path
 would run off either end of the range, the app slides the whole path back inside, and compresses it
 only when sliding is not enough &mdash; so the result never simply sticks against the first or last frame (in
-that case Start point has no effect).
+that case Anchor at has no effect).
 </p>
 <p>
-In Surface mode every pixel becomes an independent clock. <strong>Black rate</strong> and
-<strong>White rate</strong> (&minus;4 to +4, default &minus;1 and +1) are interpolated by brightness, so out of
-the box black plays in reverse, mid grey is frozen and white plays forward &mdash; the same reading as a slit
-rate map at a Rate range of 1.0. Negative values run backwards. <strong>Anchor</strong> &mdash; Start, Middle,
+In Surface mode every pixel becomes an independent clock, reading brightness through the same Black rate and
+White rate as a slit. <strong>Anchor</strong> &mdash; Start, Middle,
 or End, Middle by default &mdash; is the instant in the output at which every pixel agrees, and
 <strong>Anchor at</strong> picks which point of the range they agree on; switching Anchor sets Anchor at to match
 (0, 0.5 or 1). Moving Anchor at away from that value can make the fastest pixels jump partway through the loop.
 </p>
 <p>
-The default rate map is <strong>All grey</strong> in every mode, which is plain normal playback under a slit
+The default rate map is <strong>All white</strong> in every mode, which is plain normal playback under a slit
 and under Surface alike. Reach for a rate map when the interesting question is how fast a region moves rather
 than which frame it shows: one corner crawling, another racing, a third running backwards.
 </p>
@@ -926,11 +926,10 @@ earlier&rdquo;, Normal playback and &ldquo;1.5s later&rdquo; &mdash; while all f
 &ldquo;Time ramp&rdquo;.
 </p>
 <p>
-On a <strong>rate map</strong> the labels are driven by <strong>Rate range</strong> in the
-<strong>Parameters</strong> panel (or by Black rate and White rate under Surface), which sets what black and
-white mean. With the range at 1.0, black plays in reverse and white plays forward, so <strong>All white</strong>
-reads &ldquo;Forward&rdquo; and <strong>All grey</strong> reads &ldquo;Frozen&rdquo;; widen the range to 1.5 and
-<strong>All black</strong> now reads &ldquo;1.5&times; reverse&rdquo;. The four ramps show both ends at once &mdash;
+On a <strong>rate map</strong> the labels are driven by <strong>Black rate</strong> and <strong>White rate</strong>
+in the <strong>Parameters</strong> panel, which set what black and white mean. With the defaults (0 and +1),
+<strong>All white</strong> reads as forward and <strong>All black</strong> as frozen; after <strong>With reverse</strong>
+(&minus;1 and +1), <strong>All grey</strong> reads as frozen and <strong>All black</strong> as reverse. The four ramps show both ends at once &mdash;
 joined by an arrow when the ramp runs along the time axis, or by a wave dash when it runs across the frame, since
 in that case the two speeds coexist in different parts of the picture rather than following one another.
 </p>
