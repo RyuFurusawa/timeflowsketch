@@ -687,7 +687,7 @@ band high in a vertical-slit map and everything below it moves too.
 Speed runs from <strong>Black rate</strong> to <strong>White rate</strong> (&minus;2 to +2), interpolated by
 brightness. The defaults are 0 and +1: black is a hard freeze, mid grey half speed and white ordinary playback.
 <strong>With reverse</strong>, at the top right of the Parameters panel, sets black to &minus;1 and white to +1, so
-black plays in reverse and mid grey freezes; <strong>Reset</strong> goes back to the defaults (Duration, Anchor and
+black plays in reverse and mid grey freezes; <strong>Reset</strong> goes back to the defaults (Duration and
 Anchor at included). The solid presets report the resulting speed in words, and the four ramps report both
 ends at once using the shortened forms &mdash; Frozen, Normal, Slow, Fast, Reverse, Slow reverse, Fast
 reverse. In the slit modes every slit meets at <strong>Anchor at</strong> at the start of the output and accumulates
@@ -698,10 +698,11 @@ that case Anchor at has no effect).
 </p>
 <p>
 In Surface mode every pixel becomes an independent clock, reading brightness through the same Black rate and
-White rate as a slit. <strong>Anchor</strong> &mdash; Start, Middle,
-or End, Middle by default &mdash; is the instant in the output at which every pixel agrees, and
-<strong>Anchor at</strong> picks which point of the range they agree on; switching Anchor sets Anchor at to match
-(0, 0.5 or 1). Moving Anchor at away from that value can make the fastest pixels jump partway through the loop.
+White rate as a slit. <strong>Anchor at</strong> (0.5 by default) is where they all agree: at that fraction of
+the loop, every pixel shows that point of the range &mdash; 0 is the start of the clip at the start of the loop,
+0.5 the middle at the middle, 1 the end at the end (up to 1.21 a separate Anchor choice of Start, Middle or End did
+this). With forward-only speeds no pixel wraps partway through the loop; with reverse pixels, moving Anchor at away
+from 0.5 can make them jump.
 </p>
 <p>
 The default rate map is <strong>All white</strong> in every mode, which is plain normal playback under a slit
