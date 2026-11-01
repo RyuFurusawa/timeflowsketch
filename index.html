@@ -87,7 +87,7 @@
     <p>
     モニタービューで<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>をオンにすると、出力の絵と並べてグラフを見られます。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
-    右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に緑の線と秒数が付きます。
+    右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に赤い線と秒数が付きます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
     横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
     レートはレートマップ基準で編集しているとき、空間は空間マップを編集したときに現れます。
@@ -131,7 +131,7 @@
     続く<strong>ぼかし</strong>は押すたびにマップを 1 段ぼかし、<strong>反転</strong>は明暗を入れ替えます。レートマップでは<strong>モーションから生成</strong>、空間マップでは<strong>切り分け</strong>も並びます（はさみを押してマップを横切る線を引き、分かれた領域をドラッグでずらして、上に出る「ずらしたら、ここをタップで確定」を押します）。
     描いたあとは右下に「ひとつ前に戻す」が出ます。
     編集画面のマップの右上にある目のボタンで、マップの見せ方を<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤で、レートマップと空間マップは線と線の間もその色で塗り分けます。数字の所では線が途切れ、単位は一番下の数字にだけ付きます。見せ方だけで、マップの中身は変わりません。
-    スリットのときは、同じ目のボタンで<strong>読み取り値</strong>をオンにすると、再生位置に細い白い線が出て、スリットに沿った 7 本（縦長の映像の縦スリットでは 5 本）の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を示します（読み取り値）。上から、素材の何秒か（白）と、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）。空間マップを描き換えていれば、素材のどの位置か（px。緑〜赤）が 3 段目に加わります。色は等高線と同じです。数字の右（横スリットは数字の上）には、どの段が何の数字か（時間位置・再生レート・空間位置）を書き添えます。白い線の先には出力の何秒目かも出ます。ライブでは時間マップのとき何秒前かを、レートマップのときはマップから読んだレートを示します。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。読み取り値をオンにすると、トップ画面でも、出力がいま映している素材の時刻の範囲が入力映像のバーに赤く出ます（普通の再生では点、時間が広がる所では横に伸びた帯。入力映像の全画面表示では出しません）。入力の再生位置はバーの緑の縦線です。
+    スリットのときは、同じ目のボタンで<strong>読み取り値</strong>をオンにすると、再生位置に細い白い線が出て、スリットに沿った 7 本（縦長の映像の縦スリットでは 5 本）の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を示します（読み取り値）。上から、素材の何秒か（白）と、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）。空間マップを描き換えていれば、素材のどの位置か（px。緑〜赤）が 3 段目に加わります。色は等高線と同じです。数字の右（横スリットは数字の上）には、どの段が何の数字か（時間位置・再生レート・空間位置）を書き添えます。白い線の先には出力の何秒目かも出ます。ライブでは時間マップのとき何秒前かを、レートマップのときはマップから読んだレートを示します。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。読み取り値をオンにすると、トップ画面でも、出力がいま映している素材の時刻の範囲が入力映像のバーに赤く出ます（普通の再生では点、時間が広がる所では横に伸びた帯。入力映像の全画面表示では出しません）。サーフェスでも読み取り値をオンにすると、画面全体が映している範囲（立体グラフの赤い線と同じ）が入力映像のバーに赤い帯で出ます。入力の再生位置はバーの緑の縦線です。
     </p>
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
@@ -549,7 +549,7 @@ clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only 
 turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
 is down. Pinch to zoom. The <strong>Section</strong> button at the top right switches to showing the clip&rsquo;s
 block itself, <strong>translucent</strong> or <strong>opaque</strong>: the front face then carries pixel-count ticks,
-and green lines with seconds mark the earliest and latest moments the section reaches. When the use range is
+and red lines with seconds mark the earliest and latest moments the section reaches. When the use range is
 shorter than half the clip, a <strong>Whole clip / Use range</strong>
 button appears at the top right and fits the box&rsquo;s depth to the use range. You can also reach the 3D plot on
 the main screen by swiping the map sideways. With a space map in use, the surface also moves sideways (up and
@@ -594,7 +594,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     the playhead and seven faint lines along the slit (five on a vertical slit with a portrait video), poking past the edge of the map; under the map, readout values show, for the spot
     where each one crosses the white line, which second of the video it is showing (white) and its playback rate there (1 is normal speed, 0 a freeze,
     negative is reverse; blue&ndash;gray&ndash;yellow); once the space map has been changed, a third row adds which pixel of the video it shows (green&ndash;red). The colours match the contour lines, and each row is named to the right of the numbers (above them with a horizontal slit): Time, Rate, Position. The output time appears at the end of the white line, and with live input a time map shows how many seconds ago (a rate map shows the rate read from the map).
-    With a vertical slit the time graph now runs output time downward (start at the top). With the readout on, the input video's bar on the main screen also marks in red the span of the video the output is showing right now: a dot with normal playback, a band where the map spreads time out (not in the full-screen Input view). The input&rsquo;s own playhead on that bar is the green vertical line.
+    With a vertical slit the time graph now runs output time downward (start at the top). With the readout on, the input video's bar on the main screen also marks in red the span of the video the output is showing right now: a dot with normal playback, a band where the map spreads time out (not in the full-screen Input view). In Surface mode, turning on Readout marks the span the whole picture is showing on that bar, the same span as the red lines in the 3D plot. The input&rsquo;s own playhead on that bar is the green vertical line.
     </p>
     <p>
     The caption under the map spells out what brightness means with your current settings &mdash;
