@@ -162,6 +162,7 @@
     右下のアイコンから、マップの作り方を切り替えられます。各項目の右にある <strong>i</strong> で説明を開けます。
     <strong>グラデーション生成</strong>は規則的な縞模様を、
     <strong>モーションから生成</strong>は映像自身の動きからマップを作ります（動きの残像が変化する「ヒストリー」はサーフェスのときだけ使えます）。
+    グラデーションは、いまのマップへの重ね方を<strong>上書き・加算・乗算</strong>から選べます（既定は乗算。マップの形を残したまま縞が入ります）。加算・乗算は始めたときのマップに重ね、加算で白を超えたところは全体をいちばん明るい所で割って収めます。トップ画面では、グラデーションを操作している間 ✓ の横に同じ選択肢が出ます。
     </p>
     <p>
     <strong>プリセットで塗り直し</strong>では、一色やグラデーションでマップ全体を塗り替えます。
@@ -868,6 +869,14 @@ finger.
 Choosing <strong>Gradient</strong> immediately lays a regular wave over the current map, and every slider
 regenerates it live as you drag. The pattern is a sine wave: brightness runs smoothly from black to white and
 back, measured along a direction you choose.
+</p>
+<p>
+How the wave meets the map you already have is your choice: <strong>Replace</strong> paints over it,
+<strong>Add</strong> adds the wave to it, and <strong>Multiply</strong> (the default) multiplies it, which keeps the
+shape of your map and cuts the stripes into it. Add and Multiply always build on the map as it was when you
+started the gradient, so moving the pattern never piles up; where Add goes past white, the whole map is divided by
+its brightest point so it still fits. Finish and start again to layer another gradient on top. On the main screen the
+same three choices sit next to the check mark while you shape a gradient.
 </p>
 <table>
   <tr><th>Amplitude</th><td>0&ndash;1. How far the wave swings. At 1 it reaches full black and full white; at 0 the map is flat grey and only <strong>Offset</strong> has any effect.</td></tr>
