@@ -588,7 +588,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     &mdash; <strong>Custom</strong>, which opens a vertical slider for any grey and shows what that grey means in
     seconds or speed, <strong>Eyedropper</strong>, which picks up the grey where you touch the map, and
     <strong>Smudge</strong>. Brush size runs 1&ndash;300&nbsp;px, with Strength
-    alongside; Blur and Invert sit with Play and Undo at the bottom left and work in every method. The eye button at the top right of the map switches to <strong>contour lines</strong> labelled with their
+    alongside; Invert, Blur and Gamma sit with Play and Undo at the bottom left and work in every method. The eye button at the top right of the map switches to <strong>contour lines</strong> labelled with their
     seconds, speed or pixel position; this does not change the map itself. The lines are coloured by map type: white on a time map, blue (reverse) through
     gray (frozen) to yellow (forward) on a rate map, and green (left edge) through red (right edge) on a space map, with the bands between the lines filled in on rate and space maps. The lines break around their numbers, and only the lowest number carries a unit. With a slit, turning on
     <strong>Readout</strong> in the same eye menu adds a thin white line at
@@ -781,19 +781,20 @@ them, are under <a href="#export-en">How long the export will be</a> and
 The row of round buttons at the bottom right of the editor chooses <em>how</em> you build the map:
 <strong>Draw</strong>, <strong>Gradient</strong>, <strong>Presets</strong>, <strong>From motion</strong> and
 <strong>Cut &amp; slide</strong>, with the current one in white. Tap a method and its detailed tools open just
-above the row; tap the current method again to fold them away. Once you have edited the map, the row ends with a
-counter-clockwise arrow, <strong>Reset to normal playback</strong> (<strong>Reset to default</strong> for the
-space map), which returns that map to normal playback for the current mode and marks it unedited again.
+above the row; tap the current method again to fold them away. To return a map to normal playback for the current
+mode and mark it unedited again, tap the preset marked <strong>Default</strong> in Presets (or press and hold Undo).
 Switching methods changes only the detailed tools. The map you are editing, the mode it is applied
 in, and the live preview all stay as they were. The caption just above the tools always states what black, grey
 and white mean for the current map and mode, so it is worth reading again after any change of mode or parameter.
 </p>
 <p>
-At the bottom left, next to the layout button, four tools work in every method: <strong>play/pause</strong>,
-<strong>Undo</strong>, <strong>Blur</strong> and <strong>Invert</strong>. Blur softens the whole map by one step
-and Invert swaps its dark and light; each tap is applied to the map as one step, so Undo takes it back. In
-Gradient and Cut &amp; slide, which rebuild the map from where you started, tapping Blur, Invert or Undo first
-finishes that method and switches to Draw, so the change is not rebuilt away. Gradient and From motion also carry a
+At the bottom left, next to the layout button, these tools work in every method: <strong>play/pause</strong>,
+<strong>Undo</strong> (and <strong>Redo</strong> once you have undone something), <strong>Invert</strong>,
+<strong>Blur</strong> and <strong>Gamma</strong>. Invert swaps the map&rsquo;s dark and light as one step each tap.
+Blur and Gamma open a slider that works on the map as it was when you opened it; what you change counts as one step,
+and it is committed when you close the slider, start a stroke, undo or switch method. In Gradient and Cut &amp;
+slide, which rebuild the map from where you started, these tools first finish that method and switch to Draw, so
+the change is not rebuilt away. Gradient and From motion also carry a
 clockwise <strong>refresh</strong> button that re-runs the generation. Outside Draw and Cut &amp; slide, a drag on
 the preview scrubs the playhead.
 </p>
@@ -836,11 +837,10 @@ entire canvas with one of them without leaving Draw.
   <tr><th>Strength</th><td>0.05&ndash;1, default 0.3. How far a single pass moves towards the chosen tone. Low values let you build up tone gradually; at 1 a single stroke lands almost the full tone at the centre of the brush.</td></tr>
 </table>
 <p>
-Pen tools are just the palette, <strong>Brush</strong> and <strong>Strength</strong>. To soften or flip the
-whole map, use <strong>Blur</strong> and <strong>Invert</strong> at the bottom left: each tap changes the map
-straight away as one step (the same strength as the buttons on the main screen&rsquo;s map), and you can keep
-painting on the result. Up to 1.21 the pen tools had Gamma, Blur and Invert controls that were committed with an
-<strong>Apply adjustments</strong> button; those are gone.
+Choosing Draw shows the palette with the <strong>Brush</strong> and <strong>Strength</strong> sliders beneath it
+straight away. To soften, reshape or flip the whole map, use <strong>Blur</strong>, <strong>Gamma</strong> and
+<strong>Invert</strong> at the bottom left, then keep painting on the result. Up to 1.21 these sat among the pen
+tools and were committed with an <strong>Apply adjustments</strong> button; that button is gone.
 </p>
 <p>
 With Apple&nbsp;Pencil, pressure scales the brush. A finger always counts as an <em>average</em> press, so a
