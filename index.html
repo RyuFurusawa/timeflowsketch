@@ -190,6 +190,15 @@
 画面下の<img class="ui" src="icons/dock_export.png" alt=""><strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
 長さは編集画面の歯車にある「再生時間」で調整でき、解像度は「映像の読み込み」で選んだ解像度になります。
 </p>
+<p>
+設定の「書き出し」で<strong>「元の映像から書き出す」</strong>をオンにすると、プレビュー用に読み込んだ映像ではなく、素材のファイルを読み直して元の解像度で書き出します。
+読み込んだ解像度や秒数に関わらず 4K のまま書き出せ、素材が HDR（HLG・PQ）なら<strong>「HDR のまま書き出す」</strong>で 10bit のまま保てます。
+書き出しの最中は画面が自動でロックされません。アプリが裏に回ると止まりますが、もう一度「書き出し」を押すと、<strong>続きから書き出す</strong>か<strong>ここまでを動画にする</strong>かを選べます。
+読み込んだ映像が大きいときは、書き出しの間だけ手放して、終わってから読み直します（その間プレビューは止まります）。
+</p>
+<p>
+書き出しのフレームレートは 24・30・60fps で、素材が 120fps・240fps のときは 120・240fps も選べます。
+</p>
 
 <p>
 App Store に新しいバージョンが出ていると、起動したときに一度だけお知らせします。
@@ -244,7 +253,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 <p>
 読み込んだ動画は端末のメモリに展開されます。
 読み込む量は空きメモリから自動で決まりますが、他のアプリがメモリを使っていると足りなくなることがあります。
-設定の「映像の読み込み」で解像度を 1/2 や 1/4 に下げるか、読み込む秒数を短くしてください。
+設定の「映像の読み込み」で解像度を 1/2〜1/16 に下げるか、読み込む秒数を短くしてください。
 他のアプリを終了してからお試しください。
 </p>
 
@@ -576,8 +585,8 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     Trace the map with a finger or Apple&nbsp;Pencil. The brush button opens a palette holding the
     <strong>Bleed brush</strong> toggle, <strong>Fill</strong> <img class="ui" src="icons/fill.png" alt="">, five tones &mdash; <strong>Black</strong>,
     <strong>Dark grey</strong>, <strong>Grey</strong>, <strong>Light grey</strong>, <strong>White</strong>
-    &mdash; <strong>Custom</strong> <img class="ui" src="icons/custom.png" alt="">, which opens a vertical slider for any grey and shows what that grey means in
-    seconds or speed, <strong>Eyedropper</strong> <img class="ui" src="icons/eyedropper.png" alt="">, which picks up the grey where you touch the map, and <strong>Smudge</strong> <img class="ui" src="icons/smudge.png" alt="">. Brush size runs 1&ndash;300&nbsp;px, with Strength
+    &mdash; <strong>Custom</strong> <img class="ui" src="icons/custom.png" alt="">, which opens a horizontal slider for any grey, black on the left and white on the right, and shows what that grey means in
+    seconds or speed, the <strong>Eyedropper</strong> <img class="ui" src="icons/eyedropper.png" alt=""> beside that slider, which picks up the grey where you touch the map, and <strong>Smudge</strong> <img class="ui" src="icons/smudge.png" alt="">. Brush size runs 1&ndash;300&nbsp;px, with Strength
     alongside; Invert, Blur and Gamma sit with Undo in the bottom row and work in every method. The eye button <img class="ui" src="icons/eye.png" alt=""> at the top right of the map switches to <strong>contour lines</strong> labelled with their
     seconds, speed or pixel position; this does not change the map itself. The lines are coloured by map type: white on a time map, blue (reverse) through
     gray (frozen) to yellow (forward) on a rate map, and green (left edge) through red (right edge) on a space map, with the bands between the lines filled in on rate and space maps. The lines break around their numbers, and only the lowest number carries a unit. With a slit, turning on
@@ -1196,15 +1205,30 @@ the whole path is scaled down evenly and plays slower. Under Surface, lengthenin
 speed; the paths simply get longer and wrap around within the range.
 </p>
 <p>
-<strong>Frame rate</strong> (Settings &rarr; Export) is 24, 30 or 60&nbsp;fps. It changes how many frames are
-written and how long the render takes, not how long the result plays.
+<strong>Frame rate</strong> (Settings &rarr; Export) is 24, 30 or 60&nbsp;fps, plus 120 and 240&nbsp;fps when the source was shot at that rate. It changes how many frames are
+written and how long the render takes, not how long the result plays. Above 60&nbsp;fps the bit rate rises with the frame rate, so each frame keeps its quality.
+</p>
+
+<h3 id="source-export-en">Exporting from the source file</h3>
+<p>
+Turn on <strong>Export from the source file</strong> under Settings &rarr; Export to render from the source file
+instead of the working copy in memory. The result comes out at the source&rsquo;s full resolution whatever you chose
+under Video Loading, with no limit on length from what fits in memory. If the source is HDR (HLG or PQ),
+<strong>Keep HDR</strong> writes HEVC 10-bit with the same transfer function. Colours pass through as the source
+stored them, so they can differ very slightly from the preview. Maps stay exactly as you made them; only the frames
+are read again.
+</p>
+<p>
+The screen stays awake while it runs. If the app goes to the background the export stops; tap Export again to choose
+<strong>Resume Export</strong> or <strong>Save Finished Part as Video</strong>. When the loaded video is large, the app releases
+it for the duration of the export and reloads it afterwards, so the preview pauses until then.
 </p>
 
 <h3>Resolution, and why it is not your camera&rsquo;s</h3>
 <p>
 The export comes out at the size of the working copy held in memory, not necessarily the size of the file you
 picked. That size is fixed at import by <strong>Resolution</strong> in Settings &rarr; <strong>Video
-Loading</strong>: <strong>Full</strong>, <strong>1/2</strong> or <strong>1/4</strong> of the source&rsquo;s
+Loading</strong>: <strong>Full</strong>, <strong>1/2</strong>, <strong>1/4</strong>, <strong>1/8</strong> or <strong>1/16</strong> of the source&rsquo;s
 dimensions, with the actual pixel size of each shown under the buttons. The aspect ratio and any rotation follow the
 source, and the app never scales <em>up</em> &mdash; Full is the source&rsquo;s own size. The bit rate scales with
 the frame area &mdash; about 11&nbsp;Mbps for 1280&times;720, and never less than 6&nbsp;Mbps &mdash; so compression
@@ -1320,7 +1344,7 @@ out.
 </p>
 <figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading, with the Frames line explaining why frames are skipped</figcaption></figure>
 <table>
-  <tr><th>Resolution</th><td><strong>Full</strong> / <strong>1/2</strong> / <strong>1/4</strong> &mdash; the size the loaded video is worked at, as a fraction of the source; the pixel size of each option is printed under it. The file in your photo library is never modified. This is also the resolution the export is written at.</td></tr>
+  <tr><th>Resolution</th><td><strong>Full</strong> / <strong>1/2</strong> / <strong>1/4</strong> / <strong>1/8</strong> / <strong>1/16</strong> &mdash; the size the loaded video is worked at, as a fraction of the source; the pixel size of each option is printed under it. The file in your photo library is never modified. This is also the resolution the export is written at.</td></tr>
   <tr><th>Seconds to load</th><td>How much of the video to use, from 0.5&nbsp;s up to the whole clip in steps of 0.1&nbsp;s, shown as &ldquo;&hellip; s of &hellip; s&rdquo;. It never drops below the length of the range in use on the main screen. The line underneath gives the start time, which always follows the beginning of the range in use (moving earlier only when the seconds would otherwise run past the end of the clip).</td></tr>
   <tr><th>Frames</th><td>A read-out. <em>No frames skipped</em> with the source frame rate, or an orange warning giving the source and loaded frame rates and how many frames make one (&ldquo;1 of every &hellip; frames&rdquo;), with the reason: either the GPU can hold at most 2,048 frames at once, or the clip does not fit in memory. Below 8&nbsp;fps it adds <em>Motion will look quite choppy</em>.</td></tr>
   <tr><th>Memory</th><td>A read-out: how much the combination uses against what this device can spare right now, and the width &times; height &times; number of frames behind it. Frames are stored uncompressed at 4 bytes per pixel.</td></tr>
@@ -1353,7 +1377,7 @@ old copy has been released, the app reloads the previous settings and tells you 
 
 <h3>Export</h3>
 <table>
-  <tr><th>Frame rate</th><td>24 / 30 / 60&nbsp;fps. The frame rate written into the exported file.</td></tr>
+  <tr><th>Frame rate</th><td>24 / 30 / 60&nbsp;fps, plus 120 / 240&nbsp;fps when the source has that many frames. The frame rate written into the exported file.</td></tr>
   <tr><th>Export length</th><td>A read-out of the current output length in seconds, the same number shown next to <strong>Duration</strong> in the editor.</td></tr>
 </table>
 <p>
@@ -1607,7 +1631,7 @@ apps first, which buys real headroom.
 <p>
 When a clip has more frames than the GPU can hold at once (2,048) or than fit in memory, frames are skipped evenly and
 an orange note gives the source and loaded frame rates. Slow-motion footage is the usual case. Under
-<a href="#settings-en">Settings &rarr; Video Loading</a>, lower <strong>Resolution</strong> to 1/2 or 1/4 or load
+<a href="#settings-en">Settings &rarr; Video Loading</a>, lower <strong>Resolution</strong> to 1/2 or below or load
 fewer seconds until <strong>Frames</strong> reads <em>No frames skipped</em>; with a time map in a slit mode,
 <strong>Reload only the range in use</strong> in the Parameters panel does the same for just the range you are using.
 </p>
@@ -1624,7 +1648,7 @@ positioned so your range sits in the middle of it.
 Rendering allocates on top of the frames already resident, so an export can run out of memory even though the
 clip loaded fine &mdash; usually reported as a texture that could not be allocated. Lower
 <strong>Resolution</strong> or <strong>Seconds to load</strong>, tap <strong>Reload with these settings</strong>,
-shorten <strong>Duration</strong>, close other apps, and export again.
+shorten <strong>Duration</strong>, close other apps, and export again. <a href="#source-export-en">Export from the source file</a> needs far less memory for the same result.
 </p>
 
 <h3>Nothing seems to happen when I switch between Vertical slit and Horizontal slit</h3>
