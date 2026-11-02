@@ -57,3 +57,4 @@ figcaption { color:var(--muted); font-size:.85rem; margin-top:10px; }
 /* 本文に添えるアプリのボタン（実機の画面から切り出したもの） */
 img.ui { display:inline-block; height:1.5em; width:auto; vertical-align:-0.42em; border-radius:7px; margin:0 .12em; border:0; max-width:none; }
 th img.ui { vertical-align:-0.42em; }
+img.ui.wide { height:2em; vertical-align:-0.6em; }

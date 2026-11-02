@@ -170,8 +170,8 @@
     </p>
     <p>
     <strong>切り分け</strong><img class="ui" src="icons/cut.png" alt="">では、マップを横切る線や囲む線で2つに分け、それぞれを指でずらします。
-    線は下のパレットで「自由曲線」<img class="ui" src="icons/cut_free.png" alt="">か「直線」<img class="ui" src="icons/cut_straight.png" alt="">（始点と終点をタップ）を選べ、囲む線は交差したところで閉じた形になります。
-    ずらしてできた隙間は両側の値をつないで自動で埋まります。「確定」<img class="ui" src="icons/cut_apply.png" alt="">で次の線へ進み、「やり直す」<img class="ui" src="icons/cut_redo.png" alt="">で線を引き直し、「元に戻す」<img class="ui" src="icons/cut_revert.png" alt="">で切り分けを始める前のマップに戻ります。
+    線は下のパレットで「自由曲線」<img class="ui wide" src="icons/cut_free.png" alt="">か「直線」<img class="ui wide" src="icons/cut_straight.png" alt="">（始点と終点をタップ）を選べ、囲む線は交差したところで閉じた形になります。
+    ずらしてできた隙間は両側の値をつないで自動で埋まります。「確定」<img class="ui wide" src="icons/cut_apply.png" alt="">で次の線へ進み、「やり直す」<img class="ui wide" src="icons/cut_redo.png" alt="">で線を引き直し、「元に戻す」<img class="ui wide" src="icons/cut_revert.png" alt="">で切り分けを始める前のマップに戻ります。
     </p>
     <p>
     マップを編集したあと、プリセットで塗り直し<img class="ui" src="icons/preset.png" alt="">の「既定」の印が付いたプリセットを選ぶか、ひとつ前に戻す<img class="ui" src="icons/undo.png" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
@@ -969,10 +969,10 @@ time or rate map that stretches one region of time away from its neighbour; on t
 where part of the picture is cut open.
 </p>
 <p>
-A small palette above the tool row chooses how the line is drawn. <strong>Freehand</strong> <img class="ui" src="icons/cut_free.png" alt=""> takes the line you trace: draw it across the map from edge to edge (you can start and finish outside the map, and an end that stops
+A small palette above the tool row chooses how the line is drawn. <strong>Freehand</strong> <img class="ui wide" src="icons/cut_free.png" alt=""> takes the line you trace: draw it across the map from edge to edge (you can start and finish outside the map, and an end that stops
 inside is extended to the edge in the direction it was travelling), or draw a loop around a region. A loop closes
 where the line crosses itself, so its start and end do not have to meet exactly, and the tiny loops a wobbling
-fingertip makes are ignored. <strong>Straight</strong> <img class="ui" src="icons/cut_straight.png" alt=""> takes two taps: tap the start point, which is marked, then
+fingertip makes are ignored. <strong>Straight</strong> <img class="ui wide" src="icons/cut_straight.png" alt=""> takes two taps: tap the start point, which is marked, then
 the end point, and the map is cut along the straight line through them, extended to the edges &mdash; a faint dashed
 line previews where it will run. The caption under the buttons tells you which step you are on, and turns orange
 for a few seconds if a line could not split the map.
@@ -985,9 +985,9 @@ loop always stays on top; otherwise the piece you dragged last does. Playback pa
 Draw. The tool row holds:
 </p>
 <table>
-  <tr><th><img class="ui" src="icons/cut_redo.png" alt=""> Start over</th><td>Throws away the line and the offsets and lets you draw a new line on the same base. In Straight mode it also cancels a start point you have placed.</td></tr>
-  <tr><th><img class="ui" src="icons/cut_apply.png" alt=""> Apply</th><td>Makes the current result the new base, ready for another cut.</td></tr>
-  <tr><th><img class="ui" src="icons/cut_revert.png" alt=""> Revert</th><td>Returns the map to how it was when you opened Cut &amp; slide, discarding every cut since.</td></tr>
+  <tr><th><img class="ui wide" src="icons/cut_redo.png" alt=""> Start over</th><td>Throws away the line and the offsets and lets you draw a new line on the same base. In Straight mode it also cancels a start point you have placed.</td></tr>
+  <tr><th><img class="ui wide" src="icons/cut_apply.png" alt=""> Apply</th><td>Makes the current result the new base, ready for another cut.</td></tr>
+  <tr><th><img class="ui wide" src="icons/cut_revert.png" alt=""> Revert</th><td>Returns the map to how it was when you opened Cut &amp; slide, discarding every cut since.</td></tr>
 </table>
 <div class="gallery">
   <figure><img src="shots/v15/en/cut_free.png" alt="A freehand loop around a triangle, slid to the right: the original outline in yellow, the moved outline in cyan" loading="lazy"><figcaption>Freehand: the loop closes where the line crosses itself</figcaption></figure>
