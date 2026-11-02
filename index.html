@@ -188,13 +188,22 @@
 <h3>4. 書き出す</h3>
 <p>
 画面下の<img class="ui" src="icons/dock_export.png" alt=""><strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
-長さは編集画面の歯車にある「再生時間」で調整でき、解像度は「映像の読み込み」で選んだ解像度になります。
+長さは編集画面の歯車にある「再生時間」で調整でき（決まり方は<a href="time.html#length">時間処理の仕組み</a>で説明しています）、解像度は「映像の読み込み」で選んだ解像度になります。
 </p>
 <p>
 設定の「書き出し」で<strong>「元の映像から書き出す」</strong>をオンにすると、プレビュー用に読み込んだ映像ではなく、素材のファイルを読み直して元の解像度で書き出します。
-読み込んだ解像度や秒数に関わらず 4K のまま書き出せ、素材が HDR（HLG・PQ）なら<strong>「HDR のまま書き出す」</strong>で 10bit のまま保てます。
+読み込みの解像度に関わらず元の解像度のまま書き出せ、素材が HDR（HLG・PQ）なら<strong>「HDR のまま書き出す」</strong>で 10bit のまま保てます。
 書き出しの最中は画面が自動でロックされません。アプリが裏に回ると止まりますが、もう一度「書き出し」を押すと、<strong>続きから書き出す</strong>か<strong>ここまでを動画にする</strong>かを選べます。
 読み込んだ映像が大きいときは、書き出しの間だけ手放して、終わってから読み直します（その間プレビューは止まります）。
+</p>
+<p>
+メモリを多く使い、時間もかかります。メモリ 8GB 以上の機種（iPhone 15 Pro 以降、M チップの iPad など）がおすすめです。それ以外の機種では書き出せないことがあります。
+</p>
+<p>
+<strong>処理のしくみ</strong> — 読み込んだ動画は、アプリ内の一時フォルダに元のまま（間引きも縮小もせずに）写してあり、GPU にはそこから縮小・間引きした分だけを載せています。
+「元の映像から書き出す」は GPU の絵ではなくこの写しを区切りながら読み直すので、読み込み範囲を元の解像度・フレームレートで書き出せます。素材が HDR なら HLG / PQ の 10bit HEVC になります。
+写しを残すのは編集中の動画の分だけで、別の動画を開いたときとアプリを終了したときに消します（iOS が裏で終わらせたときは次の起動時）。
+中止した書き出しの途中結果はアプリ内の Application Support に残ります。カメラから取り込んだ映像には使えません（GPU 上の映像から書き出します）。
 </p>
 <p>
 書き出しのフレームレートは 24・30・60fps で、素材が 120fps・240fps のときは 120・240fps も選べます。
@@ -1219,9 +1228,22 @@ stored them, so they can differ very slightly from the preview. Maps stay exactl
 are read again.
 </p>
 <p>
+It uses a lot of memory and takes longer. A device with 8&nbsp;GB of memory or more is recommended (iPhone 15 Pro or later,
+iPads with an M-series chip, and so on). On other devices the export may fail.
+</p>
+<p>
 The screen stays awake while it runs. If the app goes to the background the export stops; tap Export again to choose
 <strong>Resume Export</strong> or <strong>Save Finished Part as Video</strong>. When the loaded video is large, the app releases
 it for the duration of the export and reloads it afterwards, so the preview pauses until then.
+</p>
+<p>
+<strong>How it works.</strong> The loaded video is kept as an untouched copy (no frame skipping or downscaling) in the
+app&rsquo;s temporary folder; only a downscaled, frame-skipped version of it is held on the GPU. Export from the source file
+re-reads that copy in chunks instead of the GPU video, so the loaded range is exported at the original resolution and frame
+rate. HDR sources are written as 10-bit HEVC in HLG or PQ. Only the copy of the video being edited is kept; it is deleted
+when you open another video or quit the app (or at the next launch if iOS ended the app in the background). The finished
+part of a cancelled export is kept in the app&rsquo;s Application Support folder. Not available for video captured from the
+camera, which exports from the GPU video.
 </p>
 
 <h3>Resolution, and why it is not your camera&rsquo;s</h3>
@@ -1648,7 +1670,7 @@ positioned so your range sits in the middle of it.
 Rendering allocates on top of the frames already resident, so an export can run out of memory even though the
 clip loaded fine &mdash; usually reported as a texture that could not be allocated. Lower
 <strong>Resolution</strong> or <strong>Seconds to load</strong>, tap <strong>Reload with these settings</strong>,
-shorten <strong>Duration</strong>, close other apps, and export again. <a href="#source-export-en">Export from the source file</a> needs far less memory for the same result.
+shorten <strong>Duration</strong>, close other apps, and export again. On a device with 8&nbsp;GB of memory or more you can also try <a href="#source-export-en">Export from the source file</a>.
 </p>
 
 <h3>Nothing seems to happen when I switch between Vertical slit and Horizontal slit</h3>
