@@ -623,8 +623,7 @@ audio and saved to your photo library, with a progress bar over the output while
 app open until it finishes. The length follows the map and mode (for a time map, the seconds in the range in
 use) and the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong> panel (the gear
 icon). Settings shows the resulting <strong>Export length</strong> next to <strong>Frame rate</strong> under
-<strong>Export</strong>, while <strong>Include audio</strong> and <strong>Also save the map as a 16-bit
-PNG</strong> sit under <strong>Export options</strong>. The video is written at the <strong>Resolution</strong>
+<strong>Export</strong>, while <strong>Include audio</strong> sits under <strong>Export options</strong>. The video is written at the <strong>Resolution</strong>
 chosen under Video Loading. If you declined the Photos permission, a share sheet opens instead.
 </p>
 
@@ -1020,8 +1019,7 @@ seeds its canvas from whatever the map currently holds, so a gradient, a preset 
 base and your strokes add to it. <strong>Cut &amp; slide</strong> likewise starts from the current map, drawn or
 generated. The reverse does not hold &mdash; choosing <strong>Gradient</strong> or
 <strong>From motion</strong> after drawing rebuilds the map from scratch and discards the strokes, with no
-undo to get them back. If a drawing is worth keeping, export it first: see
-<a href="#export-en">Also save the map as a 16-bit PNG</a>.
+undo to get them back.
 </p>
 
 <h2 id="sound-en">Sound</h2>
@@ -1297,26 +1295,6 @@ the time axis more real frames to land on. The button is built only for that com
 Surface it is not there.
 </p>
 
-<h3>Also save the map as a 16-bit PNG</h3>
-<p>
-This toggle, under <strong>Export options</strong> in Settings, makes the export produce a second thing: a
-share sheet containing the maps as single-channel <strong>16-bit grayscale PNGs</strong>. The time or rate map
-is always written; the space map comes too, but only if you have actually edited it. The filename carries the
-map&rsquo;s role &mdash; <code>time_0-512</code>, <code>rate_1.0</code> or <code>space_912</code> &mdash; which
-is what the desktop version reads them back by. For a time map that number is the map&rsquo;s height in pixels,
-which is the time-axis length in Vertical slit. The files are written to a temporary folder rather than your
-photo library, so dismiss the share sheet without saving and they are gone.
-</p>
-<p>
-The reason to keep them is quality. The .mp4 can only ever be as good as the working copy, limited to the
-resolution you loaded at and to the number of frames the device could hold. The map is not a picture of the result,
-it is the instruction &mdash; brightness per pixel, 65,536 levels of it, which is why it is 16-bit and not 8-bit (at
-8-bit the time axis visibly steps). A map also carries no resolution of its own: it is read as brightness from 0 to 1
-and stretched over whatever frame it is applied to. So take that PNG and your original, full-resolution footage to
-a desktop, render there with the desktop version (<strong>imgtrans</strong>), which reads these files as they
-are named, and you get the same time design at the full quality of the original. Sketch on the device, finish
-on the desktop.
-</p>
 <p>
 Sustained exporting warms the device and drains the battery. For a long piece, plug in first.
 </p>
@@ -1383,8 +1361,7 @@ whole clip if it is shorter), then skipped frames (keeping at least 15&nbsp;fps)
 The two choices buy different things. <strong>Resolution</strong> buys detail within a frame, and costs memory in
 proportion to area &mdash; Full is four times the memory of 1/2, not twice. <strong>Seconds to load</strong> trades
 length against time resolution: the fewer seconds you load, the less the app needs to skip frames. That matters most
-in the slit modes: there the renderer samples the nearest stored frame with no blending, exactly as the desktop version
-does, so a clip thinned to a low frame rate steps visibly. Surface mode blends between the two nearest frames instead,
+in the slit modes: there the renderer samples the nearest stored frame with no blending, so a clip thinned to a low frame rate steps visibly. Surface mode blends between the two nearest frames instead,
 and tolerates thinning much better. If your output stutters rather than flows, load fewer seconds or a lower resolution
 until <strong>Frames</strong> reports no skipping.
 </p>
@@ -1461,14 +1438,12 @@ here, at the cost of the drawing.
 One behaviour to know before you spend time on a map: <strong>loading a different video rebuilds every map,
 edited ones included</strong>, at a size matched to the new clip&rsquo;s aspect ratio, and discards a size you
 set by hand. A map made for one aspect ratio does not mean anything over another. Reloading the <em>same</em>
-clip &mdash; the reload buttons, or rotating the video &mdash; does not do this. If a map is worth keeping,
-export it as a PNG first.
+clip &mdash; the reload buttons, or rotating the video &mdash; does not do this.
 </p>
 
 <h3>Export options</h3>
 <table>
   <tr><th>Include audio</th><td>On by default. Writes the time-manipulated audio into the exported file. Turn it off for a silent .mp4. It has no effect when the source has no audio track, or when the sound is muted or set to Off in the editor&rsquo;s sound panel &mdash; those settings carry through to the export as they are.</td></tr>
-  <tr><th>Map PNG</th><td><strong>Also save the map as a 16-bit PNG</strong> &mdash; off by default. Writes the map alongside the video and opens a share sheet for it: see <a href="#export-en">Exporting</a> for what the files are and why they are worth keeping.</td></tr>
 </table>
 
 <h3>Current source</h3>
@@ -1620,14 +1595,6 @@ Manager off first or the display is treated as an extended desktop and the full-
 Without a display, the full-screen Output view on the device itself is the quickest way to judge a result at size.
 </p>
 
-<h3>Keep the map, not just the video</h3>
-<p>
-Turn on <strong>Also save the map as a 16-bit PNG</strong> in Settings &rarr; Export options and a share sheet
-offers it alongside the render. The map is the part of the work that can be taken further &mdash; rendered at
-full resolution later in the desktop version (imgtrans), free of the working resolution the phone used &mdash;
-or kept as a record of what you made. Expect the device to warm up: stay plugged in for a long session.
-</p>
-
 <h2 id="support-en">Frequently asked questions</h2>
 
 <h3>Loading a video takes a long time</h3>
@@ -1693,8 +1660,8 @@ the only workaround is to trim the video before importing it.
 <p>
 Every decoded frame is converted to sRGB at import, so an HDR clip &mdash; HLG or Dolby Vision, which is what a
 recent iPhone shoots by default &mdash; loses its grade on the way in and will not match what Photos shows you.
-Convert or grade the clip to SDR before importing it, or export the 16-bit map PNG and render the original HDR
-footage against it on a computer.
+Convert or grade the clip to SDR before importing it, or use <a href="#source-export-en">Export from the source file</a>,
+which can keep an HDR source as 10-bit HDR in the exported video.
 </p>
 
 <h3>I cannot find the video I exported</h3>
@@ -1760,8 +1727,7 @@ because a map shaped for the old frame no longer lines up. Re-importing the <em>
 
 <h3>Can I bring a map in from elsewhere, or take one out?</h3>
 <p>
-Out, yes: <strong>Also save the map as a 16-bit PNG</strong> under Settings &rarr; Export options, described in
-<a href="#export-en">Exporting</a>. In, no &mdash; the current version has no way to load an image as a map;
+Neither, at the moment &mdash; the current version has no way to load an image as a map or to save one;
 maps are made inside the app with Draw, Gradient, Presets, From motion or Cut &amp; slide.
 </p>
 
