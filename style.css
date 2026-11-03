@@ -49,12 +49,18 @@ figcaption { color:var(--muted); font-size:.85rem; margin-top:10px; }
 .gallery figure { margin:0; }
 .gallery figure img { max-width:100%; }
 
+/* 各部の名前を赤い矢印で示した図（幅いっぱい） */
+figure.guide img { max-width:100%; border:0; }
+
 /* App Store バッジ */
 .store { margin: 18px 0 4px; }
 .store img { height: 48px; width: auto; display: inline-block; }
 .store a { display: inline-block; }
 
-/* 本文に添えるアプリのボタン（実機の画面から切り出したもの） */
-img.ui { display:inline-block; height:1.5em; width:auto; vertical-align:-0.42em; border-radius:7px; margin:0 .12em; border:0; max-width:none; }
-th img.ui { vertical-align:-0.42em; }
-img.ui.wide { height:2em; vertical-align:-0.6em; }
+/* 本文に添えるアプリのボタン（アプリと同じ SF Symbols の形。tools/siteassets で作る） */
+img.ui { display:inline-block; height:1.6em; width:auto; vertical-align:-0.45em; margin:0 .12em; border:0; max-width:none; }
+th img.ui { vertical-align:-0.45em; }
+/* 文字の付いたボタン（切り分けの「確定」など） */
+.uichip { display:inline-flex; align-items:center; gap:.3em; padding:.08em .65em; margin:0 .12em; border-radius:999px;
+  background:#1c1c1e; color:#fff; font-size:.85em; font-weight:600; line-height:1.5; white-space:nowrap; vertical-align:.04em; }
+.uichip img { height:1em; width:auto; display:block; border:0; }
