@@ -202,7 +202,7 @@
 <p>
 <strong>処理のしくみ</strong> — 読み込んだ動画は、アプリ内の一時フォルダに元のまま（間引きも縮小もせずに）写してあり、GPU にはそこから縮小・間引きした分だけを載せています。
 「元の映像から書き出す」は GPU の絵ではなくこの写しを区切りながら読み直すので、読み込み範囲を元の解像度・フレームレートで書き出せます。素材が HDR なら HLG / PQ の 10bit HEVC になります。
-写しを残すのは編集中の動画の分だけで、別の動画を開いたときとアプリを終了したときに消します（iOS が裏で終わらせたときは次の起動時）。
+写しを残すのは編集中の動画の分だけで、別の動画を開いたときとアプリを終了したときに消します（終了時に消せなかった分は次の起動時）。
 中止した書き出しの途中結果はアプリ内の Application Support に残ります。カメラから取り込んだ映像には使えません（GPU 上の映像から書き出します）。
 </p>
 <p>
@@ -1239,7 +1239,7 @@ it for the duration of the export and reloads it afterwards, so the preview paus
 app&rsquo;s temporary folder; only a downscaled, frame-skipped version of it is held on the GPU. Export from the source file
 re-reads that copy in chunks instead of the GPU video, so the loaded range is exported at the original resolution and frame
 rate. HDR sources are written as 10-bit HEVC in HLG or PQ. Only the copy of the video being edited is kept; it is deleted
-when you open another video or quit the app (or at the next launch if iOS ended the app in the background). The finished
+when you open another video or quit the app (anything left over is deleted at the next launch). The finished
 part of a cancelled export is kept in the app&rsquo;s Application Support folder. Not available for video captured from the
 camera, which exports from the GPU video.
 </p>
