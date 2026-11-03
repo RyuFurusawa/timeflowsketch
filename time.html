@@ -78,8 +78,8 @@
 <h2 id="volume">4. 3D で見る: 立体グラフ</h2>
 <p>出力の全画面で<strong>「立体グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にこの図が出ます。トップ画面のマップを横にスワイプしても見られます。編集画面の表示メニューの「2画面: 立体グラフ ＋ マップ」「3画面: 映像 ＋ 立体グラフ ＋ マップ」でも、描きながら同じ図を見られます。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
 <div class="gallery">
-  <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と、下の辺に秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
-  <figure><img src="shots/v16/ja/timegraph.png" alt="出力の全画面で時間グラフをオンにしたところ。位置の違う 7 本の縦の線が、左の緑から右の赤まで並び、赤い横線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。縦スリットは出力の時間を縦に取るので、帯ごとの線が縦に、位置を変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
+  <figure><img src="shots/v16/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、下の辺に秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
+  <figure><img src="shots/v16/ja/timegraph.png" alt="時間グラフ。位置の違う 7 本の縦の線が、左の緑から右の赤まで並び、赤い横線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。縦スリットは出力の時間を縦に取るので、帯ごとの線が縦に、位置を変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
 </div>
 <ul>
   <li><strong>箱</strong> — 素材全体を「横×縦×時間」の直方体として描きます。横と縦は映像の画面（縦横比も映像と同じ）、奥行きは素材の 0 秒から終わりまでで、開いたときは素材の終わりが奥になります。秒数は、時間方向の辺のうち画面でいちばん下に見える辺に沿って付きます。</li>
@@ -138,7 +138,7 @@
   <li>間引きの量は読み込む瞬間の空きメモリで決まるので、毎回変わることがあります。</li>
   <li>例: 1920×1080・120fps・9.4 秒の素材で予算が 800MB なら、960×540・先頭 4.0 秒・2 コマに 1 枚（60fps）で約 240 枚になります。</li>
 </ul>
-<figure><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引き" loading="lazy"><figcaption>設定の「映像の読み込み」。解像度と秒数を選ぶと、間引きの有無が「フレーム」に出ます</figcaption></figure>
+<figure class="crop"><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引き" loading="lazy"><figcaption>設定の「映像の読み込み」。解像度と秒数を選ぶと、間引きの有無が「フレーム」に出ます</figcaption></figure>
 <figure class="diagram">
   <img src="time/ja/fig6_decimation.png" alt="120fps の素材を 3 コマに 1 枚読んだときのフレームの参照のしかた">
   <figcaption>上は 120fps の素材を 3 コマに 1 枚だけ読む様子（実効 40fps）。下はそれを速さ 0.25×（時間マップなら再生時間 4×）で見た場合。スリットは最も近い 1 枚を使うので階段状にカクつき、サーフェスは隣の 2 枚を混ぜるので動きは滑らかですが二重像になります。</figcaption>
@@ -253,8 +253,8 @@
 <h2 id="volume-en">4. Seeing it in 3D: the 3D plot</h2>
 <p>Turn on <strong>3D plot</strong> in the full-screen Output view and the screen splits: the output picture on top, this plot below it. You can also swipe the map on the main screen sideways to reach it. The editor&rsquo;s layout menu shows the same plot while you draw, in <strong>Split: 3D plot + map</strong> and <strong>Three panes: video + 3D plot + map</strong>. The plot computes its times with the same function that renders the output picture.</p>
 <div class="gallery">
-  <figure><img src="shots/v16/en/volume.png" alt="Full-screen Output with the 3D plot on: the output picture above, and below it a tilted surface inside the clip box, with seconds along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
-  <figure><img src="shots/v16/en/timegraph.png" alt="Full-screen Output with the time graph on: seven vertical lines at different positions, green at the left to red at the right, and a red horizontal playhead" loading="lazy"><figcaption>The time graph for the same map. A vertical slit runs output time downward, so there is one straight vertical line per strip, each at its own position (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
+  <figure><img src="shots/v16/en/volume.png" alt="The 3D plot: a tilted surface inside the clip box, with seconds along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
+  <figure><img src="shots/v16/en/timegraph.png" alt="The time graph: seven vertical lines at different positions, green at the left to red at the right, and a red horizontal playhead" loading="lazy"><figcaption>The time graph for the same map. A vertical slit runs output time downward, so there is one straight vertical line per strip, each at its own position (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
 </div>
 <ul>
   <li><strong>The box</strong> &mdash; the whole clip as a block of width &times; height &times; time. Width and height are the picture, with the video&rsquo;s own aspect ratio; depth runs from 0 seconds to the end of the clip, with the end at the back when the plot opens. Seconds are labelled along whichever time-direction edge currently appears lowest on screen.</li>
@@ -313,7 +313,7 @@
   <li>How many frames are skipped depends on free memory at the moment of loading, so it can differ from one load to the next.</li>
   <li>Example: a 1920&times;1080, 120 fps, 9.4-second clip with an 800 MB budget loads at 960&times;540, the first 4.0 seconds, 1 frame in 2 (60 fps) &mdash; about 240 frames.</li>
 </ul>
-<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load and the Frames line" loading="lazy"><figcaption>Settings &rarr; Video Loading. The Frames line says whether frames will be skipped; its i gives the reason</figcaption></figure>
+<figure class="crop"><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load and the Frames line" loading="lazy"><figcaption>Settings &rarr; Video Loading. The Frames line says whether frames will be skipped; its i gives the reason</figcaption></figure>
 <figure class="diagram">
   <img src="time/en/fig6_decimation.png" alt="How frames are looked up when a 120 fps clip is loaded at 1 frame in 3">
   <figcaption>Top: loading only 1 of every 3 frames of a 120 fps clip (40 fps effective). Bottom: the same material played at 0.25&times; (Duration 4&times; on a time map). Slit modes use the nearest frame, so motion steps and stutters; surface modes blend the two neighbouring frames, so motion is smooth but doubled.</figcaption>

@@ -75,7 +75,7 @@
     入力の全画面には使用範囲のバーと読み込みの情報（元の映像と GPU 上の映像の大きさ・fps）が出て、情報をタップすると読み込みの設定を開けます。
     </p>
     <p>
-    出力の全画面は<strong>モニタービュー</strong>です。開いた直後は絵だけで、画面に触れると下からメニューが出ます。
+    出力の全画面は<strong>モニタービュー</strong>です。開いた直後は絵だけで、画面に触れると下からメニューが出ます（もう一度触れると隠れます）。
     <strong>入力映像・マップ・出力映像・立体グラフ・時間グラフ</strong>を選ぶと、いくつでも並べて見比べられます。
     押した順に上から並びます（横長の画面では左右に）。マップは、いま出力に効いているもの（時間マップかレートマップ）が出ます。
     空間マップは編集したときだけ選べます。トップ画面の立体グラフの右下のボタンから開くと、立体グラフだけで始まります。編集画面の出力映像と立体グラフの右下のボタンからも開け、「戻る」で編集画面に帰ります。
@@ -108,10 +108,10 @@
   
 
 
-<figure class="guide"><a href="shots/guide/monitor_ja.jpg"><img src="shots/guide/monitor_ja.jpg" alt="モニタービューの図。入力映像、時間マップ、出力映像、立体グラフ、時間グラフをすべて並べ、下のメニューで並べるものを選ぶ説明を添えている" loading="lazy"></a><figcaption>モニタービュー（押すと大きく開きます）</figcaption></figure>
+<figure class="guide"><a href="shots/guide/monitor_ja.jpg"><img src="shots/guide/monitor_ja.jpg" alt="モニタービューの図。入力映像、時間マップ、出力映像、立体グラフを並べ、下のメニューで並べるものを切り替える" loading="lazy"></a><figcaption>モニタービュー（押すと大きく開きます）</figcaption></figure>
 <div class="gallery">
-  <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面表示。下に読み込みの情報、使用範囲のバー、秒数が並ぶ" loading="lazy"><figcaption>入力の全画面。情報をタップすると読み込みの設定が開きます</figcaption></figure>
-  <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と秒数の目盛り" loading="lazy"><figcaption>立体グラフ。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
+  <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面表示の下の部分。読み込みの情報、使用範囲のバー、秒数が並ぶ" loading="lazy"><figcaption>入力の全画面。情報をタップすると読み込みの設定が開きます</figcaption></figure>
+  <figure><img src="shots/v16/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、秒数の目盛り" loading="lazy"><figcaption>立体グラフ。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
 </div>
 
 <figure class="guide"><a href="shots/guide/editor_ja.jpg"><img src="shots/guide/editor_ja.jpg" alt="編集画面の各部の名前を赤い線で示した図。上から適用パラメータなどのボタン、結果の映像、編集するマップ、筆の色とスライダー、手法のボタン" loading="lazy"></a><figcaption>編集画面（押すと大きく開きます）</figcaption></figure>
@@ -148,11 +148,8 @@
   
 
 
-<figure><img src="shots/v16/ja/editor_3pane.png" alt="編集画面の3画面表示。上から出力映像、傾いた面の入った立体グラフ、左→右のグラデーションの時間マップが並び、下にプリセットのボタン" loading="lazy"><figcaption>3画面: 映像 ＋ 立体グラフ ＋ マップ</figcaption></figure>
+<figure><img src="shots/v16/ja/editor_3pane.png" alt="編集画面の3画面表示。上から出力映像、傾いた面の入った立体グラフ、左→右のグラデーションの時間マップが並ぶ" loading="lazy"><figcaption>3画面: 映像 ＋ 立体グラフ ＋ マップ</figcaption></figure>
 
-<div class="shot">
-  <figure><img src="shots/presets.png" alt="プリセットで塗り直しの画面。7つのプリセットに再生の説明が付いている"></figure>
-  <div class="body">
     <h3>3. 生成やプリセットから始める</h3>
     <p>
     いちばん下の列の右側に並ぶボタンで、マップの作り方を切り替えられます。左から<strong>描画</strong><img class="ui" src="icons/draw.svg" alt="">・<strong>グラデーション生成</strong><img class="ui" src="icons/gradient.svg" alt="">・<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">・<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">・<strong>プリセットで塗り直し</strong><img class="ui" src="icons/preset.svg" alt="">で、押すとその方法の道具が上に出ます。
@@ -164,6 +161,7 @@
     <strong>プリセットで塗り直し</strong><img class="ui" src="icons/preset.svg" alt="">では、一色やグラデーションでマップ全体を塗り替えます。
     各ボタンの下に、いまの設定でどう再生されるか（通常再生・逆再生・時間停止など）が表示されます。
     </p>
+    <figure class="crop"><img src="shots/presets.png" alt="プリセットで塗り直しの道具。重ね方の選択と、再生の説明が付いた 7 つのプリセット" loading="lazy"></figure>
     <p>
     <strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">では、マップを横切る線や囲む線で2つに分け、それぞれを指でずらします。
     線は下のパレットで<span class="uichip"><img src="icons/chip_free.svg" alt="">自由曲線</span>か<span class="uichip"><img src="icons/chip_straight.svg" alt="">直線</span>（始点と終点をタップ）を選べ、囲む線は交差したところで閉じた形になります。
@@ -173,8 +171,6 @@
     マップを編集したあと、プリセットで塗り直し<img class="ui" src="icons/preset.svg" alt="">の「既定」の印が付いたプリセットを選ぶか、ひとつ前に戻す<img class="ui" src="icons/undo.svg" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
     </p>
     <p>生成したマップの上から、そのまま描き足すこともできます。</p>
-  </div>
-</div>
 
 <div class="gallery">
   <figure><img src="shots/v15/ja/cut_free.png" alt="切り分けで三角形を囲んで右へずらした画面。元の線が黄色、移動先が水色の点線" loading="lazy"><figcaption>自由曲線で囲んでずらす。線が交差したところで閉じます</figcaption></figure>
@@ -273,7 +269,7 @@ GPU が一度に扱えるフレーム数（2048枚）やメモリに収まらな
 スリットの時間マップでは、歯車の「使用範囲だけを読み込み直す」も使えます。
 間引いて読み込んだあとに使用範囲を狭めると、間引きを減らせる長さになった所で「この範囲なら 60fps で読めます」のように入力映像の上に出るので、「読み直す」を押せばその fps で読み直せます（120fps の素材なら 40 → 60 → 120fps と段ごとに出ます）。
 </p>
-<figure><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引きの表示" loading="lazy"><figcaption>設定の「映像の読み込み」。間引きが起きるときは「フレーム」に出ます（理由は i で確かめられます）</figcaption></figure>
+<figure class="crop"><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引きの表示" loading="lazy"><figcaption>設定の「映像の読み込み」。間引きが起きるときは「フレーム」に出ます（理由は i で確かめられます）</figcaption></figure>
 
 <h3>「読み込み範囲の外は動きません」と表示されます</h3>
 <p>
@@ -529,7 +525,7 @@ to open the <strong>Video Loading</strong> settings on their own and reload from
 </p>
 <p>
 The button on the <strong>Output</strong> opens the <strong>Monitor view</strong>. It opens with nothing but the
-picture; touch the screen and a menu slides up from the bottom. Pick <strong>Input</strong>, the map,
+picture; touch the screen and a menu slides up from the bottom (touch again to hide it). Pick <strong>Input</strong>, the map,
 <strong>Output</strong>, <strong>3D plot</strong> and <strong>Time graph</strong> in any combination and they are
 laid out together, in the order you picked them &mdash; from the top, or left to right on a wide screen. The map shown
 is the one driving the output (the time map or the rate map); the space map can be picked once you have edited it.
@@ -538,9 +534,9 @@ Pro Max and iPad) a button at the bottom right of each pane shows that one alone
 Output and the 3D plot in the editor opens it too, and <strong>Back</strong> returns to the editor. The Monitor view is for looking
 only: export from <strong>Export</strong> on the main screen.
 </p>
-<figure class="guide"><a href="shots/guide/monitor_en.jpg"><img src="shots/guide/monitor_en.jpg" alt="The Monitor view showing all of the input video, the time map, the output video, the 3D plot and the time graph, with a note on choosing what to show from the menu below" loading="lazy"></a><figcaption>The Monitor view (tap to enlarge)</figcaption></figure>
+<figure class="guide"><a href="shots/guide/monitor_en.jpg"><img src="shots/guide/monitor_en.jpg" alt="The Monitor view showing the input video, the time map, the output video and the 3D plot, with the menu below for switching what is shown" loading="lazy"></a><figcaption>The Monitor view (tap to enlarge)</figcaption></figure>
 <div class="gallery">
-  <figure><img src="shots/v15/en/input_full.png" alt="Full-screen Input with the loading information line, the range bar and the seconds in use" loading="lazy"><figcaption>Full-screen Input: tap the information line to open Video Loading</figcaption></figure>
+  <figure><img src="shots/v15/en/input_full.png" alt="The bottom of the full-screen Input view: the loading information line, the range bar and the seconds in use" loading="lazy"><figcaption>Full-screen Input: tap the information line to open Video Loading</figcaption></figure>
 </div>
 
 <h3 id="plots-en">The 3D plot and the time graph</h3>
@@ -579,7 +575,7 @@ colours. The orange band is the range in use, the
 blue band the loaded range, and the red vertical line is the current playback position. How to read both for each
 mode is explained in <a href="time.html#volume-en">How time processing works</a>.
 </p>
-<figure><img src="shots/v16/en/volume.png" alt="Full-screen Output with the 3D plot on: the output picture above, and below it a tilted surface carrying the picture inside a box marked in seconds" loading="lazy"><figcaption>The 3D plot. With a Left &rarr; right time map under a vertical slit, the left of the picture shows earlier moments, so the surface is tilted</figcaption></figure>
+<figure class="crop"><img src="shots/v16/en/volume.png" alt="The 3D plot: a tilted surface carrying the picture inside a box marked in seconds" loading="lazy"><figcaption>The 3D plot. With a Left &rarr; right time map under a vertical slit, the left of the picture shows earlier moments, so the surface is tilted</figcaption></figure>
 
 <figure class="guide"><a href="shots/guide/editor_en.jpg"><img src="shots/guide/editor_en.jpg" alt="The editor with each part named by red lines: the buttons along the top, the result, the map you edit, brush tones and sliders, and the method buttons" loading="lazy"></a><figcaption>The editor (tap to enlarge)</figcaption></figure>
     <h3>3. Drawing or generating a map</h3>
@@ -806,7 +802,7 @@ all three, stacked along the longer side of the screen, so you can watch the sur
 choice is independent of what an external display is showing &mdash; that shows the output alone, or mirrors
 the screen if you chose that in Settings.
 </p>
-<figure><img src="shots/v16/en/editor_3pane.png" alt="The editor in Three panes: the output video at the top, the 3D plot with a tilted surface in the middle, and a left-to-right time map at the bottom above the preset buttons" loading="lazy"><figcaption>Three panes: video + 3D plot + map</figcaption></figure>
+<figure><img src="shots/v16/en/editor_3pane.png" alt="The editor in Three panes: the output video at the top, the 3D plot with a tilted surface in the middle, and a left-to-right time map at the bottom" loading="lazy"><figcaption>Three panes: video + 3D plot + map</figcaption></figure>
 
 <h3>Draw</h3>
 <p>
@@ -887,9 +883,6 @@ forwards, then backwards, then forwards again, once per cycle, while the same wa
 instead freezes each column at a different moment.
 </p>
 
-<div class="shot">
-  <figure><img src="shots/en/presets.png" alt="The preset screen: seven preset buttons, each with a thumbnail and a caption saying what it will do with the current settings"></figure>
-  <div class="body">
     <h3>Presets</h3>
     <p>
     Seven buttons repaint the whole map in one tap: <strong>All black</strong>, <strong>All grey</strong>,
@@ -902,8 +895,7 @@ instead freezes each column at a different moment.
     parameters you have set. Those labels are computed rather than fixed, so they change the moment you change
     anything that matters. As with Gradient, you can choose <strong>Replace</strong> (the default), <strong>Add</strong> or <strong>Multiply</strong>.
     </p>
-  </div>
-</div>
+    <figure class="crop"><img src="shots/en/presets.png" alt="The preset tools: the blend choice and seven preset buttons, each with a thumbnail and a caption saying what it will do with the current settings" loading="lazy"></figure>
 
 <p>
 On a <strong>time map in vertical slit</strong>, where the map&rsquo;s vertical axis is output time, they read
@@ -1091,7 +1083,7 @@ water, traffic, wind, a crowd &mdash; and is the clearest way to hear what a rat
 of each region arrives as pitch, uninterrupted.
 </p>
 
-<figure><img src="shots/v15/en/sound_info.png" alt="The Sound panel with the explanation of Granular and Rate playback open" loading="lazy"><figcaption>The i next to the method explains both</figcaption></figure>
+<figure class="crop"><img src="shots/v15/en/sound_info.png" alt="The Sound panel with the explanation of Granular and Rate playback open" loading="lazy"><figcaption>The i next to the method explains both</figcaption></figure>
 
 <h3>Reverb</h3>
 <p>
@@ -1341,7 +1333,7 @@ when frames are being skipped, the app runs out of memory, or it feels slow. The
 you tap the information line in the full-screen Input view. Until a video is loaded its controls are shown greyed
 out.
 </p>
-<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading. The Frames line shows when frames are skipped; its i gives the reason</figcaption></figure>
+<figure class="crop"><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading. The Frames line shows when frames are skipped; its i gives the reason</figcaption></figure>
 <table>
   <tr><th>Resolution</th><td><strong>Full</strong> / <strong>1/2</strong> / <strong>1/4</strong> / <strong>1/8</strong> / <strong>1/16</strong> &mdash; the size the loaded video is worked at, as a fraction of the source; the pixel size of each option is printed under it. The file in your photo library is never modified. This is also the resolution the export is written at.</td></tr>
   <tr><th>Seconds to load</th><td>How much of the video to use, from 0.5&nbsp;s up to the whole clip in steps of 0.1&nbsp;s, shown as &ldquo;&hellip; s of &hellip; s&rdquo;. It never drops below the length of the range in use on the main screen. The line underneath gives the start time, which always follows the beginning of the range in use (moving earlier only when the seconds would otherwise run past the end of the clip).</td></tr>
