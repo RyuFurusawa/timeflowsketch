@@ -62,7 +62,7 @@
 <figure class="guide"><a href="shots/guide/top_ja.jpg"><img src="shots/guide/top_ja.jpg" alt="トップ画面の各部の名前を赤い線で示した図。入力映像、使用範囲のバー、マップ画像と道具、出力映像が並んでいる" loading="lazy"></a><figcaption>トップ画面（押すと大きく開きます）</figcaption></figure>
     <h3>1. 画面の見かた</h3>
     <p>
-    トップ画面は上から <strong>入力映像</strong>・<strong>マップ画像</strong>・<strong>出力映像</strong> の3段です（縦長の素材では、上の段に入力映像と出力映像、下の段にマップ画像と立体グラフが並びます）。
+    トップ画面は上から <strong>入力映像</strong>・<strong>マップ画像</strong>・<strong>出力映像</strong> の3段です。縦長の素材と、iPad の横向き・Mac では、上の段に入力映像と出力映像、下の段にマップ画像と立体グラフの 4 画面で並びます。
     同じ素材が、マップによってどう変わったかをその場で見比べられます。
     </p>
     <p>
@@ -78,7 +78,7 @@
     出力の全画面は<strong>モニタービュー</strong>です。開いた直後は絵だけで、画面に触れると下からメニューが出ます。
     <strong>入力映像・マップ・出力映像・立体グラフ・時間グラフ</strong>を選ぶと、いくつでも並べて見比べられます。
     押した順に上から並びます（横長の画面では左右に）。マップは、いま出力に効いているもの（時間マップかレートマップ）が出ます。
-    空間マップは編集したときだけ選べます。トップ画面の立体グラフの右下のボタンから開くと、立体グラフだけで始まります。
+    空間マップは編集したときだけ選べます。トップ画面の立体グラフの右下のボタンから開くと、立体グラフだけで始まります。編集画面の出力映像と立体グラフの右下のボタンからも開け、「戻る」で編集画面に帰ります。
     画面の大きな端末（iPhone Air・Plus・Pro Max・iPad）では、並べた画面の右下のボタンでその画面だけを全画面にできます。
     モニタービューは見るための画面なので、書き出しはトップ画面の「書き出し」から行います。
     </p>
@@ -86,7 +86,7 @@
     モニタービューで<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>をオンにすると、出力の絵と並べてグラフを見られます。
     立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
     右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に、下の面（画素の縦がいちばん大きい側）と左の面（横が 0）を横切る白い線と、その端に赤い秒数が付きます。
-    時間グラフは横が出力の 1 周、縦が素材の時刻で、画面の場所ごとにどの瞬間を映すかを線で示します。
+    時間グラフは横が出力の 1 周、縦が素材の時刻で（縦スリットでは縦と横が入れ替わります）、画面の場所ごとにどの瞬間を映すかを線で示します。
     横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
     レートはレートマップ基準で編集しているとき、空間は空間マップを編集したときに現れます。
     立体グラフは、トップ画面のマップを横にスワイプしても見られます（空間マップを編集していれば、その前に空間マップのページが入ります）。
@@ -118,7 +118,7 @@
     <h3>2. マップを描く</h3>
     <p>
     マップ画像の右下にある鉛筆アイコン<img class="ui" src="icons/map_edit.svg" alt="">、出力映像のタップ、または画面下の<img class="ui" src="icons/dock_edit.svg" alt=""><strong>「編集」</strong>から編集画面に入ります。
-    下半分のマップの上を指や Apple Pencil でなぞると、その明るさに応じて時間の流れが変わります。
+    マップの上を指や Apple Pencil でなぞると、その明るさに応じて時間の流れが変わります。
     </p>
     <p>
     ちょっとした描き足しなら、トップ画面のマップ画像をそのままなぞっても描けます（赤い線の近くを触ると、再生位置の移動になります）。
@@ -126,7 +126,7 @@
     その隣の<strong>グラデーション</strong><img class="ui" src="icons/map_wave.svg" alt="">のボタンを押すと、マップが縞のグラデーションになり、なぞって動かす・ピンチで周期・2 本指で回して角度を、その場で変えられます（✓ で終わります）。
     続く<strong>ブラー</strong><img class="ui" src="icons/map_blur.svg" alt="">は押すたびにマップに 1 段ブラーをかけ、<strong>反転</strong><img class="ui" src="icons/map_invert.svg" alt="">は明暗を入れ替えます。レートマップでは<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">、空間マップでは<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">も並びます（はさみを押してマップを横切る線を引き、分かれた領域をドラッグでずらして、上に出る「ずらしたら、ここをタップで確定」を押します）。
     描いたあとは右下に「ひとつ前に戻す」<img class="ui" src="icons/undo.svg" alt="">が出ます。
-    編集画面のマップの右上にある目のボタン<img class="ui" src="icons/eye.svg" alt="">で、マップの見え方を<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤で、レートマップと空間マップは線と線の間もその色で塗り分けます。数字の所では線が途切れ、単位は一番下の数字にだけ付きます。見え方が変わるだけで、マップの中身は変わりません。
+    マップの右上にある目のボタン<img class="ui" src="icons/eye.svg" alt="">で、マップの見え方を<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤で、レートマップと空間マップは線と線の間もその色で塗り分けます。数字の所では線が途切れ、単位は一番下の数字にだけ付きます。見え方が変わるだけで、マップの中身は変わりません。目のボタンはトップ画面・編集画面・モニタービューのマップにあり、編集画面では余白があれば、マップの名前とともに絵の外に出ます。
     スリットのときは、同じ目のボタンで<strong>読み取り値</strong>をオンにすると、再生位置に細い白い線が出て、スリットに沿った 7 本（縦長の映像の縦スリットでは 5 本）の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を示します（読み取り値）。上から、素材の何秒か（白）と、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）。空間マップを描き換えていれば、素材のどの位置か（px。緑〜赤）が 3 段目に加わります。色は等高線と同じです。数字の右（横スリットは数字の上）には、どの段が何の数字か（時間位置・再生レート・空間位置）を書き添えます。白い線の先には出力の何秒目かも出ます。ライブでは時間マップのとき何秒前かを、レートマップのときはマップから読んだレートを示します。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。読み取り値をオンにすると、トップ画面でも、出力がいま映している素材の時刻の範囲が入力映像のバーに赤く出ます（普通の再生では点、時間が広がる所では横に伸びた帯。入力映像の全画面表示では出しません）。サーフェスでも読み取り値をオンにすると、画面全体が映している範囲（立体グラフの赤い線と同じ）が入力映像のバーに赤い帯で出ます。入力の再生位置はバーの緑の縦線です。
     </p>
     <p>
@@ -136,14 +136,14 @@
     いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
     <p>
-    いちばん下の列の左から 2 つめのボタン<img class="ui" src="icons/undo.svg" alt="">で、<strong>ひとつ前の状態に戻せます</strong>。押すたびに 1 手順ずつ戻り、
+    いちばん下の列の左端のボタン<img class="ui" src="icons/undo.svg" alt="">で、<strong>ひとつ前の状態に戻せます</strong>。押すたびに 1 手順ずつ戻り、
     ストロークだけでなくプリセットやグラデーション生成など、どの方法での変更もさかのぼれます
     （スライダーは指を離すまでが 1 手順）。長押しすると「デフォルトの状態に戻す」が出ます。
     手順はマップごとに最大 30 まで覚えていて、アプリを終了すると消えます。
     </p>
     <p>
-    左下の表示メニュー<img class="ui" src="icons/layout.svg" alt="">で並べ方を選べます。<strong>重ねて表示</strong>・<strong>マップのみ</strong>・<strong>映像のみ</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
-    <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。
+    右上の表示メニュー<img class="ui" src="icons/layout.svg" alt="">で並べ方を選べます。<strong>重ねて表示</strong>・<strong>マップのみ</strong>・<strong>映像のみ</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
+    <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。マップは選んでいる 1 枚だけを表示し、左上の「時間マップ」などの表示で切り替えます。
     </p>
   
 
@@ -158,7 +158,7 @@
     いちばん下の列の右側に並ぶボタンで、マップの作り方を切り替えられます。左から<strong>描画</strong><img class="ui" src="icons/draw.svg" alt="">・<strong>グラデーション生成</strong><img class="ui" src="icons/gradient.svg" alt="">・<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">・<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">・<strong>プリセットで塗り直し</strong><img class="ui" src="icons/preset.svg" alt="">で、押すとその方法の道具が上に出ます。
     <strong>グラデーション生成</strong>は規則的な縞模様を、
     <strong>モーションから生成</strong>は映像自身の動きからマップを作ります（動きの残像が変化する「ヒストリー」はサーフェスのときだけ使えます）。
-    グラデーションは、いまのマップへの重ね方を<strong>上書き・加算・乗算</strong>から選べます（既定は乗算。マップの形を残したまま縞が入ります）。加算・乗算は始めたときのマップに重ね、加算で白を超えたところは全体をいちばん明るい所で割って収めます。トップ画面では、グラデーションを操作している間 ✓ の横に同じ選択肢が出ます。
+    グラデーションは、いまのマップへの重ね方を<strong>上書き・加算・乗算</strong>から選べます（既定は乗算。マップの形を残したまま縞が入ります）。加算・乗算は始めたときのマップに重ね、加算で白を超えたところは全体をいちばん明るい所で割って収めます。トップ画面では、グラデーションを操作している間 ✓ の横に同じ選択肢が出ます。塗りつぶしとプリセットでも同じ 3 つから選べます（既定は上書き）。
     </p>
     <p>
     <strong>プリセットで塗り直し</strong><img class="ui" src="icons/preset.svg" alt="">では、一色やグラデーションでマップ全体を塗り替えます。
@@ -184,12 +184,15 @@
 <h3>4. 書き出す</h3>
 <p>
 画面下の<img class="ui" src="icons/dock_export.svg" alt=""><strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
-長さは編集画面の歯車にある「再生時間」で調整でき（決まり方は<a href="time.html#length">時間処理の仕組み</a>で説明しています）、解像度は「映像の読み込み」で選んだ解像度になります。
+長さは編集画面の歯車にある「再生時間」で調整できます（決まり方は<a href="time.html#length">時間処理の仕組み</a>で説明しています）。
+書き出しの方法は設定の「書き出し」で選びます。既定は iPhone・iPad がプレビュー書き出し、Mac がフル品質書き出しです。
 </p>
+<ul>
+  <li><strong>プレビュー書き出し</strong> — 読み込んだ映像から書き出します。解像度は「映像の読み込み」で選んだものになります。</li>
+  <li><strong>フル品質書き出し</strong> — 素材のファイルを読み直して、元の解像度・フレームレートで書き出します。素材が HDR（HLG・PQ）なら<strong>「HDR のまま書き出す」</strong>で 10bit のまま保てます。</li>
+</ul>
 <p>
-設定の「書き出し」で<strong>「元の映像から書き出す」</strong>をオンにすると、プレビュー用に読み込んだ映像ではなく、素材のファイルを読み直して元の解像度で書き出します。
-読み込みの解像度に関わらず元の解像度のまま書き出せ、素材が HDR（HLG・PQ）なら<strong>「HDR のまま書き出す」</strong>で 10bit のまま保てます。
-書き出しの最中は画面が自動でロックされません。アプリが裏に回ると止まりますが、もう一度「書き出し」を押すと、<strong>続きから書き出す</strong>か<strong>ここまでを動画にする</strong>かを選べます。
+<strong>フル品質書き出しについて</strong> — 書き出しの最中は画面が自動でロックされません。アプリが裏に回ると止まりますが、もう一度「書き出し」を押すと、<strong>続きから書き出す</strong>か<strong>ここまでを動画にする</strong>かを選べます。
 読み込んだ映像が大きいときは、書き出しの間だけ手放して、終わってから読み直します（その間プレビューは止まります）。
 </p>
 <p>
@@ -197,7 +200,7 @@
 </p>
 <p>
 <strong>処理のしくみ</strong> — 読み込んだ動画は、アプリ内の一時フォルダに元のまま（間引きも縮小もせずに）写してあり、GPU にはそこから縮小・間引きした分だけを載せています。
-「元の映像から書き出す」は GPU の絵ではなくこの写しを区切りながら読み直すので、読み込み範囲を元の解像度・フレームレートで書き出せます。素材が HDR なら HLG / PQ の 10bit HEVC になります。
+フル品質書き出しは GPU の絵ではなくこの写しを区切りながら読み直すので、読み込み範囲を元の解像度・フレームレートで書き出せます。素材が HDR なら HLG / PQ の 10bit HEVC になります。
 写しを残すのは編集中の動画の分だけで、別の動画を開いたときとアプリを終了したときに消します（終了時に消せなかった分は次の起動時）。
 中止した書き出しの途中結果はアプリ内の Application Support に残ります。カメラから取り込んだ映像には使えません（GPU 上の映像から書き出します）。
 </p>
@@ -270,7 +273,7 @@ GPU が一度に扱えるフレーム数（2048枚）やメモリに収まらな
 スリットの時間マップでは、歯車の「使用範囲だけを読み込み直す」も使えます。
 間引いて読み込んだあとに使用範囲を狭めると、間引きを減らせる長さになった所で「この範囲なら 60fps で読めます」のように入力映像の上に出るので、「読み直す」を押せばその fps で読み直せます（120fps の素材なら 40 → 60 → 120fps と段ごとに出ます）。
 </p>
-<figure><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引きの表示" loading="lazy"><figcaption>設定の「映像の読み込み」。間引きが起きるときは「フレーム」に理由が出ます</figcaption></figure>
+<figure><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引きの表示" loading="lazy"><figcaption>設定の「映像の読み込み」。間引きが起きるときは「フレーム」に出ます（理由は i で確かめられます）</figcaption></figure>
 
 <h3>「読み込み範囲の外は動きません」と表示されます</h3>
 <p>
@@ -278,8 +281,8 @@ GPU が一度に扱えるフレーム数（2048枚）やメモリに収まらな
 横の「この範囲で読み直す」を押すと、解像度と読み込む秒数はそのままで、使用範囲が真ん中に来る位置から読み直します。
 </p>
 <div class="gallery">
-  <figure><img src="shots/v15/ja/top_reload.png" alt="使用範囲を 7.48 秒まで広げ、「読み込み範囲の外は動きません」と「この範囲で読み直す」が出ている" loading="lazy"><figcaption>読み込んだ 0–4 秒の外まで広げると表示されます</figcaption></figure>
-  <figure><img src="shots/v15/ja/top_reloaded.png" alt="読み直した後の画面。0.0–7.5 秒を読み込み、注意が消えている" loading="lazy"><figcaption>押した後。使用範囲が収まるように読み直されます</figcaption></figure>
+  <figure><img src="shots/v15/ja/top_reload.png" alt="使用範囲を 7.66 秒まで広げ、「読み込み範囲の外は動きません」と「この範囲で読み直す」が出ている" loading="lazy"><figcaption>読み込んだ 0–4.2 秒の外まで広げると表示されます</figcaption></figure>
+  <figure><img src="shots/v15/ja/top_reloaded.png" alt="読み直した後の画面。使用範囲の全体を読み込み、15fps に間引いたお知らせが出ている" loading="lazy"><figcaption>押した後。使用範囲が収まるように読み直されます</figcaption></figure>
 </div>
 
 <h3>書き出した動画が見つかりません</h3>
@@ -316,7 +319,7 @@ iPad でステージマネージャがオンになっていると外部ディス
 <h3>iPad でも使えますか</h3>
 <p>
 使えます。iPhone と iPad の両方に対応しています。
-画面の広い iPad では映像とマップを同時に大きく表示でき、Apple Pencil なら筆圧も使えます。
+画面の広い iPad では映像とマップを同時に大きく表示でき、Apple Pencil なら筆圧も使えます。横向きではトップ画面が 4 画面の配置になり、編集画面の道具は右端に並びます。
 </p>
 
 <h3>Mac でも使えますか</h3>
@@ -325,6 +328,7 @@ iPad でステージマネージャがオンになっていると外部ディス
 Mac では動画をファイルで扱います。「読み込み」の「ファイルから開く」、Finder からウィンドウへのドラッグ＆ドロップ、Finder の「このアプリで開く」、⌘O のどれでも開け、
 書き出しは保存先を選びます。カメラは Mac の内蔵カメラのほか、iPhone の連係カメラや USB カメラを名前で選べます。
 読み込める量は端末の GPU の空きから決まるので、Mac ではメモリのぶんだけ長い動画を間引かずに読み込めます（上限は 30fps で 68 秒ぶんのフレーム数。それより長い動画は間引きます）。
+トップ画面は 4 画面の配置で、編集画面の道具は右端に並びます。
 </p>
 
 <h3>どんな映像が向いていますか</h3>
@@ -452,8 +456,8 @@ makes the app usable for installation and live work as well as for producing fil
     <h3>1. Reading the main screen</h3>
     <p>
     With landscape footage the screen stacks <strong>Input</strong> (your clip, untouched), the
-    <strong>map</strong>, and <strong>Output</strong> (the result, playing live) from top to bottom; with
-    portrait footage Input and Output sit side by side, with the map and the 3D plot below them. Turn the device sideways and
+    <strong>map</strong>, and <strong>Output</strong> (the result, playing live) from top to bottom. With
+    portrait footage, on iPad in landscape and on the Mac, Input and Output sit side by side, with the map and the 3D plot below them: four panes. Turn an iPhone sideways and
     the bottom bar moves to the right edge, with the playback bars laid over the videos.
     </p>
     <p>
@@ -530,7 +534,8 @@ picture; touch the screen and a menu slides up from the bottom. Pick <strong>Inp
 laid out together, in the order you picked them &mdash; from the top, or left to right on a wide screen. The map shown
 is the one driving the output (the time map or the rate map); the space map can be picked once you have edited it.
 Opened from the 3D plot on the main screen, it starts with the 3D plot alone. On larger screens (iPhone Air, Plus,
-Pro Max and iPad) a button at the bottom right of each pane shows that one alone. The Monitor view is for looking
+Pro Max and iPad) a button at the bottom right of each pane shows that one alone. The button at the bottom right of the
+Output and the 3D plot in the editor opens it too, and <strong>Back</strong> returns to the editor. The Monitor view is for looking
 only: export from <strong>Export</strong> on the main screen.
 </p>
 <figure class="guide"><a href="shots/guide/monitor_en.jpg"><img src="shots/guide/monitor_en.jpg" alt="The Monitor view with each part named by red lines: the output video, the time map and the 3D plot side by side" loading="lazy"></a><figcaption>The Monitor view (tap to enlarge)</figcaption></figure>
@@ -565,7 +570,7 @@ slit-scan picture &mdash; is drawn translucently beside it.
 </p>
 <p>
 The <strong>Time graph</strong> is the flat version over one loop. The horizontal axis is one output loop and the
-vertical axis is time in the clip, in seconds. Swipe it sideways for two more pages: <strong>Rate</strong> (playback
+vertical axis is time in the clip, in seconds (under a vertical slit the two swap). Swipe it sideways for two more pages: <strong>Rate</strong> (playback
 speed) and <strong>Space</strong> (where in the clip each strip is sampled from). Rate appears while you are working
 with the rate map, Space once you have edited a space map. Each line is one part of the picture, coloured from green at the left
 of the picture to red at the right (top to bottom under a horizontal slit; under Surface the hue gives the left&ndash;right
@@ -580,7 +585,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     <h3>3. Drawing or generating a map</h3>
     <p>
     The editor opens full screen. The row across the top carries the map-and-mode label at the left, the gear <img class="ui" src="icons/map_gear.svg" alt=""> (<strong>Parameters</strong>), the waveform (<strong>Sound</strong>), and an <strong>X</strong> at the far
-    right that closes the editor. The layout menu <img class="ui" src="icons/layout.svg" alt=""> sits at the bottom left and the method buttons at the bottom right, on either side of the tools. Nothing needs saving &mdash; the map is already applied.
+    right that closes the editor, with the layout menu <img class="ui" src="icons/layout.svg" alt=""> beside it. The method buttons sit at the bottom right. The editor shows the one map you selected; switch it from the label at the top left. Nothing needs saving &mdash; the map is already applied.
     </p>
     <p>
     Trace the map with a finger or Apple&nbsp;Pencil. The brush button opens a palette holding
@@ -588,7 +593,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     <strong>Dark grey</strong>, <strong>Grey</strong>, <strong>Light grey</strong>, <strong>White</strong>
     &mdash; <strong>Custom</strong> <img class="ui" src="icons/custom.svg" alt="">, which opens a horizontal slider for any grey, black on the left and white on the right, and shows what that grey means in
     seconds or speed, the <strong>Eyedropper</strong> <img class="ui" src="icons/eyedropper.svg" alt=""> beside that slider, which picks up the grey where you touch the map, and <strong>Smudge</strong> <img class="ui" src="icons/smudge.svg" alt="">. Brush size runs 1&ndash;300&nbsp;px, with Strength
-    alongside; Invert, Blur and Gamma sit with Undo in the bottom row and work in every method. The eye button <img class="ui" src="icons/eye.svg" alt=""> at the top right of the map switches to <strong>contour lines</strong> labelled with their
+    alongside; Invert, Blur and Gamma sit with Undo in the bottom row and work in every method. The eye button <img class="ui" src="icons/eye.svg" alt=""> at the top right of the map (on the main screen, in the editor and in the Monitor view; in the editor it moves outside the picture with the map&rsquo;s name when there is room) switches to <strong>contour lines</strong> labelled with their
     seconds, speed or pixel position; this does not change the map itself. The lines are coloured by map type: white on a time map, blue (reverse) through
     gray (frozen) to yellow (forward) on a rate map, and green (left edge) through red (right edge) on a space map, with the bands between the lines filled in on rate and space maps. The lines break around their numbers, and only the lowest number carries a unit. With a slit, turning on
     <strong>Readout</strong> in the same eye menu adds a thin white line at
@@ -616,7 +621,7 @@ app open until it finishes. The length follows the map and mode (for a time map,
 use) and the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong> panel (the gear
 icon). Settings shows the resulting <strong>Export length</strong> next to <strong>Frame rate</strong> under
 <strong>Export</strong>, while <strong>Include audio</strong> sits under <strong>Export options</strong>. The video is written at the <strong>Resolution</strong>
-chosen under Video Loading. If you declined the Photos permission, a share sheet opens instead.
+chosen under Video Loading (a <a href="#source-export-en">Full-quality export</a> uses the source&rsquo;s resolution). If you declined the Photos permission, a share sheet opens instead.
 </p>
 
 <h2 id="maps-en">Maps and modes</h2>
@@ -782,7 +787,7 @@ in, and the live preview all stay as they were. The caption just above the tools
 and white mean for the current map and mode, so it is worth reading again after any change of mode or parameter.
 </p>
 <p>
-In the bottom row, next to the layout button, these tools work in every method: <strong>Undo</strong> <img class="ui" src="icons/undo.svg" alt=""> (and <strong>Redo</strong> once you have undone something), <strong>Invert</strong> <img class="ui" src="icons/invert.svg" alt="">, <strong>Blur</strong> <img class="ui" src="icons/blur.svg" alt=""> and <strong>Gamma</strong> <img class="ui" src="icons/gamma.svg" alt="">. Invert swaps the map&rsquo;s dark and light as one step each tap.
+At the left of the bottom row, these tools work in every method: <strong>Undo</strong> <img class="ui" src="icons/undo.svg" alt=""> (and <strong>Redo</strong> once you have undone something), <strong>Invert</strong> <img class="ui" src="icons/invert.svg" alt="">, <strong>Blur</strong> <img class="ui" src="icons/blur.svg" alt=""> and <strong>Gamma</strong> <img class="ui" src="icons/gamma.svg" alt="">. Invert swaps the map&rsquo;s dark and light as one step each tap.
 Blur and Gamma open a slider that works on the map as it was when you opened it; what you change counts as one step,
 and it is committed when you close the slider, start a stroke, undo or switch method. Tapping Invert, Blur or
 Gamma deselects any other method (Gradient, Presets, From motion, Cut &amp; slide) and switches to Draw; the pen
@@ -791,7 +796,7 @@ started, likewise finish that method first, so the change is not rebuilt away. G
 the preview scrubs the playhead.
 </p>
 <p>
-The layout menu <img class="ui" src="icons/layout.svg" alt=""> at the bottom left of the editor has six options. <strong>Overlay</strong> lays the
+The layout menu <img class="ui" src="icons/layout.svg" alt=""> at the top right of the editor has six options. <strong>Overlay</strong> lays the
 map over the picture at partial opacity, which is how you land a stroke on a particular object rather than a
 particular part of the frame. <strong>Map only</strong> and <strong>Video only</strong> show one layer at a time.
 <strong>Split: video + map</strong> is the default and shows the video and the map as two panes, side by side or
@@ -822,7 +827,8 @@ the map to normal playback for the current mode. There is no separate eraser; pa
 <strong>Smudge</strong> <img class="ui" src="icons/smudge.svg" alt=""> works differently from the tones &mdash; it picks up the tone already under the brush
 and drags it along the direction of travel, blending as it goes, which is the quickest way to soften a
 boundary you have already drawn. <strong>Fill</strong> <img class="ui" src="icons/fill.svg" alt=""> expands into the seven preset patterns and repaints the
-entire canvas with one of them without leaving Draw.
+entire canvas with one of them without leaving Draw. <strong>Replace</strong> (the default), <strong>Add</strong> or
+<strong>Multiply</strong> chooses how it meets the map you already have, as in Gradient.
 </p>
 <table>
   <tr><th>Brush</th><td>1&ndash;300&nbsp;px. This is the <em>radius</em>, measured in map pixels rather than screen pixels, so on a default map (512&nbsp;px on the short edge) a brush of 300 covers the whole frame at once. The slider is deliberately non-linear &mdash; size follows the square of the slider position &mdash; so the first half of its travel covers everything up to about 75&nbsp;px, and the default of 80 sits near the middle.</td></tr>
@@ -894,7 +900,7 @@ instead freezes each column at a different moment.
     Each button carries a thumbnail of the pattern, its name, and &mdash; most usefully &mdash; a line
     underneath saying what that pattern <em>will actually do</em> given the map kind, the mode, and the
     parameters you have set. Those labels are computed rather than fixed, so they change the moment you change
-    anything that matters.
+    anything that matters. As with Gradient, you can choose <strong>Replace</strong> (the default), <strong>Add</strong> or <strong>Multiply</strong>.
     </p>
   </div>
 </div>
@@ -1208,10 +1214,11 @@ speed; the paths simply get longer and wrap around within the range.
 written and how long the render takes, not how long the result plays. Above 60&nbsp;fps the bit rate rises with the frame rate, so each frame keeps its quality.
 </p>
 
-<h3 id="source-export-en">Exporting from the source file</h3>
+<h3 id="source-export-en">Full-quality export</h3>
 <p>
-Turn on <strong>Export from the source file</strong> under Settings &rarr; Export to render from the source file
-instead of the working copy in memory. The result comes out at the source&rsquo;s full resolution whatever you chose
+<strong>Export method</strong> under Settings &rarr; Export offers <strong>Preview export</strong>, which renders from the
+working copy in memory, and <strong>Full-quality export</strong>, which renders from the source file. Preview export is the
+default on iPhone and iPad, and Full-quality export on the Mac. With Full-quality export the result comes out at the source&rsquo;s full resolution whatever you chose
 under Video Loading, with no limit on length from what fits in memory. If the source is HDR (HLG or PQ),
 <strong>Keep HDR</strong> writes HEVC 10-bit with the same transfer function. Colours pass through as the source
 stored them, so they can differ very slightly from the preview. Maps stay exactly as you made them; only the frames
@@ -1228,7 +1235,7 @@ it for the duration of the export and reloads it afterwards, so the preview paus
 </p>
 <p>
 <strong>How it works.</strong> The loaded video is kept as an untouched copy (no frame skipping or downscaling) in the
-app&rsquo;s temporary folder; only a downscaled, frame-skipped version of it is held on the GPU. Export from the source file
+app&rsquo;s temporary folder; only a downscaled, frame-skipped version of it is held on the GPU. Full-quality export
 re-reads that copy in chunks instead of the GPU video, so the loaded range is exported at the original resolution and frame
 rate. HDR sources are written as 10-bit HEVC in HLG or PQ. Only the copy of the video being edited is kept; it is deleted
 when you open another video or quit the app (anything left over is deleted at the next launch). The finished
@@ -1238,7 +1245,7 @@ camera, which exports from the GPU video.
 
 <h3>Resolution, and why it is not your camera&rsquo;s</h3>
 <p>
-The export comes out at the size of the working copy held in memory, not necessarily the size of the file you
+A Preview export comes out at the size of the working copy held in memory, not necessarily the size of the file you
 picked. That size is fixed at import by <strong>Resolution</strong> in Settings &rarr; <strong>Video
 Loading</strong>: <strong>Full</strong>, <strong>1/2</strong>, <strong>1/4</strong>, <strong>1/8</strong> or <strong>1/16</strong> of the source&rsquo;s
 dimensions, with the actual pixel size of each shown under the buttons. The aspect ratio and any rotation follow the
@@ -1276,8 +1283,8 @@ longest range that fits at that rate, with the range in use in the middle. A 120
 40 &rarr; 60 &rarr; 120&nbsp;fps in turn.
 </p>
 <div class="gallery">
-  <figure><img src="shots/v15/en/top_reload.png" alt="The range widened to 7.48 s beyond the loaded 0&ndash;4 s, with Frozen outside the loaded part and Reload here" loading="lazy"><figcaption>Past the loaded part: the notice and Reload here</figcaption></figure>
-  <figure><img src="shots/v15/en/top_reloaded.png" alt="After reloading: 0.0&ndash;7.5 s is loaded and the notice is gone" loading="lazy"><figcaption>After tapping it</figcaption></figure>
+  <figure><img src="shots/v15/en/top_reload.png" alt="The range widened to 7.66 s beyond the loaded 0&ndash;4.2 s, with Frozen outside the loaded part and Reload here" loading="lazy"><figcaption>Past the loaded part: the notice and Reload here</figcaption></figure>
+  <figure><img src="shots/v15/en/top_reloaded.png" alt="After reloading: the whole range in use is loaded, with a note that frames were skipped to 15 fps" loading="lazy"><figcaption>After tapping it</figcaption></figure>
 </div>
 <p>
 Before a final export <strong>in a slit mode with a time map</strong>, it is also worth tapping <strong>Reload only
@@ -1334,18 +1341,18 @@ when frames are being skipped, the app runs out of memory, or it feels slow. The
 you tap the information line in the full-screen Input view. Until a video is loaded its controls are shown greyed
 out.
 </p>
-<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading, with the Frames line explaining why frames are skipped</figcaption></figure>
+<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading. The Frames line shows when frames are skipped; its i gives the reason</figcaption></figure>
 <table>
   <tr><th>Resolution</th><td><strong>Full</strong> / <strong>1/2</strong> / <strong>1/4</strong> / <strong>1/8</strong> / <strong>1/16</strong> &mdash; the size the loaded video is worked at, as a fraction of the source; the pixel size of each option is printed under it. The file in your photo library is never modified. This is also the resolution the export is written at.</td></tr>
   <tr><th>Seconds to load</th><td>How much of the video to use, from 0.5&nbsp;s up to the whole clip in steps of 0.1&nbsp;s, shown as &ldquo;&hellip; s of &hellip; s&rdquo;. It never drops below the length of the range in use on the main screen. The line underneath gives the start time, which always follows the beginning of the range in use (moving earlier only when the seconds would otherwise run past the end of the clip).</td></tr>
-  <tr><th>Frames</th><td>A read-out. <em>No frames skipped</em> with the source frame rate, or an orange warning giving the source and loaded frame rates and how many frames make one (&ldquo;1 of every &hellip; frames&rdquo;), with the reason: either the GPU can hold at most 2,048 frames at once, or the clip does not fit in memory. Below 8&nbsp;fps it adds <em>Motion will look quite choppy</em>.</td></tr>
+  <tr><th>Frames</th><td>A read-out. <em>No frames skipped</em> with the source frame rate, or an orange warning giving the source and loaded frame rates and how many frames make one (&ldquo;1 of every &hellip; frames&rdquo;); the <strong>i</strong> beside it gives the reason: either the GPU can hold at most 2,048 frames at once, or the clip does not fit in memory. Below 8&nbsp;fps it adds <em>Motion will look quite choppy</em>.</td></tr>
   <tr><th>Memory</th><td>A read-out: how much the combination uses against what this device can spare right now, and the width &times; height &times; number of frames behind it. Frames are stored uncompressed at 4 bytes per pixel.</td></tr>
   <tr><th>Reload</th><td><strong>Reload with these settings</strong> &mdash; re-imports the clip you already have with the resolution and seconds chosen here, and closes the sheet so you can watch the progress on the main screen, keeping the range in use as it is. <em>Changes not applied yet</em> appears above it when the choice differs from what is loaded &mdash; which includes moving the start of the range in use on the main screen, or stretching the range past the loaded length, since the plan follows the range; otherwise it is greyed out, as it is while a video is loading or exporting.</td></tr>
 </table>
 <p>
 There is no frame-rate setting: a lower frame rate would not make loading any faster, so the app only skips frames
 when it has to. When you load a new video, both values are chosen again from that video and the free memory on the
-device. The app starts from the largest of the three resolutions whose long edge is 1280&nbsp;px or less, loads the
+device. The app starts from the largest resolution whose long edge is 1280&nbsp;px or less, loads the
 whole clip if it fits, and otherwise cuts back in order: first fewer seconds (aiming for at least 4 seconds, or the
 whole clip if it is shorter), then skipped frames (keeping at least 15&nbsp;fps), then the next lower resolution.
 </p>
@@ -1369,6 +1376,7 @@ old copy has been released, the app reloads the previous settings and tells you 
 <h3>Export</h3>
 <table>
   <tr><th>Frame rate</th><td>24 / 30 / 60&nbsp;fps, plus 120 / 240&nbsp;fps when the source has that many frames. The frame rate written into the exported file.</td></tr>
+  <tr><th>Export method</th><td><strong>Preview export</strong> or <strong>Full-quality export</strong>; see <a href="#source-export-en">Full-quality export</a>. With the latter, <strong>Keep HDR</strong> appears for HDR sources.</td></tr>
   <tr><th>Export length</th><td>A read-out of the current output length in seconds, the same number shown next to <strong>Duration</strong> in the editor.</td></tr>
 </table>
 <p>
@@ -1579,8 +1587,8 @@ you lift it. Surface shows no line, because there the whole map is in use at eve
 <h3>Draw on the device, watch on a display</h3>
 <p>
 With a display connected over HDMI or AirPlay the output alone fills that screen while your device keeps the
-editor, and this is by far the most comfortable way to work on anything serious. Set the layout menu at the bottom
-left of the editor to <strong>Map only</strong> and the device becomes a pure drawing surface with the picture
+editor, and this is by far the most comfortable way to work on anything serious. Set the layout menu at the top
+right of the editor to <strong>Map only</strong> and the device becomes a pure drawing surface with the picture
 on the wall; switch to <strong>Overlay</strong>, which lays the map over the image at partial opacity, when a
 stroke needs to land on a particular object rather than a particular part of the frame. On iPad, turn Stage
 Manager off first or the display is treated as an extended desktop and the full-screen output never appears.
@@ -1629,7 +1637,7 @@ positioned so your range sits in the middle of it.
 Rendering allocates on top of the frames already resident, so an export can run out of memory even though the
 clip loaded fine &mdash; usually reported as a texture that could not be allocated. Lower
 <strong>Resolution</strong> or <strong>Seconds to load</strong>, tap <strong>Reload with these settings</strong>,
-shorten <strong>Duration</strong>, close other apps, and export again. On a device with 8&nbsp;GB of memory or more you can also try <a href="#source-export-en">Export from the source file</a>.
+shorten <strong>Duration</strong>, close other apps, and export again. On a device with 8&nbsp;GB of memory or more you can also try <a href="#source-export-en">Full-quality export</a>.
 </p>
 
 <h3>Nothing seems to happen when I switch between Vertical slit and Horizontal slit</h3>
@@ -1652,7 +1660,7 @@ the only workaround is to trim the video before importing it.
 <p>
 Every decoded frame is converted to sRGB at import, so an HDR clip &mdash; HLG or Dolby Vision, which is what a
 recent iPhone shoots by default &mdash; loses its grade on the way in and will not match what Photos shows you.
-Convert or grade the clip to SDR before importing it, or use <a href="#source-export-en">Export from the source file</a>,
+Convert or grade the clip to SDR before importing it, or use <a href="#source-export-en">Full-quality export</a>,
 which can keep an HDR source as 10-bit HDR in the exported video.
 </p>
 
@@ -1686,7 +1694,7 @@ treated as an extended desktop and the second screen is never created.
 <h3>Does it work on iPad, and does Apple Pencil add anything?</h3>
 <p>
 Both are supported, and the iPad is the better instrument: the map and the two videos all fit at a workable size
-at once. Apple&nbsp;Pencil adds real pressure &mdash; a finger always counts as an average press, so a Pencil
+at once. In landscape the main screen uses four panes, and the editor&rsquo;s tools sit along the right edge. Apple&nbsp;Pencil adds real pressure &mdash; a finger always counts as an average press, so a Pencil
 goes both thinner (about a sixth) and thicker (about one and a half times) than a finger stroke &mdash; and a
 double-tap on its side opens and closes the brush palette. The brush covers the other
 case: hold still with a fingertip and tone keeps building and spreading outward.
@@ -1699,7 +1707,7 @@ iPad and Mac. On the Mac, videos are files: open one with <strong>Open File</str
 the window, choose &ldquo;Open With&rdquo; in the Finder, or press &#8984;O, and exports ask where to save. The camera can be the
 Mac&rsquo;s built-in camera, an iPhone used as Continuity Camera, or a USB camera, chosen by name. How much video can be loaded
 depends on the free GPU memory of the device, so a Mac loads longer clips without skipping frames, up to the frame limit of
-68 seconds at 30 fps; longer clips are thinned.
+68 seconds at 30 fps; longer clips are thinned. The main screen uses four panes, and the editor&rsquo;s tools sit along the right edge.
 </p>
 
 <h3>Is there an undo?</h3>

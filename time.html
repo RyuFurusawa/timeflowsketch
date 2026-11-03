@@ -15,7 +15,7 @@
 <header>
   <img class="icon" src="icon.png" alt="">
   <h1 id="top">動画の時間処理の仕組み</h1>
-  <p class="lede">Time Flow Sketch 1.23 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
+  <p class="lede">Time Flow Sketch 1.24 が、読み込んだ動画のどの瞬間を、出力のいつ映すのか</p>
 </header>
 
 <nav><a href="index.html">サポートページへ戻る</a><a href="#en">English</a></nav>
@@ -78,8 +78,8 @@
 <h2 id="volume">4. 3D で見る: 立体グラフ</h2>
 <p>出力の全画面で<strong>「立体グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にこの図が出ます。トップ画面のマップを横にスワイプしても見られます。編集画面の表示メニューの「2画面: 立体グラフ ＋ マップ」「3画面: 映像 ＋ 立体グラフ ＋ マップ」でも、描きながら同じ図を見られます。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
 <div class="gallery">
-  <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と、下の辺に 0.0〜8.0 の秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
-  <figure><img src="shots/v16/ja/timegraph.png" alt="出力の全画面で時間グラフをオンにしたところ。高さの違う 7 本の水平な線が、下の緑から上の赤まで並び、赤い縦線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。帯ごとの線が水平に、高さを変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
+  <figure><img src="shots/v16/ja/volume.png" alt="出力の全画面で立体グラフをオンにしたところ。上に出力映像、下に素材の箱の中で斜めに傾いた面と、下の辺に秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
+  <figure><img src="shots/v16/ja/timegraph.png" alt="出力の全画面で時間グラフをオンにしたところ。位置の違う 7 本の縦の線が、左の緑から右の赤まで並び、赤い横線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。縦スリットは出力の時間を縦に取るので、帯ごとの線が縦に、位置を変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
 </div>
 <ul>
   <li><strong>箱</strong> — 素材全体を「横×縦×時間」の直方体として描きます。横と縦は映像の画面（縦横比も映像と同じ）、奥行きは素材の 0 秒から終わりまでで、開いたときは素材の終わりが奥になります。秒数は、時間方向の辺のうち画面でいちばん下に見える辺に沿って付きます。</li>
@@ -102,14 +102,14 @@
 </ul>
 
 <h3>時間グラフ: 3 章の図の 2D 版</h3>
-<p>出力の全画面の<strong>「時間グラフ」</strong>は、3 章の図と同じ読み方の図を、いまのマップ・モード・パラメータで描きます（立体グラフとはどちらか一方だけオンにできます）。</p>
+<p>出力の全画面の<strong>「時間グラフ」</strong>は、3 章の図と同じ読み方の図を、いまのマップ・モード・パラメータで描きます。</p>
 <ul>
-  <li>横軸は出力の 1 周、縦軸は素材の時刻です。どちらも秒の目盛りが付き、いちばん大きい目盛りに単位（s）が添えられます。</li>
+  <li>横軸は出力の 1 周、縦軸は素材の時刻です（縦スリットでは入れ替わり、縦が出力の 1 周、横が素材の時刻です）。どちらも秒の目盛りが付き、いちばん大きい目盛りに単位（s）が添えられます。</li>
   <li>線は画面の区画ごとに 1 本です。区画はサウンドのボイスと同じで、縦スリットは左右に並ぶ帯（ボイス分割数、既定 7）、横スリットは上下に並ぶ帯、サーフェスはボイス数の格子（格子が細かいときは一部を間引きます）。値は区画の中のマップの平均から計算します。</li>
   <li>線の色は画面の左（緑）から右（赤）へ変わります。横スリットでは上（緑）から下（赤）へ。サーフェスでは左右の位置が色（左＝緑 → 右＝赤）、上下の位置が明るさ（上＝明るい → 下＝暗い）です。右上の小さな図が区画の並びを線と同じ色で示し、ぴったり重なる線は、それぞれの色を交互にした破線で描きます。</li>
-  <li>薄い帯が使用範囲（素材全体と同じときは出ません）、赤い縦線がいまの再生位置です。回り込みの飛びは線をつなぎません。</li>
+  <li>薄い帯が使用範囲（素材全体と同じときは出ません）、赤い線がいまの再生位置です。回り込みの飛びは線をつなぎません。</li>
   <li>横にスワイプするか、左右の矢印を押すと、<strong>レート</strong>（縦＝再生の速さ。1 が等速、0 は停止、マイナスは逆再生）と<strong>空間</strong>（縦＝その帯が素材のどの列を映すか。px 表示）のページに切り替わります。並びは 時間 → レート → 空間で、既定は時間だけ。レートはレートマップ基準のとき、空間は空間マップを編集したときに加わります（imgtrans の 2dplot が既定で描く Space / Time / Rate と同じ 3 つです）。</li>
-  <li>赤い縦線のところで線の高さを縦に読むと、立体グラフの面がいま箱のどの奥行きにあるかと対応します。既定の「上→下」では全部の線が 1 本の斜めの線に重なり（3 章の図 (a) の既定グラデ）、「左→右」では高さの違う水平な線が並びます。</li>
+  <li>赤い線のところで線の位置を読むと、立体グラフの面がいま箱のどの奥行きにあるかと対応します。既定の「上→下」では全部の線が 1 本の斜めの線に重なり（3 章の図 (a) の既定グラデ）、「左→右」では素材の時刻の違う、まっすぐな線が並びます。</li>
 </ul>
 
 <h2 id="length">5. 出力の長さ</h2>
@@ -129,8 +129,8 @@
 
 <h2>6. 読み込みとフレームの間引き</h2>
 <ul>
-  <li>新しい素材では計画が自動で決まります。解像度は長辺 1280 以下になる倍率（等倍・1/2・1/4）から始めます。</li>
-  <li>全体が入れば全体を読みます。入らなければ、まず秒数を削り（4 秒までは残す）、次にフレームを間引きます（15fps まで）。それでも無理なら解像度を 1 段下げて、全体が入るかから判定し直します。1/4 でも 15fps を割るときは、そのまま 1/4・4 秒で間引きます。</li>
+  <li>新しい素材では計画が自動で決まります。解像度は長辺 1280 以下になる倍率（等倍・1/2・1/4・1/8・1/16）から始めます。</li>
+  <li>全体が入れば全体を読みます。入らなければ、まず秒数を削り（4 秒までは残す）、次にフレームを間引きます（15fps まで）。それでも無理なら解像度を 1 段下げて、全体が入るかから判定し直します。1/16 でも 15fps を割るときは、そのまま 1/16・4 秒で間引きます。</li>
   <li>新しい素材の初期の計画は常に 0 秒から読みます。</li>
   <li>設定「映像の読み込み」に出る計画は、トップ画面の使用範囲に従います。開始は常に使用範囲の先頭（秒数が素材の終わりを越えるときは、そのぶん前）で、読む秒数は使用範囲の長さを下回りません。</li>
   <li>トップ画面で使用範囲の先頭を動かしたり、読み込んだ長さより広げたりしてから設定を開くと、「変更はまだ反映されていません」と出ます。「この設定で読み込み直す」を押すとその範囲を読み直し、使用範囲はそのまま保たれます。</li>
@@ -157,8 +157,8 @@
   <li>入力の音をオンにすると、使用範囲を等速で繰り返す音に映像の位置が合います。出力の音とは同時に鳴りません。</li>
 </ul>
 <div class="gallery">
-  <figure><img src="shots/v15/ja/top_reload.png" alt="読み込んだ 0–4 秒の外まで使用範囲を広げ、注意と「この範囲で読み直す」が出ている" loading="lazy"><figcaption>0–4 秒だけ読み込んだ状態で、使用範囲を 7.48 秒まで広げたところ</figcaption></figure>
-  <figure><img src="shots/v15/ja/top_reloaded.png" alt="読み直した後。0.0–7.5 秒を読み込み、注意が消えている" loading="lazy"><figcaption>「この範囲で読み直す」の後。メモリに収めるため 15fps に間引かれた旨が出ています</figcaption></figure>
+  <figure><img src="shots/v15/ja/top_reload.png" alt="読み込んだ 0–4.2 秒の外まで使用範囲を広げ、注意と「この範囲で読み直す」が出ている" loading="lazy"><figcaption>0–4.2 秒だけ読み込んだ状態で、使用範囲を 7.66 秒まで広げたところ</figcaption></figure>
+  <figure><img src="shots/v15/ja/top_reloaded.png" alt="読み直した後。使用範囲の全体を読み込み、15fps に間引いたお知らせが出ている" loading="lazy"><figcaption>「この範囲で読み直す」の後。メモリに収めるため 15fps に間引かれた旨が出ています</figcaption></figure>
 </div>
 
 <h2>8. 音と書き出し</h2>
@@ -166,7 +166,7 @@
   <li>出力の音は、映像と同じ計算で素材の時刻を追います。読み込み範囲の制限を受けず素材全体の音声を使うので、絵が止まっていても音は進みます。</li>
   <li>横スリットの音はモノラルです。</li>
   <li>書き出す枚数は「1 周の秒数 × fps」の切り捨て（既定 30fps）。最初と最後のコマが重ならないので、そのままループできます。</li>
-  <li>書き出しの解像度は読み込みの解像度のまま、形式は H.264 の mp4 です。</li>
+  <li>プレビュー書き出しの解像度は読み込みの解像度のまま、形式は H.264 の mp4 です。フル品質書き出しは元の解像度で、素材が HDR なら HLG / PQ の 10bit HEVC にできます。</li>
 </ul>
 
 <h2>9. つまずきやすい点</h2>
@@ -191,7 +191,7 @@
 
 <h1 id="en" lang="en">How time processing works</h1>
 <div lang="en">
-<p class="lede">Which moment of your video Time Flow Sketch 1.23 shows at each instant of the output</p>
+<p class="lede">Which moment of your video Time Flow Sketch 1.24 shows at each instant of the output</p>
 
 <nav><a href="index.html#en">Back to the support page</a><a href="#top">日本語</a></nav>
 
@@ -253,8 +253,8 @@
 <h2 id="volume-en">4. Seeing it in 3D: the 3D plot</h2>
 <p>Turn on <strong>3D plot</strong> in the full-screen Output view and the screen splits: the output picture on top, this plot below it. You can also swipe the map on the main screen sideways to reach it. The editor&rsquo;s layout menu shows the same plot while you draw, in <strong>Split: 3D plot + map</strong> and <strong>Three panes: video + 3D plot + map</strong>. The plot computes its times with the same function that renders the output picture.</p>
 <div class="gallery">
-  <figure><img src="shots/v16/en/volume.png" alt="Full-screen Output with the 3D plot on: the output picture above, and below it a tilted surface inside the clip box, with seconds 0.0 to 8.0 along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
-  <figure><img src="shots/v16/en/timegraph.png" alt="Full-screen Output with the time graph on: seven horizontal lines at different heights, green at the bottom to red at the top, and a red vertical playhead" loading="lazy"><figcaption>The time graph for the same map: one flat line per strip, each at its own height (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
+  <figure><img src="shots/v16/en/volume.png" alt="Full-screen Output with the 3D plot on: the output picture above, and below it a tilted surface inside the clip box, with seconds along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
+  <figure><img src="shots/v16/en/timegraph.png" alt="Full-screen Output with the time graph on: seven vertical lines at different positions, green at the left to red at the right, and a red horizontal playhead" loading="lazy"><figcaption>The time graph for the same map. A vertical slit runs output time downward, so there is one straight vertical line per strip, each at its own position (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
 </div>
 <ul>
   <li><strong>The box</strong> &mdash; the whole clip as a block of width &times; height &times; time. Width and height are the picture, with the video&rsquo;s own aspect ratio; depth runs from 0 seconds to the end of the clip, with the end at the back when the plot opens. Seconds are labelled along whichever time-direction edge currently appears lowest on screen.</li>
@@ -277,14 +277,14 @@
 </ul>
 
 <h3>The time graph: section 3&rsquo;s figure, live</h3>
-<p><strong>Time graph</strong> in the full-screen Output view draws the same kind of figure as section 3 for your current map, mode and parameters. Only one of Time graph and 3D plot can be on at a time.</p>
+<p><strong>Time graph</strong> in the full-screen Output view draws the same kind of figure as section 3 for your current map, mode and parameters.</p>
 <ul>
-  <li>The horizontal axis is one output loop and the vertical axis is time in the clip. Both carry second marks, with the unit (s) on the largest one.</li>
+  <li>The horizontal axis is one output loop and the vertical axis is time in the clip (under a vertical slit the two swap: output time runs downward). Both carry second marks, with the unit (s) on the largest one.</li>
   <li>There is one line per part of the picture. The parts are the same as the sound&rsquo;s voices: strips from left to right under a vertical slit (Voice divisions, 7 by default), strips from top to bottom under a horizontal slit, and the voice grid under Surface (thinned out when the grid is fine). Each line uses the average of the map over its part.</li>
   <li>Line colour runs from green at the left of the picture to red at the right; under a horizontal slit, from green at the top to red at the bottom. Under Surface, the hue gives the left&ndash;right position (left green &rarr; right red) and the brightness the top&ndash;bottom position (top bright &rarr; bottom dark). A small legend at the top right shows the parts in the same colours, and lines that lie exactly on top of each other are drawn as dashes alternating their colours.</li>
-  <li>The faint band is the use range (it is not drawn when the range is the whole clip), and the red vertical line is the current playback position. Where a line wraps from end to start, the jump is not drawn.</li>
+  <li>The faint band is the use range (it is not drawn when the range is the whole clip), and the red line is the current playback position. Where a line wraps from end to start, the jump is not drawn.</li>
   <li>Swipe sideways, or tap the arrows at the edges, for two more pages: <strong>Rate</strong> (vertical is playback speed &mdash; 1 is normal, 0 frozen, negative reverse) and <strong>Space</strong> (vertical is which column of the clip that strip shows, in pixels). The order is Time &rarr; Rate &rarr; Space; only Time is there by default, Rate joins while you work with the rate map, and Space once you have edited a space map &mdash; the same three that imgtrans&rsquo; 2dplot draws by default.</li>
-  <li>Reading the heights of the lines at the red line tells you where in the box the 3D plot&rsquo;s surface sits at that moment. With the default Top &rarr; bottom, all the lines lie on top of one another along a single diagonal (the default gradient in section 3&rsquo;s figure (a)); with Left &rarr; right, they are flat lines at different heights.</li>
+  <li>Reading the lines where they meet the red line tells you where in the box the 3D plot&rsquo;s surface sits at that moment. With the default Top &rarr; bottom, all the lines lie on top of one another along a single diagonal (the default gradient in section 3&rsquo;s figure (a)); with Left &rarr; right, they are straight lines at different moments of the clip.</li>
 </ul>
 
 <h2>5. How long the output is</h2>
@@ -304,8 +304,8 @@
 
 <h2>6. Loading and frame skipping</h2>
 <ul>
-  <li>For a new clip the plan is chosen automatically. Resolution starts at the largest scale (full, &frac12;, &frac14;) whose long side is 1280 or less.</li>
-  <li>If the whole clip fits, all of it is loaded. If not, seconds are cut first (down to 4 s), then frames are skipped (down to 15 fps). If that is still not enough, resolution drops one step and the check starts again from the whole clip. If even &frac14; would fall below 15 fps, it loads &frac14; and 4 seconds and skips frames as needed.</li>
+  <li>For a new clip the plan is chosen automatically. Resolution starts at the largest scale (full, &frac12;, &frac14;, &frac18;, 1/16) whose long side is 1280 or less.</li>
+  <li>If the whole clip fits, all of it is loaded. If not, seconds are cut first (down to 4 s), then frames are skipped (down to 15 fps). If that is still not enough, resolution drops one step and the check starts again from the whole clip. If even 1/16 would fall below 15 fps, it loads 1/16 and 4 seconds and skips frames as needed.</li>
   <li>The automatic plan for a new clip always starts at 0 seconds.</li>
   <li>The plan shown under <strong>Settings &rarr; Video Loading</strong> follows the use range on the main screen. It always starts at the start of the use range (earlier only if the seconds would run past the end of the clip), and its seconds never drop below the length of the use range.</li>
   <li>If you move the start of the use range, or widen it past the loaded length, and then open Settings, it shows <strong>Changes not applied yet</strong>. <strong>Reload with these settings</strong> then loads that span and keeps the use range as it is.</li>
@@ -313,7 +313,7 @@
   <li>How many frames are skipped depends on free memory at the moment of loading, so it can differ from one load to the next.</li>
   <li>Example: a 1920&times;1080, 120 fps, 9.4-second clip with an 800 MB budget loads at 960&times;540, the first 4.0 seconds, 1 frame in 2 (60 fps) &mdash; about 240 frames.</li>
 </ul>
-<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load and the Frames line" loading="lazy"><figcaption>Settings &rarr; Video Loading. The Frames line says whether and why frames will be skipped</figcaption></figure>
+<figure><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load and the Frames line" loading="lazy"><figcaption>Settings &rarr; Video Loading. The Frames line says whether frames will be skipped; its i gives the reason</figcaption></figure>
 <figure class="diagram">
   <img src="time/en/fig6_decimation.png" alt="How frames are looked up when a 120 fps clip is loaded at 1 frame in 3">
   <figcaption>Top: loading only 1 of every 3 frames of a 120 fps clip (40 fps effective). Bottom: the same material played at 0.25&times; (Duration 4&times; on a time map). Slit modes use the nearest frame, so motion steps and stutters; surface modes blend the two neighbouring frames, so motion is smooth but doubled.</figcaption>
@@ -332,8 +332,8 @@
   <li>Turning on the input sound locks the picture to audio looping the use range at normal speed. It does not play at the same time as the output sound.</li>
 </ul>
 <div class="gallery">
-  <figure><img src="shots/v15/en/top_reload.png" alt="The use range widened past the loaded 0&ndash;4 s, with Frozen outside the loaded part and Reload here" loading="lazy"><figcaption>Only 0&ndash;4 s loaded, use range widened to 7.48 s</figcaption></figure>
-  <figure><img src="shots/v15/en/top_reloaded.png" alt="After reloading: 0.0&ndash;7.5 s loaded and the notice gone" loading="lazy"><figcaption>After Reload here: the note says frames were skipped to 15 fps to fit memory</figcaption></figure>
+  <figure><img src="shots/v15/en/top_reload.png" alt="The use range widened past the loaded 0&ndash;4.2 s, with Frozen outside the loaded part and Reload here" loading="lazy"><figcaption>Only 0&ndash;4.2 s loaded, use range widened to 7.66 s</figcaption></figure>
+  <figure><img src="shots/v15/en/top_reloaded.png" alt="After reloading: the whole use range loaded, with a note about skipped frames" loading="lazy"><figcaption>After Reload here: the note says frames were skipped to 15 fps to fit memory</figcaption></figure>
 </div>
 
 <h2>8. Sound and export</h2>
@@ -341,7 +341,7 @@
   <li>The output sound follows clip time with the same calculation as the picture. It uses the whole clip&rsquo;s audio, not just the loaded range, so sound keeps moving even where the picture is frozen.</li>
   <li>Horizontal slit sound is mono.</li>
   <li>The exported frame count is loop seconds &times; fps, rounded down (30 fps by default). The first and last frames do not duplicate each other, so the file loops seamlessly.</li>
-  <li>Exports use the loaded resolution and are H.264 MP4.</li>
+  <li>A Preview export uses the loaded resolution and is H.264 MP4. A Full-quality export uses the source&rsquo;s resolution, and an HDR source can stay 10-bit HEVC in HLG or PQ.</li>
 </ul>
 
 <h2>9. Common surprises</h2>
