@@ -126,8 +126,8 @@
     その隣の<strong>グラデーション</strong><img class="ui" src="icons/map_wave.svg" alt="">のボタンを押すと、マップが縞のグラデーションになり、なぞって動かす・ピンチで周期・2 本指で回して角度を、その場で変えられます（✓ で終わります）。
     続く<strong>ブラー</strong><img class="ui" src="icons/map_blur.svg" alt="">は押すたびにマップに 1 段ブラーをかけ、<strong>反転</strong><img class="ui" src="icons/map_invert.svg" alt="">は明暗を入れ替えます。レートマップでは<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">、空間マップでは<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">も並びます（はさみを押してマップを横切る線を引き、分かれた領域をドラッグでずらして、上に出る「ずらしたら、ここをタップで確定」を押します）。
     描いたあとは右下に「ひとつ前に戻す」<img class="ui" src="icons/undo.svg" alt="">が出ます。
-    マップの右上にある目のボタン<img class="ui" src="icons/eye.svg" alt="">で、マップの見え方を<strong>等高線と数値</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤で、レートマップと空間マップは線と線の間もその色で塗り分けます。数字の所では線が途切れ、単位は一番下の数字にだけ付きます。見え方が変わるだけで、マップの中身は変わりません。目のボタンはトップ画面・編集画面・モニタービューのマップにあり、編集画面では余白があれば、マップの名前とともに絵の外に出ます。
-    スリットのときは、同じ目のボタンで<strong>読み取り値</strong>をオンにすると、再生位置に細い白い線が出て、スリットに沿った 7 本（縦長の映像の縦スリットでは 5 本）の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を示します（読み取り値）。上から、素材の何秒か（白）と、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）。空間マップを描き換えていれば、素材のどの位置か（px。緑〜赤）が 3 段目に加わります。色は等高線と同じです。数字の右（横スリットは数字の上）には、どの段が何の数字か（時間位置・再生レート・空間位置）を書き添えます。白い線の先には出力の何秒目かも出ます。ライブでは時間マップのとき何秒前かを、レートマップのときはマップから読んだレートを示します。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。読み取り値をオンにすると、トップ画面でも、出力がいま映している素材の時刻の範囲が入力映像のバーに赤く出ます（普通の再生では点、時間が広がる所では横に伸びた帯。入力映像の全画面表示では出しません）。サーフェスでも読み取り値をオンにすると、画面全体が映している範囲（立体グラフの赤い線と同じ）が入力映像のバーに赤い帯で出ます。入力の再生位置はバーの緑の縦線です。
+    マップの右上にある目のボタン<img class="ui" src="icons/eye.svg" alt="">で、マップの見え方を<strong>等高線</strong>（同じ明るさを線で結び、何秒・どの速さ・素材のどの位置（px）かを数字で示す）に変えられます。線の色はマップの種類ごとで、時間マップは白、レートマップは逆再生が青・止まるとグレー・順再生が黄、空間マップは素材の左端が緑・右端が赤で、レートマップと空間マップは線と線の間もその色で塗り分けます。数字の所では線が途切れ、単位は一番下の数字にだけ付きます。見え方が変わるだけで、マップの中身は変わりません。目のボタンはトップ画面・編集画面・モニタービューのマップにあり、編集画面では余白があれば、マップの名前とともに絵の外に出ます。
+    スリットのときは、同じ目のボタンで<strong>読み取り値</strong>をオンにすると、再生位置に細い白い線が出て、スリットに沿った 7 本（縦長の映像の縦スリットでは 5 本）の薄い線がマップの縁から少しはみ出し、その先のマップの下に、白い線と交わる所がいま映している値を示します（読み取り値）。上から、素材の何秒か（白）と、そこでの再生レート（1 で等速、0 で止まる、マイナスは逆再生。青〜グレー〜黄）。空間マップを描き換えていれば、素材のどの位置か（px。緑〜赤）が 3 段目に加わります。色は等高線と同じです。数字の右（横スリットは数字の上）には、どの段が何の数字か（時間位置・再生レート・空間位置）を書き添えます。白い線の先には出力の何秒目かも出ます。ライブでは時間マップのとき何秒前かを、レートマップのときはマップから読んだレートを示します。縦スリットの時間グラフは、出力の時間を縦（上が始まり）に取るようにしました。読み取り値をオンにすると、トップ画面でも、出力がいま映している素材の時刻の範囲が入力映像のバーに赤く出ます（普通の再生では点、時間が広がる所では横に伸びた帯。入力映像の全画面表示では出しません）。サーフェスでは、空間マップを編集しているときだけ、空間マップの目のボタンで読み取り値をオンにすると、画面全体が映している範囲（立体グラフの赤い線と同じ）が入力映像のバーに赤い帯で出ます。入力の再生位置はバーの緑の縦線です。
     </p>
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
@@ -142,8 +142,9 @@
     手順はマップごとに最大 30 まで覚えていて、アプリを終了すると消えます。
     </p>
     <p>
-    右上の表示メニュー<img class="ui" src="icons/layout.svg" alt="">で並べ方を選べます。<strong>重ねて表示</strong>・<strong>マップのみ</strong>・<strong>映像のみ</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
-    <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。マップは選んでいる 1 枚だけを表示し、左上の「時間マップ」などの表示で切り替えます。
+    右上の表示メニュー<img class="ui" src="icons/layout.svg" alt="">で並べ方を選べます。<strong>重ねて表示</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
+    <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。<strong>4画面: 映像 ＋ 立体 ＋ マップ 2 枚</strong>は時間系のマップと空間マップを並べ、緑の枠が編集中のマップです（もう一方を押すとそちらに切り替わります）。
+    左上の<strong>編集対象</strong>では、時間マップかレートマップのどちらかと、空間マップを一緒に選べます。2 枚を選んでいるときは、マップの上に「時間マップ｜空間マップ」のタブが並び、押して描く相手を切り替えます（緑が編集中）。空間マップをすでに編集していれば、最初から 2 枚で開きます。
     </p>
   
 
@@ -163,9 +164,10 @@
     </p>
     <figure class="crop"><img src="shots/presets.png" alt="プリセットで塗り直しの道具。重ね方の選択と、再生の説明が付いた 7 つのプリセット" loading="lazy"></figure>
     <p>
-    <strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">では、マップを横切る線や囲む線で2つに分け、それぞれを指でずらします。
-    線は下のパレットで<span class="uichip"><img src="icons/chip_free.svg" alt="">自由曲線</span>か<span class="uichip"><img src="icons/chip_straight.svg" alt="">直線</span>（始点と終点をタップ）を選べ、囲む線は交差したところで閉じた形になります。
-    ずらしてできた隙間は両側の値をつないで自動で埋まります。<span class="uichip"><img src="icons/chip_apply.svg" alt="">確定</span>で次の線へ進み、<span class="uichip"><img src="icons/chip_redo.svg" alt="">やり直す</span>で線を引き直し、<span class="uichip"><img src="icons/chip_revert.svg" alt="">元に戻す</span>で切り分けを始める前のマップに戻ります。
+    <strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">では、マップを横切る線や囲む線で2つに分け、それぞれを動かします。
+    線は下のパレットで<span class="uichip"><img src="icons/chip_free.svg" alt="">自由曲線</span>・<span class="uichip"><img src="icons/chip_straight.svg" alt="">直線</span>（始点と終点をタップ）・<span class="uichip"><img src="icons/chip_polygon.svg" alt="">多角形</span>（頂点を順にタップし、最初の点をタップして閉じる）から選べ、自由曲線で囲む線は交差したところで閉じた形になります。
+    切ったあとは、領域をドラッグして移動、枠の 4 隅のつまみで台形に変形、2 本指のピンチで拡大・縮小ができます（つまみはマップの縁の内側に留まり、隅が外へ出ても縁の上から動かせます）。
+    動かしてできた隙間は両側の値をつないで自動で埋まります。<span class="uichip"><img src="icons/chip_apply.svg" alt="">確定</span>で次の線へ進み、<span class="uichip"><img src="icons/chip_redo.svg" alt="">やり直す</span>で線を引き直し（多角形の頂点を置いている途中は最後の点だけ取り消します）、<span class="uichip"><img src="icons/chip_revert.svg" alt="">元に戻す</span>で切り分けを始める前のマップに戻ります。
     </p>
     <p>
     マップを編集したあと、プリセットで塗り直し<img class="ui" src="icons/preset.svg" alt="">の「既定」の印が付いたプリセットを選ぶか、ひとつ前に戻す<img class="ui" src="icons/undo.svg" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
@@ -175,6 +177,8 @@
 <div class="gallery">
   <figure><img src="shots/v15/ja/cut_free.png" alt="切り分けで三角形を囲んで右へずらした画面。元の線が黄色、移動先が水色の点線" loading="lazy"><figcaption>自由曲線で囲んでずらす。線が交差したところで閉じます</figcaption></figure>
   <figure><img src="shots/v15/ja/cut_straight_start.png" alt="直線モードで始点を置いた画面。黄色の丸が始点" loading="lazy"><figcaption>直線は始点と終点をタップ</figcaption></figure>
+  <figure><img src="shots/v125/ja/cut_polygon.png" alt="多角形モードで頂点を 4 つ置いた画面。最初の点が大きな黄色の丸" loading="lazy"><figcaption>多角形は頂点を順にタップし、最初の点で閉じる</figcaption></figure>
+  <figure><img src="shots/v125/ja/cut_handles.png" alt="囲んだ領域を動かし、右上のつまみを内側へ引いて台形にした画面。白い丸がつまみ" loading="lazy"><figcaption>4 隅のつまみで台形に、2 本指で拡大・縮小</figcaption></figure>
 </div>
 
 <h3>4. 書き出す</h3>
@@ -581,7 +585,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     <h3>3. Drawing or generating a map</h3>
     <p>
     The editor opens full screen. The row across the top carries the map-and-mode label at the left, the gear <img class="ui" src="icons/map_gear.svg" alt=""> (<strong>Parameters</strong>), the waveform (<strong>Sound</strong>), and an <strong>X</strong> at the far
-    right that closes the editor, with the layout menu <img class="ui" src="icons/layout.svg" alt=""> beside it. The method buttons sit at the bottom right. The editor shows the one map you selected; switch it from the label at the top left. Nothing needs saving &mdash; the map is already applied.
+    right that closes the editor, with the layout menu <img class="ui" src="icons/layout.svg" alt=""> beside it. The method buttons sit at the bottom right. The <strong>Editing</strong> menu at the top left picks the time map or the rate map, and can add the space map alongside; with two selected, tabs above the map choose which one you draw on (green marks the one being edited), and the editor opens with both whenever the space map has already been edited. Nothing needs saving &mdash; the map is already applied.
     </p>
     <p>
     Trace the map with a finger or Apple&nbsp;Pencil. The brush button opens a palette holding
@@ -596,7 +600,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     the playhead and seven faint lines along the slit (five on a vertical slit with a portrait video), poking past the edge of the map; under the map, readout values show, for the spot
     where each one crosses the white line, which second of the video it is showing (white) and its playback rate there (1 is normal speed, 0 a freeze,
     negative is reverse; blue&ndash;gray&ndash;yellow); once the space map has been changed, a third row adds which pixel of the video it shows (green&ndash;red). The colours match the contour lines, and each row is named to the right of the numbers (above them with a horizontal slit): Time, Rate, Position. The output time appears at the end of the white line, and with live input a time map shows how many seconds ago (a rate map shows the rate read from the map).
-    With a vertical slit the time graph now runs output time downward (start at the top). With the readout on, the input video's bar on the main screen also marks in red the span of the video the output is showing right now: a dot with normal playback, a band where the map spreads time out (not in the full-screen Input view). In Surface mode, turning on Readout marks the span the whole picture is showing on that bar, the same span as the red lines in the 3D plot. The input&rsquo;s own playhead on that bar is the green vertical line.
+    With a vertical slit the time graph now runs output time downward (start at the top). With the readout on, the input video's bar on the main screen also marks in red the span of the video the output is showing right now: a dot with normal playback, a band where the map spreads time out (not in the full-screen Input view). In Surface mode the band appears only once the space map has been edited, with Readout turned on from the space map&rsquo;s eye menu; it marks the span the whole picture is showing, the same span as the red lines in the 3D plot. The input&rsquo;s own playhead on that bar is the green vertical line.
     </p>
     <p>
     The caption under the map spells out what brightness means with your current settings &mdash;
@@ -792,13 +796,14 @@ started, likewise finish that method first, so the change is not rebuilt away. G
 the preview scrubs the playhead.
 </p>
 <p>
-The layout menu <img class="ui" src="icons/layout.svg" alt=""> at the top right of the editor has six options. <strong>Overlay</strong> lays the
+The layout menu <img class="ui" src="icons/layout.svg" alt=""> at the top right of the editor has five options. <strong>Overlay</strong> lays the
 map over the picture at partial opacity, which is how you land a stroke on a particular object rather than a
-particular part of the frame. <strong>Map only</strong> and <strong>Video only</strong> show one layer at a time.
+particular part of the frame.
 <strong>Split: video + map</strong> is the default and shows the video and the map as two panes, side by side or
 stacked, whichever shows both larger. <strong>Split: 3D plot + map</strong> puts the
 <a href="#plots-en">3D plot</a> in place of the video, and <strong>Three panes: video + 3D plot + map</strong> shows
-all three, stacked along the longer side of the screen, so you can watch the surface bend while you draw. The
+all three, stacked along the longer side of the screen, so you can watch the surface bend while you draw.
+<strong>Four panes: video + 3D + two maps</strong> adds the space map beside the time or rate map; the map being edited has a green frame, and a tap on the other switches to it. The
 choice is independent of what an external display is showing &mdash; that shows the output alone, or mirrors
 the screen if you chose that in Settings.
 </p>
@@ -981,18 +986,17 @@ inside is extended to the edge in the direction it was travelling), or draw a lo
 where the line crosses itself, so its start and end do not have to meet exactly, and the tiny loops a wobbling
 fingertip makes are ignored. <span class="uichip"><img src="icons/chip_straight.svg" alt="">Straight</span> takes two taps: tap the start point, which is marked, then
 the end point, and the map is cut along the straight line through them, extended to the edges &mdash; a faint dashed
-line previews where it will run. The caption under the buttons tells you which step you are on, and turns orange
+line previews where it will run. <span class="uichip"><img src="icons/chip_polygon.svg" alt="">Polygon</span> takes one tap per corner and joins them in order; once three are placed the first point is drawn larger, and tapping it closes the shape and cuts (the enclosed part is the piece you move). The caption under the buttons tells you which step you are on, and turns orange
 for a few seconds if a line could not split the map.
 </p>
 <p>
-Once the map is split, drag either piece; the caption reads <em>Drag a region to move it. You can keep moving it
-until you tap Apply</em>. The original cut is shown as a yellow dashed line and its moved position as a cyan dotted
+Once the map is split, drag either piece; the caption reads <em>Drag to move, corner handles to reshape, two fingers to scale. Adjust as often as you like until Apply</em>. The piece you touched last shows a dotted frame with a white handle at each corner: drag a handle to pull that corner and turn the piece into a trapezoid, or pinch with two fingers to scale it (and move it) about your fingers. The handles stay inside the map, so a corner pushed outside can still be dragged back from the edge. The original cut is shown as a yellow dashed line and its moved position as a cyan dotted
 one. Lifting your finger commits nothing, so you can grab and move again as often as you like. A piece enclosed by a
 loop always stays on top; otherwise the piece you dragged last does. Playback pauses while you touch the map, as in
 Draw. The tool row holds:
 </p>
 <table>
-  <tr><th><span class="uichip"><img src="icons/chip_redo.svg" alt="">Start over</span></th><td>Throws away the line and the offsets and lets you draw a new line on the same base. In Straight mode it also cancels a start point you have placed.</td></tr>
+  <tr><th><span class="uichip"><img src="icons/chip_redo.svg" alt="">Start over</span></th><td>Throws away the line and the changes and lets you draw a new line on the same base. In Straight mode it also cancels a start point you have placed; in Polygon mode it removes the last point placed.</td></tr>
   <tr><th><span class="uichip"><img src="icons/chip_apply.svg" alt="">Apply</span></th><td>Makes the current result the new base, ready for another cut.</td></tr>
   <tr><th><span class="uichip"><img src="icons/chip_revert.svg" alt="">Revert</span></th><td>Returns the map to how it was when you opened Cut &amp; slide, discarding every cut since.</td></tr>
 </table>
@@ -1000,6 +1004,8 @@ Draw. The tool row holds:
   <figure><img src="shots/v15/en/cut_free.png" alt="A freehand loop around a triangle, slid to the right: the original outline in yellow, the moved outline in cyan" loading="lazy"><figcaption>Freehand: the loop closes where the line crosses itself</figcaption></figure>
   <figure><img src="shots/v15/en/cut_straight_start.png" alt="Straight mode with the start point placed, shown as a yellow ring" loading="lazy"><figcaption>Straight: tap a start point&hellip;</figcaption></figure>
   <figure><img src="shots/v15/en/cut_straight.png" alt="A straight cut from edge to edge with the lower piece slid upwards" loading="lazy"><figcaption>&hellip;then an end point, and slide</figcaption></figure>
+  <figure><img src="shots/v125/en/cut_polygon.png" alt="Polygon mode with four corners placed; the first point is drawn as a larger yellow ring" loading="lazy"><figcaption>Polygon: tap the corners, then the first point to close</figcaption></figure>
+  <figure><img src="shots/v125/en/cut_handles.png" alt="The enclosed piece moved and its top-right handle pulled inward into a trapezoid; white circles are the handles" loading="lazy"><figcaption>Corner handles reshape the piece; two fingers scale it</figcaption></figure>
 </div>
 
 <h3>Combining the methods</h3>
