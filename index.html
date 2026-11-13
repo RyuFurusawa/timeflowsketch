@@ -86,7 +86,7 @@
     </p>
     <p>
     <strong>入力映像</strong>を並べると、映像の下の端に使用範囲のバーと読み込みの情報（GPU 上の映像の大きさ・fps）が出て、情報を押すと読み込みの設定を開けます。
-    左上の<strong>「入力」</strong>の札を押すと、別の動画（写真ライブラリ・ファイル）やライブカメラへの切り替えと、読み込みの設定ができます。編集画面を閉じずに素材を替えられ、編集したマップはそのまま保たれます。
+    左上の<strong>「入力」</strong>の札の下のボタン<img class="ui" src="icons/dock_load.svg" alt="">を押すと、別の動画（写真ライブラリ・ファイル）やライブカメラへの切り替えと、読み込みの設定ができます。編集画面を閉じずに素材を替えられ、編集したマップはそのまま保たれます。
     </p>
     <p>
     表示切替で<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>を並べると、出力の絵と並べてグラフを見られます。
@@ -117,7 +117,7 @@
 <figure class="guide"><a href="shots/guide/fullscreen_ja.jpg"><img src="shots/guide/fullscreen_ja.jpg" alt="編集画面のフルスクリーンの図。入力映像、時間マップ、出力映像、立体グラフを並べ、右上の表示切替で並べるものを切り替える" loading="lazy"></a><figcaption>編集画面のフルスクリーン（押すと大きく開きます）</figcaption></figure>
 <div class="gallery">
   <figure><img src="shots/v129/ja/input_full.png" alt="入力映像だけを並べたフルスクリーン。映像の下に使用範囲のバー、秒数、読み込みの情報が並ぶ" loading="lazy"><figcaption>入力映像だけを並べたところ。情報を押すと読み込みの設定が開きます</figcaption></figure>
-  <figure><img src="shots/v129/ja/input_menu.png" alt="入力映像の左上の「入力」の札を押して開いたメニュー。動画を選ぶ、ファイルから開く、読み込みの設定" loading="lazy"><figcaption>「入力」の札から、別の動画への切り替えと読み込みの設定</figcaption></figure>
+  <figure><img src="shots/v129/ja/input_menu.png" alt="入力映像の左上のボタンを押して開いたメニュー。動画を選ぶ、ファイルから開く、読み込みの設定" loading="lazy"><figcaption>入力映像の左上のボタンから、別の動画への切り替えと読み込みの設定</figcaption></figure>
   <figure><img src="shots/v129/ja/volume.png" alt="立体グラフの断面の表示。素材の箱の中で斜めに傾いた面と、秒数の目盛り" loading="lazy"><figcaption>立体グラフ（断面）。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
   <figure><img src="shots/v129/ja/volume_lines.png" alt="立体グラフのラインの表示。同じ面が、緑から赤の 7 本の縦の線で示されている" loading="lazy"><figcaption>同じマップを「ライン」で。線の色は時間グラフと同じ（左が緑、右が赤）</figcaption></figure>
   <figure><img src="shots/v129/ja/fullscreen_clean.png" alt="フルスクリーンで画面に触れてバーを隠した状態。入力、時間マップ、出力の札だけが残り、ボタンは消えている" loading="lazy"><figcaption>画面に触れると、バーとボタンが消えて名前の札だけに</figcaption></figure>
@@ -259,7 +259,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 
 <h2>ライブカメラ</h2>
 <p>
-カメラの映像を、撮りながら時間操作できます。<strong>「読み込み」→「ライブカメラ」</strong>か、起動直後の画面の「ライブカメラ」、編集画面の入力映像の「入力」の札で始めます
+カメラの映像を、撮りながら時間操作できます。<strong>「読み込み」→「ライブカメラ」</strong>か、起動直後の画面の「ライブカメラ」、編集画面の入力映像の左上のボタンで始めます
 （カメラのある端末で、はじめにカメラの許可を求められます。映像は端末の外へ送られません）。
 </p>
 <ul>
@@ -496,10 +496,9 @@ makes the app usable for installation and live work as well as for producing fil
     use are printed underneath.
     </p>
     <p>
-    An <strong>audio on / off</strong> button <img class="ui" src="icons/speaker.svg" alt=""> sits at the top right of each video, and only one of the two sounds at a time. A
-    <strong>rotate button</strong> <img class="ui" src="icons/rotate.svg" alt=""> sits at the bottom left of the Input tile: each tap turns the source
-    another 90&deg; and re-imports the clip, which takes as long as a reload but leaves your maps alone. Above it,
-    <strong>Stabilize</strong> <img class="ui" src="icons/stabilize.svg" alt=""> smooths out camera shake. The
+    An <strong>audio on / off</strong> button <img class="ui" src="icons/speaker.svg" alt=""> sits at the top right of each video, and only one of the two sounds at a time.
+    <strong>Stabilize</strong> <img class="ui" src="icons/stabilize.svg" alt=""> at the bottom left of the Input tile smooths out camera shake
+    (the rotate button that used to sit there was removed in 1.29). The
     button at the bottom right of each video (beside the audio button when the device is sideways) opens it
     <strong>full screen</strong> <img class="ui" src="icons/fullscreen.svg" alt=""> (see below).
     </p>
@@ -571,14 +570,14 @@ The <strong>Input</strong> pane carries the same range bar as the main screen &m
 slide, touch to scrub &mdash; with the seconds underneath and a chip describing what is loaded (the size and frame
 rate held on the GPU; with the Input pane alone, also the source&rsquo;s size and frame rate, whether frames were
 skipped, and the seconds loaded). Tap it to open the <strong>Video Loading</strong> settings on their own and
-reload from there. The <strong>Input</strong> label at the top left of the pane is a menu: choose another video
+reload from there. The button under the <strong>Input</strong> label at the top left of the pane <img class="ui" src="icons/dock_load.svg" alt=""> opens a menu: choose another video
 from the photo library or a file, switch to a live camera, or open the load settings. The source changes without
 leaving the editor, and the maps you edited are kept.
 </p>
 <figure class="guide"><a href="shots/guide/fullscreen_en.jpg"><img src="shots/guide/fullscreen_en.jpg" alt="The editor in full screen showing the input video, the time map, the output video and the 3D plot, with the View menu at the top right for choosing the panes" loading="lazy"></a><figcaption>The editor in full screen (tap to enlarge)</figcaption></figure>
 <div class="gallery">
   <figure><img src="shots/v129/en/input_full.png" alt="Full screen with the Input pane alone: the range bar, the seconds in use and the loading information under the video" loading="lazy"><figcaption>The Input pane alone: tap the information to open Video Loading</figcaption></figure>
-  <figure><img src="shots/v129/en/input_menu.png" alt="The menu opened from the Input label: Choose a video, Open File and Load settings" loading="lazy"><figcaption>The Input label switches the source and opens the load settings</figcaption></figure>
+  <figure><img src="shots/v129/en/input_menu.png" alt="The menu opened from the button at the top left of the Input pane: Choose a video, Open File and Load settings" loading="lazy"><figcaption>The button on the Input pane switches the source and opens the load settings</figcaption></figure>
   <figure><img src="shots/v129/en/fullscreen_clean.png" alt="Full screen after touching the screen: only the Input, Time map and Output labels remain and the buttons are gone" loading="lazy"><figcaption>Touch the screen to hide the bars and buttons</figcaption></figure>
 </div>
 
@@ -1490,7 +1489,7 @@ here, at the cost of the drawing.
 </p>
 <p>
 Loading a different video <strong>keeps the maps you edited</strong>: they are stretched to a size matched to the new clip&rsquo;s aspect ratio, along with their undo history, and a size you set by hand is discarded. Maps you never edited are rebuilt to the new clip&rsquo;s default. Reloading the <em>same</em>
-clip &mdash; the reload buttons, or rotating the video &mdash; leaves every map as it is.
+clip &mdash; the reload buttons &mdash; leaves every map as it is.
 </p>
 
 <h3>Export options</h3>
@@ -1774,7 +1773,7 @@ opened that method.
 <h3>What happens to my map when I load another video?</h3>
 <p>
 Maps you edited are kept and stretched to the new video&rsquo;s aspect ratio, and Undo still works. Maps you never edited become the new clip&rsquo;s default. To start again from the default, hold Undo, or pick the Fill button marked Default. Re-importing the <em>same</em> clip
-&mdash; changing the Video Loading settings, reloading the range, or rotating &mdash; leaves your maps alone.
+&mdash; changing the Video Loading settings or reloading the range &mdash; leaves your maps alone.
 </p>
 
 <h3>Can I bring a map in from elsewhere, or take one out?</h3>
