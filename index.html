@@ -32,7 +32,7 @@
 <h3>マップをつくる</h3>
 <ul>
   <li><img class="ui" src="icons/draw.svg" alt=""><strong>描画</strong> — 指でなぞって時間の流れを描く。5段階の濃淡と自由な灰色、スポイト、指先ツール。触れたまま止めると色がにじむ</li>
-  <li><img class="ui" src="icons/gradient.svg" alt=""><img class="ui" src="icons/preset.svg" alt=""><strong>グラデーション生成・プリセット</strong> — 規則的なパターンから始める</li>
+  <li><img class="ui" src="icons/gradient.svg" alt=""><img class="ui" src="icons/preset.svg" alt=""><strong>グラデーション生成・塗りつぶし</strong> — 規則的なパターンから始める</li>
   <li><img class="ui" src="icons/motion.svg" alt=""><strong>モーション解析</strong> — 映像自身の動きから自動で時間の形をつくる</li>
   <li><img class="ui" src="icons/cut.svg" alt=""><strong>切り分け</strong> — マップを線で2つに分け、動かしたり拡大・台形に変形したりして、時間のずれをつくる</li>
   <li><img class="ui" src="icons/edit_region.svg" alt=""><strong>編集範囲</strong> — マップの中に四角を引き、その中（または外）だけを編集する</li>
@@ -72,22 +72,26 @@
     右上の音声出力切り替え<img class="ui" src="icons/speaker.svg" alt="">で、鳴らす音を選びます。入力は素材そのままの音、出力は時間操作を受けた音で、鳴るのはどちらか一方だけです。
     </p>
     <p>
-    入力・出力それぞれの右下のボタン<img class="ui" src="icons/fullscreen.svg" alt="">で<strong>全画面表示</strong>になります。
-    入力の全画面には使用範囲のバーと読み込みの情報（元の映像と GPU 上の映像の大きさ・fps）が出て、情報をタップすると読み込みの設定を開けます。
+    画面は<strong>トップ画面</strong>と<strong>編集画面</strong>の 2 つだけです。入力・出力それぞれの右下のボタン<img class="ui" src="icons/fullscreen.svg" alt="">を押すと、編集画面が<strong>フルスクリーン</strong>（編集の道具を隠して、映像やグラフだけを大きく見る状態）で開きます。
     </p>
     <p>
-    出力の全画面は<strong>モニタービュー</strong>です。開いた直後は絵だけで、画面に触れると下からメニューが出ます（もう一度触れると隠れます）。
-    <strong>入力映像・マップ・出力映像・立体グラフ・時間グラフ</strong>を選ぶと、いくつでも並べて見比べられます。
-    押した順に上から並びます（横長の画面では左右に）。マップは、いま出力に効いているもの（時間マップかレートマップ）が出ます。
-    空間マップは編集したときだけ選べます。トップ画面の立体グラフの右下のボタンから開くと、立体グラフだけで始まります。編集画面の出力映像と立体グラフの右下のボタンからも開け、「戻る」で編集画面に帰ります。
-    並べたマップの右下のペン<img class="ui" src="icons/map_edit.svg" alt="">を押すと、そのマップの編集画面へ移ります。
-    画面の大きな端末（iPhone Air・Plus・Pro Max・iPad）では、並べた画面の右下のボタンでその画面だけを全画面にできます。
-    モニタービューは見るための画面なので、書き出しはトップ画面の「書き出し」から行います。
+    フルスクリーンでは、右上の<strong>表示切替</strong><img class="ui" src="icons/layout.svg" alt="">で<strong>入力映像・マップ・出力映像・立体グラフ・時間グラフ</strong>を選ぶと、いくつでも並べて見比べられます。
+    押した順に並び、行と列は画面の形に合わせて自動で決まります。マップは、いま出力に効いているもの（時間マップかレートマップ）が出ます。空間マップは編集したときだけ選べます。
+    トップ画面の立体グラフの右下のボタンから開くと、立体グラフだけで始まります。
+    画面に 1 回触れると上下のバーとボタンが消えて、名前の札だけが残ります（もう一度触れると戻ります）。
+    左上の<strong>「編集」</strong>で道具が出て、そのまま編集を続けられます。並べたマップの右下のペン<img class="ui" src="icons/map_edit.svg" alt="">を押すと、そのマップの編集になります。
+    画面の大きな端末（iPhone Air・Plus・Pro Max・iPad）では、並べた画面の右下のボタンでその画面だけを表示できます。
+    映像の上で 2 本の指を広げてもフルスクリーンになり、狭めると戻ります。
+    書き出しはトップ画面の「書き出し」から行います。
     </p>
     <p>
-    モニタービューで<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>をオンにすると、出力の絵と並べてグラフを見られます。
-    立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。
-    右上の「断面」ボタンを押すと、箱そのものを半透明または不透明で見せる表示に変わり、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に、下の面（画素の縦がいちばん大きい側）と左の面（横が 0）を横切る白い線と、その端に赤い秒数が付きます。
+    <strong>入力映像</strong>を並べると、映像の下の端に使用範囲のバーと読み込みの情報（GPU 上の映像の大きさ・fps）が出て、情報を押すと読み込みの設定を開けます。
+    左上の<strong>「入力」</strong>の札を押すと、別の動画（写真ライブラリ・ファイル）やライブカメラへの切り替えと、読み込みの設定ができます。編集画面を閉じずに素材を替えられ、編集したマップはそのまま保たれます。
+    </p>
+    <p>
+    表示切替で<strong>「立体グラフ」</strong>や<strong>「時間グラフ」</strong>を並べると、出力の絵と並べてグラフを見られます。
+    立体グラフは素材を「横×縦×時間」の箱として描き、いまの 1 コマが箱をどう切っているかを、絵を貼った面で見せます。ゆっくり自動で回り、ドラッグで回転、ピンチで拡大できます。回して離すと、その勢いのまま回り続けます（指を止めてから離すと止まります）。
+    右上の「断面」ボタンを押すたびに表示が変わります。<strong>ライン</strong><img class="ui" src="icons/lines.svg" alt="">は断面を映像ではなくスリットの線で示し、線の色は時間グラフと同じ（画面の左が緑、右が赤）です。<strong>半透明</strong>と<strong>不透明</strong>は箱そのものを見せ、手前の面に画素数の目盛り、断面のいちばん進んだ時刻と遅れた時刻に、下の面（画素の縦がいちばん大きい側）と左の面（横が 0）を横切る白い線と、その端に赤い秒数が付きます。
     時間グラフは横が出力の 1 周、縦が素材の時刻で（縦スリットでは縦と横が入れ替わります）、画面の場所ごとにどの瞬間を映すかを線で示します。
     横にスワイプすると<strong>レート</strong>（再生の速さ）と<strong>空間</strong>（素材のどこを映すか）のページに切り替わります。
     レートはレートマップ基準で編集しているとき、空間は空間マップを編集したときに現れます。
@@ -110,13 +114,16 @@
   
 
 
-<figure class="guide"><a href="shots/guide/monitor_ja.jpg"><img src="shots/guide/monitor_ja.jpg" alt="モニタービューの図。入力映像、時間マップ、出力映像、立体グラフを並べ、下のメニューで並べるものを切り替える" loading="lazy"></a><figcaption>モニタービュー（押すと大きく開きます）</figcaption></figure>
+<figure class="guide"><a href="shots/guide/fullscreen_ja.jpg"><img src="shots/guide/fullscreen_ja.jpg" alt="編集画面のフルスクリーンの図。入力映像、時間マップ、出力映像、立体グラフを並べ、右上の表示切替で並べるものを切り替える" loading="lazy"></a><figcaption>編集画面のフルスクリーン（押すと大きく開きます）</figcaption></figure>
 <div class="gallery">
-  <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面表示の下の部分。読み込みの情報、使用範囲のバー、秒数が並ぶ" loading="lazy"><figcaption>入力の全画面。情報をタップすると読み込みの設定が開きます</figcaption></figure>
-  <figure><img src="shots/v16/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、秒数の目盛り" loading="lazy"><figcaption>立体グラフ。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
+  <figure><img src="shots/v129/ja/input_full.png" alt="入力映像だけを並べたフルスクリーン。映像の下に使用範囲のバー、秒数、読み込みの情報が並ぶ" loading="lazy"><figcaption>入力映像だけを並べたところ。情報を押すと読み込みの設定が開きます</figcaption></figure>
+  <figure><img src="shots/v129/ja/input_menu.png" alt="入力映像の左上の「入力」の札を押して開いたメニュー。動画を選ぶ、ファイルから開く、読み込みの設定" loading="lazy"><figcaption>「入力」の札から、別の動画への切り替えと読み込みの設定</figcaption></figure>
+  <figure><img src="shots/v129/ja/volume.png" alt="立体グラフの断面の表示。素材の箱の中で斜めに傾いた面と、秒数の目盛り" loading="lazy"><figcaption>立体グラフ（断面）。縦スリット×時間マップの「左→右」では、左ほど前の瞬間を映すので面が斜めに傾きます</figcaption></figure>
+  <figure><img src="shots/v129/ja/volume_lines.png" alt="立体グラフのラインの表示。同じ面が、緑から赤の 7 本の縦の線で示されている" loading="lazy"><figcaption>同じマップを「ライン」で。線の色は時間グラフと同じ（左が緑、右が赤）</figcaption></figure>
+  <figure><img src="shots/v129/ja/fullscreen_clean.png" alt="フルスクリーンで画面に触れてバーを隠した状態。入力、時間マップ、出力の札だけが残り、ボタンは消えている" loading="lazy"><figcaption>画面に触れると、バーとボタンが消えて名前の札だけに</figcaption></figure>
 </div>
 
-<figure class="guide"><a href="shots/guide/editor_ja.jpg"><img src="shots/guide/editor_ja.jpg" alt="編集画面の各部の名前を赤い線で示した図。上から編集対象や適用パラメータなどのボタン、結果の映像、編集するマップのタブと編集範囲、マップ、筆の色とスライダー、手法のボタン" loading="lazy"></a><figcaption>編集画面（押すと大きく開きます）</figcaption></figure>
+<figure class="guide"><a href="shots/guide/editor_ja.jpg"><img src="shots/guide/editor_ja.jpg" alt="編集画面の各部の名前を赤い線で示した図。上から編集対象・パラメータ・サウンド・表示切替のボタン、結果の映像、マップ、マップの名前と編集範囲、筆の色とスライダー、手法のボタン" loading="lazy"></a><figcaption>編集画面（押すと大きく開きます）</figcaption></figure>
     <h3>2. マップを描く</h3>
     <p>
     マップ画像の右下にある鉛筆アイコン<img class="ui" src="icons/map_edit.svg" alt="">、出力映像のタップ、または画面下の<img class="ui" src="icons/dock_edit.svg" alt=""><strong>「編集」</strong>から編集画面に入ります。
@@ -124,7 +131,7 @@
     </p>
     <p>
     ちょっとした描き足しなら、トップ画面のマップ画像をそのままなぞっても描けます（赤い線の近くを触ると、再生位置の移動になります）。
-    左下の筆のボタン<img class="ui" src="icons/map_pencil.svg" alt="">で黒〜白の 5 段階と指先を選び、隣の<strong>プリセット</strong><img class="ui" src="icons/map_preset.svg" alt="">のボタンでは、黒・グレー・白の一色や、上→下・下→上・左→右・右→左のグラデーションでマップ全体を塗り直せます。
+    左下の筆のボタン<img class="ui" src="icons/map_pencil.svg" alt="">で黒〜白の 5 段階と指先を選び、隣の<strong>塗りつぶし</strong><img class="ui" src="icons/map_preset.svg" alt="">のボタンでは、黒・グレー・白の一色や、上→下・下→上・左→右・右→左のグラデーションでマップ全体を塗り直せます。
     その隣の<strong>グラデーション</strong><img class="ui" src="icons/map_wave.svg" alt="">のボタンを押すと、マップが縞のグラデーションになり、なぞって動かす・ピンチで周期・2 本指で回して角度を、その場で変えられます（✓ で終わります）。
     続く<strong>ブラー</strong><img class="ui" src="icons/map_blur.svg" alt="">は押すたびにマップに 1 段ブラーをかけ、<strong>反転</strong><img class="ui" src="icons/map_invert.svg" alt="">は明暗を入れ替えます。レートマップでは<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">、空間マップでは<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">も並びます（はさみを押してマップを横切る線を引き、分かれた領域をドラッグでずらして、上に出る「ずらしたら、ここをタップで確定」を押します）。
     描いたあとは右下に「ひとつ前に戻す」<img class="ui" src="icons/undo.svg" alt="">が出ます。
@@ -134,49 +141,54 @@
     <p>
     明るさの意味はマップの種類で変わります。起動時の<strong>時間マップ・縦スリット</strong>では、黒いところが使用範囲の始まり、白いところが終わりの瞬間を映します。
     最初のマップは上が黒・下が白のグラデーションで、これが通常の再生です。マップの縦方向が出力の時間なので、描いたところは赤い線がそこを通るときに、その列が映す瞬間を変えます。
-    レートマップでは（既定の設定なら）黒が停止、白が順再生で、グレーはその間の半分の速さです。歯車のパネルの右上の「逆再生あり」を押すと、黒が逆再生、グレーが停止、白が順再生になり、「既定に戻す」で元に戻ります。
+    レートマップでは（既定の設定なら）黒が停止、白が順再生で、グレーはその間の半分の速さです。「パラメータ」のパネルの右上の「逆再生あり」を押すと、黒が逆再生、グレーが停止、白が順再生になり、「既定に戻す」で元に戻ります。
     いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
     <p>
     いちばん下の列の左端のボタン<img class="ui" src="icons/undo.svg" alt="">で、<strong>ひとつ前の状態に戻せます</strong>。押すたびに 1 手順ずつ戻り、
-    ストロークだけでなくプリセットやグラデーション生成など、どの方法での変更もさかのぼれます
+    ストロークだけでなく塗りつぶしやグラデーション生成など、どの方法での変更もさかのぼれます
     （スライダーは指を離すまでが 1 手順）。長押しすると「デフォルトの状態に戻す」が出ます。
     手順はマップごとに最大 30 まで覚えていて、アプリを終了すると消えます。
     </p>
     <p>
-    右上の表示メニュー<img class="ui" src="icons/layout.svg" alt="">で並べ方を選べます。<strong>重ねて表示</strong>・<strong>2画面: 映像 ＋ マップ</strong>（最初の表示）のほか、
-    <strong>2画面: 立体グラフ ＋ マップ</strong>と<strong>3画面: 映像 ＋ 立体グラフ ＋ マップ</strong>では、描きながら立体グラフの面の変化を確かめられます。3画面は画面の長い方向に並びます。<strong>4画面: 映像 ＋ 立体 ＋ マップ 2 枚</strong>は時間系のマップと空間マップを並べ、緑の枠が編集中のマップです（もう一方を押すとそちらに切り替わります）。
-    左上の<strong>編集対象</strong>では、時間マップかレートマップのどちらかと、空間マップを一緒に選べます。2 枚を選んでいるときは、マップの上に「時間マップ｜空間マップ」のタブが並び、押して描く相手を切り替えます（緑が編集中）。空間マップをすでに編集していれば、最初から 2 枚で開きます。
+    右上の<strong>表示切替</strong><img class="ui" src="icons/layout.svg" alt="">で、並べるものを選べます。<strong>入力映像・マップ・出力映像・立体グラフ・時間グラフ</strong>を押した順に並べ、行と列は画面の形に合わせて自動で決まります（最初は出力映像とマップ。iPhone は道具を出している間 4 つまで）。
+    立体グラフを並べれば、描きながら面の変化を確かめられます。<strong>マップを出力映像に重ねる</strong>をオンにすると、映像の上にマップを薄く重ねて描けます。同じメニューの<strong>フルスクリーンで表示</strong>で、道具を隠して大きく見られます。並びは次に開いたときも同じです。
+    左上の<strong>編集対象</strong>では、時間マップかレートマップのどちらかと、空間マップを一緒に選べます。2 枚を選ぶとマップが 2 つ並び、緑の枠が編集中のマップです（もう一方を押すとそちらに切り替わります）。表示切替でもう一方のマップを足しても同じです。空間マップをすでに編集していれば、最初から 2 枚で開きます。
+    上の段の<strong>パラメータ</strong><img class="ui" src="icons/map_gear.svg" alt="">と<strong>サウンド</strong><img class="ui" src="icons/sound.svg" alt="">は、適用パラメータと音の設定を開きます。
+    HDMI などで外部ディスプレイをつないでいる間は、表示切替の左に<strong>外部表示</strong>が出て、外に映すものを選べます。
+    マップの赤い線（再生位置）は、マップの外に少しはみ出しています。はみ出した所をつかんで動かすと、描く操作と混ざらずに再生位置を動かせます。
     トップ画面のマップの名前は、時間系と空間の両方を編集していると「時間＋空間」になり、いま見えているほうが明るく出ます。
     </p>
     <p>
-    <strong>別の動画を読み込んでも、編集したマップは保たれます。</strong>新しい動画の縦横比に合わせて引き伸ばし、編集の手順もそのまま戻せます。編集していないマップは新しい動画に合わせた既定の形になります。既定に戻したいときは、ひとつ前に戻す<img class="ui" src="icons/undo.svg" alt="">の長押しかプリセットの「既定」を使います。
+    <strong>別の動画を読み込んでも、編集したマップは保たれます。</strong>新しい動画の縦横比に合わせて引き伸ばし、編集の手順もそのまま戻せます。編集していないマップは新しい動画に合わせた既定の形になります。既定に戻したいときは、ひとつ前に戻す<img class="ui" src="icons/undo.svg" alt="">の長押しか塗りつぶしの「既定」を使います。
     </p>
     <p>
-    マップの名前の横の<strong>編集範囲</strong><img class="ui" src="icons/edit_region.svg" alt="">を押してからマップをドラッグすると、その四角の中だけに描画・生成・プリセット・ブラー・ガンマ・反転が効きます（四角は緑の破線で示し、効かない側を少し暗くします）。
-    プリセットのグラデーションは四角の端から端までになるので、部分ごとに違うグラデーションを置けます。隣の<img class="ui" src="icons/edit_region_swap.svg" alt="">で四角の外側に切り替えられ、編集範囲をもう一度押すと解除します。切り分けの結果も四角の中だけに残ります（切り分けの間はボタンが出ないので、範囲の変更はほかの方法で）。
+    マップの名前の横の<strong>編集範囲</strong><img class="ui" src="icons/edit_region.svg" alt="">を押してからマップをドラッグすると、その四角の中だけに描画・生成・塗りつぶし・ブラー・ガンマ・反転が効きます（四角は緑の破線で示し、効かない側を少し暗くします）。
+    塗りつぶしのグラデーションは四角の端から端までになるので、部分ごとに違うグラデーションを置けます。隣の<img class="ui" src="icons/edit_region_swap.svg" alt="">で四角の外側に切り替えられ、編集範囲をもう一度押すと解除します。切り分けの結果も四角の中だけに残ります（切り分けの間はボタンが出ないので、範囲の変更はほかの方法で）。
     </p>
-    <figure class="crop"><img src="shots/v125/ja/edit_region.png" alt="編集範囲を右側に引き、その中だけに左→右のプリセットを塗った画面。四角は緑の破線で、外は元のマップのまま" loading="lazy"><figcaption>四角の中だけに左→右のプリセット。グラデーションは四角の端から端まで</figcaption></figure>
+    <figure class="crop"><img src="shots/v129/ja/edit_region.png" alt="編集範囲を右側に引き、その中だけを左→右のグラデーションで塗りつぶした画面。四角は緑の破線で、外は元のマップのまま" loading="lazy"><figcaption>四角の中だけを左→右で塗りつぶし。グラデーションは四角の端から端まで</figcaption></figure>
   
 
 
 <div class="gallery">
-  <figure><img src="shots/v16/ja/editor_3pane.png" alt="編集画面の3画面表示。上から出力映像、立体グラフ、時間マップが並ぶ" loading="lazy"><figcaption>3画面: 映像 ＋ 立体グラフ ＋ マップ</figcaption></figure>
-  <figure><img src="shots/v125/ja/editor_quad.png" alt="編集画面の4画面表示。上から出力映像、立体グラフ、緑の枠の時間マップ、空間マップが並ぶ" loading="lazy"><figcaption>4画面: 緑の枠が編集中のマップ</figcaption></figure>
+  <figure><img src="shots/v129/ja/menu_open.png" alt="編集画面の表示切替のメニュー。並べるものとして入力映像、時間マップ、空間マップ、出力映像、立体グラフ、時間グラフが並び、その下にマップを出力映像に重ねる、フルスクリーンで表示" loading="lazy"><figcaption>表示切替のメニュー。印の付いたものが並びます</figcaption></figure>
+  <figure><img src="shots/v129/ja/editor_3pane.png" alt="編集画面に出力映像、時間マップ、立体グラフを並べたところ" loading="lazy"><figcaption>出力映像・マップ・立体グラフを並べる</figcaption></figure>
+  <figure><img src="shots/v129/ja/editor_3pane_lines.png" alt="同じ並びで、立体グラフをラインの表示にしたところ" loading="lazy"><figcaption>立体グラフを「ライン」に</figcaption></figure>
+  <figure><img src="shots/v129/ja/editor_quad.png" alt="編集画面に出力映像、時間マップ、立体グラフ、緑の枠の空間マップを並べたところ" loading="lazy"><figcaption>マップを 2 枚並べる。緑の枠が編集中のマップ</figcaption></figure>
 </div>
 
-    <h3>3. 生成やプリセットから始める</h3>
+    <h3>3. 生成や塗りつぶしから始める</h3>
     <p>
-    いちばん下の列の右側に並ぶボタンで、マップの作り方を切り替えられます。左から<strong>描画</strong><img class="ui" src="icons/draw.svg" alt="">・<strong>グラデーション生成</strong><img class="ui" src="icons/gradient.svg" alt="">・<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">・<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">・<strong>プリセットで塗り直し</strong><img class="ui" src="icons/preset.svg" alt="">で、押すとその方法の道具が上に出ます。
+    いちばん下の列の右側に並ぶボタンで、マップの作り方を切り替えられます。左から<strong>描画</strong><img class="ui" src="icons/draw.svg" alt="">・<strong>グラデーション生成</strong><img class="ui" src="icons/gradient.svg" alt="">・<strong>モーションから生成</strong><img class="ui" src="icons/motion.svg" alt="">・<strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">・<strong>塗りつぶし</strong><img class="ui" src="icons/preset.svg" alt="">で、押すとその方法の道具が上に出ます。
     <strong>グラデーション生成</strong>は規則的な縞模様を、
     <strong>モーションから生成</strong>は映像自身の動きからマップを作ります（動きの残像が変化する「ヒストリー」はサーフェスのときだけ使えます）。
-    グラデーションは、いまのマップへの重ね方を<strong>上書き・加算・乗算</strong>から選べます（既定は乗算。マップの形を残したまま縞が入ります）。加算・乗算は始めたときのマップに重ね、加算で白を超えたところは全体をいちばん明るい所で割って収めます。トップ画面では、グラデーションを操作している間 ✓ の横に同じ選択肢が出ます。塗りつぶしとプリセットでも同じ 3 つから選べます（既定は上書き）。
+    グラデーションは、いまのマップへの重ね方を<strong>上書き・加算・乗算</strong>から選べます（既定は乗算。マップの形を残したまま縞が入ります）。加算・乗算は始めたときのマップに重ね、加算で白を超えたところは全体をいちばん明るい所で割って収めます。トップ画面では、グラデーションを操作している間 ✓ の横に同じ選択肢が出ます。塗りつぶしでも同じ 3 つから選べます（既定は上書き）。
     </p>
     <p>
-    <strong>プリセットで塗り直し</strong><img class="ui" src="icons/preset.svg" alt="">では、一色やグラデーションでマップ全体を塗り替えます。
+    <strong>塗りつぶし</strong><img class="ui" src="icons/preset.svg" alt="">では、一色やグラデーションでマップ全体を塗り替えます。
     各ボタンの下に、いまの設定でどう再生されるか（通常再生・逆再生・時間停止など）が表示されます。
     </p>
-    <figure class="crop"><img src="shots/presets.png" alt="プリセットで塗り直しの道具。重ね方の選択と、再生の説明が付いた 7 つのプリセット" loading="lazy"></figure>
+    <figure class="crop"><img src="shots/v129/ja/fill.png" alt="塗りつぶしの道具。重ね方の選択と、再生の説明が付いた 7 つのボタン" loading="lazy"></figure>
     <p>
     <strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">では、マップを横切る線や囲む線で2つに分け、それぞれを動かします。
     線は下のパレットで<span class="uichip"><img src="icons/chip_free.svg" alt="">自由曲線</span>・<span class="uichip"><img src="icons/chip_straight.svg" alt="">直線</span>（始点と終点をタップ）・<span class="uichip"><img src="icons/chip_polygon.svg" alt="">多角形</span>（頂点を順にタップし、最初の点をタップして閉じる）から選べ、自由曲線で囲む線は交差したところで閉じた形になります。
@@ -184,21 +196,21 @@
     動かしてできた隙間は両側の値をつないで自動で埋まります。<span class="uichip"><img src="icons/chip_apply.svg" alt="">確定</span>で次の線へ進み、<span class="uichip"><img src="icons/chip_redo.svg" alt="">やり直す</span>で線を引き直し（多角形の頂点を置いている途中は最後の点だけ取り消します）、<span class="uichip"><img src="icons/chip_revert.svg" alt="">元に戻す</span>で切り分けを始める前のマップに戻ります。
     </p>
     <p>
-    マップを編集したあと、プリセットで塗り直し<img class="ui" src="icons/preset.svg" alt="">の「既定」の印が付いたプリセットを選ぶか、ひとつ前に戻す<img class="ui" src="icons/undo.svg" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
+    マップを編集したあと、塗りつぶし<img class="ui" src="icons/preset.svg" alt="">の「既定」の印が付いたボタンを選ぶか、ひとつ前に戻す<img class="ui" src="icons/undo.svg" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
     </p>
     <p>生成したマップの上から、そのまま描き足すこともできます。</p>
 
 <div class="gallery">
-  <figure><img src="shots/v15/ja/cut_free.png" alt="切り分けで三角形を囲んで右へずらした画面。元の線が黄色、移動先が水色の点線" loading="lazy"><figcaption>自由曲線で囲んでずらす。線が交差したところで閉じます</figcaption></figure>
-  <figure><img src="shots/v15/ja/cut_straight_start.png" alt="直線モードで始点を置いた画面。黄色の丸が始点" loading="lazy"><figcaption>直線は始点と終点をタップ</figcaption></figure>
-  <figure><img src="shots/v125/ja/cut_polygon.png" alt="多角形モードで頂点を 4 つ置いた画面。最初の点が大きな黄色の丸" loading="lazy"><figcaption>多角形は頂点を順にタップし、最初の点で閉じる</figcaption></figure>
-  <figure><img src="shots/v125/ja/cut_handles.png" alt="囲んだ領域を動かし、右上のつまみを内側へ引いて台形にした画面。白い丸がつまみ" loading="lazy"><figcaption>4 隅のつまみで台形に、2 本指で拡大・縮小</figcaption></figure>
+  <figure><img src="shots/v129/ja/cut_free.png" alt="切り分けで三角形を囲んで右へずらした画面。元の線が黄色、移動先が水色の点線" loading="lazy"><figcaption>自由曲線で囲んでずらす。線が交差したところで閉じます</figcaption></figure>
+  <figure><img src="shots/v129/ja/cut_straight_start.png" alt="直線モードで始点を置いた画面。黄色の丸が始点" loading="lazy"><figcaption>直線は始点と終点をタップ</figcaption></figure>
+  <figure><img src="shots/v129/ja/cut_polygon.png" alt="多角形モードで頂点を 4 つ置いた画面。最初の点が大きな黄色の丸" loading="lazy"><figcaption>多角形は頂点を順にタップし、最初の点で閉じる</figcaption></figure>
+  <figure><img src="shots/v129/ja/cut_handles.png" alt="囲んだ領域を動かし、右上のつまみを内側へ引いて台形にした画面。白い丸がつまみ" loading="lazy"><figcaption>4 隅のつまみで台形に、2 本指で拡大・縮小</figcaption></figure>
 </div>
 
 <h3>4. 書き出す</h3>
 <p>
 画面下の<img class="ui" src="icons/dock_export.svg" alt=""><strong>「書き出し」</strong>から、結果を動画として写真ライブラリへ保存します。
-長さは編集画面の歯車にある「再生時間」で調整できます（決まり方は<a href="time.html#length">時間処理の仕組み</a>で説明しています）。
+長さは編集画面の「パラメータ」<img class="ui" src="icons/map_gear.svg" alt="">にある「再生時間」で調整できます（決まり方は<a href="time.html#length">時間処理の仕組み</a>で説明しています）。
 書き出しの方法は設定の「書き出し」で選びます。既定は iPhone・iPad がプレビュー書き出し、Mac がフル品質書き出しです。
 </p>
 <ul>
@@ -238,16 +250,16 @@ App Store に新しいバージョンが出ていると、起動したときに�
 <p>
 編集画面の左上にある「時間マップ・縦スリット」などの表示をタップすると、
 マップの種類と適用モードをまとめて切り替えられます（起動時は時間マップ・縦スリットです）。
-歯車<img class="ui" src="icons/map_gear.svg" alt="">の「適用パラメータ」とサウンドの各項目にも <strong>i</strong> ボタンがあり、いまのモードでの意味を確かめられます。
+上の段の「パラメータ」<img class="ui" src="icons/map_gear.svg" alt="">と「サウンド」<img class="ui" src="icons/sound.svg" alt="">の各項目にも <strong>i</strong> ボタンがあり、いまのモードでの意味を確かめられます。
 </p>
 <div class="gallery">
-  <figure><img src="shots/v15/ja/params_info.png" alt="適用パラメータ。再生時間の i を開き、サーフェス×レートでの意味が表示されている" loading="lazy"><figcaption>適用パラメータの i（再生時間の説明）</figcaption></figure>
-  <figure><img src="shots/v15/ja/sound_info.png" alt="サウンドパネル。音の方式の i を開き、グラニュラーとレート再生の違いが表示されている" loading="lazy"><figcaption>サウンドの i（グラニュラーとレート再生）</figcaption></figure>
+  <figure><img src="shots/v129/ja/params_info.png" alt="適用パラメータ。再生時間の i を開き、縦スリット×時間マップでの意味が表示されている" loading="lazy"><figcaption>適用パラメータの i（再生時間の説明）</figcaption></figure>
+  <figure><img src="shots/v129/ja/sound_info.png" alt="サウンドパネル。音の方式の i を開き、グラニュラーとレート再生の違いが表示されている" loading="lazy"><figcaption>サウンドの i（グラニュラーとレート再生）</figcaption></figure>
 </div>
 
 <h2>ライブカメラ</h2>
 <p>
-カメラの映像を、撮りながら時間操作できます。<strong>「読み込み」→「ライブカメラ」</strong>か、起動直後の画面の「ライブカメラ」で始めます
+カメラの映像を、撮りながら時間操作できます。<strong>「読み込み」→「ライブカメラ」</strong>か、起動直後の画面の「ライブカメラ」、編集画面の入力映像の「入力」の札で始めます
 （カメラのある端末で、はじめにカメラの許可を求められます。映像は端末の外へ送られません）。
 </p>
 <ul>
@@ -256,7 +268,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 <li><strong>レートマップ</strong>は、速さが 0（停止）〜1（順再生）の範囲で使えます。黒く塗った場所は止まった絵が残り続け、グレーの場所は少しずつ遅れていきます。
 出力映像の右下の「リフレッシュ」で、全体をいまのフレームにそろえ直します。
 いちばん遅く動いている場所の遅れが、ためている長さに届くと、全体を自動でいまへそろえ直すので、グラデーションの傾きがそのまま時間の傾きになります。
-編集画面の歯車の<strong>「上限」</strong>を「頭打ち」にすると、届いた場所はその遅れのまま流れ続けます。</li>
+編集画面の「パラメータ」の<strong>「上限」</strong>を「頭打ち」にすると、届いた場所はその遅れのまま流れ続けます。</li>
 <li>入力映像の上の表示で、フレームレート（30・60・120）と解像度、<strong>ためる長さ</strong>（8・15・30・60 秒）を選べます。
 長くためるほどメモリを使うので、端末と解像度で持ちきれない長さは選べません。左下のボタンで、縦長・横長と、前面・背面カメラ（長押しでレンズ）を切り替えます。端末を横に倒すと、映像も横長になります。</li>
 <li>編集画面の<strong>モーションから生成</strong>は、ライブでは動くマップになります。カメラの 1 枚ごとに直前との差を溜め、動いた所ほど白くなるので、動いた場所の時間がその場で変わります（サーフェスの時間マップ・レートマップで使えます）。「履歴秒数」で残像の長さ、反転で動いた所に過去を残す使い方を選べます。白になる動きの量は、映像の動きに合わせてゆっくり自動で調整されます。「止めて取り込む」と、その瞬間のマップが残ります。</li>
@@ -268,6 +280,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 <h3>動画の読み込みに時間がかかります</h3>
 <p>
 4K や長い動画は、写真ライブラリからの取り出しに数十秒かかることがあります。
+iCloud にある動画は、端末へダウンロードしてから読み込みます。その間は進み具合が出て、iCloud にあると分かるときは「iCloud からダウンロード中」と表示されます。
 読み込み中はいつでも「中止」できます。短く切り出した素材のほうが試行錯誤しやすくなります。
 </p>
 
@@ -284,7 +297,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 GPU が一度に扱えるフレーム数（2048枚）やメモリに収まらないときは、フレームを間引いて読み込みます。
 スローモーションで撮った映像はフレーム数が多いため、特に間引かれやすくなります。
 設定の「映像の読み込み」で解像度を下げるか読み込む秒数を短くすると、間引かずに読み込めます。
-スリットの時間マップでは、歯車の「使用範囲だけを読み込み直す」も使えます。
+スリットの時間マップでは、「パラメータ」の「使用範囲だけを読み込み直す」も使えます。
 間引いて読み込んだあとに使用範囲を狭めると、間引きを減らせる長さになった所で「この範囲なら 60fps で読めます」のように入力映像の上に出るので、「読み直す」を押せばその fps で読み直せます（120fps の素材なら 40 → 60 → 120fps と段ごとに出ます）。
 </p>
 <figure class="crop"><img src="shots/v15/ja/settings_loading.png" alt="設定の映像の読み込み。解像度、読み込む秒数、フレームの間引きの表示" loading="lazy"><figcaption>設定の「映像の読み込み」。間引きが起きるときは「フレーム」に出ます（理由は i で確かめられます）</figcaption></figure>
@@ -322,7 +335,7 @@ iOS の「設定」→「Time Flow」→「写真」から変更できます。
 </p>
 <p>
 説明やデモで操作画面のほうを大きく見せたいときは、設定の「外部ディスプレイの表示」を
-「この画面をそのまま映す」にします。出力映像の上の「外部ディスプレイに出力中」の札をタップしても切り替えられます。
+「この画面をそのまま映す」にします。出力映像の上の「外部ディスプレイに出力中」の札をタップしても切り替えられ、編集画面ではつないでいる間だけ上の段に出る「外部表示」から選べます。
 </p>
 <p>
 iPad でステージマネージャがオンになっていると外部ディスプレイが拡張デスクトップとして扱われ、
@@ -392,7 +405,7 @@ thought you knew.
 <h3>Making a map</h3>
 <ul>
   <li><img class="ui" src="icons/draw.svg" alt=""><strong>Draw</strong> &mdash; trace with a finger to draw the flow of time. Five brush tones and a smudge tool; hold still and the tone bleeds outward</li>
-  <li><img class="ui" src="icons/gradient.svg" alt=""><img class="ui" src="icons/preset.svg" alt=""><strong>Gradients and presets</strong> &mdash; start from a regular pattern</li>
+  <li><img class="ui" src="icons/gradient.svg" alt=""><img class="ui" src="icons/preset.svg" alt=""><strong>Gradients and fills</strong> &mdash; start from a regular pattern</li>
   <li><img class="ui" src="icons/motion.svg" alt=""><strong>From motion</strong> &mdash; build the shape of time automatically from the movement in the clip</li>
   <li><img class="ui" src="icons/cut.svg" alt=""><strong>Cut &amp; slide</strong> &mdash; split the map along a line, then move, scale or reshape the pieces to make time slip</li>
   <li><img class="ui" src="icons/edit_region.svg" alt=""><strong>Edit region</strong> &mdash; draw a rectangle on the map and edit only its inside (or outside)</li>
@@ -430,7 +443,7 @@ moving yet; a walking figure can trail a wake of its own earlier selves.
 <p>
 What decides all of that is a picture. The instruction medium is a <strong>grayscale image</strong> &mdash;
 the map &mdash; which you make with <strong>Draw</strong>, <strong>Gradient</strong>,
-<strong>Presets</strong>, <strong>From motion</strong> or <strong>Cut &amp; slide</strong>. Its brightness is
+<strong>Fill</strong>, <strong>From motion</strong> or <strong>Cut &amp; slide</strong>. Its brightness is
 read as a number, and what the number means depends on which kind of map you are editing. In a
 <strong>Time map</strong>, brightness is a moment in the clip: black is near the start, white near the end. In a
 <strong>Rate map</strong>, brightness is a playback speed: with the default settings, mid grey is frozen,
@@ -485,7 +498,8 @@ makes the app usable for installation and live work as well as for producing fil
     <p>
     An <strong>audio on / off</strong> button <img class="ui" src="icons/speaker.svg" alt=""> sits at the top right of each video, and only one of the two sounds at a time. A
     <strong>rotate button</strong> <img class="ui" src="icons/rotate.svg" alt=""> sits at the bottom left of the Input tile: each tap turns the source
-    another 90&deg; and re-imports the clip, which takes as long as a reload but leaves your maps alone. The
+    another 90&deg; and re-imports the clip, which takes as long as a reload but leaves your maps alone. Above it,
+    <strong>Stabilize</strong> <img class="ui" src="icons/stabilize.svg" alt=""> smooths out camera shake. The
     button at the bottom right of each video (beside the audio button when the device is sideways) opens it
     <strong>full screen</strong> <img class="ui" src="icons/fullscreen.svg" alt=""> (see below).
     </p>
@@ -493,7 +507,7 @@ makes the app usable for installation and live work as well as for producing fil
     The map tile is labelled with which map it is and carries a <strong>red playhead</strong> marking the row
     or column being read at that instant. Drag along the playhead to scrub; playback pauses while your finger
     is down and resumes when you lift. Anywhere else, your finger <strong>draws straight onto the map</strong>:
-    the brush button <img class="ui" src="icons/map_pencil.svg" alt=""> at the bottom left picks one of the five tones or the smudge, and the <strong>Presets</strong> button <img class="ui" src="icons/map_preset.svg" alt=""> beside it repaints the whole map in black, grey or white, or a gradient
+    the brush button <img class="ui" src="icons/map_pencil.svg" alt=""> at the bottom left picks one of the five tones or the smudge, and the <strong>Fill</strong> button <img class="ui" src="icons/map_preset.svg" alt=""> beside it repaints the whole map in black, grey or white, or a gradient
     running top &rarr; bottom, bottom &rarr; top, left &rarr; right or right &rarr; left. The
     <strong>Gradient</strong> button <img class="ui" src="icons/map_wave.svg" alt=""> next to it turns the map into a striped gradient you shape right there: drag to
     move it, pinch to change the spacing, twist with two fingers to change the angle, and tap the check mark when you
@@ -533,33 +547,44 @@ its end. Painting straight away therefore changes which moment each column of th
 passes over your stroke.
 </p>
 
-<h3>Full-screen input and the Monitor view</h3>
+<h3>Full screen</h3>
 <p>
-The full-screen button on either video fills the display with that picture; tap the picture to hide or show the
-controls, and tap <strong>Back</strong> at the top right or swipe down to return. The <strong>Input</strong>
-view carries the same range bar as the main screen &mdash; handles, press-and-hold to slide, touch to scrub
-&mdash; with the seconds underneath, and a line describing what is loaded: the source&rsquo;s size and frame
-rate, the size and frame rate held on the GPU, whether frames were skipped, and the seconds loaded. Tap that line
-to open the <strong>Video Loading</strong> settings on their own and reload from there.
+The app has just two screens: the <strong>main screen</strong> and the <strong>editor</strong>. The full-screen
+button on either video opens the editor in <strong>full screen</strong> &mdash; the editor with its tools hidden,
+so the pictures and graphs fill the display.
 </p>
 <p>
-The button on the <strong>Output</strong> opens the <strong>Monitor view</strong>. It opens with nothing but the
-picture; touch the screen and a menu slides up from the bottom (touch again to hide it). Pick <strong>Input</strong>, the map,
-<strong>Output</strong>, <strong>3D plot</strong> and <strong>Time graph</strong> in any combination and they are
-laid out together, in the order you picked them &mdash; from the top, or left to right on a wide screen. The map shown
-is the one driving the output (the time map or the rate map); the space map can be picked once you have edited it.
-Opened from the 3D plot on the main screen, it starts with the 3D plot alone. On larger screens (iPhone Air, Plus,
-Pro Max and iPad) a button at the bottom right of each pane shows that one alone. The button at the bottom right of the
-Output and the 3D plot in the editor opens it too, and <strong>Back</strong> returns to the editor. The pen <img class="ui" src="icons/map_edit.svg" alt=""> at the bottom right of a map pane opens that map in the editor. To export, use <strong>Export</strong> on the main screen.
+In full screen, the <strong>View</strong> menu <img class="ui" src="icons/layout.svg" alt=""> at the top right lists
+the panes: <strong>Input</strong>, the map, <strong>Output</strong>, <strong>3D plot</strong> and
+<strong>Time graph</strong>. Pick any combination and they are laid out together in the order you picked them, in
+rows and columns chosen to fit the screen. The map shown is the one driving the output (the time map or the rate
+map); the space map can be picked once you have edited it. Opened from the 3D plot on the main screen, it starts
+with the 3D plot alone. Touch the screen once and the bars and buttons disappear, leaving only each pane&rsquo;s
+name; touch again to bring them back. <strong>Edit</strong> at the top left brings the tools out so you can carry
+on editing, and the pen <img class="ui" src="icons/map_edit.svg" alt=""> at the bottom right of a map pane starts
+editing that map. On larger screens (iPhone Air, Plus, Pro Max and iPad) a button at the bottom right of each pane
+shows that one alone. Spreading two fingers on a video also enters full screen, and pinching leaves it. To
+export, use <strong>Export</strong> on the main screen.
 </p>
-<figure class="guide"><a href="shots/guide/monitor_en.jpg"><img src="shots/guide/monitor_en.jpg" alt="The Monitor view showing the input video, the time map, the output video and the 3D plot, with the menu below for switching what is shown" loading="lazy"></a><figcaption>The Monitor view (tap to enlarge)</figcaption></figure>
+<p>
+The <strong>Input</strong> pane carries the same range bar as the main screen &mdash; handles, press-and-hold to
+slide, touch to scrub &mdash; with the seconds underneath and a chip describing what is loaded (the size and frame
+rate held on the GPU; with the Input pane alone, also the source&rsquo;s size and frame rate, whether frames were
+skipped, and the seconds loaded). Tap it to open the <strong>Video Loading</strong> settings on their own and
+reload from there. The <strong>Input</strong> label at the top left of the pane is a menu: choose another video
+from the photo library or a file, switch to a live camera, or open the load settings. The source changes without
+leaving the editor, and the maps you edited are kept.
+</p>
+<figure class="guide"><a href="shots/guide/fullscreen_en.jpg"><img src="shots/guide/fullscreen_en.jpg" alt="The editor in full screen showing the input video, the time map, the output video and the 3D plot, with the View menu at the top right for choosing the panes" loading="lazy"></a><figcaption>The editor in full screen (tap to enlarge)</figcaption></figure>
 <div class="gallery">
-  <figure><img src="shots/v15/en/input_full.png" alt="The bottom of the full-screen Input view: the loading information line, the range bar and the seconds in use" loading="lazy"><figcaption>Full-screen Input: tap the information line to open Video Loading</figcaption></figure>
+  <figure><img src="shots/v129/en/input_full.png" alt="Full screen with the Input pane alone: the range bar, the seconds in use and the loading information under the video" loading="lazy"><figcaption>The Input pane alone: tap the information to open Video Loading</figcaption></figure>
+  <figure><img src="shots/v129/en/input_menu.png" alt="The menu opened from the Input label: Choose a video, Open File and Load settings" loading="lazy"><figcaption>The Input label switches the source and opens the load settings</figcaption></figure>
+  <figure><img src="shots/v129/en/fullscreen_clean.png" alt="Full screen after touching the screen: only the Input, Time map and Output labels remain and the buttons are gone" loading="lazy"><figcaption>Touch the screen to hide the bars and buttons</figcaption></figure>
 </div>
 
 <h3 id="plots-en">The 3D plot and the time graph</h3>
 <p>
-The <strong>3D plot</strong> and <strong>Time graph</strong> are two of the panes in the Monitor view, and they show
+The <strong>3D plot</strong> and <strong>Time graph</strong> are two of the panes in the View menu, and they show
 how the current map spends the clip&rsquo;s time. Turn either or both on beside the output picture to watch them
 together.
 </p>
@@ -571,9 +596,11 @@ that part of the picture is showing. A flat surface square to the time axis mean
 a tilted or bent one means different parts of the picture show different moments. Cyan lines on the surface join
 points that show the same moment. Orange rectangles mark the range in use and blue ones the loaded range, and the
 clip&rsquo;s first and last frames appear faintly on the end faces &mdash; only on the side farther from you. The box
-turns slowly by itself (about once every 50 seconds). Drag to rotate it; the automatic turn pauses while your finger
-is down. Pinch to zoom. The <strong>Section</strong> button at the top right switches to showing the clip&rsquo;s
-block itself, <strong>translucent</strong> or <strong>opaque</strong>: the front face then carries pixel-count ticks,
+turns slowly by itself (about once every 100 seconds). Drag to rotate it; let go while it is moving and it keeps
+spinning at that speed, or hold still before letting go to stop it. Pinch to zoom. The <strong>Section</strong>
+button at the top right cycles the display. <strong>Lines</strong> <img class="ui" src="icons/lines.svg" alt=""> draws the section as slit lines instead of the
+picture, in the same colours as the time graph (green at the left of the picture, red at the right).
+<strong>Translucent</strong> and <strong>Opaque</strong> show the clip&rsquo;s block itself: the front face then carries pixel-count ticks,
 and the earliest and latest moments the section reaches are marked by white lines across the bottom face (the last pixel row) and the left face (pixel column 0), with the seconds in red at the end of each line. When the use range is
 shorter than half the clip, a <strong>Whole clip / Use range</strong>
 button appears at the top right and fits the box&rsquo;s depth to the use range. You can also reach the 3D plot on
@@ -593,42 +620,45 @@ colours. The orange band is the range in use, the
 blue band the loaded range, and the red vertical line is the current playback position. How to read both for each
 mode is explained in <a href="time.html#volume-en">How time processing works</a>.
 </p>
-<figure class="crop"><img src="shots/v16/en/volume.png" alt="The 3D plot: a tilted surface carrying the picture inside a box marked in seconds" loading="lazy"><figcaption>The 3D plot. With a Left &rarr; right time map under a vertical slit, the left of the picture shows earlier moments, so the surface is tilted</figcaption></figure>
+<div class="gallery">
+  <figure><img src="shots/v129/en/volume.png" alt="The 3D plot in Section: a tilted surface carrying the picture inside a box marked in seconds" loading="lazy"><figcaption>The 3D plot (Section). With a Left &rarr; right time map under a vertical slit, the left of the picture shows earlier moments, so the surface is tilted</figcaption></figure>
+  <figure><img src="shots/v129/en/volume_lines.png" alt="The 3D plot in Lines: the same surface drawn as seven vertical lines running from green to red" loading="lazy"><figcaption>The same map in Lines, coloured like the time graph</figcaption></figure>
+</div>
 
-<figure class="guide"><a href="shots/guide/editor_en.jpg"><img src="shots/guide/editor_en.jpg" alt="The editor with each part named by red lines: the buttons along the top, the result, the map tabs and Edit region, the map you edit, brush tones and sliders, and the method buttons" loading="lazy"></a><figcaption>The editor (tap to enlarge)</figcaption></figure>
+<figure class="guide"><a href="shots/guide/editor_en.jpg"><img src="shots/guide/editor_en.jpg" alt="The editor with each part named by red lines: Editing, Params, Sound and View along the top, the result, the map you edit with its name and Edit region below it, brush tones and sliders, and the method buttons" loading="lazy"></a><figcaption>The editor (tap to enlarge)</figcaption></figure>
     <h3>3. Drawing or generating a map</h3>
     <p>
-    The editor opens full screen. The row across the top carries the map-and-mode label at the left, the gear <img class="ui" src="icons/map_gear.svg" alt=""> (<strong>Parameters</strong>), the waveform (<strong>Sound</strong>), and an <strong>X</strong> at the far
-    right that closes the editor, with the layout menu <img class="ui" src="icons/layout.svg" alt=""> beside it. The method buttons sit at the bottom right. The <strong>Editing</strong> menu at the top left picks the time map or the rate map, and can add the space map alongside; with two selected, tabs above the map choose which one you draw on (green marks the one being edited), and the editor opens with both whenever the space map has already been edited. On the main screen, the map&rsquo;s name reads <strong>Time + Space</strong> once both have been edited, with the one on show brighter. Nothing needs saving &mdash; the map is already applied.
+    The row across the top of the editor carries the map-and-mode label at the left, <strong>Params</strong> <img class="ui" src="icons/map_gear.svg" alt=""> (the Parameters panel), <strong>Sound</strong> <img class="ui" src="icons/sound.svg" alt="">, the <strong>View</strong> menu <img class="ui" src="icons/layout.svg" alt=""> and an <strong>X</strong> at the far
+    right that closes the editor. The method buttons sit at the bottom right, each with its name underneath. The <strong>Editing</strong> menu at the top left picks the time map or the rate map, and can add the space map alongside; with two selected, both maps are shown as panes, a green frame marks the one being edited and a tap on the other switches to it, and the editor opens with both whenever the space map has already been edited. On the main screen, the map&rsquo;s name reads <strong>Time + Space</strong> once both have been edited, with the one on show brighter. Nothing needs saving &mdash; the map is already applied.
     </p>
     <p>
-    <strong>Edit region</strong> <img class="ui" src="icons/edit_region.svg" alt=""> beside the map name limits your edits to a rectangle: tap it, then drag on the map. Draw, Gradient, Presets, Fill, Blur, Gamma, Invert and From motion then act only inside it (shown as a green dashed rectangle, with the other side slightly darkened). A preset gradient runs from one edge of the rectangle to the other, so different parts of the map can carry different gradients. The button beside it <img class="ui" src="icons/edit_region_swap.svg" alt=""> swaps to the outside of the rectangle; tap Edit region again to clear it. Cut &amp; slide keeps its result inside the region as well (its buttons are hidden while cutting, so change the region from another method).
+    <strong>Edit region</strong> <img class="ui" src="icons/edit_region.svg" alt=""> beside the map name limits your edits to a rectangle: tap it, then drag on the map. Draw, Gradient, Fill, Blur, Gamma, Invert and From motion then act only inside it (shown as a green dashed rectangle, with the other side slightly darkened). A Fill gradient runs from one edge of the rectangle to the other, so different parts of the map can carry different gradients. The button beside it <img class="ui" src="icons/edit_region_swap.svg" alt=""> swaps to the outside of the rectangle; tap Edit region again to clear it. Cut &amp; slide keeps its result inside the region as well (its buttons are hidden while cutting, so change the region from another method).
     </p>
-    <figure class="crop"><img src="shots/v125/en/edit_region.png" alt="An edit region drawn on the right with a left-to-right preset inside it; the rectangle is a green dashed line and the map outside is unchanged" loading="lazy"><figcaption>A left-to-right preset inside the rectangle: the gradient runs from edge to edge of it</figcaption></figure>
+    <figure class="crop"><img src="shots/v129/en/edit_region.png" alt="An edit region drawn on the right with a left-to-right fill inside it; the rectangle is a green dashed line and the map outside is unchanged" loading="lazy"><figcaption>A left-to-right fill inside the rectangle: the gradient runs from edge to edge of it</figcaption></figure>
     <p>
-    Trace the map with a finger or Apple&nbsp;Pencil. The brush button opens a palette holding
-    <strong>Fill</strong> <img class="ui" src="icons/fill.svg" alt="">, five tones &mdash; <strong>Black</strong>,
+    Trace the map with a finger or Apple&nbsp;Pencil. The Draw palette holds
+    five tones &mdash; <strong>Black</strong>,
     <strong>Dark grey</strong>, <strong>Grey</strong>, <strong>Light grey</strong>, <strong>White</strong>
     &mdash; <strong>Custom</strong> <img class="ui" src="icons/custom.svg" alt="">, which opens a horizontal slider for any grey, black on the left and white on the right, and shows what that grey means in
     seconds or speed, the <strong>Eyedropper</strong> <img class="ui" src="icons/eyedropper.svg" alt=""> beside that slider, which picks up the grey where you touch the map, and <strong>Smudge</strong> <img class="ui" src="icons/smudge.svg" alt="">. Brush size runs 1&ndash;300&nbsp;px, with Strength
-    alongside; Invert, Blur and Gamma sit with Undo in the bottom row and work in every method. The eye button <img class="ui" src="icons/eye.svg" alt=""> at the top right of the map (on the main screen, in the editor and in the Monitor view; in the editor it moves outside the picture with the map&rsquo;s name when there is room) switches from <strong>Grayscale</strong> <img class="ui" src="icons/map_gray.svg" alt=""> to <strong>contour lines</strong> <img class="ui" src="icons/map_contour.svg" alt=""> labelled with their
+    alongside; Invert, Blur and Gamma sit with Undo in the bottom row and work in every method. The eye button <img class="ui" src="icons/eye.svg" alt=""> at the top right of the map (on the main screen and in the editor; in the editor it moves outside the picture with the map&rsquo;s name when there is room) switches from <strong>Grayscale</strong> <img class="ui" src="icons/map_gray.svg" alt=""> to <strong>contour lines</strong> <img class="ui" src="icons/map_contour.svg" alt=""> labelled with their
     seconds, speed or pixel position; this does not change the map itself. The lines are coloured by map type: white on a time map, blue (reverse) through
     gray (frozen) to yellow (forward) on a rate map, and green (left edge) through red (right edge) on a space map, with the bands between the lines filled in on rate and space maps. The lines break around their numbers, and only the lowest number carries a unit. With a slit, turning on
     <strong>Readout</strong> <img class="ui" src="icons/map_readout.svg" alt=""> in the same eye menu adds a thin white line at
     the playhead and seven faint lines along the slit (five on a vertical slit with a portrait video), poking past the edge of the map; under the map, readout values show, for the spot
     where each one crosses the white line, which second of the video it is showing (white) and its playback rate there (1 is normal speed, 0 a freeze,
     negative is reverse; blue&ndash;gray&ndash;yellow); once the space map has been changed, a third row adds which pixel of the video it shows (green&ndash;red). The colours match the contour lines, and each row is named to the right of the numbers (above them with a horizontal slit): Time, Rate, Position. The output time appears at the end of the white line, and with live input a time map shows how many seconds ago (a rate map shows the rate read from the map).
-    With a vertical slit the time graph now runs output time downward (start at the top). With the readout on, the input video's bar on the main screen also marks in red the span of the video the output is showing right now: a dot with normal playback, a band where the map spreads time out (not in the full-screen Input view). In Surface mode the band appears only once the space map has been edited, with Readout turned on from the space map&rsquo;s eye menu; it marks the span the whole picture is showing, the same span as the red lines in the 3D plot. The input&rsquo;s own playhead on that bar is the green vertical line.
+    With a vertical slit the time graph now runs output time downward (start at the top). With the readout on, the input video's bar on the main screen also marks in red the span of the video the output is showing right now: a dot with normal playback, a band where the map spreads time out. In Surface mode the band appears only once the space map has been edited, with Readout turned on from the space map&rsquo;s eye menu; it marks the span the whole picture is showing, the same span as the red lines in the 3D plot. The input&rsquo;s own playhead on that bar is the green vertical line.
     </p>
     <p>
     The caption under the map spells out what brightness means with your current settings &mdash;
     &ldquo;Black is the start of the clip &frasl; white the end&rdquo; &mdash; and rewrites itself when you
-    change the map or the mode. The row of buttons at the bottom right chooses the method: <strong>Draw</strong> <img class="ui" src="icons/draw.svg" alt="">, <strong>Gradient</strong> <img class="ui" src="icons/gradient.svg" alt="">, <strong>From motion</strong> <img class="ui" src="icons/motion.svg" alt="">, <strong>Cut &amp; slide</strong> <img class="ui" src="icons/cut.svg" alt=""> and <strong>Presets</strong> <img class="ui" src="icons/preset.svg" alt="">; the current one is shown in white, and its tools open just above the row. Anything you generate can be drawn on afterwards.
+    change the map or the mode. The row of buttons at the bottom right chooses the method: <strong>Draw</strong> <img class="ui" src="icons/draw.svg" alt="">, <strong>Gradient</strong> <img class="ui" src="icons/gradient.svg" alt="">, <strong>From motion</strong> <img class="ui" src="icons/motion.svg" alt="">, <strong>Cut &amp; slide</strong> <img class="ui" src="icons/cut.svg" alt=""> and <strong>Fill</strong> <img class="ui" src="icons/preset.svg" alt="">; the current one is shown in white, and its tools open just above the row. Anything you generate can be drawn on afterwards.
     </p>
   
 
 <div class="gallery">
-  <figure><img src="shots/v15/en/params_info.png" alt="The Parameters panel with the Duration explanation open for a surface rate map" loading="lazy"><figcaption>Parameters: the i text is written for the current mode</figcaption></figure>
+  <figure><img src="shots/v129/en/params_info.png" alt="The Parameters panel with the Duration explanation open for a vertical-slit time map" loading="lazy"><figcaption>Parameters: the i text is written for the current mode</figcaption></figure>
 </div>
 
 <h3>4. Exporting your first result</h3>
@@ -636,7 +666,7 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
 Tap <img class="ui" src="icons/dock_export.svg" alt=""> <strong>Export</strong>. Exactly what the Output view is showing is written out as an H.264 .mp4 with its
 audio and saved to your photo library, with a progress bar over the output while it works &mdash; leave the
 app open until it finishes. The length follows the map and mode (for a time map, the seconds in the range in
-use) and the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong> panel (the gear
+use) and the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong> panel (<strong>Params</strong>
 icon). Settings shows the resulting <strong>Export length</strong> next to <strong>Frame rate</strong> under
 <strong>Export</strong>, while <strong>Include audio</strong> sits under <strong>Export options</strong>. The video is written at the <strong>Resolution</strong>
 chosen under Video Loading (a <a href="#source-export-en">Full-quality export</a> uses the source&rsquo;s resolution). If you declined the Photos permission, a share sheet opens instead.
@@ -659,7 +689,7 @@ your work. Maps are held as 16-bit grayscale &mdash; 65,536 levels &mdash; which
 produces a genuinely gentle change in time rather than visible steps.
 </p>
 <p>
-The settings that belong to the current kind and mode are in the <strong>Parameters</strong> panel (the gear).
+The settings that belong to the current kind and mode are in the <strong>Parameters</strong> panel (<strong>Params</strong>).
 Each setting there has an <strong>i</strong> button that opens an explanation written for the mode you are in, since
 the same control can mean different things in different modes.
 </p>
@@ -672,7 +702,7 @@ of the clip &frasl; white the end.&rdquo;
 </p>
 <p>
 In the slit modes, <strong>Time from</strong> and <strong>Time to</strong> in the <strong>Parameters</strong>
-panel (the gear icon) narrow the span the two ends of the scale point at. These are the same two values as
+panel (Params) narrow the span the two ends of the scale point at. These are the same two values as
 the white handles on the playback bar under the input video, so moving either one moves the other; setting Time
 from above Time to plays in reverse. Once you narrow the range, the caption switches to real seconds &mdash;
 &ldquo;Black 2.0s into the clip &frasl; white 6.5s&rdquo; &mdash; and <strong>Reload only the range in
@@ -707,7 +737,7 @@ Speed runs from <strong>Black rate</strong> to <strong>White rate</strong> (&min
 brightness. The defaults are 0 and +1: black is a hard freeze, mid grey half speed and white ordinary playback.
 <strong>With reverse</strong>, at the top right of the Parameters panel, sets black to &minus;1 and white to +1, so
 black plays in reverse and mid grey freezes; <strong>Reset</strong> goes back to the defaults (Duration and
-Anchor at included). The solid presets report the resulting speed in words, and the four ramps report both
+Anchor at included). The solid fills report the resulting speed in words, and the four ramps report both
 ends at once using the shortened forms &mdash; Frozen, Normal, Slow, Fast, Reverse, Slow reverse, Fast
 reverse. In the slit modes, as on a surface, every slit meets at the <strong>Anchor at</strong> moment of the loop
 (shown in seconds; with Readout values on, the map marks it with a dashed line) and accumulates forward and back from
@@ -799,7 +829,7 @@ them, are under <a href="#export-en">How long the export will be</a> and
 The row of round buttons at the bottom right of the editor chooses <em>how</em> you build the map:
 <strong>Draw</strong> <img class="ui" src="icons/draw.svg" alt="">, <strong>Gradient</strong> <img class="ui" src="icons/gradient.svg" alt="">, <strong>From motion</strong> <img class="ui" src="icons/motion.svg" alt="">, <strong>Cut &amp; slide</strong> <img class="ui" src="icons/cut.svg" alt=""> and <strong>Presets</strong> <img class="ui" src="icons/preset.svg" alt="">, in that order, with the current one in white. Tap a method and its detailed tools open just
 above the row; tap the current method again to fold them away. To return a map to normal playback for the current
-mode and mark it unedited again, tap the preset marked <strong>Default</strong> in Presets (or press and hold Undo).
+mode and mark it unedited again, tap the button marked <strong>Default</strong> in Fill (or press and hold Undo).
 Switching methods changes only the detailed tools. The map you are editing, the mode it is applied
 in, and the live preview all stay as they were. The caption just above the tools always states what black, grey
 and white mean for the current map and mode, so it is worth reading again after any change of mode or parameter.
@@ -808,26 +838,31 @@ and white mean for the current map and mode, so it is worth reading again after 
 At the left of the bottom row, these tools work in every method: <strong>Undo</strong> <img class="ui" src="icons/undo.svg" alt=""> (and <strong>Redo</strong> once you have undone something), <strong>Invert</strong> <img class="ui" src="icons/invert.svg" alt="">, <strong>Blur</strong> <img class="ui" src="icons/blur.svg" alt=""> and <strong>Gamma</strong> <img class="ui" src="icons/gamma.svg" alt="">. Invert swaps the map&rsquo;s dark and light as one step each tap.
 Blur and Gamma open a slider that works on the map as it was when you opened it; what you change counts as one step,
 and it is committed when you close the slider, start a stroke, undo or switch method. Tapping Invert, Blur or
-Gamma deselects any other method (Gradient, Presets, From motion, Cut &amp; slide) and switches to Draw; the pen
+Gamma deselects any other method (Gradient, Fill, From motion, Cut &amp; slide) and switches to Draw; the pen
 tools can stay open alongside. Undo and Redo in Gradient or Cut &amp; slide, which rebuild the map from where you
 started, likewise finish that method first, so the change is not rebuilt away. Gradient and From motion also carry a clockwise <strong>refresh</strong> button <img class="ui" src="icons/wave_refresh.svg" alt=""> that re-runs the generation. Outside Draw and Cut &amp; slide, a drag on
 the preview scrubs the playhead.
 </p>
 <p>
-The layout menu <img class="ui" src="icons/layout.svg" alt=""> at the top right of the editor has five options. <strong>Overlay</strong> lays the
+The <strong>View</strong> menu <img class="ui" src="icons/layout.svg" alt=""> at the top right of the editor chooses the panes: <strong>Input</strong>,
+the maps, <strong>Output</strong>, <strong>3D plot</strong> and <strong>Time graph</strong>. They are laid out in the
+order you pick them, in rows and columns chosen to fit the screen; the editor starts with the output and the map,
+and an iPhone shows up to four while the tools are out. Add the <a href="#plots-en">3D plot</a> and you can watch
+the surface bend while you draw. Adding the other map puts the two maps side by side; the one being edited has a
+green frame, and a tap on the other switches to it. <strong>Overlay the map on the output</strong> lays the
 map over the picture at partial opacity, which is how you land a stroke on a particular object rather than a
-particular part of the frame.
-<strong>Split: video + map</strong> is the default and shows the video and the map as two panes, side by side or
-stacked, whichever shows both larger. <strong>Split: 3D plot + map</strong> puts the
-<a href="#plots-en">3D plot</a> in place of the video, and <strong>Three panes: video + 3D plot + map</strong> shows
-all three, stacked along the longer side of the screen, so you can watch the surface bend while you draw.
-<strong>Four panes: video + 3D + two maps</strong> adds the space map beside the time or rate map; the map being edited has a green frame, and a tap on the other switches to it. The
-choice is independent of what an external display is showing &mdash; that shows the output alone, or mirrors
-the screen if you chose that in Settings.
+particular part of the frame. <strong>Full screen</strong> hides the tools. The arrangement is remembered the next
+time you open the editor. The red playhead on a map sticks out a little past the picture on both sides: grab it
+there to scrub without drawing. The
+choice of panes is independent of what an external display is showing &mdash; that shows the output alone, or mirrors
+the screen if you chose that in Settings; while a display is connected, a <strong>Display</strong> button beside
+View switches between the two.
 </p>
 <div class="gallery">
-  <figure><img src="shots/v16/en/editor_3pane.png" alt="The editor in Three panes: the output video, the 3D plot and the time map, top to bottom" loading="lazy"><figcaption>Three panes: video + 3D plot + map</figcaption></figure>
-  <figure><img src="shots/v125/en/editor_quad.png" alt="The editor in Four panes: the output video, the 3D plot, the time map with a green frame, and the space map, top to bottom" loading="lazy"><figcaption>Four panes: the green frame marks the map being edited</figcaption></figure>
+  <figure><img src="shots/v129/en/menu_open.png" alt="The View menu in the editor: Panes lists Input, Time map, Space map, Output, 3D plot and Time graph, followed by Overlay the map on the output and Full screen" loading="lazy"><figcaption>The View menu: ticked panes are shown</figcaption></figure>
+  <figure><img src="shots/v129/en/editor_3pane.png" alt="The editor with the output video, the time map and the 3D plot" loading="lazy"><figcaption>Output, map and 3D plot together</figcaption></figure>
+  <figure><img src="shots/v129/en/editor_3pane_lines.png" alt="The same panes with the 3D plot set to Lines" loading="lazy"><figcaption>The 3D plot set to Lines</figcaption></figure>
+  <figure><img src="shots/v129/en/editor_quad.png" alt="The editor with the output video, the time map, the 3D plot and the space map with a green frame" loading="lazy"><figcaption>Two maps: the green frame marks the map being edited</figcaption></figure>
 </div>
 
 <h3>Draw</h3>
@@ -839,7 +874,7 @@ which is what makes soft shading possible.
 </p>
 <p>
 <strong>Undo at the bottom left steps back one change.</strong> Press it again to go further
-back, one step at a time; it reaches past strokes into whatever else changed the map (a preset, a generated
+back, one step at a time; it reaches past strokes into whatever else changed the map (a fill, a generated
 gradient, a reset), and a slider drag counts as one step. Up to 30 steps are kept per map, and they are
 forgotten when the app quits. Press and hold that button for <strong>Reset to default</strong>, which returns
 the map to normal playback for the current mode. There is no separate eraser; painting with
@@ -848,9 +883,9 @@ the map to normal playback for the current mode. There is no separate eraser; pa
 <p>
 <strong>Smudge</strong> <img class="ui" src="icons/smudge.svg" alt=""> works differently from the tones &mdash; it picks up the tone already under the brush
 and drags it along the direction of travel, blending as it goes, which is the quickest way to soften a
-boundary you have already drawn. <strong>Fill</strong> <img class="ui" src="icons/fill.svg" alt=""> expands into the seven preset patterns and repaints the
-entire canvas with one of them without leaving Draw. <strong>Replace</strong> (the default), <strong>Add</strong> or
-<strong>Multiply</strong> chooses how it meets the map you already have, as in Gradient.
+boundary you have already drawn. To repaint the whole canvas with a single tone or a ramp, use the
+<strong>Fill</strong> method <img class="ui" src="icons/fill.svg" alt=""> in the bottom row (up to 1.26 the same patterns
+were also offered inside the Draw palette, and the method was called Presets).
 </p>
 <table>
   <tr><th>Brush</th><td>1&ndash;300&nbsp;px. This is the <em>radius</em>, measured in map pixels rather than screen pixels, so on a default map (512&nbsp;px on the short edge) a brush of 300 covers the whole frame at once. The slider is deliberately non-linear &mdash; size follows the square of the slider position &mdash; so the first half of its travel covers everything up to about 75&nbsp;px, and the default of 80 sits near the middle.</td></tr>
@@ -909,7 +944,7 @@ forwards, then backwards, then forwards again, once per cycle, while the same wa
 instead freezes each column at a different moment.
 </p>
 
-    <h3>Presets</h3>
+    <h3>Fill</h3>
     <p>
     Seven buttons repaint the whole map in one tap: <strong>All black</strong>, <strong>All grey</strong>,
     <strong>All white</strong>, <strong>Top &rarr; bottom</strong>, <strong>Bottom &rarr; top</strong>,
@@ -921,7 +956,7 @@ instead freezes each column at a different moment.
     parameters you have set. Those labels are computed rather than fixed, so they change the moment you change
     anything that matters. As with Gradient, you can choose <strong>Replace</strong> (the default), <strong>Add</strong> or <strong>Multiply</strong>.
     </p>
-    <figure class="crop"><img src="shots/en/presets.png" alt="The preset tools: the blend choice and seven preset buttons, each with a thumbnail and a caption saying what it will do with the current settings" loading="lazy"></figure>
+    <figure class="crop"><img src="shots/v129/en/fill.png" alt="The Fill tools: the blend choice and seven buttons, each with a thumbnail and a caption saying what it will do with the current settings" loading="lazy"></figure>
 
 <p>
 On a <strong>time map in vertical slit</strong>, where the map&rsquo;s vertical axis is output time, they read
@@ -988,7 +1023,7 @@ dimmed and the caption says <em>History is available only in Surface mode</em>, 
 map to a slit mode stops it. History applies to time and rate maps only &mdash; the button is hidden while you are
 editing a space map, which always uses the still analysis. And the per-frame data is held at reduced resolution
 (at least half, and further reduced for long clips, to stay inside a fixed memory budget), so a history map is
-softer than a still one. Applying any fixed image afterwards &mdash; a preset, a gradient, a reset, or switching
+softer than a still one. Applying any fixed image afterwards &mdash; a fill, a gradient, a reset, or switching
 to Draw or Cut &amp; slide &mdash; stops the moving map and leaves the state it had reached behind as an ordinary
 still map.
 </p>
@@ -1022,17 +1057,17 @@ Draw. The tool row holds:
   <tr><th><span class="uichip"><img src="icons/chip_revert.svg" alt="">Revert</span></th><td>Returns the map to how it was when you opened Cut &amp; slide, discarding every cut since.</td></tr>
 </table>
 <div class="gallery">
-  <figure><img src="shots/v15/en/cut_free.png" alt="A freehand loop around a triangle, slid to the right: the original outline in yellow, the moved outline in cyan" loading="lazy"><figcaption>Freehand: the loop closes where the line crosses itself</figcaption></figure>
-  <figure><img src="shots/v15/en/cut_straight_start.png" alt="Straight mode with the start point placed, shown as a yellow ring" loading="lazy"><figcaption>Straight: tap a start point&hellip;</figcaption></figure>
-  <figure><img src="shots/v15/en/cut_straight.png" alt="A straight cut from edge to edge with the lower piece slid upwards" loading="lazy"><figcaption>&hellip;then an end point, and slide</figcaption></figure>
-  <figure><img src="shots/v125/en/cut_polygon.png" alt="Polygon mode with four corners placed; the first point is drawn as a larger yellow ring" loading="lazy"><figcaption>Polygon: tap the corners, then the first point to close</figcaption></figure>
-  <figure><img src="shots/v125/en/cut_handles.png" alt="The enclosed piece moved and its top-right handle pulled inward into a trapezoid; white circles are the handles" loading="lazy"><figcaption>Corner handles reshape the piece; two fingers scale it</figcaption></figure>
+  <figure><img src="shots/v129/en/cut_free.png" alt="A freehand loop around a triangle, slid to the right: the original outline in yellow, the moved outline in cyan" loading="lazy"><figcaption>Freehand: the loop closes where the line crosses itself</figcaption></figure>
+  <figure><img src="shots/v129/en/cut_straight_start.png" alt="Straight mode with the start point placed, shown as a yellow ring" loading="lazy"><figcaption>Straight: tap a start point&hellip;</figcaption></figure>
+  <figure><img src="shots/v129/en/cut_straight.png" alt="A straight cut from edge to edge with the lower piece slid upwards" loading="lazy"><figcaption>&hellip;then an end point, and slide</figcaption></figure>
+  <figure><img src="shots/v129/en/cut_polygon.png" alt="Polygon mode with four corners placed; the first point is drawn as a larger yellow ring" loading="lazy"><figcaption>Polygon: tap the corners, then the first point to close</figcaption></figure>
+  <figure><img src="shots/v129/en/cut_handles.png" alt="The enclosed piece moved and its top-right handle pulled inward into a trapezoid; white circles are the handles" loading="lazy"><figcaption>Corner handles reshape the piece; two fingers scale it</figcaption></figure>
 </div>
 
 <h3>Combining the methods</h3>
 <p>
 The methods are not symmetrical. Anything generated can be drawn over: entering <strong>Draw</strong>
-seeds its canvas from whatever the map currently holds, so a gradient, a preset or a motion map becomes the
+seeds its canvas from whatever the map currently holds, so a gradient, a fill or a motion map becomes the
 base and your strokes add to it. <strong>Cut &amp; slide</strong> likewise starts from the current map, drawn or
 generated. The reverse does not hold &mdash; choosing <strong>Gradient</strong> or
 <strong>From motion</strong> after drawing rebuilds the map from scratch and discards the strokes, with no
@@ -1110,7 +1145,7 @@ water, traffic, wind, a crowd &mdash; and is the clearest way to hear what a rat
 of each region arrives as pitch, uninterrupted.
 </p>
 
-<figure class="crop"><img src="shots/v15/en/sound_info.png" alt="The Sound panel with the explanation of Granular and Rate playback open" loading="lazy"><figcaption>The i next to the method explains both</figcaption></figure>
+<figure class="crop"><img src="shots/v129/en/sound_info.png" alt="The Sound panel with the explanation of Granular and Rate playback open" loading="lazy"><figcaption>The i next to the method explains both</figcaption></figure>
 
 <h3>Reverb</h3>
 <p>
@@ -1202,7 +1237,7 @@ Settings. Muting the output, or setting the sound method to Off, also leaves the
 <p>
 You never type the length in. It is a <strong>base length</strong> that the current map and mode work out for
 themselves, multiplied by the <strong>Duration</strong> slider in the editor&rsquo;s <strong>Parameters</strong>
-panel (the gear icon). The slider runs from &frac14;&times; to 4&times; and shows the result in seconds next to it;
+panel (Params). The slider runs from &frac14;&times; to 4&times; and shows the result in seconds next to it;
 its <strong>i</strong> explains the base for the mode you are in, and Settings also reports the result as
 <strong>Export length</strong>.
 </p>
@@ -1292,7 +1327,7 @@ of the clip is in memory. Moments outside the loaded part cannot move &mdash; th
 &mdash; so the caption then reads <strong>Frozen outside the loaded part</strong>, with a <strong>Reload here</strong>
 button beside it. Tapping it reloads at the same resolution and the same number of seconds, placed so the range in use
 sits in the middle (if the range is longer than that, the range&rsquo;s length is loaded, skipping frames if needed).
-The same notice appears under the range bar in the full-screen Input view, and below both videos when portrait footage
+The same notice appears under the range bar of the Input pane in the editor, and below both videos when portrait footage
 puts them side by side.
 </p>
 <p>
@@ -1330,7 +1365,7 @@ In the 3D plot, now is 0 and the seconds run negative toward the past.</li>
 picture, and gray places fall behind little by little. <strong>Refresh</strong>, at the bottom right of the output video,
 realigns everything to the current frame. When the slowest-moving place has fallen as far behind as the
 video being kept, everything realigns on its own, so the slope of your gradient stays the slope in time. Set
-<strong>Limit</strong> under the gear in the editor to <strong>Cap</strong> and those places keep running at that
+<strong>Limit</strong> under Params in the editor to <strong>Cap</strong> and those places keep running at that
 delay instead.</li>
 <li>From the labels on the input video, choose the frame rate (30, 60, 120), the resolution and how long to
 <strong>keep</strong> (8, 15, 30 or 60 seconds). Longer takes more memory, so lengths the device can&rsquo;t hold at
@@ -1357,7 +1392,7 @@ its own button.
 <p>
 This section decides how much of the video is held in memory and at what size, and it is the section to reach for
 when frames are being skipped, the app runs out of memory, or it feels slow. The same section opens on its own when
-you tap the information line in the full-screen Input view. Until a video is loaded its controls are shown greyed
+you tap the loading information on the Input pane in the editor. Until a video is loaded its controls are shown greyed
 out.
 </p>
 <figure class="crop"><img src="shots/v15/en/settings_loading.png" alt="Settings, Video Loading: Resolution, Seconds to load, and a Frames line saying frames will be skipped" loading="lazy"><figcaption>Video Loading. The Frames line shows when frames are skipped; its i gives the reason</figcaption></figure>
@@ -1448,7 +1483,7 @@ multiplier.
 <p>
 <strong>Rebuilding leaves edited maps alone</strong>, which is usually what you want &mdash; it would be
 unpleasant to lose a drawing to a settings change &mdash; but it does mean the button can look like it did
-nothing. A map you have drawn on, generated, or repainted keeps its old dimensions, and presets and gradients
+nothing. A map you have drawn on, generated, or repainted keeps its old dimensions, and fills and gradients
 applied later inherit those dimensions rather than the new ones. To move an edited map to a new size, reset it
 with the counter-clockwise arrow in the editor&rsquo;s tool row: that reset rebuilds the map at the size set
 here, at the cost of the drawing.
@@ -1476,7 +1511,7 @@ that the settings above did what you expected.
   <tr><th>Loaded range</th><td>The span of the clip, in seconds, that those frames cover.</td></tr>
 </table>
 <p>
-The full-screen Input view states the effective frame rate directly, next to the source&rsquo;s. If that number is
+The Input pane in the editor, shown alone in full screen, states the effective frame rate directly, next to the source&rsquo;s. If that number is
 well under the frame rate you shot at, the output will step rather than flow in the slit modes, and the fix is fewer
 seconds loaded, a lower resolution, or a shorter range reloaded.
 </p>
@@ -1562,7 +1597,7 @@ maximum.
 
 <h3>Generate first, draw second &mdash; not the other way around</h3>
 <p>
-<strong>Presets</strong>, <strong>Gradient</strong> and <strong>From motion</strong> fill the map in one tap and
+<strong>Fill</strong>, <strong>Gradient</strong> and <strong>From motion</strong> fill the map in one tap and
 give you something concrete to react to, and you can draw freely on top of anything they produce. Choosing
 Gradient or From motion <em>after</em> drawing, though, rebuilds the map from scratch and your strokes are gone,
 with no undo. <strong>From motion</strong> makes a good under-layer: busier areas come out brighter, so the
@@ -1572,7 +1607,7 @@ distortion follows what is actually moving, and in Surface its History option le
 
 <h3>Learn which way your gradients run</h3>
 <p>
-Each preset button is captioned with what it will do given your current settings &mdash; Normal playback,
+Each Fill button is captioned with what it will do given your current settings &mdash; Normal playback,
 Reverse, Frozen at start, Left is earlier &mdash; because the same gradient means different things in different
 modes. In Vertical slit the map&rsquo;s vertical axis is time, so <strong>Top &rarr; bottom</strong> is ordinary
 playback and <strong>Bottom &rarr; top</strong> is reverse, while <strong>Left &rarr; right</strong> runs across
@@ -1604,12 +1639,12 @@ you lift it. Surface shows no line, because there the whole map is in use at eve
 <h3>Draw on the device, watch on a display</h3>
 <p>
 With a display connected over HDMI or AirPlay the output alone fills that screen while your device keeps the
-editor, and this is by far the most comfortable way to work on anything serious. Set the layout menu at the top
-right of the editor to <strong>Map only</strong> and the device becomes a pure drawing surface with the picture
-on the wall; switch to <strong>Overlay</strong>, which lays the map over the image at partial opacity, when a
+editor, and this is by far the most comfortable way to work on anything serious. In the <strong>View</strong> menu at the top
+right of the editor, show the map alone and the device becomes a pure drawing surface with the picture
+on the wall; turn on <strong>Overlay the map on the output</strong>, which lays the map over the image at partial opacity, when a
 stroke needs to land on a particular object rather than a particular part of the frame. On iPad, turn Stage
 Manager off first or the display is treated as an extended desktop and the full-screen output never appears.
-Without a display, the full-screen Output view on the device itself is the quickest way to judge a result at size.
+Without a display, full screen with the Output pane alone on the device itself is the quickest way to judge a result at size.
 </p>
 
 <h2 id="support-en">Frequently asked questions</h2>
@@ -1619,7 +1654,8 @@ Without a display, the full-screen Output view on the device itself is the quick
 The caption under the progress bar names the stage: <strong>Fetching from your photo library&hellip;</strong>,
 then <strong>Expanding frames&hellip;</strong> with a percentage, then <strong>Loading the audio
 track&hellip;</strong>. The first stage is iOS handing the file over, and for a long 4K or HDR clip it can take
-tens of seconds before the percentage even starts to move. <strong>Cancel</strong> stops the import at any
+tens of seconds. A video kept in iCloud is downloaded to the device first; the caption shows the progress, and reads
+<strong>Downloading from iCloud&hellip;</strong> when the app can tell that is what is happening. <strong>Cancel</strong> stops the import at any
 stage. The second stage is shorter when less is loaded: a lower <strong>Resolution</strong> or fewer
 <strong>Seconds to load</strong> under Settings &rarr; Video Loading.
 </p>
@@ -1663,7 +1699,7 @@ The two modes read opposite axes of the map as time, so a map whose tone varies 
 playback in a vertical slit but returns the same values at every instant in a horizontal one &mdash; each row
 sits on one fixed moment and the picture never advances. Since <strong>1.2</strong> any map you have not edited
 is rebuilt as the new mode&rsquo;s normal-playback default when you switch, so this only bites on maps you drew
-yourself. Open <strong>Presets</strong> and take the button labelled <em>Normal playback</em> as a fresh base.
+yourself. Open <strong>Fill</strong> and take the button labelled <em>Normal playback</em> as a fresh base.
 </p>
 
 <h3>I trimmed the clip but the output still uses the whole video</h3>
@@ -1730,21 +1766,21 @@ depends on the free GPU memory of the device, so a Mac loads longer clips withou
 <h3>Is there an undo?</h3>
 <p>
 Yes. <strong>Undo</strong> at the bottom left of the editor steps back one change at a time (up to 30 per map),
-through strokes, Blur, Invert, presets and generated gradients alike; press and hold it to reset the map to
+through strokes, Blur, Invert, fills and generated gradients alike; press and hold it to reset the map to
 default. In <strong>Cut &amp; slide</strong>, <strong>Revert</strong> also returns the map to how it was when you
 opened that method.
 </p>
 
 <h3>What happens to my map when I load another video?</h3>
 <p>
-Maps you edited are kept and stretched to the new video&rsquo;s aspect ratio, and Undo still works. Maps you never edited become the new clip&rsquo;s default. To start again from the default, hold Undo, or pick the preset marked Default. Re-importing the <em>same</em> clip
+Maps you edited are kept and stretched to the new video&rsquo;s aspect ratio, and Undo still works. Maps you never edited become the new clip&rsquo;s default. To start again from the default, hold Undo, or pick the Fill button marked Default. Re-importing the <em>same</em> clip
 &mdash; changing the Video Loading settings, reloading the range, or rotating &mdash; leaves your maps alone.
 </p>
 
 <h3>Can I bring a map in from elsewhere, or take one out?</h3>
 <p>
 Neither, at the moment &mdash; the current version has no way to load an image as a map or to save one;
-maps are made inside the app with Draw, Gradient, Presets, From motion or Cut &amp; slide.
+maps are made inside the app with Draw, Gradient, Fill, From motion or Cut &amp; slide.
 </p>
 
 <h3>The device gets hot, or the preview starts to stutter</h3>

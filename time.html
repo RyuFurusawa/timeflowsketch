@@ -51,7 +51,7 @@
 </ul>
 <div class="gallery">
   <figure><img src="shots/v15/ja/top.png" alt="トップ画面。入力映像の下に使用範囲のバーと秒数" loading="lazy"><figcaption>トップ画面。入力の下のバーが使用範囲（ハンドルで端を決める）</figcaption></figure>
-  <figure><img src="shots/v15/ja/input_full.png" alt="入力映像の全画面。読み込みの情報、使用範囲のバー、秒数" loading="lazy"><figcaption>入力の全画面。元の映像と GPU 上の映像の大きさ・fps・読み込んだ秒数が出ます</figcaption></figure>
+  <figure><img src="shots/v129/ja/input_full.png" alt="編集画面のフルスクリーンで入力映像だけを並べたところ。使用範囲のバー、秒数、読み込みの情報" loading="lazy"><figcaption>編集画面で入力映像だけを並べたところ。元の映像と GPU 上の映像の大きさ・fps・読み込んだ秒数が出ます</figcaption></figure>
 </div>
 <figure class="diagram">
   <img src="time/ja/fig2_ranges.png" alt="素材・読み込み範囲・使用範囲の関係と、読み込み範囲の外で絵が止まる様子">
@@ -76,9 +76,9 @@
 </div>
 
 <h2 id="volume">4. 3D で見る: 立体グラフ</h2>
-<p>出力の全画面で<strong>「立体グラフ」</strong>をオンにすると、画面が上下に分かれ、上に出力の絵、下にこの図が出ます。トップ画面のマップを横にスワイプしても見られます。編集画面の表示メニューの「2画面: 立体グラフ ＋ マップ」「3画面: 映像 ＋ 立体グラフ ＋ マップ」でも、描きながら同じ図を見られます。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
+<p>編集画面の右上の<strong>表示切替</strong>で<strong>「立体グラフ」</strong>を選ぶと、出力の絵やマップと並べてこの図が出ます。道具を出したままなら、描きながら同じ図を見られます。トップ画面のマップを横にスワイプしても見られます。右上の「断面」を「ライン」にすると、面を絵ではなく、時間グラフと同じ色の線で示します。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
 <div class="gallery">
-  <figure><img src="shots/v16/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、下の辺に秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
+  <figure><img src="shots/v129/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、下の辺に秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
   <figure><img src="shots/v16/ja/timegraph.png" alt="時間グラフ。位置の違う 7 本の縦の線が、左の緑から右の赤まで並び、赤い横線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。縦スリットは出力の時間を縦に取るので、帯ごとの線が縦に、位置を変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
 </div>
 <ul>
@@ -102,7 +102,7 @@
 </ul>
 
 <h3>時間グラフ: 3 章の図の 2D 版</h3>
-<p>出力の全画面の<strong>「時間グラフ」</strong>は、3 章の図と同じ読み方の図を、いまのマップ・モード・パラメータで描きます。</p>
+<p>表示切替で選べる<strong>「時間グラフ」</strong>は、3 章の図と同じ読み方の図を、いまのマップ・モード・パラメータで描きます。</p>
 <ul>
   <li>横軸は出力の 1 周、縦軸は素材の時刻です（縦スリットでは入れ替わり、縦が出力の 1 周、横が素材の時刻です）。どちらも秒の目盛りが付き、いちばん大きい目盛りに単位（s）が添えられます。</li>
   <li>線は画面の区画ごとに 1 本です。区画はサウンドのボイスと同じで、縦スリットは左右に並ぶ帯（ボイス分割数、既定 7）、横スリットは上下に並ぶ帯、サーフェスはボイス数の格子（格子が細かいときは一部を間引きます）。値は区画の中のマップの平均から計算します。</li>
@@ -151,7 +151,7 @@
   <li>帯をタップ／なぞると、入力の再生位置だけが動きます。出力の赤ラインや出力のバーを動かしても、入力は動きません。ただし入力の音がオンの間は位置が音に従うので、帯をタップしてもすぐ戻ります。</li>
   <li>開始／終了ハンドルをドラッグしている間だけ、その端の瞬間が映ります。指を離すと再生中の位置の絵に戻ります。</li>
   <li>帯を長押ししてからドラッグすると、長さを保ったまま範囲を動かせます。</li>
-  <li>同じ帯は、入力映像の全画面表示の下にもあります。</li>
+  <li>同じ帯は、編集画面に並べた入力映像の下にもあります。</li>
   <li>使用範囲が読み込み範囲の外にかかると、入力ビューもその区間は端のフレームで止まり、「読み込み範囲の外は動きません」と表示されます。横の<strong>「この範囲で読み直す」</strong>を押すと、解像度と読む秒数はそのままで、使用範囲が真ん中に来る位置へ読み込み範囲を移して読み直します（使用範囲のほうが長ければその長さを読み、メモリに収まらない分は間引きが増えます）。</li>
   <li>間引いて読み込んだあとに使用範囲を狭めると、いまより間引きを減らせる長さになった所で<strong>「この範囲なら 60fps で読めます」</strong>のように表示されます。間引きは 1 コマおき・2 コマおき…の整数なので、120fps の素材なら 40 → 60 → 120fps と段ごとに知らせます（120fps まで戻せるときは「この範囲なら間引かずに読めます」）。<strong>「読み直す」</strong>を押すと、その fps で読める最長の範囲を、使用範囲を真ん中にして読み直します。</li>
   <li>入力の音をオンにすると、使用範囲を等速で繰り返す音に映像の位置が合います。出力の音とは同時に鳴りません。</li>
@@ -177,14 +177,14 @@
   <li>再生時間の効き方はモードで違います。時間マップはスローになります。サーフェス×レートは速さそのままで軌道が伸び、使用範囲の中で回り込みます。スリット×レートは軌道が使用範囲に収まるうちは速さそのまま、収まらなくなると全体が一律に縮むので、時間マップと同じようにスローになります。</li>
   <li>サーフェス×レートの同期位置は、全画素がそろう瞬間と素材の位置を 1 本のスライダーで決めます。0・0.5・1 が、1.21 までの「同期」の始点・中間・終点と同じ動きです。逆再生の画素があるときは、0.5 からずらすと途中でジャンプすることがあります。</li>
   <li>同期位置は、スリット×レートでもサーフェス×レートでも同じ意味で、出力 1 周の何秒目に全スリット（全画素）が同じ素材の時刻にそろうかです。その瞬間、使用範囲の中の同じ割合の位置（1 周の真ん中なら使用範囲の真ん中）にそろいます。スリットで軌道が使用範囲からはみ出すときは全体がずらされるか縮められますが、そろう瞬間は変わりません。読み取り値をオンにすると、マップにその瞬間が点線と「同期 ◯秒」で出ます（1.21 まではスリットのほうを「開始位置」と呼び、そろうのはいつも出力の始めでした）。</li>
-  <li>レートマップの歯車のパネルの右上にある<strong>「既定に戻す」</strong>は、黒 0・白 +1 と、再生時間・同期位置を既定に戻します。<strong>「逆再生あり」</strong>は黒 −1・白 +1 の組にします（ライブでは速さが 0〜1 なので出ません）。黒・白のレートは −2〜+2 です。</li>
+  <li>レートマップの「パラメータ」のパネルの右上にある<strong>「既定に戻す」</strong>は、黒 0・白 +1 と、再生時間・同期位置を既定に戻します。<strong>「逆再生あり」</strong>は黒 −1・白 +1 の組にします（ライブでは速さが 0〜1 なので出ません）。黒・白のレートは −2〜+2 です。</li>
   <li>使用範囲を一度手で触ると、自動では合わせ直しません（別の素材を読み込むと自動に戻ります）。「この範囲で読み直す」「この設定で読み込み直す」で読み直したときも、手で決めた範囲として扱います。</li>
   <li>スリット×時間の「時間 最小／最大」は使用範囲と同じ値です。最小を最大より大きくすると逆再生になります。</li>
 </ul>
 <p class="note">編集画面の各項目の横にある「i」ボタンでも、その項目の説明を確認できます。</p>
 <div class="gallery">
-  <figure><img src="shots/v15/ja/params_info.png" alt="適用パラメータの再生時間の i を開いたところ" loading="lazy"><figcaption>再生時間の i。モードに合わせた出力の長さの決まり方が出ます</figcaption></figure>
-  <figure><img src="shots/v15/ja/sound_info.png" alt="サウンドパネルで音の方式の i を開いたところ" loading="lazy"><figcaption>音の方式の i</figcaption></figure>
+  <figure><img src="shots/v129/ja/params_info.png" alt="適用パラメータの再生時間の i を開いたところ" loading="lazy"><figcaption>再生時間の i。モードに合わせた出力の長さの決まり方が出ます</figcaption></figure>
+  <figure><img src="shots/v129/ja/sound_info.png" alt="サウンドパネルで音の方式の i を開いたところ" loading="lazy"><figcaption>音の方式の i</figcaption></figure>
 </div>
 
 <hr class="lang">
@@ -226,7 +226,7 @@
 </ul>
 <div class="gallery">
   <figure><img src="shots/v15/en/top.png" alt="The main screen with the range bar and seconds under the input video" loading="lazy"><figcaption>Main screen: the bar under Input is the use range</figcaption></figure>
-  <figure><img src="shots/v15/en/input_full.png" alt="Full-screen Input with the loading information, the range bar and the seconds" loading="lazy"><figcaption>Full-screen Input: source and GPU size, fps and seconds loaded</figcaption></figure>
+  <figure><img src="shots/v129/en/input_full.png" alt="The editor in full screen with the Input pane alone: the range bar, the seconds and the loading information" loading="lazy"><figcaption>The Input pane alone in the editor: source and GPU size, fps and seconds loaded</figcaption></figure>
 </div>
 <figure class="diagram">
   <img src="time/en/fig2_ranges.png" alt="How the clip, the loaded range and the use range relate, and how the picture freezes outside the loaded range">
@@ -251,9 +251,9 @@
 </div>
 
 <h2 id="volume-en">4. Seeing it in 3D: the 3D plot</h2>
-<p>Turn on <strong>3D plot</strong> in the full-screen Output view and the screen splits: the output picture on top, this plot below it. You can also swipe the map on the main screen sideways to reach it. The editor&rsquo;s layout menu shows the same plot while you draw, in <strong>Split: 3D plot + map</strong> and <strong>Three panes: video + 3D plot + map</strong>. The plot computes its times with the same function that renders the output picture.</p>
+<p>Pick <strong>3D plot</strong> in the editor&rsquo;s <strong>View</strong> menu and this plot appears beside the output picture and the map; with the tools out you can watch it while you draw. You can also swipe the map on the main screen sideways to reach it. Switching <strong>Section</strong> at its top right to <strong>Lines</strong> draws the surface as lines in the time graph&rsquo;s colours instead of the picture. The plot computes its times with the same function that renders the output picture.</p>
 <div class="gallery">
-  <figure><img src="shots/v16/en/volume.png" alt="The 3D plot: a tilted surface inside the clip box, with seconds along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
+  <figure><img src="shots/v129/en/volume.png" alt="The 3D plot: a tilted surface inside the clip box, with seconds along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
   <figure><img src="shots/v16/en/timegraph.png" alt="The time graph: seven vertical lines at different positions, green at the left to red at the right, and a red horizontal playhead" loading="lazy"><figcaption>The time graph for the same map. A vertical slit runs output time downward, so there is one straight vertical line per strip, each at its own position (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
 </div>
 <ul>
@@ -277,7 +277,7 @@
 </ul>
 
 <h3>The time graph: section 3&rsquo;s figure, live</h3>
-<p><strong>Time graph</strong> in the full-screen Output view draws the same kind of figure as section 3 for your current map, mode and parameters.</p>
+<p><strong>Time graph</strong>, also in the View menu, draws the same kind of figure as section 3 for your current map, mode and parameters.</p>
 <ul>
   <li>The horizontal axis is one output loop and the vertical axis is time in the clip (under a vertical slit the two swap: output time runs downward). Both carry second marks, with the unit (s) on the largest one.</li>
   <li>There is one line per part of the picture. The parts are the same as the sound&rsquo;s voices: strips from left to right under a vertical slit (Voice divisions, 7 by default), strips from top to bottom under a horizontal slit, and the voice grid under Surface (thinned out when the grid is fine). Each line uses the average of the map over its part.</li>
@@ -326,7 +326,7 @@
   <li>Tapping or sliding along the band moves only the input&rsquo;s playhead. Moving the output&rsquo;s red line or bar does not move the input. While the input sound is on, the position follows the sound, so a tap on the band snaps back.</li>
   <li>While you drag the start or end handle, the input shows that edge&rsquo;s frame; release it and the picture returns to the playing position.</li>
   <li>Press and hold the band, then drag, to slide the whole range without changing its length.</li>
-  <li>The same bar also appears under the input&rsquo;s full-screen view.</li>
+  <li>The same bar also appears on the Input pane in the editor.</li>
   <li>If the use range extends past the loaded range, the input freezes on the edge frame for that part too, and <strong>Frozen outside the loaded part</strong> appears with a <strong>Reload here</strong> button. It reloads with the same resolution and seconds, moving the loaded range so the use range sits in the middle. If the use range is longer than that, it loads the whole use range and skips more frames if memory requires it.</li>
   <li>If a clip was loaded with frames skipped and you then narrow the use range, a notice such as <strong>This range fits at 60 fps</strong> appears as soon as fewer frames need to be skipped. Frames are skipped in whole steps (every 2nd, every 3rd&hellip;), so a 120 fps clip is offered at 40 &rarr; 60 &rarr; 120 fps in turn (at full rate the notice reads <strong>This range fits without dropping frames</strong>). <strong>Reload</strong> loads the longest range that fits at that rate, with the use range in the middle.</li>
   <li>Turning on the input sound locks the picture to audio looping the use range at normal speed. It does not play at the same time as the output sound.</li>
@@ -358,8 +358,8 @@
 </ul>
 <p class="note">The &ldquo;i&rdquo; button next to each setting in the editor explains that setting in the app, too.</p>
 <div class="gallery">
-  <figure><img src="shots/v15/en/params_info.png" alt="The Duration explanation opened with its i button" loading="lazy"><figcaption>The i for Duration explains the length rule for the current mode</figcaption></figure>
-  <figure><img src="shots/v15/en/sound_info.png" alt="The Sound panel with the method explanation open" loading="lazy"><figcaption>The i for the sound method</figcaption></figure>
+  <figure><img src="shots/v129/en/params_info.png" alt="The Duration explanation opened with its i button" loading="lazy"><figcaption>The i for Duration explains the length rule for the current mode</figcaption></figure>
+  <figure><img src="shots/v129/en/sound_info.png" alt="The Sound panel with the method explanation open" loading="lazy"><figcaption>The i for the sound method</figcaption></figure>
 </div>
 </div>
 
