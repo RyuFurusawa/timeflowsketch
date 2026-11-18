@@ -51,7 +51,7 @@
 </ul>
 <div class="gallery">
   <figure><img src="shots/v15/ja/top.png" alt="トップ画面。入力映像の下に使用範囲のバーと秒数" loading="lazy"><figcaption>トップ画面。入力の下のバーが使用範囲（ハンドルで端を決める）</figcaption></figure>
-  <figure><img src="shots/v129/ja/input_full.png" alt="編集画面のフルスクリーンで入力映像だけを並べたところ。使用範囲のバー、秒数、読み込みの情報" loading="lazy"><figcaption>編集画面で入力映像だけを並べたところ。元の映像と GPU 上の映像の大きさ・fps・読み込んだ秒数が出ます</figcaption></figure>
+  <figure><img src="shots/v130/ja/input_view.png" alt="入力のビュー。入力映像、断面 X–T、断面 Y–T、入力の立体グラフの下に、使用範囲のバー、秒数、読み込みの情報" loading="lazy"><figcaption>入力のビュー（入力映像の右下のボタンで開く）。いちばん下に使用範囲のバーと、元の映像と GPU 上の映像の大きさ・fps・読み込んだ秒数が出ます</figcaption></figure>
 </div>
 <figure class="diagram">
   <img src="time/ja/fig2_ranges.png" alt="素材・読み込み範囲・使用範囲の関係と、読み込み範囲の外で絵が止まる様子">
@@ -76,9 +76,9 @@
 </div>
 
 <h2 id="volume">4. 3D で見る: 立体グラフ</h2>
-<p>編集画面の右上の<strong>表示切替</strong>で<strong>「立体グラフ」</strong>を選ぶと、出力の絵やマップと並べてこの図が出ます。道具を出したままなら、描きながら同じ図を見られます。トップ画面のマップを横にスワイプしても見られます。右上の「断面」を「ライン」にすると、面を絵ではなく、時間グラフと同じ色の線で示します。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
+<p>編集画面の右上の<strong>表示切替</strong>で<strong>「立体グラフ」</strong>を選ぶと、出力の絵やマップと並べてこの図が出ます。道具を出したままなら、描きながら同じ図を見られます。トップ画面のマップを横にスワイプしても見られます。右上のメニューで見せ方を「ライン」にすると、面を絵ではなく、時間グラフと同じ色の線で示します。図の時刻は、出力の絵を描くのと同じ関数で計算しています。</p>
 <div class="gallery">
-  <figure><img src="shots/v129/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、下の辺に秒数" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
+  <figure><img src="shots/v130/ja/volume.png" alt="立体グラフ。素材の箱の中で斜めに傾いた面と、X・Y・T の軸、秒数の目盛り" loading="lazy"><figcaption>縦スリット×時間マップの「左→右」。左の列ほど前の瞬間を映すので、面が斜めの板になり、水色の線が縦に等間隔で並びます</figcaption></figure>
   <figure><img src="shots/v16/ja/timegraph.png" alt="時間グラフ。位置の違う 7 本の縦の線が、左の緑から右の赤まで並び、赤い横線が再生位置" loading="lazy"><figcaption>同じマップの時間グラフ。縦スリットは出力の時間を縦に取るので、帯ごとの線が縦に、位置を変えて並びます（下の「時間グラフ」を参照）</figcaption></figure>
 </div>
 <ul>
@@ -86,9 +86,9 @@
   <li><strong>面</strong> — 出力のいまの 1 コマです。面の各点の奥行きが、画面のその場所が映している素材の時刻で、面には実際の絵が貼られています。時間の軸に垂直な平らな面なら、画面全体が同じ瞬間です。傾いたり曲がったりしていれば、場所ごとに違う瞬間を映しています。</li>
   <li><strong>水色の線</strong> — 素材の同じ時刻を結ぶ線です。間隔は 0.5・1・2・5・10・20・30 秒のうち、素材の長さを 12 本以内で刻める最も細かいもの（6 分を超える素材は長さ ÷ 12 を丸めた秒）。線が混んでいるところほど、面が時間の方向へ急に傾いています。</li>
   <li><strong>橙と青の四角</strong> — 橙が使用範囲の始めと終わり、青が読み込み範囲の始めと終わりです。面はふつう橙の間に収まります。使用範囲が読み込み範囲からはみ出していると面も青の外へ出ますが、そこに貼られる絵は読み込み範囲の端のフレームのままです（2 章の「端で平らになる」と同じ）。</li>
-  <li><strong>素材全体／使用範囲</strong> — 使用範囲が素材の半分より短いときだけ、右上に出ます。押すと箱の奥行きが使用範囲の始めから終わりまでになり（秒数の目盛りもその範囲で振り直します）、もう一度押すと素材全体に戻ります。長い素材の一部だけを使うとき、面が薄い箱の中に押し込まれて読めなくなるのを防ぎます。</li>
+  <li><strong>時間軸の範囲（素材全体／使用範囲）</strong> — 編集画面の立体グラフは、箱の奥行きをいつも使用範囲の始めから終わりまでにします（秒数の目盛りもその範囲で振ります）。トップ画面と入力のビューでは、使用範囲が素材の半分より短いときだけ、右上のメニューに「時間軸の範囲」が出て、素材全体と使用範囲を切り替えられます。長い素材の一部だけを使うとき、面が薄い箱の中に押し込まれて読めなくなるのを防ぎます。</li>
   <li><strong>半透明の板</strong> — 箱の両端（素材の最初と最後の時刻）に、その時刻のフレームを薄く表示します（読み込み範囲の外なら、読み込んだ端のフレーム）。描くのは見ている側から遠いほうだけで、回転して奥と手前が入れ替わるときはクロスフェードします。</li>
-  <li><strong>操作</strong> — 何もしなければ約 50 秒で 1 周の速さで自動で回ります。ドラッグで回転（触っている間は自動回転が止まり、離すと続きから回ります）、ピンチで拡大・縮小。</li>
+  <li><strong>操作</strong> — 何もしなければ約 50 秒で 1 周の速さで自動で回ります。ドラッグで回転（触っている間は自動回転が止まり、回して離すと勢いのまま回ってから、元の速さに戻ります）、ピンチで拡大・縮小。</li>
   <li><strong>開いたとき</strong> — 約 1.7 秒の演出があります。目盛りの時刻のフレームが奥（素材の終わり）から手前へ順に現れては消え、入れ替わりに面がフェードインします。</li>
 </ul>
 
@@ -226,7 +226,7 @@
 </ul>
 <div class="gallery">
   <figure><img src="shots/v15/en/top.png" alt="The main screen with the range bar and seconds under the input video" loading="lazy"><figcaption>Main screen: the bar under Input is the use range</figcaption></figure>
-  <figure><img src="shots/v129/en/input_full.png" alt="The editor in full screen with the Input pane alone: the range bar, the seconds and the loading information" loading="lazy"><figcaption>The Input pane alone in the editor: source and GPU size, fps and seconds loaded</figcaption></figure>
+  <figure><img src="shots/v130/en/input_view.png" alt="The input view: the Input video, Slice X&ndash;T, Slice Y&ndash;T and the Input 3D plot, with the range bar, the seconds and the loading information at the bottom" loading="lazy"><figcaption>The input view (the button at the bottom right of the Input video): the range bar at the bottom, with source and GPU size, fps and seconds loaded</figcaption></figure>
 </div>
 <figure class="diagram">
   <img src="time/en/fig2_ranges.png" alt="How the clip, the loaded range and the use range relate, and how the picture freezes outside the loaded range">
@@ -251,9 +251,9 @@
 </div>
 
 <h2 id="volume-en">4. Seeing it in 3D: the 3D plot</h2>
-<p>Pick <strong>3D plot</strong> in the editor&rsquo;s <strong>View</strong> menu and this plot appears beside the output picture and the map; with the tools out you can watch it while you draw. You can also swipe the map on the main screen sideways to reach it. Switching <strong>Section</strong> at its top right to <strong>Lines</strong> draws the surface as lines in the time graph&rsquo;s colours instead of the picture. The plot computes its times with the same function that renders the output picture.</p>
+<p>Pick <strong>3D plot</strong> in the editor&rsquo;s <strong>View</strong> menu and this plot appears beside the output picture and the map; with the tools out you can watch it while you draw. You can also swipe the map on the main screen sideways to reach it. Choosing <strong>Lines</strong> in the menu at its top right draws the surface as lines in the time graph&rsquo;s colours instead of the picture. The plot computes its times with the same function that renders the output picture.</p>
 <div class="gallery">
-  <figure><img src="shots/v129/en/volume.png" alt="The 3D plot: a tilted surface inside the clip box, with seconds along the lower edge" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
+  <figure><img src="shots/v130/en/volume.png" alt="The 3D plot: a tilted surface inside the clip box, with X, Y and T axes and seconds along the time axis" loading="lazy"><figcaption>Vertical slit &times; time map with Left &rarr; right. Columns further left show earlier moments, so the surface is a tilted plane and the cyan lines run vertically at even spacing</figcaption></figure>
   <figure><img src="shots/v16/en/timegraph.png" alt="The time graph: seven vertical lines at different positions, green at the left to red at the right, and a red horizontal playhead" loading="lazy"><figcaption>The time graph for the same map. A vertical slit runs output time downward, so there is one straight vertical line per strip, each at its own position (see &ldquo;The time graph&rdquo; below)</figcaption></figure>
 </div>
 <ul>
@@ -261,9 +261,9 @@
   <li><strong>The surface</strong> &mdash; the current output frame. The depth of each point is the moment of the clip that part of the picture is showing, and the actual picture is mapped onto it. A flat surface square to the time axis means the whole frame shows one moment; a tilted or bent surface means different parts of the picture show different moments.</li>
   <li><strong>Cyan lines</strong> &mdash; join points that show the same moment of the clip. The spacing is the finest of 0.5, 1, 2, 5, 10, 20 or 30 seconds that marks the clip in 12 steps or fewer (for clips over 6 minutes, the clip length &divide; 12, rounded). Where the lines crowd together, the surface is tilting steeply in time.</li>
   <li><strong>Orange and blue rectangles</strong> &mdash; orange marks the start and end of the use range, blue the start and end of the loaded range. The surface normally stays between the orange ones. If the use range reaches past the loaded range, the surface goes beyond the blue rectangles too, but the picture on that part stays on the edge frame of the loaded range &mdash; the same flattening at the edges as in section 2.</li>
-  <li><strong>Whole clip / Use range</strong> &mdash; appears at the top right only when the use range is shorter than half the clip. Tap it and the box&rsquo;s depth runs from the start to the end of the use range (the second marks are redrawn for that span); tap again to return to the whole clip. It keeps the surface from being squeezed into a thin slice when you use only part of a long clip.</li>
+  <li><strong>Time axis range (Whole clip / Use range)</strong> &mdash; in the editor the box&rsquo;s depth always runs from the start to the end of the use range, and the second marks are drawn for that span. On the main screen and in the input view, <strong>Time axis range</strong> appears in the menu at the top right only when the use range is shorter than half the clip, and switches between the whole clip and the use range. It keeps the surface from being squeezed into a thin slice when you use only part of a long clip.</li>
   <li><strong>Translucent frames</strong> &mdash; the end faces of the box (the first and last moments of the clip) show the frame at that time faintly (the edge frame of the loaded range if that moment is not loaded). Only the face on the far side from you is drawn, and the two cross-fade as the box turns.</li>
-  <li><strong>Handling</strong> &mdash; left alone, the box turns slowly by itself, about once every 50 seconds. Drag to rotate it; the automatic turn stops while your finger is down and carries on from there when you lift. Pinch to zoom.</li>
+  <li><strong>Handling</strong> &mdash; left alone, the box turns slowly by itself, about once every 50 seconds. Drag to rotate it; the automatic turn stops while your finger is down; let go while turning and it keeps spinning, then eases back to its usual speed. Pinch to zoom.</li>
   <li><strong>Opening</strong> &mdash; a short intro of about 1.7 seconds plays: frames at the second marks appear and fade in turn from the back (the end of the clip) towards the front, and the surface fades in as they go.</li>
 </ul>
 
