@@ -163,7 +163,7 @@
     いまの設定での意味はツールの上に表示され、映像に結果がその場で反映されるので、描きながら確かめられます。
     </p>
     <p>
-    いちばん下の列の左端の<strong>取り消す</strong><img class="ui" src="icons/undo.svg" alt="">で、ひとつ前の状態に戻せます。押すたびに 1 手順ずつ戻り、
+    いちばん下の列の左端（iPhone を横にしたときは右の列のいちばん下）の<strong>取り消す</strong><img class="ui" src="icons/undo.svg" alt="">で、ひとつ前の状態に戻せます。押すたびに 1 手順ずつ戻り、
     ストロークだけでなく塗りつぶしやグラデーション生成など、どの方法での変更もさかのぼれます
     （スライダーは指を離すまでが 1 手順）。取り消したあとは、隣に<strong>やり直す</strong>が出ます。長押しすると「デフォルトの状態に戻す」が出ます。
     手順はマップごとに最大 30 まで覚えていて、アプリを終了すると消えます。
@@ -174,7 +174,7 @@
     ビューの左上の<strong>名前の札</strong>を押すとメニューが開き、<strong>大きく表示・この画面だけを表示・並べ替え・消す</strong>を選べます。ビューの何も無い所を押しても、そのビューが大きくなります（もう一度押すと戻ります）。
     <strong>並べ替え</strong>は、表示切替の「ビューを並べ替え・消す」やビューの長押しでも始まり、ドラッグで入れ替え、× で消し、「完了」で終わります。表示切替の「初期の並びに戻す」で元の並びに戻ります。
     立体グラフを並べれば、描きながら面の変化を確かめられます。<strong>マップを出力映像に重ねる</strong>をオンにすると、映像の上にマップを薄く重ねて描けます。同じメニューの<strong>フルスクリーンで表示</strong>で、道具を隠して大きく見られます。並びは次に開いたときも同じです。
-    左上の<strong>編集対象</strong>では、時間マップかレートマップのどちらかと、空間マップを一緒に選べます。2 枚を選ぶと、緑の札と緑の枠が編集中のマップです。iPhone では 2 枚が 1 つのビューにまとまり、マップの右上の<strong>「時間｜空間」</strong>で切り替えます（ビューが小さくても出ています）。iPad と Mac では 2 枚が並び、もう一方のマップか名前の札を押すとそちらに切り替わります。描画のときは切り替えなくても、どちらのマップにもそのまま描けます（描いたほうが編集中になります）。切り替えても、ビューの並びは変わりません。まとめるか並べるかは、マップの名前の札のメニュー（「時間と空間を並べて表示」「1 つのビューにまとめる」）で選べます。空間マップをすでに編集していれば、最初から 2 枚で開きます。
+    左上の<strong>編集対象</strong>では、時間マップかレートマップのどちらかと、空間マップを一緒に選べます。名前の左の緑の丸がいま編集しているマップの印で、2 枚を選ぶと丸が 2 つ重なり、いま編集しているほうが手前に来ます。並べたビューでは、緑の札と緑の枠が編集中のマップです。iPhone では 2 枚が 1 つのビューにまとまり、マップの右上の<strong>「時間｜空間」</strong>で切り替えます（ビューが小さくても出ています）。iPad と Mac では 2 枚が並び、もう一方のマップか名前の札を押すとそちらに切り替わります。描画のときは切り替えなくても、どちらのマップにもそのまま描けます（描いたほうが編集中になります）。切り替えても、ビューの並びは変わりません。まとめるか並べるかは、マップの名前の札のメニュー（「時間と空間を並べて表示」「1 つのビューにまとめる」）で選べます。空間マップをすでに編集していれば、最初から 2 枚で開きます。
     上の段の<strong>パラメータ</strong><img class="ui" src="icons/map_gear.svg" alt="">と<strong>サウンド</strong><img class="ui" src="icons/sound.svg" alt="">は、適用パラメータと音の設定を開きます。
     HDMI などで外部ディスプレイをつないでいる間は、表示切替の左に<strong>外部表示</strong>が出て、外に映すものを選べます。
     マップの赤い線（再生位置）は、マップの外に少しはみ出しています。はみ出した所をつかんで動かすと、描く操作と混ざらずに再生位置を動かせます。
@@ -183,6 +183,16 @@
     <p>
     <strong>別の動画を読み込んでも、編集したマップは保たれます。</strong>新しい動画の縦横比に合わせて引き伸ばし、編集の手順もそのまま戻せます。編集していないマップは新しい動画に合わせた既定の形になります。既定に戻したいときは、取り消す<img class="ui" src="icons/undo.svg" alt="">の長押しか塗りつぶしの「既定」を使います。
     </p>
+    <p>
+    <strong>iPhone を横にすると</strong>、左にビューだけを上下いっぱいに並べ、操作は右側にまとめます。いちばん右の列に閉じる・<strong>編集対象</strong>・パラメータ・サウンド・表示切替、その左の列に手法（描画〜塗りつぶし）と反転・ブラー・ガンマ・取り消すが並びます。
+    パレットやスライダーなどの詳しい道具と、パラメータ・サウンドの欄は、その左に開いているときだけ出ます。詳しい道具を × で閉じると、ビューが右まで広がります。
+    詳しい道具とパラメータ・サウンドが入りきらないときは、最後に開いたほうだけを出します。縦長の映像でビューを 3 つ以上並べると、横 1 列に並びます。
+    </p>
+    <div class="gallery wide">
+      <figure><img src="shots/v133/ja/landscape_open.png" alt="iPhone を横にした編集画面。左に出力映像・立体グラフ・時間マップ、中ほどにパレットとブラシ・強さのスライダー、右に手法と道具の列、いちばん右に閉じる・編集対象・パラメータ・サウンド・表示切替の列" loading="lazy"><figcaption>iPhone の横向き。右に詳しい道具と 2 列のボタン</figcaption></figure>
+      <figure><img src="shots/v133/ja/landscape_closed.png" alt="詳しい道具を閉じたところ。時間マップが右の列の手前まで大きく広がっている" loading="lazy"><figcaption>詳しい道具を閉じると、ビューが右まで広がる</figcaption></figure>
+      <figure><img src="shots/v133/ja/ipad_editor.png" alt="iPad を横にした編集画面。出力映像・時間マップ・立体グラフ・入力映像を 2 段に並べ、パレットとスライダーはビューの右上、手法の並びは右下" loading="lazy"><figcaption>iPad の横向き（横長の映像）。詳しい道具はビューの右に</figcaption></figure>
+    </div>
     <p>
     マップの右上（余白があればマップの下）の<strong>範囲指定</strong><img class="ui" src="icons/edit_region.svg" alt="">を押してからマップをドラッグすると、その四角の中だけに描画・生成・塗りつぶし・ブラー・ガンマ・反転が効きます（四角は緑の破線で示し、効かない側を少し暗くします）。
     塗りつぶしのグラデーションは四角の端から端までになるので、部分ごとに違うグラデーションを置けます。隣の<strong>内外</strong><img class="ui" src="icons/edit_region_swap.svg" alt="">で四角の外側に切り替えられ、範囲指定をもう一度押すと解除します。切り分けの結果も四角の中だけに残ります（切り分けの間はボタンが出ないので、範囲の変更はほかの方法で）。
@@ -372,7 +382,7 @@ iPad でステージマネージャがオンになっていると外部ディス
 <h3>iPad でも使えますか</h3>
 <p>
 使えます。iPhone と iPad の両方に対応しています。
-画面の広い iPad では映像とマップを同時に大きく表示でき、Apple Pencil なら筆圧も使えます。横向きではトップ画面が 4 画面の配置（入力映像→マップ→立体グラフ→出力映像の順）になり、縦長の素材では 4 つが横 1 段に並びます。編集画面の道具は画面の下に並びます。縦向きの編集画面では、マップが大きくなるよう段ごとに並べ方を決めます。
+画面の広い iPad では映像とマップを同時に大きく表示でき、Apple Pencil なら筆圧も使えます。横向きではトップ画面が 4 画面の配置（入力映像→マップ→立体グラフ→出力映像の順）になり、縦長の素材では 4 つが横 1 段に並びます。編集画面の手法と道具のボタンは画面の下に並びます。横長の素材では、パレットなどの詳しい道具はビューの右の列に出て、ビューが 3 つのときは画面を 4 つに区切った右下に出ます（縦長の素材では下）。縦向きの編集画面では、マップが大きくなるよう段ごとに並べ方を決めます。
 </p>
 
 <h3>Mac でも使えますか</h3>
@@ -381,7 +391,7 @@ iPad でステージマネージャがオンになっていると外部ディス
 Mac では動画をファイルで扱います。「読み込み」の「ファイルから開く」、Finder からウィンドウへのドラッグ＆ドロップ、Finder の「このアプリで開く」、⌘O のどれでも開け、
 書き出しは保存先を選びます。カメラは Mac の内蔵カメラのほか、iPhone の連係カメラや USB カメラを名前で選べます。
 読み込める量は端末の GPU の空きから決まるので、Mac ではメモリのぶんだけ長い動画を間引かずに読み込めます（上限は 30fps で 68 秒ぶんのフレーム数。それより長い動画は間引きます）。
-トップ画面は 4 画面の配置で、編集画面の道具は右端に並びます。
+トップ画面は 4 画面の配置で、編集画面の手法と道具のボタンは右端に並びます。横長の窓で横長の素材のときは、パレットなどの詳しい道具もビューの右の列に出ます（ビューが 3 つのときは窓を 4 つに区切った右下）。
 キーボードでも操作できます（スペースで再生／一時停止、← → で 1 コマずつ、⌘Z で取り消す、⇧⌘Z でやり直す、⌘E で書き出し、⌘↩ で編集画面を開く／閉じる、⇧⌘F でフルスクリーン）。メニューバーの「操作」と、使い方の画面に一覧があります。キーボードをつないだ iPad でも使えます。
 </p>
 
@@ -702,8 +712,18 @@ mode is explained in <a href="time.html#volume-en">How time processing works</a>
     <h3>3. Drawing or generating a map</h3>
     <p>
     The row across the top of the editor carries the map-and-mode label at the left, <strong>Params</strong> <img class="ui" src="icons/map_gear.svg" alt=""> (the Parameters panel), <strong>Sound</strong> <img class="ui" src="icons/sound.svg" alt="">, the <strong>View</strong> menu <img class="ui" src="icons/layout.svg" alt=""> and an <strong>X</strong> at the far
-    right that closes the editor. The method buttons sit at the bottom right, each with its name underneath. The <strong>Editing</strong> menu at the top left picks the time map or the rate map, and can add the space map alongside; with two selected, a green label and a green frame mark the map being edited. On iPhone the two share one pane and <strong>Time | Space</strong> at the top right of the map switches between them, even when the pane is small; on iPad and the Mac they sit side by side and a tap on the other map or its name switches to it. With Draw selected you can simply draw on either map, and the one you draw on becomes the map being edited. Switching leaves the panes where they are. The menu under the map&rsquo;s name chooses between the two (<strong>Combine into one pane</strong>, <strong>Show time and space side by side</strong>). The editor opens with both whenever the space map has already been edited. On the main screen, the map&rsquo;s name reads <strong>Time + Space</strong> once both have been edited, with the one on show brighter. Nothing needs saving &mdash; the map is already applied.
+    right that closes the editor. The method buttons sit at the bottom right, each with its name underneath. The <strong>Editing</strong> menu at the top left picks the time map or the rate map, and can add the space map alongside. The green circle left of its name marks the map being edited; with two selected the two circles overlap, the one you are editing in front. In the panes, a green label and a green frame mark the map being edited. On iPhone the two share one pane and <strong>Time | Space</strong> at the top right of the map switches between them, even when the pane is small; on iPad and the Mac they sit side by side and a tap on the other map or its name switches to it. With Draw selected you can simply draw on either map, and the one you draw on becomes the map being edited. Switching leaves the panes where they are. The menu under the map&rsquo;s name chooses between the two (<strong>Combine into one pane</strong>, <strong>Show time and space side by side</strong>). The editor opens with both whenever the space map has already been edited. On the main screen, the map&rsquo;s name reads <strong>Time + Space</strong> once both have been edited, with the one on show brighter. Nothing needs saving &mdash; the map is already applied.
     </p>
+    <p>
+    <strong>On iPhone in landscape</strong> the panes take the full height on the left and the controls gather on the right. The rightmost column holds X, <strong>Editing</strong>, Params, Sound and View; the column beside it holds the methods (Draw to Fill) followed by Invert, Blur, Gamma and Undo.
+    The detailed tools such as the palette and sliders, and the Params and Sound panels, appear to their left only while open. Close the detailed tools with X and the panes stretch to the right.
+    When the detailed tools and Params or Sound don&rsquo;t fit together, only the one you opened last is shown. Portrait videos line up in one row with three or more panes.
+    </p>
+    <div class="gallery wide">
+      <figure><img src="shots/v133/en/landscape_open.png" alt="The editor on iPhone in landscape: Output, 3D plot and Time map on the left, the palette with Brush and Strength sliders in the middle, the methods and tools in a column, and X, Editing, Params, Sound and View in the rightmost column" loading="lazy"><figcaption>iPhone in landscape: detailed tools and two columns of buttons on the right</figcaption></figure>
+      <figure><img src="shots/v133/en/landscape_closed.png" alt="The detailed tools closed: the time map now stretches up to the button columns" loading="lazy"><figcaption>Close the detailed tools and the panes stretch to the right</figcaption></figure>
+      <figure><img src="shots/v133/en/ipad_editor.png" alt="The editor on iPad in landscape: Output, Time map, 3D plot and Input in two rows, the palette and sliders to the right of the panes, the methods at the bottom right" loading="lazy"><figcaption>iPad in landscape (landscape video): the detailed tools sit right of the panes</figcaption></figure>
+    </div>
     <p>
     <strong>Region</strong> <img class="ui" src="icons/edit_region.svg" alt=""> at the top right of the map (below it when there is room) limits your edits to a rectangle: tap it, then drag on the map. Draw, Gradient, Fill, Blur, Gamma, Invert and From motion then act only inside it (shown as a green dashed rectangle, with the other side slightly darkened). A Fill gradient runs from one edge of the rectangle to the other, so different parts of the map can carry different gradients. <strong>In/Out</strong> <img class="ui" src="icons/edit_region_swap.svg" alt=""> beside it swaps to the outside of the rectangle; tap Region again to clear it. Cut &amp; slide keeps its result inside the region as well (its buttons are hidden while cutting, so change the region from another method).
     </p>
@@ -1837,7 +1857,7 @@ treated as an extended desktop and the second screen is never created.
 <h3>Does it work on iPad, and does Apple Pencil add anything?</h3>
 <p>
 Both are supported, and the iPad is the better instrument: the map and the two videos all fit at a workable size
-at once. In landscape the main screen uses four panes (Input, map, 3D plot, Output in that order), which line up in a single row for portrait footage, and the editor&rsquo;s tools sit along the bottom. In portrait the editor arranges the panes row by row so the map stays large. Apple&nbsp;Pencil adds real pressure &mdash; a finger always counts as an average press, so a Pencil
+at once. In landscape the main screen uses four panes (Input, map, 3D plot, Output in that order), which line up in a single row for portrait footage, and the editor&rsquo;s method and tool buttons sit along the bottom. With landscape footage the detailed tools such as the palette move to a column right of the panes, or to the bottom-right quarter of the screen with three panes (with portrait footage they stay at the bottom). In portrait the editor arranges the panes row by row so the map stays large. Apple&nbsp;Pencil adds real pressure &mdash; a finger always counts as an average press, so a Pencil
 goes both thinner (about a sixth) and thicker (about one and a half times) than a finger stroke &mdash; and a
 double-tap on its side opens and closes the brush palette. The brush covers the other
 case: hold still with a fingertip and tone keeps building and spreading outward.
@@ -1850,13 +1870,13 @@ iPad and Mac. On the Mac, videos are files: open one with <strong>Open File</str
 the window, choose &ldquo;Open With&rdquo; in the Finder, or press &#8984;O, and exports ask where to save. The camera can be the
 Mac&rsquo;s built-in camera, an iPhone used as Continuity Camera, or a USB camera, chosen by name. How much video can be loaded
 depends on the free GPU memory of the device, so a Mac loads longer clips without skipping frames, up to the frame limit of
-68 seconds at 30 fps; longer clips are thinned. The main screen uses four panes, and the editor&rsquo;s tools sit along the right edge.
+68 seconds at 30 fps; longer clips are thinned. The main screen uses four panes, and the editor&rsquo;s method and tool buttons sit along the right edge. In a wide window with landscape footage, the detailed tools such as the palette also sit in a column right of the panes (the bottom-right quarter with three panes).
 Keyboard shortcuts work too: Space to play or pause, &larr; and &rarr; to step a frame, &#8984;Z to undo, &#8679;&#8984;Z to redo, &#8984;E to export, &#8984;&#8617; to open or close the editor and &#8679;&#8984;F for full screen. They are listed in the <strong>Controls</strong> menu in the menu bar and on the Help screen, and they work on an iPad with a keyboard as well.
 </p>
 
 <h3>Is there an undo?</h3>
 <p>
-Yes. <strong>Undo</strong> at the bottom left of the editor steps back one change at a time (up to 30 per map),
+Yes. <strong>Undo</strong> at the bottom left of the editor (at the bottom of the right column on iPhone in landscape) steps back one change at a time (up to 30 per map),
 through strokes, Blur, Invert, fills and generated gradients alike; press and hold it to reset the map to
 default. In <strong>Cut &amp; slide</strong>, <strong>Revert cut</strong> also returns the map to how it was when you
 opened that method.

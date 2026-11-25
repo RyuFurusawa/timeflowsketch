@@ -44,6 +44,9 @@ figcaption { color:var(--muted); font-size:.85rem; margin-top:10px; }
 .gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px; margin:20px 0 32px; align-items:start; }
 .gallery figure { margin:0; }
 .gallery figure img { max-width:480px; }
+/* 横長の画面写真（iPhone・iPad の横向き）は 2 列で大きく */
+.gallery.wide { grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); }
+.gallery.wide figure img { max-width:100%; }
 
 /* 各部の名前を赤い矢印で示した図（幅いっぱい） */
 figure.guide img { max-width:100%; border:0; }
