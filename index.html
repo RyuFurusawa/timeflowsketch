@@ -32,7 +32,7 @@
 <h3>マップをつくる</h3>
 <ul>
   <li><img class="ui" src="icons/draw.svg" alt=""><strong>描画</strong> — 指でなぞって時間の流れを描く。5段階の濃淡と自由な灰色、スポイト、指先ツール。触れたまま止めると色がにじむ</li>
-  <li><img class="ui" src="icons/gradient.svg" alt=""><img class="ui" src="icons/preset.svg" alt=""><strong>グラデーション生成・塗りつぶし</strong> — 規則的なパターンから始める</li>
+  <li><img class="ui" src="icons/gradient.svg" alt=""><img class="ui" src="icons/preset.svg" alt=""><strong>グラデーション生成・塗りつぶし</strong> — 規則的なパターンから始める。時間マップと空間マップを一度に塗る「時間＋空間」も</li>
   <li><img class="ui" src="icons/motion.svg" alt=""><strong>モーション解析</strong> — 映像自身の動きから自動で時間の形をつくる</li>
   <li><img class="ui" src="icons/cut.svg" alt=""><strong>切り分け</strong> — マップを線で2つに分け、動かしたり拡大・台形に変形したりして、時間のずれをつくる</li>
   <li><img class="ui" src="icons/edit_region.svg" alt=""><strong>範囲指定</strong> — マップの中に四角を引き、その中（または外）だけを編集する</li>
@@ -47,7 +47,7 @@
 <h3>確かめる</h3>
 <ul>
   <li><strong>立体グラフ</strong> — 描いた時間の形を立体で見る。ルック（断面・半透明・不透明）を切り替え、色・明るさ・動きで素材の一部だけを残すキーイングも</li>
-  <li><strong>入力のビュー</strong> — 素材そのものを、時間の方向に切った断面と立体で確かめる。断面をそのままマップにする「マップに適応」も</li>
+  <li><strong>入力のビュー</strong> — 素材そのものを、時間の方向に切った断面と立体で確かめる。断面をそのままマップにする「マップに適応」も。断面は「斜め」にして、時間とともに動かせる</li>
   <li><strong>2次元グラフ</strong> — 時間・レート・空間の変化を線で見る。凡例で、出力のどこが入力のどこから来たかも</li>
 </ul>
 <h3>音と書き出し</h3>
@@ -91,6 +91,7 @@
     <p>
     <strong>入力のビュー</strong>は、素材そのものを時間の方向から確かめる画面です。トップ画面の入力映像の右下のボタン、または編集画面に並べた入力映像の右下のボタンで開きます。
     <strong>入力映像・X–T 断面・Y–T 断面・入力の立体グラフ</strong>が並びます。断面は、入力映像の上の線の位置で素材を時間の方向に切った絵です（X–T は水色の横の線、Y–T は黄色の縦の線の位置）。線をドラッグすると切る位置が変わり、断面の緑の線が入力の再生位置です。ビューを押すと大きくなり、断面を大きくすると切る位置のスライダーが下に出ます。
+    スライダーの右の<strong>「斜め」</strong>を入れると、切る線の位置を読み込んだ範囲の<strong>始め</strong>と<strong>終わり</strong>で別々に決められます（X–T は「Y 始め・Y 終わり」、Y–T は「X 始め・X 終わり」）。線は時間とともに動き、素材の箱を斜めに切る断面になります。スライダーを動かしている間は、断面の下に入力の立体グラフが同じ大きさで並び、切っている面にその断面の絵が貼られます。斜めの断面も「マップに適応」できます。
     断面の下の<strong>「マップに適応」</strong>（マップの絵に下向きの矢印のアイコン）を押すと、その断面をそのまま出力に映す時間マップと空間マップに置き換えて、トップ画面に戻ります。断面に見えていた「時間の方向に切った絵」が、そのまま出力になります（出力は動かない 1 枚の絵になるので、書き出しは静止画になります）。iPhone では、断面を大きくしたときに出ます。
     入力の立体グラフを押して大きくすると、下にルックとキーイングの操作が出ます。
     いちばん下のバーで使用範囲を決めます。その下に読み込みの情報（GPU 上の映像の大きさ・fps）が出て、押すと読み込みの設定を開けます。
@@ -130,6 +131,7 @@
 <figure class="guide"><a href="shots/guide/fullscreen_ja.jpg"><img src="shots/guide/fullscreen_ja.jpg" alt="編集画面のフルスクリーンの図。入力映像、時間マップ、出力映像、立体グラフを並べ、右上の表示切替で並べるビューを切り替える。ビューの名前の札と立体グラフの右上はメニュー" loading="lazy"></a><figcaption>編集画面のフルスクリーン（押すと大きく開きます）</figcaption></figure>
 <div class="gallery">
   <figure><img src="shots/v132/ja/input_view.png" alt="入力のビュー。上に入力映像と X–T 断面、その下に大きく Y–T 断面と「マップに適応」のボタン、入力の立体グラフ、いちばん下に使用範囲のバーと読み込みの情報" loading="lazy"><figcaption>入力のビュー。大きくした Y–T 断面の下に「マップに適応」</figcaption></figure>
+  <figure><img src="shots/v135/ja/slant.png" alt="入力のビューで X–T 断面を大きくし、「斜め」を入れたところ。下に入力の立体グラフが同じ大きさで並び、斜めに傾いた断面の面に絵が貼られている。いちばん下に Y 始め・Y 終わりのスライダーと「斜め」のチェック" loading="lazy"><figcaption>「斜め」を入れると、線の位置を始めと終わりで決められる。立体グラフに断面の面が出る</figcaption></figure>
   <figure><img src="shots/v132/ja/input_menu.png" alt="入力映像を大きくして、左上のボタンを押して開いたメニュー。動画を選ぶ、ファイルから開く、読み込みの設定" loading="lazy"><figcaption>入力映像の左上のボタンから、別の動画への切り替えと読み込みの設定</figcaption></figure>
   <figure><img src="shots/v132/ja/pane_menu.png" alt="ビューの名前の札を押して開いたメニュー。大きく表示、この画面だけを表示、並べ替え、消す" loading="lazy"><figcaption>ビューの名前の札を押すと、そのビューのメニュー</figcaption></figure>
   <figure><img src="shots/v132/ja/input_plot_focus.png" alt="入力の立体グラフを押して大きくしたところ。ほかのビューは下に小さく並び、その下にルック（断面・半透明・不透明）とキーイングの選択肢" loading="lazy"><figcaption>立体グラフを押して大きくすると、下にルックとキーイング</figcaption></figure>
@@ -221,8 +223,24 @@
     <p>
     <strong>塗りつぶし</strong><img class="ui" src="icons/preset.svg" alt="">では、一色やグラデーションでマップ全体を塗り替えます。
     各ボタンの下に、いまの設定でどう再生されるか（通常再生・逆再生・時間停止など）が表示されます。
+    縦・横スリットの時間マップには<strong>ループ再生</strong>もあります。等速で進み、ゆっくり止まって逆へ戻る動きをくり返すので、出力の終わりと始めがなめらかにつながります。
     </p>
-    <figure class="crop"><img src="shots/v132/ja/fill.png" alt="塗りつぶしの道具。重ね方の選択と、再生の説明が付いた 7 つのボタン" loading="lazy"></figure>
+    <p>
+    2 段目の<strong>時間＋空間</strong>（縦・横スリットのとき）は、時間マップと空間マップを一度に塗り替えます。素材の箱（横・縦・時間）を切る面そのものを動かす塗りで、次の 6 つがあります（横スリットでは左端・右端が上端・下端になります）。
+    </p>
+    <ul>
+      <li><strong>時空の入れ替え</strong> — 画面の位置と時間を入れ替えます（スリットスキャン）。左ほど前の瞬間が並び、読む位置が出力の時間とともに端から端へ動きます</li>
+      <li><strong>中央で回転</strong> — 画面の中央の線を軸に、出力の始めから終わりで面を 360° 回します。終わりで始めの向きに戻るので、ループします</li>
+      <li><strong>左端で回転・右端で回転</strong> — 端の、時間の始めの角を軸に、面を 90° 回します。始めは最初のコマ、終わりは端の 1 本を時間順に並べた絵になります</li>
+      <li><strong>左端で倒す・右端で倒す</strong> — 端を軸に面を 90° 倒します。軸の時刻は出力の時間とともに進みます</li>
+    </ul>
+    <p>
+    当てると時間マップと空間マップの 2 枚が編集対象になり、iPhone の縦では「時間｜空間」のタブで切り替えます。立体グラフで見ると、面が回ったり倒れたりする様子が分かります。
+    </p>
+    <figure class="crop"><img src="shots/v135/ja/fill.png" alt="塗りつぶしの道具。重ね方の選択、ループ再生を含む 8 つのボタン、その下に時間＋空間の 6 つのボタン" loading="lazy"></figure>
+    <div class="gallery">
+      <figure><img src="shots/v135/ja/combined_plot.png" alt="時間＋空間の「中央で回転」を当てたところ。立体グラフで、素材の箱の中の面が縦の軸のまわりに回っている。下に時間マップと空間マップ、出力映像" loading="lazy"><figcaption>「中央で回転」を当てた立体グラフ。下に時間マップと空間マップ</figcaption></figure>
+    </div>
     <p>
     <strong>切り分け</strong><img class="ui" src="icons/cut.svg" alt="">では、マップを横切る線や囲む線で2つに分け、それぞれを動かします。
     線は下のパレットで<span class="uichip"><img src="icons/chip_free.svg" alt="">自由曲線</span>・<span class="uichip"><img src="icons/chip_straight.svg" alt="">直線</span>（始点と終点をタップ）・<span class="uichip"><img src="icons/chip_polygon.svg" alt="">多角形</span>（頂点を順にタップし、最初の点をタップして閉じる）から選べ、自由曲線で囲む線は交差したところで閉じた形になります。
@@ -230,7 +248,7 @@
     動かしてできた隙間は両側の値をつないで自動で埋まります。<span class="uichip"><img src="icons/chip_apply.svg" alt="">確定</span>で次の線へ進み、<span class="uichip"><img src="icons/chip_redo.svg" alt="">引き直す</span>で線を引き直し（多角形の頂点を置いている途中は最後の点だけ取り消します）、<span class="uichip"><img src="icons/chip_revert.svg" alt="">切る前に戻す</span>で切り分けを始める前のマップに戻ります。
     </p>
     <p>
-    マップを編集したあと、塗りつぶし<img class="ui" src="icons/preset.svg" alt="">の「既定」の印が付いたボタンを選ぶか、取り消す<img class="ui" src="icons/undo.svg" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
+    マップを編集したあと、塗りつぶし<img class="ui" src="icons/preset.svg" alt="">で、いまのモードの通常再生にあたるボタン（縦スリットの時間マップなら「上→下」）を選ぶか、取り消す<img class="ui" src="icons/undo.svg" alt="">を長押しして<strong>「デフォルトの再生に戻す」</strong>（空間マップでは「デフォルトの状態に戻す」）を選ぶと、そのマップがいまのモードの通常再生に戻り、未編集の扱いになります。
     </p>
     <p>生成したマップの上から、そのまま描き足すこともできます。</p>
 
@@ -292,6 +310,11 @@ App Store に新しいバージョンが出ていると、起動したときに�
   <figure><img src="shots/v129/ja/params_info.png" alt="適用パラメータ。再生時間の i を開き、縦スリット×時間マップでの意味が表示されている" loading="lazy"><figcaption>適用パラメータの i（再生時間の説明）</figcaption></figure>
   <figure><img src="shots/v129/ja/sound_info.png" alt="サウンドパネル。音の方式の i を開き、グラニュラーとレート再生の違いが表示されている" loading="lazy"><figcaption>サウンドの i（グラニュラーとレート再生）</figcaption></figure>
 </div>
+<p>
+サウンドの<strong>リバーブ</strong>は、スイッチで入れたときだけ<strong>深さ</strong>（0〜2）と<strong>長さ（秒）</strong>（響きの長さ。0.5〜15 秒、初めは 2.2 秒）が出ます。
+いちばん下の<strong>音の波形とボイスの位置</strong>には、素材全体の音の波形に使用範囲を薄く重ね、各ボイスがいま鳴らしている時刻を縦の線で示します（線の色は 2 次元グラフと同じく、左から右へ緑→赤）。
+</p>
+<figure class="crop"><img src="shots/v135/ja/sound.png" alt="サウンドパネル。方式・音量・パン幅、リバーブのスイッチと深さ・長さ（秒）、ボイス分割数、いちばん下に音の波形とボイスの位置" loading="lazy"><figcaption>リバーブの深さと長さ、いちばん下に音の波形とボイスの位置</figcaption></figure>
 
 <h2>ライブカメラ</h2>
 <p>
@@ -457,7 +480,7 @@ thought you knew.
 <h3>Checking what you made</h3>
 <ul>
   <li><strong>3D plot</strong> &mdash; see the shape of time as a solid, switch its look (Section, Translucent, Opaque), and key out part of the footage by colour, brightness or motion</li>
-  <li><strong>Input view</strong> &mdash; study the footage itself as slices along time and as a solid, and turn a slice straight into maps with <strong>Apply to maps</strong></li>
+  <li><strong>Input view</strong> &mdash; study the footage itself as slices along time and as a solid, and turn a slice straight into maps with <strong>Apply to maps</strong>. A slice can also be slanted, moving through the frame over time</li>
   <li><strong>2D plot</strong> &mdash; see time, rate and space as line charts, with a legend showing where each part of the output comes from in the input</li>
 </ul>
 <h3>Sound and export</h3>
@@ -620,6 +643,14 @@ line on each slice is the input playhead. Tap a pane to make it larger; an enlar
 position underneath.
 </p>
 <p>
+Tick <strong>Slant</strong>, to the right of that slider, and the cut gets two sliders instead: where the line sits at
+the <strong>start</strong> and at the <strong>end</strong> of the loaded range (<strong>Y Start</strong> and
+<strong>Y End</strong> for X&ndash;T, <strong>X Start</strong> and <strong>X End</strong> for Y&ndash;T). The line then
+travels across the frame over time, so the slice cuts the block of footage at an angle. While you move a slider,
+the Input 3D plot sits under the slice at the same size, with the slice&rsquo;s picture laid on the plane it cuts.
+A slanted slice works with <strong>Apply to maps</strong> too.
+</p>
+<p>
 <strong>Apply to maps</strong>, under a slice (an icon of a map with a downward arrow), replaces the time map and the
 space map with ones that put that slice straight into the output, and returns to the main screen: the picture you saw
 in the slice becomes the output. Because that output no longer moves, it is exported as a still image. On iPhone the
@@ -642,6 +673,7 @@ bar is drawn over the Input pane.
 <figure class="guide"><a href="shots/guide/fullscreen_en.jpg"><img src="shots/guide/fullscreen_en.jpg" alt="The editor in full screen showing the input video, the time map, the output video and the 3D plot, with the View menu at the top right for choosing the panes; pane names and the top right of the 3D plot open menus" loading="lazy"></a><figcaption>The editor in full screen (tap to enlarge)</figcaption></figure>
 <div class="gallery">
   <figure><img src="shots/v132/en/input_view.png" alt="The input view: the Input video and the X&ndash;T slice at the top, a large Y&ndash;T slice with the Apply to maps button below them, then the Input 3D plot, with the range bar and the loading information at the bottom" loading="lazy"><figcaption>The input view: Apply to maps under the enlarged Y&ndash;T slice</figcaption></figure>
+  <figure><img src="shots/v135/en/slant.png" alt="The input view with the X&ndash;T slice enlarged and Slant ticked: the Input 3D plot below at the same size, with the picture laid on a tilted plane, and the Y Start and Y End sliders at the bottom" loading="lazy"><figcaption>With Slant ticked, set where the line is at the start and at the end; the 3D plot shows the plane being cut</figcaption></figure>
   <figure><img src="shots/v132/en/input_menu.png" alt="The Input pane enlarged, with the menu from the button at its top left: Choose a video, Open File and Load settings" loading="lazy"><figcaption>The button on the Input pane switches the source and opens the load settings</figcaption></figure>
   <figure><img src="shots/v132/en/pane_menu.png" alt="The menu opened from a pane&rsquo;s name: Make larger, Show this one alone, Rearrange and Hide" loading="lazy"><figcaption>Tap a pane&rsquo;s name for its menu</figcaption></figure>
   <figure><img src="shots/v132/en/fullscreen_clean.png" alt="Full screen after touching the screen: only the Output, Time map, Input and 3D plot labels remain and the buttons are gone" loading="lazy"><figcaption>Touch the screen to hide the bars and buttons</figcaption></figure>
@@ -929,7 +961,7 @@ them, are under <a href="#export-en">How long the export will be</a> and
 The row of round buttons at the bottom right of the editor chooses <em>how</em> you build the map:
 <strong>Draw</strong> <img class="ui" src="icons/draw.svg" alt="">, <strong>Gradient</strong> <img class="ui" src="icons/gradient.svg" alt="">, <strong>From motion</strong> <img class="ui" src="icons/motion.svg" alt="">, <strong>Cut &amp; slide</strong> <img class="ui" src="icons/cut.svg" alt=""> and <strong>Presets</strong> <img class="ui" src="icons/preset.svg" alt="">, in that order, with the current one in white. Tap a method and its detailed tools open just
 above the row; tap the current method again to fold them away. To return a map to normal playback for the current
-mode and mark it unedited again, tap the button marked <strong>Default</strong> in Fill (or press and hold Undo).
+mode and mark it unedited again, tap the Fill button that gives normal playback in that mode &mdash; <strong>Top &rarr; bottom</strong> for a time map in vertical slit (or press and hold Undo).
 Switching methods changes only the detailed tools. The map you are editing, the mode it is applied
 in, and the live preview all stay as they were. The caption just above the tools always states what black, grey
 and white mean for the current map and mode, so it is worth reading again after any change of mode or parameter.
@@ -1059,7 +1091,10 @@ instead freezes each column at a different moment.
     <p>
     Seven buttons repaint the whole map in one tap: <strong>All black</strong>, <strong>All grey</strong>,
     <strong>All white</strong>, <strong>Top &rarr; bottom</strong>, <strong>Bottom &rarr; top</strong>,
-    <strong>Left &rarr; right</strong> and <strong>Right &rarr; left</strong>.
+    <strong>Left &rarr; right</strong> and <strong>Right &rarr; left</strong>. On a time map in either slit mode an
+    eighth, <strong>Loop</strong>, sits next to normal playback: it runs forward at normal speed, eases to a stop,
+    runs back and eases round again, following a sine wave along the time axis, so the end of the output meets its
+    start without a jolt.
     </p>
     <p>
     Each button carries a thumbnail of the pattern, its name, and &mdash; most usefully &mdash; a line
@@ -1067,7 +1102,7 @@ instead freezes each column at a different moment.
     parameters you have set. Those labels are computed rather than fixed, so they change the moment you change
     anything that matters. As with Gradient, you can choose <strong>Replace</strong> (the default), <strong>Add</strong> or <strong>Multiply</strong>.
     </p>
-    <figure class="crop"><img src="shots/v132/en/fill.png" alt="The Fill tools: the blend choice and seven buttons, each with a thumbnail and a caption saying what it will do with the current settings" loading="lazy"></figure>
+    <figure class="crop"><img src="shots/v135/en/fill.png" alt="The Fill tools: the blend choice, eight buttons including Loop, each with a caption saying what it will do, and below them the six Time + space buttons" loading="lazy"></figure>
 
 <p>
 On a <strong>time map in vertical slit</strong>, where the map&rsquo;s vertical axis is output time, they read
@@ -1078,6 +1113,7 @@ like this:
   <tr><th>All grey</th><td>Frozen mid-clip</td></tr>
   <tr><th>All white</th><td>Frozen at end</td></tr>
   <tr><th>Top &rarr; bottom</th><td>Normal playback &mdash; the ramp runs along the time axis, in the forward direction</td></tr>
+  <tr><th>Loop</th><td>Out and back at 1&times; &mdash; forward, a gentle stop, back again, and round to the start</td></tr>
   <tr><th>Bottom &rarr; top</th><td>Reverse</td></tr>
   <tr><th>Left &rarr; right</th><td>Left is earlier &mdash; this ramp runs across the frame instead, so each column freezes at a different moment</td></tr>
   <tr><th>Right &rarr; left</th><td>Right is earlier</td></tr>
@@ -1099,6 +1135,27 @@ in the <strong>Parameters</strong> panel, which set what black and white mean. W
 joined by an arrow when the ramp runs along the time axis, or by a wave dash when it runs across the frame, since
 in that case the two speeds coexist in different parts of the picture rather than following one another.
 </p>
+
+<h3>Time + space</h3>
+<p>
+In either slit mode, a second row under the Fill buttons, <strong>Time + space (replaces both)</strong>, repaints the
+time map and the space map together. Instead of changing <em>when</em> each strip is read, these move the plane that
+cuts the block of footage (across &times; down &times; time) itself. Under a horizontal slit, left and right become top
+and bottom.
+</p>
+<table>
+  <tr><th>Swap time/space</th><td>Position and time trade places &mdash; a slit scan. Further left shows an earlier moment, and the column being read travels from edge to edge over the output.</td></tr>
+  <tr><th>Turn at center</th><td>The plane turns a full 360&deg; about the centre line of the frame over the output, and ends facing the way it began, so it loops.</td></tr>
+  <tr><th>Turn at left / Turn at right</th><td>The plane turns 90&deg; about the edge&rsquo;s corner at the start of time. It begins as the first frame and ends as that edge&rsquo;s single line laid out in time order.</td></tr>
+  <tr><th>Tilt at left / Tilt at right</th><td>The plane tips 90&deg; about that edge, while the moment at the edge moves forward with the output.</td></tr>
+</table>
+<p>
+Applying one puts both maps under edit; on an iPhone held upright a <strong>Time | Space</strong> tab switches between
+them. The 3D plot is the easiest way to see what each does: the plane turns or tips inside the box.
+</p>
+<div class="gallery">
+  <figure><img src="shots/v135/en/combined_plot.png" alt="Turn at center applied: in the 3D plot the plane turns about a vertical axis inside the box of footage, with the time map, the space map and the output below" loading="lazy"><figcaption>Turn at center in the 3D plot, with the time and space maps below</figcaption></figure>
+</div>
 
 <h3>From motion</h3>
 <p>
@@ -1259,13 +1316,14 @@ of each region arrives as pitch, uninterrupted.
 
 <h3>Reverb</h3>
 <p>
-Reverb is off until you turn it on, and it is not a fixed room. <strong>The wet amount follows the spread of
+Reverb is off until you turn on its switch, and it is not a fixed room. <strong>The wet amount follows the spread of
 time across the frame</strong>: the app measures the gap between the earliest and the latest region in the
 current frame and drives the reverb from it. A flat map, where the whole frame sits at the same moment, stays
 dry. A map that scatters the frame across the clip opens the reverb up, reaching full depth once the spread is
 around half the clip&rsquo;s length. The value is smoothed, so the tail swells and recedes with the map instead
-of jumping. <strong>Depth</strong> sets the ceiling that spread can reach; the tail itself is a fixed two and a
-half seconds behind a short pre-delay. In practice this means scattered time is heard as space.
+of jumping. <strong>Depth</strong> (0 to 2) sets the ceiling that spread can reach &mdash; above 1, even a small spread
+reaches a fully wet sound. <strong>Length (s)</strong> sets how long the tail rings, from 0.5 to 15 seconds
+(2.2 to begin with). Both appear only while the switch is on. In practice this means scattered time is heard as space.
 </p>
 
 <h3>Voices, and what they cost</h3>
@@ -1289,10 +1347,18 @@ summed voices are soft-clipped before output, so a loud map compresses rather th
   <tr><th>Volume</th><td>Level of the result audio, 0 to 1.</td></tr>
   <tr><th>Grain (ms)</th><td>Grain length, 20&ndash;200&nbsp;ms, default 85. Granular only.</td></tr>
   <tr><th>Stereo width</th><td>0 places every voice in the centre; 1 spreads them fully left to right. Dimmed under a Horizontal slit.</td></tr>
-  <tr><th>Reverb</th><td>The switch, and <strong>Depth</strong> &mdash; the ceiling the spread of time can drive it to.</td></tr>
+  <tr><th>Reverb</th><td>The switch, then <strong>Depth</strong> (0&ndash;2) &mdash; the ceiling the spread of time can drive it to &mdash; and <strong>Length (s)</strong>, 0.5&ndash;15.</td></tr>
   <tr><th>Voice count / Voice divisions</th><td>Surface: a grid of 9, 15, 35 or 63 cells. Slit modes: 1&ndash;16 strips. Both have an <strong>i</strong> explaining how the voices are laid out in the current mode.</td></tr>
-  <tr><th>Export audio</th><td><strong>Include audio in the export</strong> &mdash; whether the exported file carries a soundtrack. The same switch appears as <strong>Include audio</strong> under Settings &rarr; Export options.</td></tr>
 </table>
+
+<h3>Waveform and voice positions</h3>
+<p>
+At the bottom of the Sound panel, <strong>Waveform and voice positions</strong> draws the whole clip&rsquo;s audio, shades
+the range in use, and marks with a vertical line the moment each voice is playing right now. The lines take the same
+colours as the 2D plot &mdash; green to red, left to right (top to bottom under a horizontal slit) &mdash; so you can see
+the map pulling the voices apart or bunching them together as it plays.
+</p>
+<figure class="crop"><img src="shots/v135/en/sound.png" alt="The Sound panel: method, volume and stereo width, the Reverb switch with Depth and Length (s), voice divisions, and at the bottom the waveform with a line for each voice" loading="lazy"><figcaption>Reverb depth and length, and the waveform with each voice&rsquo;s position</figcaption></figure>
 
 <h3>In the exported file</h3>
 <p>
@@ -1338,9 +1404,7 @@ Files, AirDrop it, or hand it to another app. The same happens if the save itsel
 <p>
 Sound is written into the same file as stereo AAC, and it is the manipulated sound &mdash; the grains or rates
 are recomputed offline against the same per-region times the picture uses, so the export matches what you heard
-in the preview rather than the original audio. Turn it off with <strong>Include audio in the export</strong>,
-in the editor&rsquo;s sound panel or as <strong>Include audio</strong> under <strong>Export options</strong> in
-Settings. Muting the output, or setting the sound method to Off, also leaves the file silent.
+in the preview rather than the original audio. Turn it off with <strong>Include audio</strong> under <strong>Export options</strong> in Settings. Muting the output, or setting the sound method to Off, also leaves the file silent.
 </p>
 
 <h3>How long the export will be</h3>
