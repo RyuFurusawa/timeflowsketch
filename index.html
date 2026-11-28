@@ -4,8 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Time Flow Sketch — サポート</title>
 <link rel="stylesheet" href="style.css">
+<script src="toc.js" defer></script>
 <div class="wrap">
-<header>
+<header id="top">
+  <p class="langbar" lang="en"><span>The English manual follows the Japanese section.</span><a class="jump" href="#en">English manual ↓</a></p>
   <img class="icon" src="icon.png" alt="">
   <h1>Time Flow Sketch</h1>
   <p class="lede">映像の中の時間の流れを、絵を描く感覚で操作する iPhone / iPad / Mac アプリ</p>
@@ -14,7 +16,7 @@
 
 <nav><a href="#support">サポート</a><a href="time.html">時間処理の仕組み</a><a href="privacy.html">プライバシーポリシー</a><a href="#en">English manual</a></nav>
 
-<h2>このアプリについて</h2>
+<h2 id="about">このアプリについて</h2>
 <p>
 映像の中の時間の流れを、絵を描く感覚で操作するスケッチアプリです。
 </p>
@@ -59,7 +61,7 @@
 映像の処理はすべて端末内で完結し、作品が外部に送られることはありません。
 </p>
 
-<h2>基本の使い方</h2>
+<h2 id="basics">基本の使い方</h2>
 
 <figure class="guide"><a href="shots/guide/top_ja.jpg"><img src="shots/guide/top_ja.jpg" alt="トップ画面の各部の名前を赤い線で示した図。入力映像、使用範囲のバー、マップ画像と道具、出力映像が並んでいる" loading="lazy"></a><figcaption>トップ画面（押すと大きく開きます）</figcaption></figure>
     <h3>1. 画面の見かた</h3>
@@ -293,7 +295,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 <img class="ui" src="icons/dock_help.svg" alt=""><strong>「使い方」</strong>の画面にはバージョンが表示され、更新があるときはその右のボタンからそのまま App Store を開けます。
 </p>
 
-<h2>適用モード</h2>
+<h2 id="modes">適用モード</h2>
 <table>
   <tr><th>サーフェス</th><td>画素ごとに時刻をずらします。描いた形がそのまま時間のゆがみになる、いちばん直感的なモードです。</td></tr>
   <tr><th>縦スリット</th><td>画面の縦の帯ごとに違う時刻を割り当てます。マップの縦方向が出力の時間、横方向が画面の位置に対応します。</td></tr>
@@ -316,7 +318,7 @@ App Store に新しいバージョンが出ていると、起動したときに�
 </p>
 <figure class="crop"><img src="shots/v135/ja/sound.png" alt="サウンドパネル。方式・音量・パン幅、リバーブのスイッチと深さ・長さ（秒）、ボイス分割数、いちばん下に音の波形とボイスの位置" loading="lazy"><figcaption>リバーブの深さと長さ、いちばん下に音の波形とボイスの位置</figcaption></figure>
 
-<h2>ライブカメラ</h2>
+<h2 id="live">ライブカメラ</h2>
 <p>
 カメラの映像を、撮りながら時間操作できます。<strong>「読み込み」→「ライブカメラ」</strong>か、起動直後の画面の「ライブカメラ」、編集画面の入力映像の左上のボタンで始めます
 （カメラのある端末で、はじめにカメラの許可を求められます。映像は端末の外へ送られません）。
@@ -426,7 +428,7 @@ Mac では動画をファイルで扱います。「読み込み」の「ファ�
 動きが飛ばずになめらかなまま残ります。
 </p>
 
-<h2>お問い合わせ</h2>
+<h2 id="contact">お問い合わせ</h2>
 <p>
 不具合の報告や機能のご要望は下記までお寄せください。<br>
 <a href="mailto:ryu.furusawa@gmail.com">ryu.furusawa@gmail.com</a><br>
@@ -440,7 +442,7 @@ Mac では動画をファイルで扱います。「読み込み」の「ファ�
 <p class="store"><a href="https://apps.apple.com/app/id6809194951"><img src="appstore-badge-en.svg" alt="Download on the App Store"></a></p>
 
 <nav>
-<a href="#about-en">About</a><a href="#started-en">Getting started</a><a href="#maps-en">Maps and modes</a><a href="#building-en">Building a map</a><a href="#sound-en">Sound</a><a href="#export-en">Exporting</a><a href="#settings-en">Settings</a><a href="#tips-en">Getting good results</a><a href="#support-en">FAQ</a><a href="time.html#en">How time processing works</a>
+<a href="#about-en">About</a><a href="#started-en">Getting started</a><a href="#maps-en">Maps and modes</a><a href="#building-en">Building a map</a><a href="#sound-en">Sound</a><a href="#export-en">Exporting</a><a href="#settings-en">Settings</a><a href="#tips-en">Getting good results</a><a href="#support-en">FAQ</a><a href="time.html#en">How time processing works</a><a href="#top" lang="ja">日本語 ↑</a>
 </nav>
 
 <h2 id="about-en">About</h2>
@@ -1966,7 +1968,7 @@ that breaks up, and stay plugged in for installation or performance use. Build t
 resolution and raise it only for the final render.
 </p>
 
-<h2>Disclaimer and rights</h2>
+<h2 id="disclaimer-en">Disclaimer and rights</h2>
 <p>
 Time Flow Sketch is experimental software intended for making moving-image work. The developer accepts no
 liability for any damage arising from its use, including data loss, device malfunction, or loss relating to work
@@ -1980,7 +1982,7 @@ obtaining the necessary permission is your responsibility.
 All data is processed on your device. No personal information is collected or transmitted.
 </p>
 
-<h2>Support</h2>
+<h2 id="contact-en">Support</h2>
 <p>
 For bug reports, questions, and feature requests, please get in touch. Messages in English are welcome.<br>
 <a href="mailto:ryu.furusawa@gmail.com">ryu.furusawa@gmail.com</a><br>
